@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://picepattarish.netlify.app/sitemap.xml
+
+# ไม่ให้ crawl ไฟล์ที่ไม่จำเป็น
+Disallow: /posts.json
+Disallow: /generate_blog.py
