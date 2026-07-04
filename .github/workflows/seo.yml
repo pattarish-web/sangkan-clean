@@ -23,6 +23,8 @@ jobs:
         run: python seo/content_generator.py
       - name: Compliance Check
         run: python seo/compliance_checker.py
+      - name: Update Domain Configuration
+        run: python update_domain.py
       - name: Commit & Deploy (if clean)
         if: success()
         run: |

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- หน้าหลัก -->
+  <!-- หน้าแรก -->
   <url>
-    <loc>https://sangkan-clean.netlify.app/</loc>
+    <loc>https://pattarish-web.github.io/sangkan-clean/sangkan-clean/</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- หน้าบทความ -->
   <url>
-    <loc>https://sangkan-clean.netlify.app/blog.html</loc>
+    <loc>https://pattarish-web.github.io/sangkan-clean/sangkan-clean/blog.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- Landing Page Big Cleaning -->
   <url>
-    <loc>https://sangkan-clean.netlify.app/landing-bigcleaning.html</loc>
+    <loc>https://pattarish-web.github.io/sangkan-clean/sangkan-clean/landing-bigcleaning.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Landing Page แม่บ้านประจำ -->
   <url>
-    <loc>https://sangkan-clean.netlify.app/landing-maid.html</loc>
+    <loc>https://pattarish-web.github.io/sangkan-clean/sangkan-clean/landing-maid.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

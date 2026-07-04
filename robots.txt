@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sangkan-clean.netlify.app/sitemap.xml
+Sitemap: https://pattarish-web.github.io/sangkan-clean/sitemap.xml
 
 # ไม่ให้ crawl ไฟล์ที่ไม่จำเป็น
 Disallow: /posts.json
