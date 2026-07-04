@@ -1,18 +1,802 @@
 [
   {
-    "keyword": "ทำความสะอาดบริษัท",
-    "search_volume": 1200
+    "keyword": "เคลียร์พื้นที่โชว์รูม",
+    "search_volume": 1730
   },
   {
-    "keyword": "บริการทำความสะอาดโรงงาน",
-    "search_volume": 800
+    "keyword": "ทำความสะอาดคลินิก",
+    "search_volume": 907
   },
   {
-    "keyword": "แม่บ้านประจำ",
-    "search_volume": 1500
+    "keyword": "จ้างทำความสะอาดรีสอร์ท",
+    "search_volume": 152
+  },
+  {
+    "keyword": "หาแม่บ้านคลินิก",
+    "search_volume": 1125
+  },
+  {
+    "keyword": "หาแม่บ้านมหาวิทยาลัย",
+    "search_volume": 432
+  },
+  {
+    "keyword": "ทำความสะอาดห้างสรรพสินค้า",
+    "search_volume": 1062
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างออฟฟิศ",
+    "search_volume": 1142
+  },
+  {
+    "keyword": "Big Cleaningโชว์รูม",
+    "search_volume": 535
+  },
+  {
+    "keyword": "Big Cleaningสำนักงาน",
+    "search_volume": 919
+  },
+  {
+    "keyword": "รับทำความสะอาดบ้าน",
+    "search_volume": 445
+  },
+  {
+    "keyword": "บริการทำความสะอาดโชว์รูม",
+    "search_volume": 875
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งคอนโด",
+    "search_volume": 795
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดโชว์รูม",
+    "search_volume": 512
+  },
+  {
+    "keyword": "บริการทำความสะอาดคลินิก",
+    "search_volume": 549
+  },
+  {
+    "keyword": "บริการแม่บ้านตึกสูง",
+    "search_volume": 1284
+  },
+  {
+    "keyword": "รับทำความสะอาดสำนักงาน",
+    "search_volume": 288
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดฟิตเนส",
+    "search_volume": 1489
+  },
+  {
+    "keyword": "จ้างทำความสะอาดคาเฟ่",
+    "search_volume": 426
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งศูนย์การค้า",
+    "search_volume": 341
+  },
+  {
+    "keyword": "หาแม่บ้านร้านอาหาร",
+    "search_volume": 769
+  },
+  {
+    "keyword": "บริการทำความสะอาดโรงเรียน",
+    "search_volume": 823
+  },
+  {
+    "keyword": "รับทำความสะอาดโรงพยาบาล",
+    "search_volume": 1027
+  },
+  {
+    "keyword": "บริการทำความสะอาดอาคารพานิชย์",
+    "search_volume": 759
+  },
+  {
+    "keyword": "ทำความสะอาดโกดัง",
+    "search_volume": 1145
+  },
+  {
+    "keyword": "หาแม่บ้านโชว์รูม",
+    "search_volume": 439
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งตึกสูง",
+    "search_volume": 677
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดออฟฟิศ",
+    "search_volume": 318
+  },
+  {
+    "keyword": "ทำความสะอาดฟิตเนส",
+    "search_volume": 286
+  },
+  {
+    "keyword": "จ้างทำความสะอาดออฟฟิศ",
+    "search_volume": 659
+  },
+  {
+    "keyword": "รับทำความสะอาดคอนโด",
+    "search_volume": 1573
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดตึกสูง",
+    "search_volume": 1210
+  },
+  {
+    "keyword": "แม่บ้านมหาวิทยาลัย",
+    "search_volume": 1835
+  },
+  {
+    "keyword": "แม่บ้านรีสอร์ท",
+    "search_volume": 1587
+  },
+  {
+    "keyword": "เคลียร์พื้นที่ออฟฟิศ",
+    "search_volume": 1402
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดโรงเรียน",
+    "search_volume": 1074
+  },
+  {
+    "keyword": "หาแม่บ้านศูนย์การค้า",
+    "search_volume": 1987
+  },
+  {
+    "keyword": "Big Cleaningห้างสรรพสินค้า",
+    "search_volume": 1627
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งอาคารพานิชย์",
+    "search_volume": 1311
+  },
+  {
+    "keyword": "จ้างทำความสะอาดมหาวิทยาลัย",
+    "search_volume": 1683
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งคลินิก",
+    "search_volume": 1789
+  },
+  {
+    "keyword": "แม่บ้านโชว์รูม",
+    "search_volume": 1670
+  },
+  {
+    "keyword": "หาคนทำความสะอาดศูนย์การค้า",
+    "search_volume": 737
+  },
+  {
+    "keyword": "ทำความสะอาดอาคารพานิชย์",
+    "search_volume": 1118
+  },
+  {
+    "keyword": "บริการทำความสะอาดศูนย์การค้า",
+    "search_volume": 965
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดห้างสรรพสินค้า",
+    "search_volume": 373
+  },
+  {
+    "keyword": "จ้างทำความสะอาดฟิตเนส",
+    "search_volume": 1771
   },
   {
     "keyword": "บริการทำความสะอาดบ้าน",
-    "search_volume": 2000
+    "search_volume": 1863
+  },
+  {
+    "keyword": "บริการแม่บ้านรีสอร์ท",
+    "search_volume": 792
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งฟิตเนส",
+    "search_volume": 1229
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดคอนโด",
+    "search_volume": 426
+  },
+  {
+    "keyword": "หาคนทำความสะอาดสำนักงาน",
+    "search_volume": 1791
+  },
+  {
+    "keyword": "Big Cleaningโรงเรียน",
+    "search_volume": 1298
+  },
+  {
+    "keyword": "ทำความสะอาดร้านอาหาร",
+    "search_volume": 1289
+  },
+  {
+    "keyword": "หาคนทำความสะอาดอาคารพานิชย์",
+    "search_volume": 941
+  },
+  {
+    "keyword": "หาคนทำความสะอาดบ้าน",
+    "search_volume": 548
+  },
+  {
+    "keyword": "หาแม่บ้านบ้าน",
+    "search_volume": 544
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งโกดัง",
+    "search_volume": 740
+  },
+  {
+    "keyword": "แม่บ้านคาเฟ่",
+    "search_volume": 1732
+  },
+  {
+    "keyword": "ทำความสะอาดโรงงาน",
+    "search_volume": 1423
+  },
+  {
+    "keyword": "หาแม่บ้านโรงงาน",
+    "search_volume": 1915
+  },
+  {
+    "keyword": "หาคนทำความสะอาดมหาวิทยาลัย",
+    "search_volume": 793
+  },
+  {
+    "keyword": "จ้างทำความสะอาดร้านอาหาร",
+    "search_volume": 163
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดบ้าน",
+    "search_volume": 1004
+  },
+  {
+    "keyword": "แม่บ้านโรงแรม",
+    "search_volume": 564
+  },
+  {
+    "keyword": "รับทำความสะอาดออฟฟิศ",
+    "search_volume": 1233
+  },
+  {
+    "keyword": "Big Cleaningโรงงาน",
+    "search_volume": 1473
+  },
+  {
+    "keyword": "บริการแม่บ้านโรงเรียน",
+    "search_volume": 1454
+  },
+  {
+    "keyword": "จ้างทำความสะอาดโรงเรียน",
+    "search_volume": 1865
+  },
+  {
+    "keyword": "บริการแม่บ้านโกดัง",
+    "search_volume": 205
+  },
+  {
+    "keyword": "จ้างทำความสะอาดบ้าน",
+    "search_volume": 541
+  },
+  {
+    "keyword": "เคลียร์พื้นที่โรงเรียน",
+    "search_volume": 125
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งมหาวิทยาลัย",
+    "search_volume": 1843
+  },
+  {
+    "keyword": "หาคนทำความสะอาดร้านอาหาร",
+    "search_volume": 1029
+  },
+  {
+    "keyword": "จ้างทำความสะอาดโรงแรม",
+    "search_volume": 555
+  },
+  {
+    "keyword": "เคลียร์พื้นที่มหาวิทยาลัย",
+    "search_volume": 1570
+  },
+  {
+    "keyword": "ทำความสะอาดโรงเรียน",
+    "search_volume": 1751
+  },
+  {
+    "keyword": "Big Cleaningโรงพยาบาล",
+    "search_volume": 841
+  },
+  {
+    "keyword": "เคลียร์พื้นที่อาคารพานิชย์",
+    "search_volume": 1841
+  },
+  {
+    "keyword": "เคลียร์พื้นที่สำนักงาน",
+    "search_volume": 298
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งโรงแรม",
+    "search_volume": 1085
+  },
+  {
+    "keyword": "หาแม่บ้านตึกสูง",
+    "search_volume": 938
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างห้างสรรพสินค้า",
+    "search_volume": 196
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดโรงแรม",
+    "search_volume": 1347
+  },
+  {
+    "keyword": "เคลียร์พื้นที่คอนโด",
+    "search_volume": 1330
+  },
+  {
+    "keyword": "แม่บ้านอาคารพานิชย์",
+    "search_volume": 1371
+  },
+  {
+    "keyword": "Big Cleaningรีสอร์ท",
+    "search_volume": 1577
+  },
+  {
+    "keyword": "แม่บ้านบ้าน",
+    "search_volume": 1429
+  },
+  {
+    "keyword": "ทำความสะอาดคาเฟ่",
+    "search_volume": 825
+  },
+  {
+    "keyword": "รับทำความสะอาดฟิตเนส",
+    "search_volume": 373
+  },
+  {
+    "keyword": "หาแม่บ้านรีสอร์ท",
+    "search_volume": 1850
+  },
+  {
+    "keyword": "บริการแม่บ้านโรงพยาบาล",
+    "search_volume": 1106
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งสำนักงาน",
+    "search_volume": 1442
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดศูนย์การค้า",
+    "search_volume": 1775
+  },
+  {
+    "keyword": "แม่บ้านออฟฟิศ",
+    "search_volume": 1475
+  },
+  {
+    "keyword": "Big Cleaningบ้าน",
+    "search_volume": 542
+  },
+  {
+    "keyword": "เคลียร์พื้นที่โรงงาน",
+    "search_volume": 891
+  },
+  {
+    "keyword": "รับทำความสะอาดโรงงาน",
+    "search_volume": 1996
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดรีสอร์ท",
+    "search_volume": 1107
+  },
+  {
+    "keyword": "รับทำความสะอาดโกดัง",
+    "search_volume": 690
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างโรงพยาบาล",
+    "search_volume": 1695
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างคาเฟ่",
+    "search_volume": 450
+  },
+  {
+    "keyword": "บริการแม่บ้านออฟฟิศ",
+    "search_volume": 1477
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดร้านอาหาร",
+    "search_volume": 1492
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างโรงงาน",
+    "search_volume": 1831
+  },
+  {
+    "keyword": "จ้างทำความสะอาดโชว์รูม",
+    "search_volume": 1674
+  },
+  {
+    "keyword": "หาแม่บ้านโกดัง",
+    "search_volume": 451
+  },
+  {
+    "keyword": "หาแม่บ้านห้างสรรพสินค้า",
+    "search_volume": 657
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างตึกสูง",
+    "search_volume": 1623
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างอาคารพานิชย์",
+    "search_volume": 1574
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างโกดัง",
+    "search_volume": 1929
+  },
+  {
+    "keyword": "แม่บ้านศูนย์การค้า",
+    "search_volume": 397
+  },
+  {
+    "keyword": "บริการทำความสะอาดรีสอร์ท",
+    "search_volume": 1350
+  },
+  {
+    "keyword": "บริการทำความสะอาดโรงพยาบาล",
+    "search_volume": 1194
+  },
+  {
+    "keyword": "บริการทำความสะอาดฟิตเนส",
+    "search_volume": 449
+  },
+  {
+    "keyword": "หาคนทำความสะอาดออฟฟิศ",
+    "search_volume": 1663
+  },
+  {
+    "keyword": "รับทำความสะอาดคลินิก",
+    "search_volume": 882
+  },
+  {
+    "keyword": "หาคนทำความสะอาดคอนโด",
+    "search_volume": 1047
+  },
+  {
+    "keyword": "บริการแม่บ้านคอนโด",
+    "search_volume": 1329
+  },
+  {
+    "keyword": "หาคนทำความสะอาดโรงงาน",
+    "search_volume": 456
+  },
+  {
+    "keyword": "รับทำความสะอาดมหาวิทยาลัย",
+    "search_volume": 320
+  },
+  {
+    "keyword": "เคลียร์พื้นที่โกดัง",
+    "search_volume": 1966
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดอาคารพานิชย์",
+    "search_volume": 1267
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดคลินิก",
+    "search_volume": 1704
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างรีสอร์ท",
+    "search_volume": 820
+  },
+  {
+    "keyword": "บริการแม่บ้านคลินิก",
+    "search_volume": 229
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดมหาวิทยาลัย",
+    "search_volume": 201
+  },
+  {
+    "keyword": "แม่บ้านคอนโด",
+    "search_volume": 275
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งรีสอร์ท",
+    "search_volume": 452
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างคลินิก",
+    "search_volume": 1534
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งโรงพยาบาล",
+    "search_volume": 526
+  },
+  {
+    "keyword": "หาคนทำความสะอาดโกดัง",
+    "search_volume": 921
+  },
+  {
+    "keyword": "บริการทำความสะอาดโกดัง",
+    "search_volume": 1883
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดโรงงาน",
+    "search_volume": 826
+  },
+  {
+    "keyword": "Big Cleaningโกดัง",
+    "search_volume": 409
+  },
+  {
+    "keyword": "จ้างทำความสะอาดห้างสรรพสินค้า",
+    "search_volume": 1313
+  },
+  {
+    "keyword": "รับทำความสะอาดรีสอร์ท",
+    "search_volume": 564
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างฟิตเนส",
+    "search_volume": 221
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดสำนักงาน",
+    "search_volume": 1803
+  },
+  {
+    "keyword": "หาแม่บ้านโรงเรียน",
+    "search_volume": 165
+  },
+  {
+    "keyword": "รับทำความสะอาดโรงแรม",
+    "search_volume": 915
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งร้านอาหาร",
+    "search_volume": 1836
+  },
+  {
+    "keyword": "Big Cleaningตึกสูง",
+    "search_volume": 214
+  },
+  {
+    "keyword": "หาแม่บ้านอาคารพานิชย์",
+    "search_volume": 277
+  },
+  {
+    "keyword": "ทำความสะอาดศูนย์การค้า",
+    "search_volume": 1309
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างโรงเรียน",
+    "search_volume": 1677
+  },
+  {
+    "keyword": "Big Cleaningอาคารพานิชย์",
+    "search_volume": 116
+  },
+  {
+    "keyword": "หาคนทำความสะอาดโชว์รูม",
+    "search_volume": 1014
+  },
+  {
+    "keyword": "แม่บ้านตึกสูง",
+    "search_volume": 1689
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างโชว์รูม",
+    "search_volume": 1505
+  },
+  {
+    "keyword": "เคลียร์พื้นที่ฟิตเนส",
+    "search_volume": 1487
+  },
+  {
+    "keyword": "ทำความสะอาดสำนักงาน",
+    "search_volume": 686
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดโรงพยาบาล",
+    "search_volume": 1279
+  },
+  {
+    "keyword": "จ้างทำความสะอาดสำนักงาน",
+    "search_volume": 1165
+  },
+  {
+    "keyword": "หาแม่บ้านโรงพยาบาล",
+    "search_volume": 1791
+  },
+  {
+    "keyword": "เคลียร์พื้นที่ศูนย์การค้า",
+    "search_volume": 1253
+  },
+  {
+    "keyword": "จ้างทำความสะอาดศูนย์การค้า",
+    "search_volume": 559
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างคอนโด",
+    "search_volume": 684
+  },
+  {
+    "keyword": "Big Cleaningฟิตเนส",
+    "search_volume": 1278
+  },
+  {
+    "keyword": "หาคนทำความสะอาดคลินิก",
+    "search_volume": 1239
+  },
+  {
+    "keyword": "บริการแม่บ้านโรงแรม",
+    "search_volume": 943
+  },
+  {
+    "keyword": "บริการทำความสะอาดคอนโด",
+    "search_volume": 648
+  },
+  {
+    "keyword": "บริการแม่บ้านห้างสรรพสินค้า",
+    "search_volume": 124
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งห้างสรรพสินค้า",
+    "search_volume": 1295
+  },
+  {
+    "keyword": "บริการทำความสะอาดห้างสรรพสินค้า",
+    "search_volume": 776
+  },
+  {
+    "keyword": "แม่บ้านฟิตเนส",
+    "search_volume": 909
+  },
+  {
+    "keyword": "แม่บ้านโรงงาน",
+    "search_volume": 1623
+  },
+  {
+    "keyword": "เคลียร์พื้นที่รีสอร์ท",
+    "search_volume": 542
+  },
+  {
+    "keyword": "เคลียร์พื้นที่คลินิก",
+    "search_volume": 169
+  },
+  {
+    "keyword": "จ้างทำความสะอาดโกดัง",
+    "search_volume": 415
+  },
+  {
+    "keyword": "บริการแม่บ้านโชว์รูม",
+    "search_volume": 1756
+  },
+  {
+    "keyword": "แม่บ้านโกดัง",
+    "search_volume": 504
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างร้านอาหาร",
+    "search_volume": 672
+  },
+  {
+    "keyword": "รับทำความสะอาดศูนย์การค้า",
+    "search_volume": 1905
+  },
+  {
+    "keyword": "ทำความสะอาดตึกสูง",
+    "search_volume": 1761
+  },
+  {
+    "keyword": "บริการแม่บ้านอาคารพานิชย์",
+    "search_volume": 1395
+  },
+  {
+    "keyword": "เคลียร์พื้นที่ตึกสูง",
+    "search_volume": 1137
+  },
+  {
+    "keyword": "รับทำความสะอาดคาเฟ่",
+    "search_volume": 1170
+  },
+  {
+    "keyword": "แม่บ้านห้างสรรพสินค้า",
+    "search_volume": 1492
+  },
+  {
+    "keyword": "จ้างทำความสะอาดอาคารพานิชย์",
+    "search_volume": 256
+  },
+  {
+    "keyword": "หาคนทำความสะอาดรีสอร์ท",
+    "search_volume": 625
+  },
+  {
+    "keyword": "เคลียร์พื้นที่โรงแรม",
+    "search_volume": 858
+  },
+  {
+    "keyword": "บริการทำความสะอาดคาเฟ่",
+    "search_volume": 1821
+  },
+  {
+    "keyword": "ทำความสะอาดโรงพยาบาล",
+    "search_volume": 934
+  },
+  {
+    "keyword": "รับทำความสะอาดอาคารพานิชย์",
+    "search_volume": 1675
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างบ้าน",
+    "search_volume": 1201
+  },
+  {
+    "keyword": "รับเหมาทำความสะอาดคาเฟ่",
+    "search_volume": 1267
+  },
+  {
+    "keyword": "หาคนทำความสะอาดตึกสูง",
+    "search_volume": 1784
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างสำนักงาน",
+    "search_volume": 1276
+  },
+  {
+    "keyword": "หาแม่บ้านคอนโด",
+    "search_volume": 205
+  },
+  {
+    "keyword": "หาคนทำความสะอาดฟิตเนส",
+    "search_volume": 598
+  },
+  {
+    "keyword": "แม่บ้านโรงเรียน",
+    "search_volume": 1660
+  },
+  {
+    "keyword": "Big Cleaningออฟฟิศ",
+    "search_volume": 1593
+  },
+  {
+    "keyword": "รับทำความสะอาดร้านอาหาร",
+    "search_volume": 142
+  },
+  {
+    "keyword": "รับทำความสะอาดโรงเรียน",
+    "search_volume": 665
+  },
+  {
+    "keyword": "บริการแม่บ้านคาเฟ่",
+    "search_volume": 1379
+  },
+  {
+    "keyword": "บิ๊กคลีนนิ่งออฟฟิศ",
+    "search_volume": 539
+  },
+  {
+    "keyword": "ทำความสะอาดหลังก่อสร้างโรงแรม",
+    "search_volume": 1008
+  },
+  {
+    "keyword": "เคลียร์พื้นที่โรงพยาบาล",
+    "search_volume": 166
+  },
+  {
+    "keyword": "ทำความสะอาดโรงแรม",
+    "search_volume": 516
+  },
+  {
+    "keyword": "บริการแม่บ้านโรงงาน",
+    "search_volume": 1008
   }
 ]

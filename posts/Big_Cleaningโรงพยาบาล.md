@@ -1,0 +1,19 @@
+# Big Cleaningโรงพยาบาล แบบมืออาชีพ – Sangkan Clean
+
+
+    <div style="font-size: 1.05rem; line-height: 1.8; color: #334155;">
+        <p>ปัญหาเรื่องความสะอาดจะไม่ใช่เรื่องน่าปวดหัวอีกต่อไป! หากคุณต้องการ <strong>Big Cleaningโรงพยาบาล</strong> ระดับมืออาชีพ <em>Sangkan Clean</em> พร้อมจัดทีมงานคุณภาพเข้าดูแลพื้นที่ของคุณในทันที</p>
+        
+        <h3 style="color: #0f172a; margin-top: 2rem; margin-bottom: 1rem; font-weight: 700;">ความลับของ Big Cleaningโรงพยาบาล ที่ทำให้พื้นที่ของคุณสะอาดหมดจด</h3>
+        <p>ความสะอาดไม่เพียงแต่ส่งผลต่อภาพลักษณ์ของสถานที่ แต่ยังเกี่ยวข้องโดยตรงกับสุขภาพ บริการ <strong>Big Cleaningโรงพยาบาล</strong> ของเราถูกออกแบบมาเพื่อกำจัดสิ่งสกปรกและเชื้อโรคที่มองไม่เห็น ด้วยมาตรฐานระดับสากล</p>
+        
+        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #0d9488;">
+            <h4 style="color: #0d9488; margin-top: 0; margin-bottom: 1rem; font-weight: 700;">สิ่งที่คุณจะได้รับจากบริการของเรา:</h4>
+            <ul style="margin-bottom: 0; padding-left: 1rem; list-style-type: none;">
+                <li style='margin-bottom: 0.5rem;'>✅ ทำความสะอาดอย่างล้ำลึกทุกซอกทุกมุม</li><li style='margin-bottom: 0.5rem;'>✅ กำจัดเชื้อโรค แบคทีเรีย และไรฝุ่นได้ถึง 99.9%</li><li style='margin-bottom: 0.5rem;'>✅ หัวหน้างานควบคุมคุณภาพ (QC) ทุกครั้งก่อนส่งมอบ</li><li style='margin-bottom: 0.5rem;'>✅ บริการหลังการขายที่ใส่ใจและพร้อมดูแล</li>
+            </ul>
+        </div>
+        
+        <p style="margin-top: 2rem;"><strong>จบทุกปัญหาความสะอาดในที่เดียว!</strong> ทักหาทีมงาน <em>Sangkan Clean</em> ตอนนี้ เราพร้อมให้บริการคุณด้วยรอยยิ้ม</p>
+    </div>
+    

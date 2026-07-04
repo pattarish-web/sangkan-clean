@@ -1,0 +1,19 @@
+# Big Cleaningโรงงาน แบบมืออาชีพ – Sangkan Clean
+
+
+    <div style="font-size: 1.05rem; line-height: 1.8; color: #334155;">
+        <p>ปัญหาเรื่องความสะอาดจะไม่ใช่เรื่องน่าปวดหัวอีกต่อไป! หากคุณต้องการ <strong>Big Cleaningโรงงาน</strong> ระดับมืออาชีพ <em>Sangkan Clean</em> พร้อมจัดทีมงานคุณภาพเข้าดูแลพื้นที่ของคุณในทันที</p>
+        
+        <h3 style="color: #0f172a; margin-top: 2rem; margin-bottom: 1rem; font-weight: 700;">ยกระดับมาตรฐานความสะอาดด้วย Big Cleaningโรงงาน</h3>
+        <p>การทำความสะอาดด้วยตัวเองอาจไม่เพียงพอและเสียเวลา บริการ <strong>Big Cleaningโรงงาน</strong> ของเราใช้เทคโนโลยีและน้ำยาเฉพาะทางที่สามารถทะลวงคราบฝังลึกได้อย่างมีประสิทธิภาพ ประหยัดเวลาและได้ผลลัพธ์ที่ดีกว่า</p>
+        
+        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #0d9488;">
+            <h4 style="color: #0d9488; margin-top: 0; margin-bottom: 1rem; font-weight: 700;">สิ่งที่คุณจะได้รับจากบริการของเรา:</h4>
+            <ul style="margin-bottom: 0; padding-left: 1rem; list-style-type: none;">
+                <li style='margin-bottom: 0.5rem;'>✅ เข้าประเมินพื้นที่และเสนอราคาฟรี</li><li style='margin-bottom: 0.5rem;'>✅ ไม่มีค่าใช้จ่ายแอบแฝง โปร่งใสทุกขั้นตอน</li><li style='margin-bottom: 0.5rem;'>✅ มีประกันความเสียหายระหว่างการปฏิบัติงาน</li><li style='margin-bottom: 0.5rem;'>✅ จัดทีมเข้าทำงานได้รวดเร็วทันใจ</li>
+            </ul>
+        </div>
+        
+        <p style="margin-top: 2rem;"><strong>ความสะอาดคือจุดเริ่มต้นของสิ่งดีๆ</strong> ให้ <em>Sangkan Clean</em> เป็นผู้ดูแลพื้นที่ของคุณ เพื่อให้คุณมีเวลาไปโฟกัสกับสิ่งสำคัญ</p>
+    </div>
+    
