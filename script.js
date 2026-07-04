@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Dynamic Blog Loader
     const articlesGrid = document.getElementById('articlesGrid');
     if (articlesGrid) {
-        fetch('posts.json')
+        fetch('posts.json?v=' + new Date().getTime(), { cache: "no-store" })
             .then(res => res.json())
             .then(data => {
                 // Get latest 3 articles
