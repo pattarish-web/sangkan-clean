@@ -1,6 +1,7 @@
 # .github/workflows/seo.yml
 name: Auto SEO Pipeline
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 1,5,11 * * *'   # 08:00, 12:00, 18:00 Thailand time (UTC+7)
 jobs:
