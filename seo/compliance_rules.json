@@ -1,0 +1,9 @@
+# seo/compliance_rules.json
+{
+  "prohibited_topics": ["politics", "religion", "government criticism"],
+  "legal_disclaimers_required": true,
+  "pdpa": {
+    "personal_data_patterns": ["\\b\\d{13}\\b", "\\b[0-9]{9,10}\\b", "\\b[+]?[0-9]{9,15}\\b"],
+    "mask_placeholder": "[REDACTED]"
+  }
+}

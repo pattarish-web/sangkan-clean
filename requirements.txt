@@ -1,0 +1,4 @@
+# requirements for SEO pipeline
+openai
+jinja2
+requests

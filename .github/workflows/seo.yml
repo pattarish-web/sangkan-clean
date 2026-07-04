@@ -1,0 +1,36 @@
+# .github/workflows/seo.yml
+name: Auto SEO Pipeline
+on:
+  schedule:
+    - cron: '0 1,5,11 * * *'   # 08:00, 12:00, 18:00 Thailand time (UTC+7)
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Keyword Research
+        run: python seo/keyword_research.py
+      - name: Content Generation
+        run: python seo/content_generator.py
+      - name: Compliance Check
+        run: python seo/compliance_checker.py
+      - name: Commit & Deploy (if clean)
+        if: success()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add posts/ seo/seo/compliance_report.md
+          git commit -m "[auto] SEO update $(date +'%Y-%m-%d %H:%M')"
+          git push origin main
+      - name: Notify on Failure
+        if: failure()
+        run: |
+          echo "Compliance check failed – see seo/compliance_report.md"
