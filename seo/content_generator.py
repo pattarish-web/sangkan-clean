@@ -56,13 +56,15 @@ def main():
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(f"# {title}\n\n{body}\n")
             
-        # Image pool
+        # Image pool (all distinct and tested)
         img_pool = [
             "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
             "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
             "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80",
             "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=600&q=80",
-            "https://images.unsplash.com/photo-1628177142898-93e46e623666?auto=format&fit=crop&w=600&q=80"
+            "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=600&q=80",
+            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80"
         ]
         import random
 
