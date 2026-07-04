@@ -19,5 +19,33 @@
     "category": "คู่มือ",
     "image": "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=600&q=80",
     "date": "2026-07-02"
+  },
+  {
+    "title": "ทำความสะอาดบริษัท – บริการทำความสะอาดจาก Sangkan Clean",
+    "description": "บริการทำความสะอาด ทำความสะอาดบริษัท ครบวงจรด้วยทีมงานมืออาชีพและอุปกรณ์ทันสมัย",
+    "category": "บริการ",
+    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
+    "date": "2026-07-04"
+  },
+  {
+    "title": "บริการทำความสะอาดโรงงาน – บริการทำความสะอาดจาก Sangkan Clean",
+    "description": "บริการทำความสะอาด บริการทำความสะอาดโรงงาน ครบวงจรด้วยทีมงานมืออาชีพและอุปกรณ์ทันสมัย",
+    "category": "บริการ",
+    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
+    "date": "2026-07-04"
+  },
+  {
+    "title": "แม่บ้านประจำ – บริการทำความสะอาดจาก Sangkan Clean",
+    "description": "บริการทำความสะอาด แม่บ้านประจำ ครบวงจรด้วยทีมงานมืออาชีพและอุปกรณ์ทันสมัย",
+    "category": "บริการ",
+    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
+    "date": "2026-07-04"
+  },
+  {
+    "title": "บริการทำความสะอาดบ้าน – บริการทำความสะอาดจาก Sangkan Clean",
+    "description": "บริการทำความสะอาด บริการทำความสะอาดบ้าน ครบวงจรด้วยทีมงานมืออาชีพและอุปกรณ์ทันสมัย",
+    "category": "บริการ",
+    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
+    "date": "2026-07-04"
   }
 ]
