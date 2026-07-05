@@ -43,9 +43,11 @@ def update_domain():
             
         # Update <loc>https://old-domain/path</loc> -> <loc>https://new-domain/path</loc>
         def sitemap_repl(m):
-            url_path = m.group(1).split('//', 1)[-1].split('/', 1)
-            path = url_path[1] if len(url_path) > 1 else ''
-            return f'<loc>{domain}/{path}</loc>'
+            basename = m.group(1).strip('/').split('/')[-1]
+            if basename.endswith('.html'):
+                return f'<loc>{domain}/{basename}</loc>'
+            else:
+                return f'<loc>{domain}/</loc>'
             
         sitemap_content = re.sub(
             r'<loc>(.*?)</loc>', 
