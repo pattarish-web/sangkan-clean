@@ -1,0 +1,36 @@
+name: Mass Upgrade Old Blogs (GEO)
+
+on:
+  workflow_dispatch: # ทำให้สามารถกดปุ่มรันมือเองบนเว็บได้เท่านั้น
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run GEO Upgrader Script
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: |
+        python upgrade_old_posts.py
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "Pattarish Upgrade Bot"
+        git config --global user.email "bot@pattarishproclean.com"
+        git add posts.json blog/ sitemap.xml
+        git diff-index --quiet HEAD || git commit -m "chore: mass upgrade old blogs to GEO [skip ci]"
+        git push
