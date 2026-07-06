@@ -39,6 +39,8 @@ def generate_geo_content(api_key, title, description):
     
     try:
         response = requests.post(url, headers=headers, json=data)
+        if response.status_code != 200:
+            print(f"Gemini API Error details: {response.text}")
         response.raise_for_status()
         result_json = response.json()
         
