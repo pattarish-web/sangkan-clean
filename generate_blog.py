@@ -150,3 +150,10 @@ def update_posts_json():
 
 if __name__ == "__main__":
     update_posts_json()
+    try:
+        import build_blogs
+        build_blogs.build_blogs()
+        import update_sitemap
+        update_sitemap.update_sitemap()
+    except Exception as e:
+        print(f"Error building static blogs or sitemap: {e}")

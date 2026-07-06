@@ -246,8 +246,10 @@
                 blogGrid.innerHTML = '<div class="no-posts">ยังไม่มีบทความในขณะนี้ครับ</div>';
                 return;
             }
-            blogGrid.innerHTML = posts.map((post, index) => `
-                <div class="blog-card" onclick="openModal(${allPosts.indexOf(post)})">
+            blogGrid.innerHTML = posts.map((post) => {
+                const slug = post.slug || 'post';
+                return `
+                <a href="blog/${slug}.html" class="blog-card" style="text-decoration:none;">
                     <img src="${post.image}" alt="${post.title}" class="blog-card-img">
                     <div class="blog-card-body">
                         <span class="blog-card-tag">${post.category}</span>
@@ -258,8 +260,9 @@
                             <span class="blog-card-read">อ่านต่อ <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                </a>
+                `;
+            }).join('');
         }
 
         function openModal(index) {
