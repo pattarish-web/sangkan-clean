@@ -1,8 +1,9 @@
 import os
 import json
 import random
-import requests
 from datetime import datetime
+
+from gemini_api import call_gemini_json
 
 # CONFIGURATION
 # ใน GitHub Actions เราจะใส่ GEMINI_API_KEY ไว้ใน Repository Secrets
@@ -71,9 +72,6 @@ def generate_blog_post():
 
     print(f"Generating post for keyword: {keyword} in category: {category}")
 
-    # เรียกใช้ Gemini API (Gemini 1.5 Flash เพื่อการเจนข้อความภาษาไทยที่ดีและประหยัด)
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={API_KEY}"
-    
     prompt = f"""
     คุณเป็นนักเขียนบทความและผู้เชี่ยวชาญด้านการทำความสะอาดและบริการจัดหาแม่บ้าน (SEO Content Creator)
     ช่วยเขียนบทความบล็อกสั้นภาษาไทยเกี่ยวกับหัวข้อ: "{keyword}"
@@ -89,30 +87,19 @@ def generate_blog_post():
     }}
     """
 
-    headers = {"Content-Type": "application/json"}
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"responseMimeType": "application/json"}
-    }
-
     try:
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        response_json = response.json()
-        
-        # แกะข้อความ JSON ออกมา
-        text_content = response_json["candidates"][0]["content"]["parts"][0]["text"]
-        result = json.loads(text_content)
-        
-        # นำมาประกอบเป็นข้อมูลบทความสมบูรณ์
-        new_post = {
+        result = call_gemini_json(API_KEY, prompt, timeout=60)
+        if not result:
+            return None
+
+        return {
             "title": result["title"],
             "description": result["description"],
             "content": result.get("content", ""),
             "category": category,
             "image": random.choice(CLEANING_IMAGES),
-            "date": datetime.today().strftime('%Y-%m-%d')
+            "date": datetime.today().strftime('%Y-%m-%d'),
         }
-        return new_post
     except Exception as e:
         print(f"API call failed: {e}")
         return None
