@@ -12,8 +12,8 @@ def get_api_keys():
     return [raw_key.strip()]
 
 def generate_geo_content(api_key, title, description):
-    # ← ลองใช้ v1 API แบบธรรมดา ไม่ใช้ JSON mode
-    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={api_key}"
+    # ← ลองใช้ gemini-pro (รุ่นเก่า แต่ใช้ได้)
+    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={api_key}"
     headers = {'Content-Type': 'application/json'}
     
     prompt = f"""
