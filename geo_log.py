@@ -1,16 +1,27 @@
 """Structured logging for GEO upgrade — visible in GitHub Actions."""
 
-import sys
+import os
 import threading
 from datetime import datetime
 
 _lock = threading.Lock()
+_IN_CI = os.environ.get("GITHUB_ACTIONS") == "true"
 
 
 def log(msg: str, *, level: str = "INFO") -> None:
     ts = datetime.now().strftime("%H:%M:%S")
     with _lock:
         print(f"[{ts}] [{level}] {msg}", flush=True)
+        if _IN_CI and level in ("WARN", "ERROR"):
+            print(f"::{level.lower()}::{msg}", flush=True)
+
+
+def milestone(msg: str) -> None:
+    """High-visibility line in GitHub Actions log."""
+    log(msg)
+    if _IN_CI:
+        with _lock:
+            print(f"::notice::{msg}", flush=True)
 
 
 def banner(title: str) -> None:

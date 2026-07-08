@@ -8,7 +8,7 @@ from datetime import datetime
 from queue import Queue
 
 from gemini_api import call_gemini_json
-from geo_log import banner, format_eta, key_label, log, progress
+from geo_log import banner, format_eta, key_label, log, milestone, progress
 
 DEFAULT_SLEEP = 6
 DEFAULT_LIMIT = 0
@@ -116,6 +116,11 @@ def _run_parallel(posts, pending_indices, api_keys, workers, t0):
             if state["done"] % CHECKPOINT_EVERY == 0 or state["done"] >= total:
                 save_posts(posts)
                 log(progress(state["done"], total, state["ok"], state["fail"], time.time() - t0))
+                if state["done"] % 25 == 0:
+                    milestone(
+                        f"GEO checkpoint: {state['done']}/{total} "
+                        f"({state['ok']} ok, {state['fail']} fail)"
+                    )
 
     def worker(worker_id):
         key = api_keys[worker_id % len(api_keys)]
@@ -217,6 +222,11 @@ def upgrade_posts(limit=DEFAULT_LIMIT, sleep_sec=DEFAULT_SLEEP, workers=0):
     )
 
     banner("GEO UPGRADE DONE")
+    milestone(
+        f"FINISHED — upgraded {upgraded_count} posts | "
+        f"{len(posts) - remaining}/{len(posts)} total GEO | "
+        f"failed {len(failed_indices)} | elapsed {format_eta(elapsed)}"
+    )
     log(f"Elapsed: {format_eta(elapsed)} | upgraded this run: {upgraded_count} | still failed: {len(failed_indices)}")
     log(f"Site status: {len(posts) - remaining}/{len(posts)} posts now have GEO content")
     log(f"Remaining pending: {remaining}")

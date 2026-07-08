@@ -59,9 +59,22 @@ jobs:
 
     - name: Commit and Push changes
       run: |
+        echo "============================================================"
+        echo " COMMIT & PUSH"
+        echo "============================================================"
         git config --global user.name "Pattarish Upgrade Bot"
         git config --global user.email "bot@pattarishproclean.com"
         git add posts.json blog/ areas/ sitemap.xml analytics.js landing-*.html privacy.html
-        git diff-index --quiet HEAD || git commit -m "chore: GEO upgrade batch (${{ inputs.batch_limit }} posts) [skip ci]"
+        echo "--- git status ---"
+        git status --short
+        echo "--- diff stat ---"
+        git diff --cached --stat
+        if git diff-index --quiet HEAD; then
+          echo "::warning::No changes to commit — upgrade may have failed or nothing pending"
+        else
+          git commit -m "chore: GEO upgrade batch (${{ inputs.batch_limit }} posts) [skip ci]"
+          echo "::notice::Committed GEO upgrade changes"
+        fi
         git pull --rebase origin main
         git push origin HEAD:main
+        echo "::notice::Pushed to main successfully"
