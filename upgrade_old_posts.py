@@ -81,8 +81,8 @@ def _incremental_git_push(slug: str, title: str) -> None:
         return
 
     if not _git_configured:
-        subprocess.run(["git", "config", "user.name", "Pattarish Upgrade Bot"], check=True)
-        subprocess.run(["git", "config", "user.email", "bot@pattarishproclean.com"], check=True)
+        subprocess.run(["git", "config", "user.name", "Sangkan Clean Upgrade Bot"], check=True)
+        subprocess.run(["git", "config", "user.email", "bot@sangkanclean.com"], check=True)
         _git_configured = True
 
     subprocess.run(["git", "add", "posts.json", f"blog/{slug}.html"], check=True)

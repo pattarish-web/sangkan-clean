@@ -33,8 +33,8 @@ jobs:
 
     - name: Commit and Push changes
       run: |
-        git config --global user.name "Pattarish Blog Bot"
-        git config --global user.email "blogbot@pattarishproclean.com"
+        git config --global user.name "Sangkan Clean Blog Bot"
+        git config --global user.email "bot@sangkanclean.com"
         git add posts.json blog/ sitemap.xml
         # เช็คว่ามีไฟล์เปลี่ยนจริงหรือไม่ก่อนเซฟ เพื่อไม่ให้เออร์เรอร์
         git diff-index --quiet HEAD || git commit -m "chore: auto-generate daily blog post [skip ci]"

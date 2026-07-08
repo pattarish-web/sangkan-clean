@@ -56,25 +56,67 @@ def build_related_posts_html(posts, current_idx, count=3):
     )
 
 
+def _strip_tags(text):
+    text = re.sub(r"<br\s*/?>", " ", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def extract_faq_schema(content):
+    """Build FAQPage schema from common GEO/Gemini/offline FAQ HTML shapes."""
     if "คำถามที่พบบ่อย" not in content and "FAQ" not in content:
         return ""
-    questions = re.findall(
-        r"<h3[^>]*>([^<]+)</h3>\s*<p[^>]*>([^<]+)</p>",
+
+    pairs = []
+
+    # Offline / some Gemini: <h3>Q</h3><p>A</p>
+    for q, a in re.findall(
+        r"<h3[^>]*>(.*?)</h3>\s*<p[^>]*>(.*?)</p>",
         content,
-        flags=re.IGNORECASE,
-    )
-    if not questions:
-        return ""
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        pairs.append((_strip_tags(q), _strip_tags(a)))
+
+    # Gemini / offline: <p><strong>ถาม: ...</strong><br>ตอบ: ...</p>
+    # Also legacy matrix: <p><strong>Q: ...</strong><br>A: ...</p>
+    for block in re.findall(r"<p[^>]*>\s*<strong>(.*?)</strong>(.*?)</p>", content, flags=re.I | re.S):
+        strong, rest = block
+        strong_clean = _strip_tags(strong)
+        answer = _strip_tags(rest)
+        m = re.match(
+            r"^(?:ถาม|Q)\s*[:：]\s*(.+)$",
+            strong_clean,
+            flags=re.IGNORECASE,
+        )
+        if not m:
+            continue
+        question = m.group(1).strip()
+        answer = re.sub(r"^(?:ตอบ|A)\s*[:：]\s*", "", answer, flags=re.IGNORECASE).strip()
+        if question and answer:
+            pairs.append((question, answer))
+
+    # Dedupe while preserving order
+    seen = set()
     entities = []
-    for q, a in questions[:6]:
+    for q, a in pairs:
+        if not q or not a or len(q) < 4 or len(a) < 4:
+            continue
+        key = (q.lower(), a.lower())
+        if key in seen:
+            continue
+        seen.add(key)
         entities.append(
             {
                 "@type": "Question",
-                "name": q.strip(),
-                "acceptedAnswer": {"@type": "Answer", "text": a.strip()},
+                "name": q[:200],
+                "acceptedAnswer": {"@type": "Answer", "text": a[:1000]},
             }
         )
+        if len(entities) >= 6:
+            break
+
+    if not entities:
+        return ""
     schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": entities}
     return f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>'
 

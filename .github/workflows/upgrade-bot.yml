@@ -66,8 +66,8 @@ jobs:
         echo "============================================================"
         echo " FINAL COMMIT — sitemap, areas, remaining artifacts"
         echo "============================================================"
-        git config --global user.name "Pattarish Upgrade Bot"
-        git config --global user.email "bot@pattarishproclean.com"
+        git config --global user.name "Sangkan Clean Upgrade Bot"
+        git config --global user.email "bot@sangkanclean.com"
         git add posts.json blog/ areas/ sitemap.xml analytics.js landing-*.html privacy.html
         echo "--- git status ---"
         git status --short

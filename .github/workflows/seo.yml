@@ -1,13 +1,28 @@
 # .github/workflows/seo.yml
+# LOCKED: cron disabled — content_generator historically overwrote posts.json
+# and wiped Gemini/offline GEO upgrades. Manual run requires explicit confirm.
 name: Auto SEO Pipeline
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 1,5,11 * * *'   # 08:00, 12:00, 18:00 Thailand time (UTC+7)
+    inputs:
+      confirm_overwrite:
+        description: "Type OVERWRITE only if you intentionally want to regenerate posts.json (wipes GEO)"
+        required: true
+        default: ""
+
 jobs:
   seo:
     runs-on: ubuntu-latest
     steps:
+      - name: Refuse accidental overwrite
+        run: |
+          if [ "${{ inputs.confirm_overwrite }}" != "OVERWRITE" ]; then
+            echo "::error::SEO pipeline is locked to protect posts.json / GEO upgrades."
+            echo "Re-run with confirm_overwrite=OVERWRITE only if you really mean to wipe content."
+            exit 1
+          fi
+          echo "::warning::OVERWRITE confirmed — posts.json may be regenerated."
+
       - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -20,6 +35,8 @@ jobs:
       - name: Keyword Research
         run: python seo/keyword_research.py
       - name: Content Generation
+        env:
+          SEO_ALLOW_OVERWRITE: "1"
         run: python seo/content_generator.py
       - name: Compliance Check
         run: python seo/compliance_checker.py
@@ -30,12 +47,12 @@ jobs:
       - name: Commit & Deploy (if clean)
         if: success()
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "Sangkan Clean SEO Bot"
+          git config user.email "bot@sangkanclean.com"
           git add posts/ seo/compliance_report.md posts.json blog/ areas/ sitemap.xml analytics.js landing-*.html privacy.html || true
           git commit -m "[auto] SEO update $(date +'%Y-%m-%d %H:%M')" || true
           git push origin main
       - name: Notify on Failure
         if: failure()
         run: |
-          echo "Compliance check failed – see seo/compliance_report.md"
+          echo "SEO pipeline failed or was blocked — see logs / seo/compliance_report.md"
