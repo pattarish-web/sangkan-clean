@@ -32,7 +32,7 @@ jobs:
       run: |
         git config --global user.name "Pattarish Upgrade Bot"
         git config --global user.email "bot@pattarishproclean.com"
-        git add posts.json blog/ areas/ sitemap.xml
+        git add posts.json blog/ areas/ sitemap.xml analytics.js landing-*.html privacy.html
         git diff-index --quiet HEAD || git commit -m "chore: mass upgrade old blogs to GEO [skip ci]"
         git pull --rebase origin main
         git push

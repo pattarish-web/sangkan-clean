@@ -7,23 +7,36 @@
     <title>บริการทำความสะอาด นนทบุรี | Sangkan Clean</title>
     <meta name="description" content="บริการทำความสะอาดโรงงาน ออฟฟิศ คอนโด และแม่บ้านประจำในนนทบุรี ครอบคลุมเมืองนนทบุรี ปากเกร็ด บางใหญ่">
     <link rel="canonical" href="https://www.sangkanclean.com/areas/local-nonthaburi.html">
+    <link rel="alternate" hreflang="th" href="https://www.sangkanclean.com/areas/local-nonthaburi.html">
     <meta property="og:title" content="บริการทำความสะอาด นนทบุรี">
     <meta property="og:description" content="บริการทำความสะอาดโรงงาน ออฟฟิศ คอนโด และแม่บ้านประจำในนนทบุรี ครอบคลุมเมืองนนทบุรี ปากเกร็ด บางใหญ่">
     <meta property="og:url" content="https://www.sangkanclean.com/areas/local-nonthaburi.html">
     <meta property="og:image" content="https://www.sangkanclean.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Sangkan Clean - นนทบุรี",
-      "description": "บริการทำความสะอาดโรงงาน ออฟฟิศ คอนโด และแม่บ้านประจำในนนทบุรี ครอบคลุมเมืองนนทบุรี ปากเกร็ด บางใหญ่",
-      "url": "https://www.sangkanclean.com/areas/local-nonthaburi.html",
-      "telephone": "+66636865134",
-      "areaServed": "นนทบุรี",
-      "address": { "@type": "PostalAddress", "addressLocality": "นนทบุรี", "addressCountry": "TH" }
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Sangkan Clean - นนทบุรี",
+          "description": "บริการทำความสะอาดโรงงาน ออฟฟิศ คอนโด และแม่บ้านประจำในนนทบุรี ครอบคลุมเมืองนนทบุรี ปากเกร็ด บางใหญ่",
+          "url": "https://www.sangkanclean.com/areas/local-nonthaburi.html",
+          "telephone": "+66636865134",
+          "email": "info@sangkanclean.com",
+          "areaServed": "นนทบุรี",
+          "geo": { "@type": "GeoCoordinates", "latitude": 13.7563, "longitude": 100.5018 },
+          "hasMap": "https://maps.google.com/?q=13.7563,100.5018",
+          "address": { "@type": "PostalAddress", "addressLocality": "นนทบุรี", "addressCountry": "TH" }
+        },
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "รับงานในนนทบุรีเขตไหนบ้าง?", "acceptedAnswer": {"@type": "Answer", "text": "เมืองนนทบุรี ปากเกร็ด บางใหญ่ บางบัวทอง และบางกรวย"}}, {"@type": "Question", "name": "มีบริการแม่บ้านประจำในนนทบุรีไหม?", "acceptedAnswer": {"@type": "Answer", "text": "มีครับ จัดหาแม่บ้านประจำสำนักงานและคอนโด พร้อมคนสำรองทดแทน"}}, {"@type": "Question", "name": "คิดค่าเดินทางเพิ่มไหม?", "acceptedAnswer": {"@type": "Answer", "text": "พื้นที่ปริมณฑลใกล้กรุงเทพ ประเมินตามระยะทางและขนาดงาน แจ้งราคาชัดเจนก่อนเริ่มงาน"}}]}
+      ]
     }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="../style.css">
     <style>
         .local-hero { background: linear-gradient(135deg, #0f172a, #0d9488); color: white; padding: 5rem 0 3rem; text-align: center; }
@@ -31,17 +44,23 @@
         .local-content { padding: 3rem 0; max-width: 800px; margin: 0 auto; line-height: 1.8; color: #334155; }
         .local-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
         .district-list { background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
+        .local-faq { margin-top: 2rem; }
+        .local-faq details { background: #f8fafc; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; }
+        .related-blog { margin-top: 2rem; }
+        .related-blog a { display: block; color: #0d9488; margin: 0.5rem 0; text-decoration: none; font-weight: 600; }
     </style>
+    <script src="../analytics.js" defer></script>
 </head>
 <body>
     <header class="navbar">
         <div class="container">
             <a href="../index.html" class="logo"><img src="../logo.png" alt="Sangkan Clean" style="height:45px;margin-right:8px;"><span>Sangkan<span> Clean</span></span></a>
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <a href="../index.html#services" class="nav-link">บริการ</a>
                 <a href="../blog.html" class="nav-link">บทความ</a>
                 <a href="../index.html#quote" class="btn btn-primary nav-cta">ขอใบเสนอราคา</a>
             </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="เมนู"><i class="fa-solid fa-bars"></i></button>
         </div>
     </header>
 
@@ -54,6 +73,7 @@
 
     <main class="container local-content">
         <p>บริการทำความสะอาดโรงงาน ออฟฟิศ คอนโด และแม่บ้านประจำในนนทบุรี ครอบคลุมเมืองนนทบุรี ปากเกร็ด บางใหญ่</p>
+        <p>ทีมงาน Sangkan Clean มีประสบการณ์กว่า 30 ปี ให้บริการทำความสะอาดครบวงจรในนนทบุรี ไม่ว่าจะเป็น Big Cleaning โรงงาน ออฟฟิศ คอนโด หรือจัดหาแม่บ้านประจำ เราพร้อมประเมินราคาฟรีและจัดทีมเข้างานตามกำหนด</p>
         <div class="district-list">
             <h2><i class="fa-solid fa-map-pin"></i> พื้นที่ให้บริการ</h2>
             <p>เมืองนนทบุรี, ปากเกร็ด, บางใหญ่, บางบัวทอง, บางกรวย</p>
@@ -63,16 +83,35 @@
             <li>Big Cleaning ทำความสะอาดเชิงลึก โรงงาน อาคาร ออฟฟิศ</li>
             <li>จัดหาแม่บ้านประจำสำนักงานและคอนโด</li>
             <li>ทำความสะอาดหลังก่อสร้าง</li>
-            <li>ซักพรม ล้างแอร์ กำจัดไรฝุ่น</li>
+            <li>ซักพรม ล้างแอร์ กำจัดไรฝุ่น อบโอโซน</li>
         </ul>
+        <div class="local-faq">
+            <h2>คำถามที่พบบ่อย</h2>
+            <details><summary>รับงานในนนทบุรีเขตไหนบ้าง?</summary><p>เมืองนนทบุรี ปากเกร็ด บางใหญ่ บางบัวทอง และบางกรวย</p></details>
+<details><summary>มีบริการแม่บ้านประจำในนนทบุรีไหม?</summary><p>มีครับ จัดหาแม่บ้านประจำสำนักงานและคอนโด พร้อมคนสำรองทดแทน</p></details>
+<details><summary>คิดค่าเดินทางเพิ่มไหม?</summary><p>พื้นที่ปริมณฑลใกล้กรุงเทพ ประเมินตามระยะทางและขนาดงาน แจ้งราคาชัดเจนก่อนเริ่มงาน</p></details>
+        </div>
+        <div class="related-blog">
+            <h2>บทความที่เกี่ยวข้อง</h2>
+            <a href="../blog/บริการแม่บ้านโรงงาน-ระดับมืออาชีพ--sangkan-clean.html">บริการแม่บ้านโรงงาน ระดับมืออาชีพ – Sangkan Clean</a>
+<a href="../blog/บริการ-ทำความสะอาดโรงแรม-ระดับมืออาชีพ--sangkan-clean.html">บริการ ทำความสะอาดโรงแรม ระดับมืออาชีพ – Sangkan Clean</a>
+<a href="../blog/บริการ-เคลียร์พื้นที่โรงพยาบาล-ระดับมืออาชีพ--sangkan-clean.html">บริการ เคลียร์พื้นที่โรงพยาบาล ระดับมืออาชีพ – Sangkan Clean</a>
+        </div>
         <div class="local-cta">
             <a href="../index.html#calculator" class="btn btn-primary btn-lg"><i class="fa-solid fa-calculator"></i> คำนวณราคา</a>
             <a href="https://line.me/ti/p/@sangkanclean" target="_blank" rel="noopener" class="btn btn-secondary btn-lg"><i class="fa-brands fa-line"></i> แอดไลน์</a>
             <a href="tel:0636865134" class="btn btn-secondary btn-lg"><i class="fa-solid fa-phone"></i> โทรเลย</a>
         </div>
-        <p style="margin-top:2rem;"><a href="../blog.html">อ่านบทความความรู้เรื่องการทำความสะอาด</a> | <a href="../index.html">กลับหน้าแรก</a></p>
+        <p style="margin-top:2rem;"><a href="../blog.html">อ่านบทความความรู้เรื่องการทำความสะอาด</a> | <a href="../index.html">กลับหน้าแรก</a> | <a href="../privacy.html">นโยบายความเป็นส่วนตัว</a></p>
     </main>
 
     <script src="../tracking.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+        }
+    </script>
 </body>
 </html>

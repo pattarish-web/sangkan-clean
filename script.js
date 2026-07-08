@@ -75,13 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        // Animate price + track calculator
+        // Animate price (calculator_result tracked on debounce, not every keystroke)
         totalPrice.style.transform = 'scale(1.05)';
         totalPrice.textContent = `฿${finalTotal.toLocaleString()}`;
-        if (typeof trackEvent === 'function') {
-            trackEvent('calculator_result', { event_category: 'engagement', value: finalTotal, service: config.label });
-        }
+        scheduleCalculatorTrack(finalTotal, config.label);
         setTimeout(() => { totalPrice.style.transform = 'scale(1)'; }, 200);
+    }
+
+    let calculatorTrackTimer;
+    function scheduleCalculatorTrack(value, service) {
+        clearTimeout(calculatorTrackTimer);
+        calculatorTrackTimer = setTimeout(() => {
+            if (typeof trackEvent === 'function') {
+                trackEvent('calculator_result', { event_category: 'engagement', value: value, service: service });
+            }
+        }, 600);
     }
 
     if (serviceType && areaSize) {
@@ -96,11 +104,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(question => {
+        const answerId = 'faq-answer-' + Math.random().toString(36).slice(2, 8);
+        const answer = question.nextElementSibling;
+        if (answer) {
+            answer.id = answerId;
+            question.setAttribute('aria-expanded', 'false');
+            question.setAttribute('aria-controls', answerId);
+        }
         question.addEventListener('click', () => {
             const faqItem = question.parentElement;
-            faqItem.classList.toggle('active');
+            const isActive = faqItem.classList.toggle('active');
+            question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
             document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) item.classList.remove('active');
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    const btn = item.querySelector('.faq-question');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                }
             });
         });
     });

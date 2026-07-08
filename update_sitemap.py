@@ -2,7 +2,7 @@ import json
 import os
 from datetime import datetime
 
-from site_config import LOCAL_AREAS, SITE_URL
+from site_config import LOCAL_AREAS, SERVICE_LANDINGS, SITE_URL
 
 
 def url_entry(path, priority, changefreq, lastmod=None):
@@ -20,9 +20,13 @@ def update_sitemap():
     static_pages = [
         ("", "1.0", "weekly"),
         ("blog.html", "0.9", "daily"),
+        ("privacy.html", "0.3", "yearly"),
         ("landing-bigcleaning.html", "0.8", "monthly"),
         ("landing-maid.html", "0.8", "monthly"),
     ]
+
+    for svc in SERVICE_LANDINGS:
+        static_pages.append((f"{svc['file']}.html", "0.75", "monthly"))
 
     urls = [url_entry(path, prio, freq) for path, prio, freq in static_pages]
 
@@ -36,7 +40,7 @@ def update_sitemap():
         slug = post.get("slug")
         if not slug:
             continue
-        date = post.get("date", datetime.today().strftime("%Y-%m-%d"))
+        date = post.get("dateModified", post.get("date", datetime.today().strftime("%Y-%m-%d")))
         urls.append(url_entry(f"blog/{slug}.html", "0.7", "monthly", date))
 
     content = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

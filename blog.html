@@ -7,16 +7,34 @@
     <title>บทความ | Sangkan Clean</title>
     <meta name="description" content="บทความความรู้เกี่ยวกับการทำความสะอาด เคล็ดลับ และคำแนะนำจากผู้เชี่ยวชาญ Sangkan Clean">
     <link rel="canonical" href="https://www.sangkanclean.com/blog.html">
+    <link rel="alternate" hreflang="th" href="https://www.sangkanclean.com/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="บทความ | Sangkan Clean">
+    <meta property="og:description" content="บทความความรู้เกี่ยวกับการทำความสะอาด เคล็ดลับ และคำแนะนำจากผู้เชี่ยวชาญ">
+    <meta property="og:url" content="https://www.sangkanclean.com/blog.html">
+    <meta property="og:image" content="https://www.sangkanclean.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "บทความ Sangkan Clean",
+      "description": "บทความความรู้เกี่ยวกับการทำความสะอาด",
+      "url": "https://www.sangkanclean.com/blog.html",
+      "isPartOf": { "@type": "WebSite", "name": "Sangkan Clean", "url": "https://www.sangkanclean.com/" }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="style.css">
     <style>
         .blog-hero { background: linear-gradient(135deg, #0f172a 0%, #0d9488 100%); padding: 6rem 0 3rem; text-align: center; color: white; }
         .blog-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
-        .blog-toolbar { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .blog-toolbar { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
         .blog-search { flex: 1; min-width: 220px; padding: 0.75rem 1rem; border: none; border-radius: 99px; font-size: 1rem; }
+        .blog-filter { padding: 0.75rem 1rem; border: none; border-radius: 99px; font-size: 1rem; }
         .blog-grid-section { padding: 3rem 0 4rem; background: #f8fafc; }
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
         .blog-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: transform 0.3s; text-decoration: none; color: inherit; display: block; }
@@ -31,9 +49,9 @@
         .pagination button.active { background: #0d9488; color: white; border-color: #0d9488; }
         .pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
         .blog-count { text-align: center; color: #64748b; margin-top: 1rem; font-size: 0.9rem; }
+        .crawl-links { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18299765093"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18299765093');</script>
+    <script src="analytics.js" defer></script>
 </head>
 <body>
     <header class="navbar">
@@ -56,6 +74,13 @@
             <p>เคล็ดลับและความรู้จากผู้เชี่ยวชาญ Sangkan Clean</p>
             <div class="blog-toolbar">
                 <input type="search" id="blogSearch" class="blog-search" placeholder="ค้นหาบทความ..." aria-label="ค้นหาบทความ">
+                <select id="blogCategory" class="blog-filter" aria-label="กรองตามหมวดหมู่">
+                    <option value="">ทุกหมวดหมู่</option>
+                    <option value="บริการ">บริการ</option>
+                    <option value="เคล็ดลับ">เคล็ดลับ</option>
+                    <option value="ธุรกิจ">ธุรกิจ</option>
+                    <option value="คู่มือ">คู่มือ</option>
+                </select>
             </div>
         </div>
     </section>
@@ -63,8 +88,9 @@
     <section class="blog-grid-section">
         <div class="container">
             <div class="blog-grid" id="blogGrid"><p style="text-align:center;grid-column:1/-1;">กำลังโหลด...</p></div>
+            <nav class="crawl-links" id="crawlLinks" aria-label="รายการบทความทั้งหมด"></nav>
             <p class="blog-count" id="blogCount"></p>
-            <div class="pagination" id="pagination"></div>
+            <div class="pagination" id="pagination" role="navigation" aria-label="การแบ่งหน้า"></div>
         </div>
     </section>
 
@@ -83,27 +109,59 @@
         const blogGrid = document.getElementById('blogGrid');
         const pagination = document.getElementById('pagination');
         const blogSearch = document.getElementById('blogSearch');
+        const blogCategory = document.getElementById('blogCategory');
         const blogCount = document.getElementById('blogCount');
+        const crawlLinks = document.getElementById('crawlLinks');
+
+        function getPageFromUrl() {
+            const p = new URLSearchParams(window.location.search).get('page');
+            return Math.max(1, parseInt(p, 10) || 1);
+        }
+
+        function updateUrl(page) {
+            const url = new URL(window.location.href);
+            if (page <= 1) url.searchParams.delete('page');
+            else url.searchParams.set('page', page);
+            history.replaceState({}, '', url);
+        }
 
         fetch('posts.json')
             .then(r => r.json())
             .then(data => {
                 allPosts = data.slice().reverse();
                 filtered = allPosts;
+                currentPage = getPageFromUrl();
+                buildCrawlLinks();
                 render();
             })
             .catch(() => { blogGrid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">ไม่สามารถโหลดบทความได้</p>'; });
 
-        blogSearch.addEventListener('input', () => {
+        function buildCrawlLinks() {
+            crawlLinks.innerHTML = allPosts.map(p =>
+                `<a href="blog/${p.slug || 'post'}.html">${p.title}</a>`
+            ).join('');
+        }
+
+        function applyFilters() {
             const q = blogSearch.value.trim().toLowerCase();
-            filtered = q ? allPosts.filter(p =>
-                (p.title + p.description + (p.category||'')).toLowerCase().includes(q)
-            ) : allPosts;
+            const cat = blogCategory.value;
+            filtered = allPosts.filter(p => {
+                const matchQ = !q || (p.title + p.description + (p.category||'')).toLowerCase().includes(q);
+                const matchC = !cat || p.category === cat;
+                return matchQ && matchC;
+            });
             currentPage = 1;
             render();
-        });
+        }
+
+        blogSearch.addEventListener('input', applyFilters);
+        blogCategory.addEventListener('change', applyFilters);
 
         function render() {
+            const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+            if (currentPage > totalPages) currentPage = totalPages;
+            updateUrl(currentPage);
+
             const start = (currentPage - 1) * PER_PAGE;
             const pagePosts = filtered.slice(start, start + PER_PAGE);
 
@@ -127,28 +185,30 @@
                 </a>`;
             }).join('');
 
-            const totalPages = Math.ceil(filtered.length / PER_PAGE);
             blogCount.textContent = `แสดง ${start + 1}-${start + pagePosts.length} จาก ${filtered.length} บทความ`;
             renderPagination(totalPages);
         }
 
         function renderPagination(totalPages) {
             if (totalPages <= 1) { pagination.innerHTML = ''; return; }
-            let html = `<button ${currentPage===1?'disabled':''} onclick="goPage(${currentPage-1})">ก่อนหน้า</button>`;
+            let html = `<button ${currentPage===1?'disabled':''} onclick="goPage(${currentPage-1})" aria-label="หน้าก่อนหน้า">ก่อนหน้า</button>`;
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 2) {
-                    html += `<button class="${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+                    const active = i === currentPage ? 'active' : '';
+                    const aria = i === currentPage ? ' aria-current="page"' : '';
+                    html += `<button class="${active}" onclick="goPage(${i})"${aria}>${i}</button>`;
                 } else if (Math.abs(i - currentPage) === 3) {
-                    html += '<span>...</span>';
+                    html += '<span aria-hidden="true">...</span>';
                 }
             }
-            html += `<button ${currentPage===totalPages?'disabled':''} onclick="goPage(${currentPage+1})">ถัดไป</button>`;
+            html += `<button ${currentPage===totalPages?'disabled':''} onclick="goPage(${currentPage+1})" aria-label="หน้าถัดไป">ถัดไป</button>`;
             pagination.innerHTML = html;
         }
 
         window.goPage = function(p) {
             currentPage = p;
             render();
+            if (typeof trackEvent === 'function') trackEvent('blog_pagination', { event_category: 'engagement', page: p });
             window.scrollTo({ top: document.querySelector('.blog-grid-section').offsetTop - 80, behavior: 'smooth' });
         };
 

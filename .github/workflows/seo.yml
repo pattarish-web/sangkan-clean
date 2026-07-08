@@ -23,6 +23,8 @@ jobs:
         run: python seo/content_generator.py
       - name: Compliance Check
         run: python seo/compliance_checker.py
+      - name: Build Site HTML
+        run: python build_site.py
       - name: Update Domain Configuration
         run: python update_domain.py
       - name: Commit & Deploy (if clean)
@@ -30,7 +32,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add posts/ seo/compliance_report.md posts.json || true
+          git add posts/ seo/compliance_report.md posts.json blog/ areas/ sitemap.xml analytics.js landing-*.html privacy.html || true
           git commit -m "[auto] SEO update $(date +'%Y-%m-%d %H:%M')" || true
           git push origin main
       - name: Notify on Failure

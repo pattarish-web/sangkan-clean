@@ -67,6 +67,12 @@
             "@type": "Place",
             "name": "กรุงเทพมหานคร และปริมณฑล"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 13.7563,
+            "longitude": 100.5018
+          },
+          "hasMap": "https://maps.google.com/?q=13.7563,100.5018",
           "sameAs": [
             "https://www.facebook.com/100067763717435",
             "https://line.me/ti/p/@sangkanclean"
@@ -87,7 +93,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -108,34 +114,41 @@
         },
         {
           "@type": "Question",
-          "name": "บริการทำความสะอาดครอบคลุมพื้นที่ไหนบ้าง?",
+          "name": "ต้องจัดเตรียมอุปกรณ์ทำความสะอาดให้ทีมงานไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "เราให้บริการทั่วกรุงเทพมหานครและปริมณฑล ครอบคลุม นนทบุรี ปทุมธานี สมุทรปราการ และจังหวัดอื่นๆ ทั่วประเทศสำหรับโปรเจกต์ขนาดใหญ่"
+            "text": "ทีมงานของเราจะเตรียมอุปกรณ์ทำความสะอาดระดับมืออาชีพ เครื่องดูดฝุ่นอุตสาหกรรม เครื่องขัดพื้น และน้ำยาทำความสะอาดมาตรฐานมาเองทั้งหมด ลูกค้าไม่ต้องเตรียมสิ่งใดเลยครับ"
           }
         },
         {
           "@type": "Question",
-          "name": "มีประกันความเสียหายหรือไม่?",
+          "name": "มีประกันความเสียหายกรณีสิ่งของชำรุดไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ทางเรามีประกันความเสียหายจากการปฏิบัติงาน เพื่อสร้างความมั่นใจสูงสุดให้กับลูกค้าทุกท่าน"
+            "text": "ทางเรามีประกันความเสียหายที่เกิดจากการปฏิบัติงานของทีมงาน ครอบคลุมทั้งความเสียหายต่อทรัพย์สินและอุบัติเหตุ เพื่อความสบายใจสูงสุดของลูกค้าทุกท่าน"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Big Cleaning ต่างจากทำความสะอาดทั่วไปอย่างไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Big Cleaning คือการทำความสะอาดครั้งใหญ่แบบเชิงลึก ที่ใช้อุปกรณ์ระดับอุตสาหกรรม เช่น เครื่องขัดพื้น เครื่องฉีดน้ำแรงดันสูง ขจัดคราบฝังลึกที่การทำความสะอาดปกติทำไม่ได้"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "รับทำความสะอาดนอกเขตกรุงเทพฯ ได้ไหม?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ได้ครับ เรารับงานทั่วประเทศไทย โดยเฉพาะงานโปรเจกต์ขนาดใหญ่ เช่น โรงงานในนิคมอุตสาหกรรม อาคารสำนักงาน ห้างสรรพสินค้า"
           }
         }
       ]
     }
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18299765093"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-18299765093');
-      gtag('config', 'G-PLACEHOLDER');
-    </script>
+    <script src="analytics.js" defer></script>
     <script src="tracking.js" defer></script>
 </head>
 <body>
@@ -166,6 +179,8 @@
                 <a href="#why-us" class="nav-link">ทำไมต้องเรา</a>
                 <a href="#calculator" class="nav-link">คำนวณราคา</a>
                 <a href="#clients" class="nav-link">ลูกค้าของเรา</a>
+                <a href="landing-bigcleaning.html" class="nav-link">Big Cleaning</a>
+                <a href="landing-maid.html" class="nav-link">แม่บ้านประจำ</a>
                 <a href="blog.html" class="nav-link">บทความทั้งหมด</a>
                 <a href="#areas" class="nav-link">พื้นที่ให้บริการ</a>
                 <a href="#faq" class="nav-link">FAQ</a>
@@ -207,7 +222,7 @@
             </div>
             <div class="hero-visual">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="บริการทำความสะอาดมืออาชีพ Sangkan Clean" class="hero-img" loading="lazy" width="800" height="600">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="บริการทำความสะอาดมืออาชีพ Sangkan Clean" class="hero-img" loading="eager" fetchpriority="high" width="800" height="600">
                     <div class="floating-card card-1">
                         <i class="fa-solid fa-circle-check text-success"></i>
                         <div>
@@ -288,30 +303,30 @@
                     <p>บริการจัดหาแม่บ้านประจำสำนักงาน คอนโด อาคาร ดูแลรายวัน/รายเดือน</p>
                     <span class="price-start">เริ่มต้น ฿12,000/เดือน</span>
                 </a>
-                <div class="service-card-mini">
+                <a href="landing-softcleaning.html" class="service-card-mini" style="text-decoration: none; display: block;">
                     <div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
                     <h3>Soft Cleaning</h3>
                     <p>ทำความสะอาดเฉพาะพื้นที่ ดูแลรักษาความสะอาดประจำ อ่อนโยนกับพื้นผิว</p>
                     <span class="price-start">เริ่มต้น ฿3,500</span>
-                </div>
-                <div class="service-card-mini">
+                </a>
+                <a href="landing-glass.html" class="service-card-mini" style="text-decoration: none; display: block;">
                     <div class="service-icon"><i class="fa-solid fa-building"></i></div>
                     <h3>เช็ดกระจกอาคารสูง</h3>
                     <p>บริการโรยตัวเช็ดกระจกอาคารสูง ด้วยอุปกรณ์มาตรฐานความปลอดภัย</p>
                     <span class="price-start">สอบถามราคา</span>
-                </div>
-                <div class="service-card-mini">
+                </a>
+                <a href="landing-carpet.html" class="service-card-mini" style="text-decoration: none; display: block;">
                     <div class="service-icon"><i class="fa-solid fa-couch"></i></div>
                     <h3>ซักพรม โซฟา ผ้าม่าน</h3>
                     <p>ซักแห้งพรม โซฟา เก้าอี้ ผ้าม่าน ขจัดคราบ กลิ่นอับ ไรฝุ่น อย่างล้ำลึก</p>
                     <span class="price-start">เริ่มต้น ฿800</span>
-                </div>
-                <div class="service-card-mini">
+                </a>
+                <a href="landing-ozone.html" class="service-card-mini" style="text-decoration: none; display: block;">
                     <div class="service-icon"><i class="fa-solid fa-atom"></i></div>
                     <h3>อบโอโซน</h3>
                     <p>ฆ่าเชื้อโรค แบคทีเรีย ไวรัส กำจัดกลิ่นอับ ด้วยระบบโอโซนมาตรฐาน</p>
                     <span class="price-start">เริ่มต้น ฿1,200</span>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -617,8 +632,8 @@
             </div>
             <form id="quoteForm" action="https://formsubmit.co/info@sangkanclean.com" method="POST" class="quote-form" style="background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
                 <input type="hidden" name="_subject" value="คำขอใบเสนอราคา - Sangkan Clean">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://www.sangkanclean.com/#quote">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_next" value="https://www.sangkanclean.com/?submitted=true#quote">
                 <div style="display:grid;gap:1rem;">
                     <input type="text" name="name" required placeholder="ชื่อ-นามสกุล *" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;">
                     <input type="tel" name="phone" required placeholder="เบอร์โทรศัพท์ *" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;">
@@ -632,6 +647,10 @@
                     </select>
                     <input type="text" name="area" placeholder="พื้นที่/จังหวัด (เช่น บางนา, กรุงเทพฯ)">
                     <textarea name="message" rows="3" placeholder="รายละเอียดเพิ่มเติม (ขนาดพื้นที่ ตร.ม., ความต้องการพิเศษ)" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;resize:vertical;"></textarea>
+                    <label style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.85rem;color:#64748b;">
+                        <input type="checkbox" name="consent" required style="margin-top:0.2rem;">
+                        <span>ยินยอมให้เก็บและใช้ข้อมูลส่วนบุคคลตาม <a href="privacy.html" target="_blank">นโยบายความเป็นส่วนตัว</a></span>
+                    </label>
                     <button type="submit" class="btn btn-primary btn-lg" style="width:100%;"><i class="fa-solid fa-paper-plane"></i> ส่งคำขอใบเสนอราคา</button>
                 </div>
                 <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:#64748b;">หรือติดต่อด่วน <a href="tel:0636865134">063-686-5134</a> | <a href="https://line.me/ti/p/@sangkanclean" target="_blank" rel="noopener">LINE @sangkanclean</a></p>
@@ -644,7 +663,7 @@
         <div class="container footer-grid">
             <div class="footer-info">
                 <a href="#" class="logo footer-logo">
-                    <img src="logo.png" alt="Sangkan Clean" style="height: 45px; width: auto; margin-right: 8px;"><span>Sangkan<span> Pro Clean</span></span>
+                    <img src="logo.png" alt="Sangkan Clean" style="height: 45px; width: auto; margin-right: 8px;"><span>Sangkan<span> Clean</span></span>
                 </a>
                 <p>Sangkan Clean เกิดจากการรวมตัวของทีมงานผู้เชี่ยวชาญหน้างานที่มีประสบการณ์กว่า 30 ปี พร้อมบริหารจัดการด้วยเทคโนโลยีใหม่ เพื่อส่งมอบความสะอาดและความสบายใจให้กับคุณ</p>
                 <div class="contact-details">
@@ -657,12 +676,12 @@
             <div class="footer-links">
                 <h4>บริการของเรา</h4>
                 <ul>
-                    <li><a href="#services">Big Cleaning</a></li>
-                    <li><a href="#services">แม่บ้านประจำ</a></li>
-                    <li><a href="#services">Soft Cleaning</a></li>
-                    <li><a href="#services">เช็ดกระจกอาคารสูง</a></li>
-                    <li><a href="#services">ซักพรม โซฟา</a></li>
-                    <li><a href="#services">ล้างแอร์</a></li>
+                    <li><a href="landing-bigcleaning.html">Big Cleaning</a></li>
+                    <li><a href="landing-maid.html">แม่บ้านประจำ</a></li>
+                    <li><a href="landing-softcleaning.html">Soft Cleaning</a></li>
+                    <li><a href="landing-glass.html">เช็ดกระจกอาคารสูง</a></li>
+                    <li><a href="landing-carpet.html">ซักพรม โซฟา</a></li>
+                    <li><a href="landing-ozone.html">อบโอโซน</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -675,7 +694,7 @@
                     <li><a href="blog.html">บทความทั้งหมด</a></li>
                     <li><a href="landing-bigcleaning.html">Big Cleaning</a></li>
                     <li><a href="landing-maid.html">แม่บ้านประจำ</a></li>
-                    <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+                    <li><a href="privacy.html">นโยบายความเป็นส่วนตัว</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -689,7 +708,7 @@
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2026 Sangkan Clean. All rights reserved. | สั่งการคลีน บริการทำความสะอาด สั่งได้ดั่งใจ Big Cleaning แม่บ้านประจำ</p>
+            <p>&copy; 2026 Sangkan Clean. All rights reserved. | <a href="privacy.html">นโยบายความเป็นส่วนตัว</a> | สั่งการคลีน บริการทำความสะอาด สั่งได้ดั่งใจ Big Cleaning แม่บ้านประจำ</p>
         </div>
     </footer>
 

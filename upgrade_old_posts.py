@@ -26,7 +26,7 @@ def generate_geo_content(api_key, title, description):
     เนื้อหาบทความ (content) ต้องเป็นโค้ด HTML semantic ล้วนๆ (ไม่ต้องมี <html> <body> tag)
     - <h2>สรุปประเด็นสำคัญ (Key Takeaways)</h2> ตามด้วย <ul><li> 3-4 ข้อสั้นๆ
     - <h2>เนื้อหาหลัก</h2> อธิบายเนื้อหาแบบเจาะลึก มีการใช้ <strong> เพื่อเน้นคำสำคัญ
-    - <h2>ข้อมูลสถิติที่น่าสนใจ</h2> บังคับให้สร้างตัวเลขสถิติหรือข้อเท็จจริง
+    - <h2>ข้อมูลสถิติที่น่าสนใจ</h2> สร้างข้อมูลเชิงประมาณหรือแนวโน้มทั่วไปในอุตสาหกรรม (ไม่ใช่ตัวเลขเฉพาะบริษัท) พร้อมข้อความว่า "ข้อมูลโดยประมาณจากแนวโน้มอุตสาหกรรม"
     - <h2>คำถามที่พบบ่อย (FAQ)</h2> ถามตอบ 2-3 ข้อแบบสั้นๆ ตรงประเด็น
     
     ตอบกลับเป็น JSON format เท่านั้น:
@@ -74,6 +74,8 @@ def upgrade_posts():
 
             if new_content and "สรุปประเด็นสำคัญ" in new_content:
                 post['content'] = new_content
+                from datetime import datetime
+                post['dateModified'] = datetime.today().strftime("%Y-%m-%d")
                 upgraded_count += 1
 
                 with open('posts.json', 'w', encoding='utf-8') as f:

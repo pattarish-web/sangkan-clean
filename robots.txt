@@ -8,3 +8,5 @@ Sitemap: https://www.sangkanclean.com/sitemap.xml
 Disallow: /generate_blog.py
 Disallow: /build_*.py
 Disallow: /seo/
+Disallow: /posts.json
+Disallow: /__pycache__/
