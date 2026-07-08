@@ -129,7 +129,22 @@ LOCAL_AREAS = [
 ]
 
 
+def _has_ga4():
+    return bool(GA4_MEASUREMENT_ID and GA4_MEASUREMENT_ID != "G-PLACEHOLDER")
+
+
 def analytics_script_tag(prefix=""):
-    """Return gtag snippet; prefix is '' for root or '../' for subdirs."""
-    src = f"{prefix}analytics.js"
-    return f'<script src="{src}" defer></script>'
+    """Return standard Google gtag snippet for <head>; prefix is '' or '../'."""
+    primary = GA4_MEASUREMENT_ID if _has_ga4() else ADS_CONVERSION_ID
+    ga4_config = f"  gtag('config', '{GA4_MEASUREMENT_ID}');\n" if _has_ga4() else ""
+    ads_label = ADS_LEAD_CONVERSION_LABEL.replace("'", "")
+    return f"""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={primary}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  window.gtag = gtag;
+  gtag('js', new Date());
+{ga4_config}  gtag('config', '{ADS_CONVERSION_ID}');
+  window.adsLeadSendTo = '{ads_label}' ? '{ADS_CONVERSION_ID}/' + '{ads_label}' : '';
+</script>"""
