@@ -8,9 +8,9 @@ on:
         required: false
         default: "0"
       workers:
-        description: "Parallel workers (3 if you have 3 API keys from different accounts)"
+        description: "Parallel workers (2 recommended to avoid 429)"
         required: false
-        default: "3"
+        default: "2"
 
 jobs:
   upgrade:
@@ -42,8 +42,8 @@ jobs:
         echo "============================================================"
         echo "  batch_limit : ${{ inputs.batch_limit }} (0 = all pending)"
         echo "  workers     : ${{ inputs.workers }}"
-        echo "  sleep/key   : 10s (auto-increases on 429)"
-        echo "  retry passes: 2"
+        echo "  sleep/key   : 15s (auto-increases on 429)"
+        echo "  retry passes: 3 (3-min cooldown between passes)"
         KEY_COUNT=$(echo "$GEMINI_API_KEY" | tr ',' '\n' | sed '/^$/d' | wc -l)
         echo "  API keys    : $KEY_COUNT detected"
         echo "============================================================"
@@ -54,8 +54,8 @@ jobs:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         GEO_BATCH_LIMIT: ${{ inputs.batch_limit }}
         GEO_WORKERS: ${{ inputs.workers }}
-        GEO_SLEEP_SEC: "10"
-      run: python upgrade_old_posts.py --limit ${{ inputs.batch_limit }} --workers ${{ inputs.workers }} --sleep 10
+        GEO_SLEEP_SEC: "15"
+      run: python upgrade_old_posts.py --limit ${{ inputs.batch_limit }} --workers ${{ inputs.workers }} --sleep 15
 
     - name: Commit and Push changes
       run: |

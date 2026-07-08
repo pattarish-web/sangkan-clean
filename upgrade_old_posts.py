@@ -7,12 +7,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from queue import Queue
 
-from gemini_api import call_gemini_json
+from gemini_api import call_gemini_json, reset_429_strikes
 from geo_log import banner, format_eta, key_label, log, milestone, progress
 
-DEFAULT_SLEEP = 10
+DEFAULT_SLEEP = 15
 DEFAULT_LIMIT = 0
-MAX_RETRY_PASSES = 2
+MAX_RETRY_PASSES = 3
+QUOTA_COOLDOWN_SEC = 180  # 3 min between retry passes
 CHECKPOINT_EVERY = 5
 
 
@@ -207,6 +208,9 @@ def upgrade_posts(limit=DEFAULT_LIMIT, sleep_sec=DEFAULT_SLEEP, workers=0):
             if not failed_indices:
                 break
             banner(f"RETRY PASS {pass_num}/{MAX_RETRY_PASSES} — {len(failed_indices)} posts")
+            log(f"Waiting {QUOTA_COOLDOWN_SEC}s for API quota recovery…")
+            time.sleep(QUOTA_COOLDOWN_SEC)
+            reset_429_strikes()
             for idx in failed_indices:
                 log(f"  retry: {posts[idx]['title'][:55]}")
             pending_indices = failed_indices

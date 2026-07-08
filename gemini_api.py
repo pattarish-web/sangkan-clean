@@ -18,6 +18,14 @@ _limiter_lock = threading.Lock()
 _key_locks: dict[str, threading.Lock] = {}
 _key_last_call: dict[str, float] = {}
 _key_interval: dict[str, float] = {}
+_key_429_strikes: dict[str, int] = {}
+MAX_429_RETRIES = 3  # fail fast — let retry pass handle later
+
+
+def reset_429_strikes() -> None:
+    """Clear per-key 429 counters between retry passes."""
+    with _limiter_lock:
+        _key_429_strikes.clear()
 
 
 def _base_interval() -> float:
@@ -28,14 +36,17 @@ def _interval_for_key(api_key: str) -> float:
     return _key_interval.get(api_key, _base_interval())
 
 
-def bump_key_cooldown(api_key: str, tag: str = "") -> None:
+def bump_key_cooldown(api_key: str, tag: str = "") -> float:
     """Slow down a key after 429 so we don't hammer the same quota."""
     with _limiter_lock:
         current = _key_interval.get(api_key, _base_interval())
-        new_interval = min(max(current * 1.5, current + 3), 30)
+        new_interval = min(max(current * 1.5, current + 5), 45)
         _key_interval[api_key] = new_interval
+        strikes = _key_429_strikes.get(api_key, 0) + 1
+        _key_429_strikes[api_key] = strikes
     label = tag or f"{api_key[:8]}…"
-    log(f"{label} cooldown → {new_interval:.0f}s/key", level="WARN")
+    log(f"{label} cooldown → {new_interval:.0f}s/key (429 strike {strikes}/{MAX_429_RETRIES})", level="WARN")
+    return new_interval
 
 
 def wait_for_key(api_key: str) -> None:
@@ -77,7 +88,11 @@ def _retry_wait(response: requests.Response | None, attempt: int, base_delay: fl
                 return min(max(float(retry_after), base_delay), 90)
             except ValueError:
                 pass
-    return min(base_delay * (2**attempt), 90)
+    return min(base_delay * (2**attempt), 45)
+
+
+def _429_strikes(api_key: str) -> int:
+    return _key_429_strikes.get(api_key, 0)
 
 
 def call_gemini_json(
@@ -85,8 +100,8 @@ def call_gemini_json(
     prompt: str,
     *,
     key_label: str = "",
-    max_retries: int = 8,
-    base_delay: float = 10,
+    max_retries: int = 4,
+    base_delay: float = 15,
     timeout: int = 90,
 ) -> dict | None:
     tag = key_label or f"{api_key[:8]}…"
@@ -114,6 +129,13 @@ def call_gemini_json(
                     response.status_code == 400 and "RESOURCE_EXHAUSTED" in response.text
                 ):
                     bump_key_cooldown(api_key, tag)
+                    if _429_strikes(api_key) >= MAX_429_RETRIES:
+                        log(
+                            f"{tag} quota exhausted — skip post "
+                            f"(will retry in next pass after cooldown)",
+                            level="WARN",
+                        )
+                        return None
                     wait_time = _retry_wait(response, attempt, base_delay)
                     log(
                         f"{tag} RATE LIMIT (429) → wait {wait_time:.0f}s "
