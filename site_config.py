@@ -1,8 +1,13 @@
 """Shared site configuration."""
 
+import os
+
 SITE_URL = "https://www.sangkanclean.com"
-GA4_MEASUREMENT_ID = "G-PLACEHOLDER"  # Replace with your GA4 ID
+# Set in site_config or via env GA4_MEASUREMENT_ID (e.g. GitHub Actions secret)
+GA4_MEASUREMENT_ID = os.environ.get("GA4_MEASUREMENT_ID", "G-MJG0VZPFKS")
 ADS_CONVERSION_ID = "AW-18299765093"
+# Optional: Google Ads lead conversion label (AW-xxx/LABEL) for form success
+ADS_LEAD_CONVERSION_LABEL = os.environ.get("ADS_LEAD_CONVERSION_LABEL", "")
 FORM_SUBMIT_EMAIL = "info@sangkanclean.com"
 
 BUSINESS = {

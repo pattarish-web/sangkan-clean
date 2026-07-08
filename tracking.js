@@ -44,11 +44,19 @@
             });
         }
 
-        if (window.location.hash === '#quote' && window.location.search.includes('submitted=true')) {
+        function trackLeadSuccess() {
             trackEvent('quote_form_success', { event_category: 'lead' });
+            trackEvent('generate_lead', { method: 'quote_form', currency: 'THB' });
+            if (window.adsLeadSendTo) {
+                trackEvent('conversion', { send_to: window.adsLeadSendTo });
+            }
+        }
+
+        if (window.location.hash === '#quote' && window.location.search.includes('submitted=true')) {
+            trackLeadSuccess();
         }
         if (new URLSearchParams(window.location.search).get('submitted') === 'true') {
-            trackEvent('quote_form_success', { event_category: 'lead' });
+            trackLeadSuccess();
         }
 
         var blogSearch = document.getElementById('blogSearch');
