@@ -18,7 +18,7 @@ on:
 env:
   BATCH_LIMIT: ${{ github.event.inputs.batch_limit || '0' }}
   GEO_WORKERS: ${{ github.event.inputs.workers || '3' }}
-  GEO_SLEEP_SEC: "60"
+  GEO_SLEEP_SEC: "120"
 
 jobs:
   upgrade:

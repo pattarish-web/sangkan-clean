@@ -16,6 +16,20 @@ def log(msg: str, *, level: str = "INFO") -> None:
             print(f"::{level.lower()}::{msg}", flush=True)
 
 
+def success(msg: str) -> None:
+    """High-visibility success — easy to spot in GitHub Actions log."""
+    bar = "=" * 60
+    with _lock:
+        print("", flush=True)
+        print(bar, flush=True)
+        print(f"✅ GEO SUCCESS | {msg}", flush=True)
+        print(bar, flush=True)
+        print("", flush=True)
+    if _IN_CI:
+        with _lock:
+            print(f"::notice title=GEO Success::{msg}", flush=True)
+
+
 def milestone(msg: str) -> None:
     """High-visibility line in GitHub Actions log."""
     log(msg)

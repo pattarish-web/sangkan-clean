@@ -16,9 +16,9 @@ from gemini_api import (
     is_key_exhausted,
     reset_429_strikes,
 )
-from geo_log import banner, format_eta, key_label, log, milestone, progress
+from geo_log import banner, format_eta, key_label, log, milestone, progress, success
 
-DEFAULT_SLEEP = 60
+DEFAULT_SLEEP = 120
 DEFAULT_LIMIT = 0
 MAX_RETRY_PASSES = 2
 QUOTA_COOLDOWN_SEC = 900  # 15 min when all keys paused (free-tier RPD)
@@ -88,13 +88,13 @@ def generate_geo_content(api_keys, api_key, title, description):
     return None
 
 
-def _incremental_git_push(slug: str, title: str) -> None:
+def _incremental_git_push(slug: str, title: str) -> bool:
     """Push each upgraded post immediately so cancel does not lose progress."""
     global _git_configured
     if os.environ.get("GITHUB_ACTIONS") != "true":
-        return
+        return False
     if os.environ.get("GEO_INCREMENTAL_COMMIT", "1") != "1":
-        return
+        return False
 
     if not _git_configured:
         subprocess.run(["git", "config", "user.name", "Sangkan Clean Upgrade Bot"], check=True)
@@ -103,7 +103,7 @@ def _incremental_git_push(slug: str, title: str) -> None:
 
     subprocess.run(["git", "add", "posts.json", f"blog/{slug}.html"], check=True)
     if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode == 0:
-        return
+        return False
 
     safe_title = title.replace('"', "'")[:55]
     commit = subprocess.run(
@@ -113,7 +113,7 @@ def _incremental_git_push(slug: str, title: str) -> None:
     )
     if commit.returncode != 0:
         log(f"git commit skipped: {commit.stderr.strip()}", level="WARN")
-        return
+        return False
 
     # GitHub Actions runner can have additional unstaged changes after content generation
     # (e.g., other generated artifacts). `git pull --rebase` refuses to run in that case.
@@ -131,7 +131,7 @@ def _incremental_git_push(slug: str, title: str) -> None:
     )
     if pull.returncode != 0:
         log(f"git pull failed: {pull.stderr.strip()}", level="WARN")
-        return
+        return False
 
     push = subprocess.run(
         ["git", "push", "origin", "HEAD:main"],
@@ -139,22 +139,31 @@ def _incremental_git_push(slug: str, title: str) -> None:
         text=True,
     )
     if push.returncode == 0:
-        log(f"git pushed → blog/{slug}.html")
-    else:
-        log(f"git push failed: {push.stderr.strip()}", level="WARN")
+        return True
+    log(f"git push failed: {push.stderr.strip()}", level="WARN")
+    return False
 
 
 def checkpoint_post(posts, idx: int) -> None:
     """Save posts.json + one blog HTML; push to GitHub if running in Actions."""
     post = posts[idx]
-    title = post.get("title", "")[:55]
+    title = post.get("title", "")
+    short = title[:55]
 
     with _save_lock:
         with open("posts.json", "w", encoding="utf-8") as f:
             json.dump(posts, f, ensure_ascii=False, indent=2)
         slug = build_single_blog(posts, idx)
-        log(f"checkpoint saved → {title}")
-        _incremental_git_push(slug, post.get("title", ""))
+        pushed = _incremental_git_push(slug, title)
+
+    gemini_total = sum(1 for p in posts if p.get("geo_source") == "gemini")
+    total_posts = len(posts)
+    pending = total_posts - gemini_total
+    deploy = "LIVE on main" if pushed else "saved (local checkpoint)"
+    success(
+        f"{short} | {deploy} | blog/{slug}.html | "
+        f"{gemini_total}/{total_posts} gemini done ({pending} pending)"
+    )
 
 
 def _upgrade_one(posts, api_keys, api_key, idx):
@@ -405,6 +414,11 @@ def upgrade_posts(limit=DEFAULT_LIMIT, sleep_sec=DEFAULT_SLEEP, workers=0):
     gemini_total = sum(1 for p in posts if p.get("geo_source") == "gemini")
 
     banner("GEO UPGRADE DONE")
+    success(
+        f"RUN COMPLETE — upgraded {upgraded_count} posts | "
+        f"{gemini_total}/{len(posts)} gemini | failed {len(failed_indices)} | "
+        f"elapsed {format_eta(elapsed)}"
+    )
     milestone(
         f"FINISHED — upgraded {upgraded_count} posts to Gemini | "
         f"{gemini_total}/{len(posts)} geo_source=gemini | "
@@ -438,8 +452,8 @@ def main():
         help="Max posts per run (default 0=unlimited)",
     )
     parser.add_argument(
-        "--sleep", type=float, default=float(os.environ.get("GEO_SLEEP_SEC", "60")),
-        help="Min seconds between requests per API key (default 60)",
+        "--sleep", type=float, default=float(os.environ.get("GEO_SLEEP_SEC", "120")),
+        help="Min seconds between requests per API key (default 120)",
     )
     parser.add_argument(
         "--workers", type=int, default=int(os.environ.get("GEO_WORKERS", "0")),
