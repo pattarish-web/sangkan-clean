@@ -4,7 +4,7 @@ Daily GitHub Action (~09:00 Bangkok) that:
 
 1. Picks the next rotating topic (`topics.py`)
 2. Asks Gemini for captions (or uses Thai fallbacks)
-3. Draws feed 1:1 + stories 9:16 PNGs (agency/tech teal)
+3. Generates a fresh photorealistic background via Gemini, then composes feed 1:1 + stories 9:16 PNGs (genz-style overlay layout: brand, chip, headline, CTA — not stock from `ads-office-ondemand/genz/art`)
 4. Renders Ken Burns MP4 for TikTok every day; also feed/stories video when `format: video`
 5. Publishes to selected channels
 
@@ -28,13 +28,13 @@ set CHANNELS=facebook,instagram,tiktok,line
 python generate_social_post.py
 ```
 
-Outputs land in `out/YYYYMMDD/` (`feed.png`, `stories.png`, `stories.mp4`, optional `feed.mp4`, `captions.json`).
+Outputs land in `out/YYYYMMDD/` (`bg.png`/`bg.jpg`, `feed.png`, `stories.png`, `stories.mp4`, optional `feed.mp4`, `captions.json`). If image gen fails, overlays use a branded gradient fallback (never genz art files).
 
 ## GitHub Secrets
 
 | Secret | Required for |
 |--------|----------------|
-| `GEMINI_API_KEY` | Captions (same as blog-bot) |
+| `GEMINI_API_KEY` | Captions **and** daily background images (same key as blog-bot) |
 | `FACEBOOK_PAGE_ID` | Facebook |
 | `FACEBOOK_PAGE_ACCESS_TOKEN` | Facebook + Instagram |
 | `INSTAGRAM_BUSINESS_ACCOUNT_ID` | Instagram |

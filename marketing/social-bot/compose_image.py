@@ -1,6 +1,8 @@
-"""Compose feed/stories graphics in genz / young-agency style.
+"""Compose feed/stories graphics in genz / young-agency layout style.
 
-Uses photo backgrounds from ads-office-ondemand/genz/art + Prompt Thai fonts.
+Layout reference only (brand, chip, headline, CTA, wash). Backgrounds are
+passed in (typically Gemini-generated) — not stock from ads genz/art.
+Fonts: Prompt Thai under ads-office-ondemand/fonts.
 """
 
 from __future__ import annotations
@@ -12,7 +14,6 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont
 ROOT = Path(__file__).resolve().parent
 ADS = ROOT.parent / "ads-office-ondemand"
 FONTS_DIR = ADS / "fonts"
-ART_DIR = ADS / "genz" / "art"
 
 TEAL = (13, 148, 136)
 CORAL = (251, 113, 133)
@@ -22,23 +23,10 @@ SOFT = (241, 245, 249)
 INK = (15, 23, 42)
 MUTED = (100, 116, 139)
 YELLOW = (250, 204, 21)
+MINT = (153, 246, 228)
 
 FEED_SIZE = (1080, 1080)
 STORIES_SIZE = (1080, 1920)
-
-# topic_id → background art file
-ART_BY_TOPIC: dict[str, str] = {
-    "office_ondemand": "genz-A-cowork.png",
-    "agency_focus": "genz-A-cowork.png",
-    "tech_team": "genz-C-phone.png",
-    "big_cleaning": "genz-D-morning.png",
-    "maid_backup": "genz-E-friends.png",
-    "service_area": "genz-A-cowork.png",
-    "price_pack": "genz-B-flatlay.png",
-    "affiliate": "genz-E-friends.png",
-    "after_construction": "genz-D-morning.png",
-    "soft_cleaning": "genz-B-flatlay.png",
-}
 
 CHIP_BY_TOPIC: dict[str, tuple[str, tuple[int, int, int]]] = {
     "office_ondemand": ("สำหรับทีมวัยใหม่", CORAL),
@@ -100,8 +88,8 @@ def wrap_lines(draw, text: str, fnt, max_width: int) -> list[str]:
     return lines
 
 
-def cover(path: Path, size: tuple[int, int]) -> Image.Image:
-    img = Image.open(path).convert("RGB")
+def cover_image(img: Image.Image, size: tuple[int, int]) -> Image.Image:
+    img = img.convert("RGB")
     tw, th = size
     sw, sh = img.size
     scale = max(tw / sw, th / sh)
@@ -109,6 +97,36 @@ def cover(path: Path, size: tuple[int, int]) -> Image.Image:
     img = img.resize((nw, nh), Image.Resampling.LANCZOS)
     left, top = (nw - tw) // 2, (nh - th) // 2
     return img.crop((left, top, left + tw, top + th))
+
+
+def cover(path: Path, size: tuple[int, int]) -> Image.Image:
+    return cover_image(Image.open(path), size)
+
+
+def branded_gradient(size: tuple[int, int]) -> Image.Image:
+    """Fallback canvas when Gemini background is unavailable (no genz art)."""
+    w, h = size
+    img = Image.new("RGB", size, WHITE)
+    draw = ImageDraw.Draw(img)
+    # Soft teal wash from top-right
+    for y in range(h):
+        t = y / max(h - 1, 1)
+        r = int(255 * (1 - t * 0.15) + TEAL[0] * t * 0.12)
+        g = int(255 * (1 - t * 0.12) + TEAL[1] * t * 0.18)
+        b = int(255 * (1 - t * 0.1) + TEAL[2] * t * 0.2)
+        draw.line([(0, y), (w, y)], fill=(r, g, b))
+    # Diagonal mint / teal bands on the right (layout hint, not a photo)
+    overlay = Image.new("RGBA", size, (0, 0, 0, 0))
+    od = ImageDraw.Draw(overlay)
+    od.polygon(
+        [(int(w * 0.55), 0), (w, 0), (w, int(h * 0.55)), (int(w * 0.35), h)],
+        fill=(*TEAL, 90),
+    )
+    od.polygon(
+        [(int(w * 0.75), 0), (w, 0), (w, int(h * 0.35)), (int(w * 0.55), h)],
+        fill=(*MINT, 120),
+    )
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
 
 def wash_bottom(img: Image.Image, start_ratio: float = 0.42) -> Image.Image:
@@ -150,17 +168,18 @@ def brand(draw, x: int = 40, y: int = 32, name: str = "Sangkan Clean"):
     draw.rounded_rectangle([x, y + 36, x + 72, y + 42], radius=3, fill=CORAL)
 
 
-def _art_path(topic_id: str) -> Path:
-    name = ART_BY_TOPIC.get(topic_id, "genz-A-cowork.png")
-    path = ART_DIR / name
+def _base_photo(
+    background: Path | Image.Image | None,
+    size: tuple[int, int],
+) -> Image.Image:
+    if background is None:
+        return branded_gradient(size)
+    if isinstance(background, Image.Image):
+        return cover_image(background, size)
+    path = Path(background)
     if path.exists():
-        return path
-    # fallback: any available art
-    for p in sorted(ART_DIR.glob("genz-*.png")):
-        return p
-    raise FileNotFoundError(
-        f"Missing genz art under {ART_DIR} — commit marketing/ads-office-ondemand/genz/art/"
-    )
+        return cover(path, size)
+    return branded_gradient(size)
 
 
 def compose(
@@ -170,16 +189,17 @@ def compose(
     size: tuple[int, int] = FEED_SIZE,
     topic_id: str = "office_ondemand",
     brand_name: str = "Sangkan Clean",
+    background: Path | Image.Image | None = None,
 ) -> Image.Image:
     w, h = size
     is_stories = h > w
-    art = _art_path(topic_id)
     use_panel = topic_id == "price_pack" and not is_stories
+    photo = _base_photo(background, size)
 
     if use_panel:
-        img = cover(art, size)
+        img = photo
     else:
-        img = wash_bottom(cover(art, size), 0.38 if is_stories else 0.42)
+        img = wash_bottom(photo, 0.38 if is_stories else 0.42)
 
     draw = ImageDraw.Draw(img)
     brand(draw, name=brand_name)
@@ -233,11 +253,16 @@ def save_feed(
     path: Path,
     *,
     topic_id: str = "office_ondemand",
+    background: Path | Image.Image | None = None,
 ) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    compose(headline, subline, size=FEED_SIZE, topic_id=topic_id).save(
-        path, "PNG", optimize=True
-    )
+    compose(
+        headline,
+        subline,
+        size=FEED_SIZE,
+        topic_id=topic_id,
+        background=background,
+    ).save(path, "PNG", optimize=True)
     return path
 
 
@@ -247,9 +272,14 @@ def save_stories(
     path: Path,
     *,
     topic_id: str = "office_ondemand",
+    background: Path | Image.Image | None = None,
 ) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    compose(headline, subline, size=STORIES_SIZE, topic_id=topic_id).save(
-        path, "PNG", optimize=True
-    )
+    compose(
+        headline,
+        subline,
+        size=STORIES_SIZE,
+        topic_id=topic_id,
+        background=background,
+    ).save(path, "PNG", optimize=True)
     return path

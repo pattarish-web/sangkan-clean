@@ -121,6 +121,93 @@ def _stamp() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
 
 
+# Photorealistic scene hints — layout style matches genz ads; images are new each run.
+SCENE_BY_TOPIC: dict[str, str] = {
+    "office_ondemand": (
+        "bright modern Bangkok coworking office, young professionals at desks, "
+        "floor-to-ceiling windows, plants, clean workspace atmosphere"
+    ),
+    "agency_focus": (
+        "creative agency studio with moodboards, Macs on desks, natural light, "
+        "tidy open plan, design team vibe without faces centered on camera"
+    ),
+    "tech_team": (
+        "startup tech office with dual monitors, standing desks, "
+        "minimal cable clutter, clean glass meeting room in soft focus"
+    ),
+    "big_cleaning": (
+        "professional deep cleaning of a large empty office after hours, "
+        "mops and equipment tastefully placed, polished floors, warm evening light"
+    ),
+    "maid_backup": (
+        "uniformed cleaning staff preparing supplies in a bright utility room, "
+        "organized cart, professional B2B cleaning service mood"
+    ),
+    "service_area": (
+        "Bangkok skyline soft background with a clean modern office interior "
+        "in the foreground, airy and professional"
+    ),
+    "price_pack": (
+        "small tidy home office / boutique agency desk flatlay, "
+        "notebook, plant, soft morning light, premium lifestyle photo"
+    ),
+    "affiliate": (
+        "two colleagues chatting casually in a clean café-style office lounge, "
+        "friendly referral vibe, soft daylight"
+    ),
+    "after_construction": (
+        "newly finished commercial space being detailed after construction, "
+        "dust removal in progress, bright unfinished-to-clean transition"
+    ),
+    "soft_cleaning": (
+        "gentle daily cleaning of a condo living room / soft surfaces, "
+        "microfiber cloths, calm natural light, premium soft aesthetic"
+    ),
+}
+
+
+def _background_prompt(topic: dict) -> str:
+    scene = SCENE_BY_TOPIC.get(
+        topic["id"],
+        "professional commercial cleaning service, realistic photo, modern Thailand office",
+    )
+    return (
+        "Photorealistic lifestyle photograph for a Thai B2B cleaning-service social post. "
+        f"Topic: {topic.get('label', topic['id'])}. "
+        f"Scene: {scene}. "
+        "Natural lighting, high quality, shallow depth of field where appropriate. "
+        "No text, no logos, no watermarks, no UI overlays, no brand names, "
+        "no phone screens with readable UI. Square-friendly 1:1 composition, "
+        "leave lower third slightly darker / less busy for text overlay."
+    )
+
+
+def _generate_background(topic: dict, out_dir: Path) -> Path | None:
+    """Generate a fresh bg via Gemini; return path or None on failure."""
+    try:
+        from gemini_api import call_gemini_image, get_api_keys
+    except ImportError:
+        print("gemini_api unavailable — gradient fallback for background")
+        return None
+
+    keys = get_api_keys()
+    if not keys:
+        print("No GEMINI_API_KEY — gradient fallback for background")
+        return None
+
+    prompt = _background_prompt(topic)
+    raw = call_gemini_image(keys[0], prompt, key_label="social-bot-bg")
+    if not raw:
+        print("Gemini image failed — gradient fallback for background")
+        return None
+
+    ext = "png" if raw[:8].startswith(b"\x89PNG") else "jpg"
+    path = out_dir / f"bg.{ext}"
+    path.write_bytes(raw)
+    print(f"Background saved → {path.name} ({len(raw)} bytes)")
+    return path
+
+
 def build_assets(topic: dict, captions: dict) -> dict[str, str]:
     """Create PNG (+ MP4 as needed). Returns relative paths under social-bot/."""
     day = _stamp()
@@ -130,15 +217,19 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
     headline = topic["headline"]
     sub = str(captions.get("image_subline") or topic["angle"])[:60]
 
+    bg_path = _generate_background(topic, out)
+
     feed_png = out / "feed.png"
     stories_png = out / "stories.png"
-    save_feed(headline, sub, feed_png, topic_id=topic["id"])
-    save_stories(headline, sub, stories_png, topic_id=topic["id"])
+    save_feed(headline, sub, feed_png, topic_id=topic["id"], background=bg_path)
+    save_stories(headline, sub, stories_png, topic_id=topic["id"], background=bg_path)
 
     assets: dict[str, str] = {
         "feed_png": str(feed_png.relative_to(ROOT)).replace("\\", "/"),
         "stories_png": str(stories_png.relative_to(ROOT)).replace("\\", "/"),
     }
+    if bg_path and bg_path.exists():
+        assets["bg"] = str(bg_path.relative_to(ROOT)).replace("\\", "/")
 
     fmt = topic.get("format", "image")
     need_stories_video = True  # TikTok always
