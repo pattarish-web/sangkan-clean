@@ -132,8 +132,8 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
 
     feed_png = out / "feed.png"
     stories_png = out / "stories.png"
-    save_feed(headline, sub, feed_png)
-    save_stories(headline, sub, stories_png)
+    save_feed(headline, sub, feed_png, topic_id=topic["id"])
+    save_stories(headline, sub, stories_png, topic_id=topic["id"])
 
     assets: dict[str, str] = {
         "feed_png": str(feed_png.relative_to(ROOT)).replace("\\", "/"),
