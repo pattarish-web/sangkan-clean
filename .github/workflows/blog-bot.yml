@@ -53,6 +53,17 @@ jobs:
         else
           COUNT=$(python -c "import json; print(len(json.load(open('posts.json',encoding='utf-8'))))")
           git commit -m "chore: daily blogs with covers [skip ci] (posts=$COUNT)"
-          git pull --rebase origin main || true
-          git push
+          git fetch origin
+          git pull --rebase origin main
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Push OK"
+              exit 0
+            fi
+            echo "Push attempt $i failed — rebase and retry"
+            git pull --rebase origin main || true
+            sleep 5
+          done
+          echo "Push failed after retries"
+          exit 1
         fi
