@@ -1,0 +1,48 @@
+{
+  "last_topic": "office_ondemand",
+  "posts": [
+    {
+      "ts": "2026-07-11T13:25:45.046874+00:00",
+      "topic_id": "office_ondemand",
+      "format": "video",
+      "dry_run": true,
+      "assets": {
+        "feed_png": "out/20260711/feed.png",
+        "stories_png": "out/20260711/stories.png",
+        "stories_mp4": "out/20260711/stories.mp4",
+        "feed_mp4": "out/20260711/feed.mp4"
+      },
+      "captions": {
+        "fb_ig": "ออฟฟิศสะอาด โดยไม่จ้างประจำ\n\nไม่ต้องจ้างประจำ เรียกใช้ตามต้องการ โซนอุดมสุข–บางนา\n\nSangkan Clean — บริการทำความสะอาดออฟฟิศ เอเจนซี่ และทีมเทค\nทัก LINE @sangkanclean หรือดูรายละเอียดที่ https://www.san",
+        "tiktok": "ออฟฟิศสะอาด โดยไม่จ้างประจำ\nไม่ต้องจ้างประจำ เรียกใช้ตามต้องการ โซนอุดมสุข–บางนา\nLINE @sangkanclean",
+        "line": "ออฟฟิศสะอาด โดยไม่จ้างประจำ\n\nไม่ต้องจ้างประจำ เรียกใช้ตามต้องการ โซนอุดมสุข–บางนา\n\nทักไลน์ @sangkanclean ได้เลย"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "dry_run": true,
+          "mode": "video",
+          "page_id": null
+        },
+        "instagram": {
+          "ok": true,
+          "dry_run": true,
+          "mode": "reels",
+          "ig_id": null
+        },
+        "tiktok": {
+          "ok": true,
+          "dry_run": true,
+          "mode": "draft",
+          "has_video": true
+        },
+        "line": {
+          "ok": true,
+          "dry_run": true,
+          "has_image_url": false,
+          "preview": "ออฟฟิศสะอาด โดยไม่จ้างประจำ\n\nไม่ต้องจ้างประจำ เรียกใช้ตามต้องการ โซนอุดมสุข–บางน"
+        }
+      }
+    }
+  ]
+}
