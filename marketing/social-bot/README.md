@@ -34,7 +34,7 @@ Outputs land in `out/YYYYMMDD/` (`bg.png`/`bg.jpg`, `feed.png`, `stories.png`, `
 
 | Secret | Required for |
 |--------|----------------|
-| `GEMINI_API_KEY` | Captions **and** daily backgrounds. Comma-separate 2–3 keys; on 429 the bot rotates to the next key automatically |
+| `GEMINI_API_KEY` | Captions **and** daily backgrounds. Comma-separate up to 3 keys; on 429 (text or image) the bot rotates to the next key automatically. Shared creative brief lives in repo-root `creative_standard.py`. |
 | `FACEBOOK_PAGE_ID` | Facebook |
 | `FACEBOOK_PAGE_ACCESS_TOKEN` | Facebook + Instagram |
 | `INSTAGRAM_BUSINESS_ACCOUNT_ID` | Instagram |

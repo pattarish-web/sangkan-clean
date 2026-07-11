@@ -7,13 +7,18 @@ Fonts: Prompt Thai under ads-office-ondemand/fonts.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageEnhance, ImageFont
 
-from creative_standard import TYPE
-
 ROOT = Path(__file__).resolve().parent
+REPO = ROOT.parent.parent
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+
+from creative_standard import TYPE  # noqa: E402
+
 ADS = ROOT.parent / "ads-office-ondemand"
 FONTS_DIR = ADS / "fonts"
 
@@ -150,7 +155,7 @@ def ink(draw, xy, text, fnt, fill=WHITE, shadow: bool = True):
 
 
 def chip(draw, x, y, text, bg=CORAL, fg=DARK) -> int:
-    fnt = font(28, "semibold")
+    fnt = font(TYPE["chip"], "semibold")
     w, h = text_wh(draw, text, fnt)
     draw.rounded_rectangle([x, y, x + w + 40, y + h + 24], radius=24, fill=bg)
     draw.text((x + 20, y + 10), text, font=fnt, fill=fg)
@@ -158,7 +163,7 @@ def chip(draw, x, y, text, bg=CORAL, fg=DARK) -> int:
 
 
 def cta(draw, x, y, text, bg=TEAL) -> int:
-    fnt = font(34, "bold")
+    fnt = font(TYPE["cta"], "bold")
     w, h = text_wh(draw, text, fnt)
     draw.rounded_rectangle([x, y, x + w + 56, y + h + 32], radius=32, fill=bg)
     draw.text((x + 28, y + 14), text, font=fnt, fill=WHITE)
@@ -166,7 +171,7 @@ def cta(draw, x, y, text, bg=TEAL) -> int:
 
 
 def brand(draw, x: int = 40, y: int = 28, name: str = "Sangkan Clean"):
-    ink(draw, (x, y), name, font(32, "semibold"), TEAL)
+    ink(draw, (x, y), name, font(TYPE["brand"], "semibold"), TEAL)
     draw.rounded_rectangle([x, y + 40, x + 80, y + 48], radius=3, fill=CORAL)
 
 
@@ -221,31 +226,46 @@ def compose(
         draw = ImageDraw.Draw(img)
         x, y = 48, 176
         # Match default Gen-Z type scale; keep text in left ~55% of frame
-        head_f = font(72, "bold")
-        for line in wrap_lines(draw, headline, head_f, int(w * 0.52))[:3]:
+        head_f = font(TYPE["headline_feed"], "bold")
+        for line in wrap_lines(draw, headline, head_f, int(w * 0.52))[
+            : TYPE["headline_wrap_max"]
+        ]:
             ink(draw, (x, y), line, head_f, INK, shadow=False)
-            y += 84
+            y += TYPE["headline_leading_feed"]
         if subline:
             y += 10
-            sub_f = font(32, "medium")
-            for line in wrap_lines(draw, subline, sub_f, int(w * 0.52))[:2]:
+            sub_f = font(TYPE["subline_feed"], "medium")
+            for line in wrap_lines(draw, subline, sub_f, int(w * 0.52))[
+                : TYPE["subline_wrap_max"]
+            ]:
                 ink(draw, (x, y), line, sub_f, MUTED, shadow=False)
-                y += 44
+                y += TYPE["subline_leading"]
         cta(draw, x, min(y + 28, h - 130), "ทัก LINE @sangkanclean", TEAL)
     else:
         # Keep overlay in left ~55% so it sits in the clear left third of the photo
         max_w = int(w * (0.72 if is_stories else 0.55))
         y = int(h * (0.44 if is_stories else 0.40))
-        head_f = font(80 if is_stories else 72, "bold")
-        for line in wrap_lines(draw, headline, head_f, max_w)[:3]:
+        head_f = font(
+            TYPE["headline_stories"] if is_stories else TYPE["headline_feed"],
+            "bold",
+        )
+        head_lead = (
+            TYPE["headline_leading_stories"]
+            if is_stories
+            else TYPE["headline_leading_feed"]
+        )
+        for line in wrap_lines(draw, headline, head_f, max_w)[: TYPE["headline_wrap_max"]]:
             ink(draw, (40, y), line, head_f, WHITE)
-            y += 88 if is_stories else 84
+            y += head_lead
         if subline:
             y += 10
-            sub_f = font(34 if is_stories else 32, "medium")
-            for line in wrap_lines(draw, subline, sub_f, max_w)[:2]:
+            sub_f = font(
+                TYPE["subline_stories"] if is_stories else TYPE["subline_feed"],
+                "medium",
+            )
+            for line in wrap_lines(draw, subline, sub_f, max_w)[: TYPE["subline_wrap_max"]]:
                 ink(draw, (40, y), line, sub_f, SOFT)
-                y += 44
+                y += TYPE["subline_leading"]
         cta(draw, 40, min(y + 28, h - 130), "ทัก LINE @sangkanclean")
 
     return ImageEnhance.Color(img).enhance(1.08)

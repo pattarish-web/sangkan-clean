@@ -132,13 +132,6 @@ _CATEGORY_STOCK = {
 }
 
 
-def _key_label(api_keys: list[str], key: str) -> str:
-    try:
-        return f"Key#{api_keys.index(key) + 1}"
-    except ValueError:
-        return f"{key[:8]}…"
-
-
 def _pick_key(api_keys: list[str], offset: int) -> str | None:
     if not api_keys:
         return None

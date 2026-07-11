@@ -15,6 +15,12 @@ for p in (str(ROOT), str(REPO)):
         sys.path.insert(0, p)
 
 from compose_image import save_feed, save_stories  # noqa: E402
+from creative_standard import (  # noqa: E402
+    SUBLINE_MAX,
+    THAI_TONE_RULES,
+    build_background_prompt,
+    clip_subline,
+)
 from render_video import (  # noqa: E402
     has_ffmpeg,
     render_feed_clip,
@@ -70,7 +76,7 @@ def _fallback_captions(topic: dict) -> dict:
         ),
         "tiktok": f"{hl}\n{angle}\nLINE {LINE_OA}",
         "line": f"{hl}\n\n{angle}\n\nทักไลน์ {LINE_OA} ได้เลย",
-        "image_subline": angle[:36],
+        "image_subline": clip_subline(angle),
         "hashtags": ["#SangkanClean", "#แม่บ้านออฟฟิศ", "#BigCleaning"],
     }
 
@@ -88,9 +94,7 @@ def _generate_captions(topic: dict) -> dict:
 
     print(f"Captions: rotating across {len(keys)} Gemini API key(s)")
     prompt = f"""คุณเขียนคอนเทนต์โซเชียลภาษาไทยให้แบรนด์ Sangkan Clean (สั่งการคลีน)
-โทน: สบายๆ มั่นใจ แม่นยำ — คุยกับทีมวัยใหม่ / เอเจนซี่ / สตาร์ทอัพ
-ห้ามสำนวนราชการ ห้ามขายแข็ง ห้ามยาวเยิ่น
-emoji ได้ไม่เกิน 1 ตัว และห้ามใส่ hashtag ในเนื้อหาหลัก
+{THAI_TONE_RULES}
 
 หัวข้อวันนี้: {topic["label"]}
 มุม: {topic["angle"]}
@@ -103,7 +107,7 @@ CTA ที่ต้องมี: LINE {LINE_OA} และเว็บ {SITE}
   "fb_ig": "แคปชัน Facebook/Instagram ภาษาไทย 60-140 คำ มี CTA",
   "tiktok": "แคปชัน TikTok สั้น 30-70 คำ",
   "line": "ข้อความ LINE broadcast 40-100 คำ",
-  "image_subline": "ประโยครองใต้หัวข้อบนกราฟิก ภาษาไทย สั้นมาก ไม่เกิน 36 ตัวอักษร",
+  "image_subline": "ประโยครองใต้หัวข้อบนกราฟิก ภาษาไทย สั้นมาก ไม่เกิน {SUBLINE_MAX} ตัวอักษร",
   "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"]
 }}
 """
@@ -117,7 +121,7 @@ CTA ที่ต้องมี: LINE {LINE_OA} และเว็บ {SITE}
         if key in data and data[key]:
             base[key] = data[key]
     if isinstance(base.get("image_subline"), str):
-        base["image_subline"] = base["image_subline"][:36]
+        base["image_subline"] = clip_subline(base["image_subline"])
     return base
 
 
@@ -125,7 +129,7 @@ def _stamp() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
 
 
-# Scene one-liners only — shared Instagram lifestyle brief is in _background_prompt.
+# Scene one-liners only — shared Instagram lifestyle brief is in creative_standard.
 SCENE_BY_TOPIC: dict[str, str] = {
     "office_ondemand": (
         "open Bangkok coworking floor, young professionals working casually at desks, "
@@ -171,23 +175,10 @@ SCENE_BY_TOPIC: dict[str, str] = {
 
 
 def _background_prompt(topic: dict) -> str:
-    scene = SCENE_BY_TOPIC.get(
-        topic["id"],
-        "modern Bangkok coworking office, young professionals, bright airy lifestyle photo",
-    )
-    return (
-        "Commercial lifestyle photography for Instagram ads, 1080x1080 square. "
-        "Gen-Z / young startup agency vibe — bright, airy, energetic, not corporate stiff. "
-        "Color palette cues in set dressing only: teal (#0d9488), coral/pink accents, "
-        "soft yellow accents, clean whites. "
-        "Leave clear negative space on the LEFT third for Thai text overlay "
-        "(no text, letters, logos, watermarks, or UI in the image). "
-        "Photorealistic, shallow depth of field, natural daylight, "
-        "modern Bangkok office / cowork aesthetic. "
-        "Young East/Southeast Asian professionals, casual-smart attire. "
-        "Indoor plants, clean desks, no cluttered UI mockups. "
-        f"Topic mood: {topic.get('label', topic['id'])}. "
-        f"Scene: {scene}."
+    scene = SCENE_BY_TOPIC.get(topic["id"], "")
+    return build_background_prompt(
+        scene,
+        topic_mood=str(topic.get("label", topic["id"])),
     )
 
 
@@ -226,7 +217,7 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
     out.mkdir(parents=True, exist_ok=True)
 
     headline = topic["headline"]
-    sub = str(captions.get("image_subline") or topic["angle"])[:36]
+    sub = clip_subline(str(captions.get("image_subline") or topic["angle"]))
 
     bg_path = _generate_background(topic, out)
 
