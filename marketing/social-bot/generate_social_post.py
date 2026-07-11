@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
+import shutil
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -189,32 +191,80 @@ def _background_prompt(topic: dict) -> str:
     )
 
 
-def _generate_background(topic: dict, out_dir: Path) -> Path | None:
-    """Generate a fresh bg via Gemini; return path or None on failure."""
+# Same lifestyle photo pool as blog covers (Pillow overlay) — not genz/art ads.
+STOCK_BG_DIR = REPO / "images" / "blog" / "bg"
+VENUE_BY_TOPIC: dict[str, str] = {
+    "office_ondemand": "office",
+    "agency_focus": "office",
+    "tech_team": "office",
+    "big_cleaning": "office",
+    "maid_backup": "office",
+    "service_area": "office",
+    "price_pack": "office",
+    "affiliate": "office",
+    "after_construction": "warehouse",
+    "soft_cleaning": "home",
+}
+
+
+def _stock_background(topic: dict) -> Path | None:
+    """Pick a lifestyle photo from images/blog/bg (same approach as blog covers)."""
+    if not STOCK_BG_DIR.is_dir():
+        return None
+    venue = VENUE_BY_TOPIC.get(topic["id"], "office")
+    files = sorted(STOCK_BG_DIR.glob(f"bg-{venue}*.jpg"))
+    files += sorted(STOCK_BG_DIR.glob(f"bg-{venue}*.png"))
+    if not files:
+        files = sorted(STOCK_BG_DIR.glob("bg-office*.jpg"))
+    if not files:
+        return None
+    seed = f"{_stamp()}:{topic['id']}"
+    idx = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % len(files)
+    return files[idx]
+
+
+def _gemini_background(topic: dict, out_dir: Path) -> Path | None:
+    """Optional Gemini image gen (often 429 on free tier)."""
     try:
         from gemini_api import call_gemini_image_rotate, get_api_keys
     except ImportError:
-        print("gemini_api unavailable — gradient fallback for background")
         return None
 
     keys = get_api_keys()
     if not keys:
-        print("No GEMINI_API_KEY — gradient fallback for background")
         return None
 
-    print(f"Background: rotating across {len(keys)} Gemini API key(s)")
-    prompt = _background_prompt(topic)
-    raw = call_gemini_image_rotate(keys, prompt, key_label_prefix="social-bot-bg")
-
+    print(f"Background: trying Gemini across {len(keys)} key(s)")
+    raw = call_gemini_image_rotate(
+        keys, _background_prompt(topic), key_label_prefix="social-bot-bg"
+    )
     if not raw:
-        print("Gemini image failed on all keys — gradient fallback for background")
         return None
 
     ext = "png" if raw[:8].startswith(b"\x89PNG") else "jpg"
     path = out_dir / f"bg.{ext}"
     path.write_bytes(raw)
-    print(f"Background saved → {path.name} ({len(raw)} bytes)")
+    print(f"Gemini background saved -> {path.name} ({len(raw)} bytes)")
     return path
+
+
+def _resolve_background(topic: dict, out_dir: Path) -> Path | None:
+    """Blog-style stock photo first; optional Gemini if SOCIAL_GEMINI_BG=1."""
+    if _env_bool("SOCIAL_GEMINI_BG", default=False):
+        gem = _gemini_background(topic, out_dir)
+        if gem:
+            return gem
+        print("Gemini bg unavailable — falling back to stock lifestyle photo")
+
+    stock = _stock_background(topic)
+    if stock and stock.exists():
+        dest = out_dir / f"bg{stock.suffix.lower()}"
+        shutil.copy2(stock, dest)
+        print(f"Stock lifestyle bg -> {stock.name} (copied as {dest.name})")
+        return dest
+
+    print("No stock bg found — gradient fallback")
+    return None
 
 
 def build_assets(topic: dict, captions: dict) -> dict[str, str]:
@@ -226,7 +276,7 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
     headline = topic["headline"]
     sub = clip_subline(str(captions.get("image_subline") or topic["angle"]))
 
-    bg_path = _generate_background(topic, out)
+    bg_path = _resolve_background(topic, out)
 
     feed_png = out / "feed.png"
     stories_png = out / "stories.png"

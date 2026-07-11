@@ -4,7 +4,7 @@ Daily GitHub Action (~09:00 Bangkok) that:
 
 1. Picks the next rotating topic (`topics.py`)
 2. Asks Gemini for captions (or uses Thai fallbacks)
-3. Generates a fresh photorealistic background via Gemini, then composes feed 1:1 + stories 9:16 PNGs (genz-style overlay layout: brand, chip, headline, CTA — not stock from `ads-office-ondemand/genz/art`)
+3. Composes feed 1:1 + stories 9:16 PNGs on **stock lifestyle photos** from `images/blog/bg` (same approach as blog covers: photo + overlay). Optional Gemini bg if `SOCIAL_GEMINI_BG=1`.
 4. Renders Ken Burns MP4 for TikTok every day; also feed/stories video when `format: video`
 5. Publishes to selected channels
 
@@ -28,13 +28,13 @@ set CHANNELS=facebook,instagram,tiktok,line
 python generate_social_post.py
 ```
 
-Outputs land in `out/YYYYMMDD/` (`bg.png`/`bg.jpg`, `feed.png`, `stories.png`, `stories.mp4`, optional `feed.mp4`, `captions.json`). If image gen fails, overlays use a branded gradient fallback (never genz art files).
+Outputs land in `out/YYYYMMDD/` (`bg.jpg` from stock pool, `feed.png`, `stories.png`, `stories.mp4`, optional `feed.mp4`, `captions.json`). Gradient only if no stock photos exist.
 
 ## GitHub Secrets
 
 | Secret | Required for |
 |--------|----------------|
-| `GEMINI_API_KEY` | Captions **and** daily backgrounds. Comma-separate up to 3 keys; on 429 (text or image) the bot rotates to the next key automatically. Shared creative brief lives in repo-root `creative_standard.py`. |
+| `GEMINI_API_KEY` | Captions (comma-separate keys; rotates on 429). Image bg only if `SOCIAL_GEMINI_BG=1` — default uses stock photos from `images/blog/bg` |
 | `FACEBOOK_PAGE_ID` | Facebook |
 | `FACEBOOK_PAGE_ACCESS_TOKEN` | Facebook + Instagram |
 | `INSTAGRAM_BUSINESS_ACCOUNT_ID` | Instagram |
@@ -47,6 +47,7 @@ Optional env:
 
 - `DRY_RUN=1` — write assets + log only
 - `CHANNELS=facebook,instagram` — subset
+- `SOCIAL_GEMINI_BG=1` — try Gemini image for backgrounds (falls back to stock on 429)
 - `TIKTOK_PUBLISH_MODE=draft` (default) or `public` after audit
 - `SOCIAL_FEED_IMAGE_URL` / `SOCIAL_REELS_VIDEO_URL` — explicit overrides
 
