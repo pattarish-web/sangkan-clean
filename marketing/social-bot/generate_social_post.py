@@ -93,7 +93,7 @@ def _generate_captions(topic: dict) -> dict:
         return _fallback_captions(topic)
 
     print(f"Captions: rotating across {len(keys)} Gemini API key(s)")
-    prompt = f"""คุณเขียนคอนเทนต์โซเชียลภาษาไทยให้แบรนด์ Sangkan Clean (สั่งการคลีน)
+    prompt = f"""คุณเขียนคอนเทนต์โซเชียลภาษาไทยให้แบรนด์ Sangkan Clean เท่านั้น
 {THAI_TONE_RULES}
 
 หัวข้อวันนี้: {topic["label"]}
@@ -104,9 +104,9 @@ CTA ที่ต้องมี: LINE {LINE_OA} และเว็บ {SITE}
 
 คืน JSON เท่านั้น:
 {{
-  "fb_ig": "แคปชัน Facebook/Instagram ภาษาไทย 60-140 คำ มี CTA",
-  "tiktok": "แคปชัน TikTok สั้น 30-70 คำ",
-  "line": "ข้อความ LINE broadcast 40-100 คำ",
+  "fb_ig": "แคปชัน Facebook/Instagram ภาษาไทย 60-140 คำ มี CTA โทนคุยเพื่อนทำงาน ไม่เป็นทางการ",
+  "tiktok": "แคปชัน TikTok สั้น 30-70 คำ โทนเดียวกัน",
+  "line": "ข้อความ LINE broadcast 40-100 คำ โทนเดียวกัน ห้ามขึ้นต้นด้วย เรียน",
   "image_subline": "ประโยครองใต้หัวข้อบนกราฟิก ภาษาไทย สั้นมาก ไม่เกิน {SUBLINE_MAX} ตัวอักษร",
   "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"]
 }}
@@ -122,6 +122,13 @@ CTA ที่ต้องมี: LINE {LINE_OA} และเว็บ {SITE}
             base[key] = data[key]
     if isinstance(base.get("image_subline"), str):
         base["image_subline"] = clip_subline(base["image_subline"])
+    for key in ("fb_ig", "tiktok", "line", "image_subline"):
+        if isinstance(base.get(key), str):
+            base[key] = (
+                base[key]
+                .replace("สั่งการคลีน", "Sangkan Clean")
+                .replace("สังการคลีน", "Sangkan Clean")
+            )
     return base
 
 

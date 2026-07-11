@@ -11,7 +11,7 @@ from datetime import datetime
 from pathlib import Path
 
 from build_blogs import slugify
-from creative_standard import THAI_TONE_RULES, build_background_prompt
+from creative_standard import THAI_TONE_RULES, build_blog_cover_prompt
 from gemini_api import (
     call_gemini_image_rotate,
     call_gemini_json_rotate,
@@ -179,7 +179,7 @@ def _image_prompt(title: str, keyword: str, category: str) -> str:
         ),
     }
     scene = scene_hints.get(category, "")
-    return build_background_prompt(
+    return build_blog_cover_prompt(
         scene,
         topic_mood=category,
         extra=f"Keyword: {keyword}. Title context: {title}.",

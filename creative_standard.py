@@ -9,17 +9,28 @@ from __future__ import annotations
 
 # --- Background image brief (English — for image models only) ---
 
-BACKGROUND_BRIEF = (
-    "Commercial lifestyle photography for Instagram ads, 1080x1080 square. "
+_GENZ_LOOK = (
     "Gen-Z / young startup agency vibe — bright, airy, energetic, not corporate stiff. "
     "Color palette cues in set dressing only: teal (#0d9488), coral/pink accents, "
     "soft yellow accents, clean whites. "
     "Leave clear negative space on the LEFT third for Thai text overlay "
     "(no text, letters, logos, watermarks, or UI in the image). "
     "Photorealistic, shallow depth of field, natural daylight, "
-    "modern Bangkok office / cowork aesthetic. "
+    "modern Bangkok office / home / cowork aesthetic. "
     "Young East/Southeast Asian professionals, casual-smart attire. "
     "Indoor plants, clean desks, no cluttered UI mockups."
+)
+
+BACKGROUND_BRIEF = (
+    "Commercial lifestyle photography for Instagram ads, 1080x1080 square. "
+    + _GENZ_LOOK
+)
+
+# Blog hero covers — wide composition, not Instagram square.
+BLOG_COVER_BRIEF = (
+    "Commercial lifestyle photography for a Thai cleaning-service blog hero, "
+    "16:9 wide composition. "
+    + _GENZ_LOOK
 )
 
 DEFAULT_SCENE = (
@@ -32,9 +43,10 @@ def build_background_prompt(
     *,
     topic_mood: str = "",
     extra: str = "",
+    brief: str | None = None,
 ) -> str:
     """Fixed Gen-Z brief + short English scene (and optional mood/extra)."""
-    parts = [BACKGROUND_BRIEF]
+    parts = [brief or BACKGROUND_BRIEF]
     if topic_mood:
         parts.append(f"Topic mood: {topic_mood}.")
     parts.append(f"Scene: {(scene or DEFAULT_SCENE).strip()}.")
@@ -43,11 +55,28 @@ def build_background_prompt(
     return " ".join(parts)
 
 
+def build_blog_cover_prompt(
+    scene: str = "",
+    *,
+    topic_mood: str = "",
+    extra: str = "",
+) -> str:
+    """16:9 Gen-Z lifestyle brief for daily blog covers."""
+    return build_background_prompt(
+        scene,
+        topic_mood=topic_mood,
+        extra=extra,
+        brief=BLOG_COVER_BRIEF,
+    )
+
+
 # --- Thai copy tone (for text / caption prompts) ---
 
 THAI_TONE_RULES = (
     "โทน: สบายๆ มั่นใจ แม่นยำ — คุยกับทีมวัยใหม่ / เอเจนซี่ / สตาร์ทอัพ\n"
     "ห้ามสำนวนราชการ ห้ามขายแข็ง ห้ามยาวเยิ่น\n"
+    "ห้ามขึ้นต้นแบบจดหมายราชการ เช่น เรียน ท่านผู้ประกอบการ\n"
+    "เรียกแบรนด์ว่า Sangkan Clean เท่านั้น — ห้ามใช้ชื่ออื่น เช่น สั่งการคลีน\n"
     "emoji ได้ไม่เกิน 1 ตัว และห้ามใส่ hashtag ในเนื้อหาหลัก"
 )
 
