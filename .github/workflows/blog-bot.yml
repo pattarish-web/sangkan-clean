@@ -2,13 +2,21 @@ name: Daily AI Blog Generator
 
 on:
   schedule:
-    # ตั้งเวลารันอัตโนมัติทุกวัน เวลา 01:00 น. UTC (ประมาณ 08:00 น. เวลาไทย)
+    # 01:00 UTC ≈ 08:00 น. ไทย
     - cron: '0 1 * * *'
-  workflow_dispatch: # เปิดให้สามารถกดรันมือได้เองทางเว็บ GitHub
+  workflow_dispatch:
+    inputs:
+      posts_per_category:
+        description: "Posts per category (เคล็ดลับ/ธุรกิจ/คู่มือ)"
+        required: false
+        default: "2"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout code
@@ -17,7 +25,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
@@ -26,9 +34,13 @@ jobs:
 
     - name: Run AI Blog Generator
       env:
-        # ดึง API Key จาก Secrets ของ Repository
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        POSTS_PER_CATEGORY: ${{ github.event.inputs.posts_per_category || '2' }}
+        GEMINI_MIN_INTERVAL: "20"
+        BLOG_POST_GAP_SEC: "5"
+        PYTHONUNBUFFERED: "1"
       run: |
+        echo "POSTS_PER_CATEGORY=$POSTS_PER_CATEGORY"
         python generate_blog.py
 
     - name: Commit and Push changes
@@ -36,7 +48,11 @@ jobs:
         git config --global user.name "Sangkan Clean Blog Bot"
         git config --global user.email "bot@sangkanclean.com"
         git add posts.json posts-index.json blog/ blog.html index.html sitemap.xml robots.txt
-        # เช็คว่ามีไฟล์เปลี่ยนจริงหรือไม่ก่อนเซฟ เพื่อไม่ให้เออร์เรอร์
-        git diff-index --quiet HEAD || git commit -m "chore: auto-generate daily blog post [skip ci]"
-        git pull --rebase origin main
-        git push
+        if git diff-index --quiet HEAD; then
+          echo "No changes to commit"
+        else
+          COUNT=$(python -c "import json; print(len(json.load(open('posts.json',encoding='utf-8'))))")
+          git commit -m "chore: daily blogs with covers [skip ci] (posts=$COUNT)"
+          git pull --rebase origin main || true
+          git push
+        fi

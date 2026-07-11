@@ -199,3 +199,100 @@ def call_gemini_json(
 
     log(f"{tag} all models exhausted — giving up", level="ERROR")
     return None
+
+
+def get_api_keys() -> list[str]:
+    raw = os.environ.get("GEMINI_API_KEY", "")
+    if not raw:
+        return []
+    if "," in raw:
+        return [k.strip() for k in raw.split(",") if k.strip()]
+    return [raw.strip()]
+
+
+DEFAULT_IMAGE_MODELS = [
+    os.environ.get("GEMINI_IMAGE_MODEL", "").strip() or "gemini-2.5-flash-image",
+    "gemini-3.1-flash-image",
+]
+
+
+def call_gemini_image(
+    api_key: str,
+    prompt: str,
+    *,
+    key_label: str = "",
+    timeout: int = 120,
+) -> bytes | None:
+    """Generate one image via Gemini image models; returns raw image bytes or None."""
+    import base64
+
+    tag = key_label or f"{api_key[:8]}…"
+    if is_key_exhausted(api_key):
+        log(f"{tag} key paused (quota) — skip image", level="WARN")
+        return None
+
+    models = [m for m in DEFAULT_IMAGE_MODELS if m]
+    # Dedupe while preserving order
+    seen = set()
+    models = [m for m in models if not (m in seen or seen.add(m))]
+
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "responseModalities": ["TEXT", "IMAGE"],
+        },
+    }
+    headers = {"Content-Type": "application/json"}
+
+    for model in models:
+        url = build_generate_content_url(model, api_key)
+        try:
+            wait_for_key(api_key)
+            response = requests.post(url, headers=headers, json=payload, timeout=timeout)
+        except requests.Timeout:
+            log(f"{tag} image timeout on {model}", level="WARN")
+            continue
+        except Exception as exc:
+            log(f"{tag} image request error: {exc}", level="WARN")
+            continue
+
+        if response.status_code == 404:
+            log(f"{tag} image model '{model}' → 404", level="WARN")
+            continue
+
+        if response.status_code == 429 or (
+            response.status_code == 400 and "RESOURCE_EXHAUSTED" in response.text
+        ):
+            bump_key_cooldown(api_key, tag)
+            log(f"{tag} image RATE LIMIT (429) — pausing key", level="WARN")
+            return None
+
+        if response.status_code != 200:
+            log(
+                f"{tag} image API {response.status_code}: {response.text[:200]}",
+                level="WARN",
+            )
+            continue
+
+        try:
+            data = response.json()
+            parts = data["candidates"][0]["content"]["parts"]
+        except (KeyError, IndexError, TypeError) as exc:
+            log(f"{tag} image parse error: {exc}", level="WARN")
+            continue
+
+        for part in parts:
+            inline = part.get("inlineData") or part.get("inline_data")
+            if not inline:
+                continue
+            b64 = inline.get("data")
+            if not b64:
+                continue
+            log(f"{tag} image model '{model}' → success")
+            clear_key_health(api_key)
+            return base64.b64decode(b64)
+
+        log(f"{tag} image model '{model}' returned no image parts", level="WARN")
+
+    log(f"{tag} all image models failed", level="ERROR")
+    return None
