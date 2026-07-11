@@ -35,6 +35,8 @@ SCENES = [
     ("bg-home-06.jpg", "Young couple handing keys in bright condo hallway, casual, LEFT empty."),
     ("bg-home-07.jpg", "Vacuum on wooden floor of sunlit living room, LEFT empty bright wall."),
     ("bg-home-08.jpg", "Bathroom vanity freshly cleaned, soft towels coral accent, LEFT empty."),
+    ("bg-home-09.jpg", "Young Thai cleaner wiping condo TV console, soft daylight RIGHT, LEFT empty bright wall."),
+    ("bg-home-10.jpg", "Freshly mopped condo kitchen floor, yellow mop bucket accent RIGHT, LEFT empty."),
     # factory 6
     ("bg-factory-01.jpg", "Bright modern light-industrial workshop aisle, young staff in casual-smart, NOT dark, LEFT empty."),
     ("bg-factory-02.jpg", "Clean production floor with soft daylight from skylights, teal safety accents subtle, LEFT empty."),
@@ -55,6 +57,8 @@ SCENES = [
     ("bg-hotel-04.jpg", "Hotel corridor with soft teal runner carpet, bright, LEFT empty."),
     ("bg-hotel-05.jpg", "Housekeeping cart stylish in boutique hotel, Gen-Z, LEFT empty."),
     ("bg-hotel-06.jpg", "Spa-like hotel bathroom fresh towels yellow accents, LEFT empty."),
+    ("bg-hotel-07.jpg", "Housekeeping arranging towels on boutique hotel lobby sofa, coral cushions, LEFT empty."),
+    ("bg-hotel-08.jpg", "Staff with housekeeping cart in bright hotel hallway teal runner, LEFT empty."),
     # hospital/clinic 6
     ("bg-hospital-01.jpg", "Bright modern clinic waiting area with plants, soft teal chairs, LEFT empty."),
     ("bg-hospital-02.jpg", "Young staff wiping clinic reception desk, airy daylight, LEFT empty."),
@@ -62,24 +66,30 @@ SCENES = [
     ("bg-hospital-04.jpg", "Dental clinic bright room freshly cleaned, LEFT empty."),
     ("bg-hospital-05.jpg", "Hands sanitizing clinic surface, soft bokeh, LEFT empty."),
     ("bg-hospital-06.jpg", "Clinic entrance plants and soft seating, Gen-Z healthcare, LEFT empty."),
-    # school 5
+    ("bg-hospital-07.jpg", "Young staff sanitizing clinic exam bed, soft daylight RIGHT, LEFT empty."),
+    # school 5 → 7
     ("bg-school-01.jpg", "Bright classroom desks tidy, soft daylight, plants, LEFT empty."),
     ("bg-school-02.jpg", "University library aisle airy modern Bangkok, LEFT empty."),
     ("bg-school-03.jpg", "Young cleaner wiping whiteboard tray, colorful sticky notes RIGHT, LEFT empty."),
     ("bg-school-04.jpg", "Campus cowork lounge students casual, bright, LEFT empty."),
     ("bg-school-05.jpg", "School hallway lockers soft pastel, Gen-Z, LEFT empty."),
-    # mall 5
+    ("bg-school-06.jpg", "Lecture hall seats being wiped, bright windows RIGHT, LEFT empty."),
+    ("bg-school-07.jpg", "Campus courtyard glass doors polished, young staff, LEFT empty."),
+    # mall 5 → 7
     ("bg-mall-01.jpg", "Bright shopping atrium with soft skylight, lifestyle shoppers distant RIGHT, LEFT empty."),
     ("bg-mall-02.jpg", "Retail storefront glass being wiped, coral shopping bag accent, LEFT empty."),
     ("bg-mall-03.jpg", "Food court seating freshly cleaned, airy mall, LEFT empty."),
     ("bg-mall-04.jpg", "Escalator area bright Bangkok mall, soft focus people, LEFT empty."),
     ("bg-mall-05.jpg", "Boutique shop interior plants and clean floor, LEFT empty."),
-    # restaurant/cafe 5
+    ("bg-mall-06.jpg", "Mall corridor floor scrubber soft teal accents, bright atrium RIGHT, LEFT empty."),
+    ("bg-mall-07.jpg", "Young staff polishing mall directory glass, coral tote accent, LEFT empty."),
+    # restaurant/cafe 5 → 6
     ("bg-restaurant-01.jpg", "Bright cafe counter with iced drinks coral cups, barista lifestyle, LEFT empty."),
     ("bg-restaurant-02.jpg", "Young staff wiping cafe table near window plants, LEFT empty."),
     ("bg-restaurant-03.jpg", "Restaurant open kitchen pass bright and clean, LEFT empty."),
     ("bg-restaurant-04.jpg", "Outdoor cafe seating Bangkok soft daylight, LEFT empty."),
     ("bg-restaurant-05.jpg", "Hands arranging yellow lemon garnish on clean bar, LEFT empty."),
+    ("bg-restaurant-06.jpg", "Cafe floor mopping near pastry case, soft morning light RIGHT, LEFT empty."),
     # showroom 4
     ("bg-showroom-01.jpg", "Car showroom glass reflections bright, polished floor, LEFT empty."),
     ("bg-showroom-02.jpg", "Furniture showroom sofa coral cushion, airy, LEFT empty."),
