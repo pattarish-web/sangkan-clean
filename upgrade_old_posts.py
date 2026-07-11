@@ -155,6 +155,13 @@ def _flush_git_push(note: str = "") -> bool:
         )
         if pull.returncode != 0:
             log(f"git pull failed: {pull.stderr.strip()}", level="WARN")
+            # Never leave conflict markers inside posts.json.
+            subprocess.run(["git", "rebase", "--abort"], capture_output=True, text=True)
+            subprocess.run(["git", "merge", "--abort"], capture_output=True, text=True)
+            try:
+                subprocess.run(["git", "reset", "--hard", "HEAD"], check=True, capture_output=True)
+            except Exception:
+                pass
             return False
         push = subprocess.run(
             ["git", "push", "origin", "HEAD:main"],
@@ -485,6 +492,12 @@ def upgrade_posts(limit=DEFAULT_LIMIT, sleep_sec=DEFAULT_SLEEP, workers=0):
         flush_pending_git()
         log("Rebuilding site…")
         try:
+            # Guard: never rebuild on conflict-marker corruption.
+            with open("posts.json", encoding="utf-8") as f:
+                raw = f.read()
+            if "<<<<<<<" in raw or ">>>>>>>" in raw:
+                raise ValueError("posts.json has unresolved git conflict markers")
+            json.loads(raw)
             import build_site
             build_site.build_all()
             log("Site rebuilt successfully")
