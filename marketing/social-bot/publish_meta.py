@@ -37,6 +37,65 @@ def _graph_error(resp: requests.Response) -> str:
         return f"HTTP {resp.status_code}: {resp.text[:400]}"
 
 
+def _resolve_page_auth(page_id: str, token: str) -> tuple[str, str, dict]:
+    """Return (page_id, page_token, probe_info).
+
+    If a User token is provided, exchange via /me/accounts for the Page token.
+    """
+    who = requests.get(
+        f"{GRAPH}/me",
+        params={"fields": "id,name", "access_token": token},
+        timeout=30,
+    )
+    if who.status_code >= 400:
+        raise RuntimeError(f"token invalid: {_graph_error(who)}")
+    info = who.json()
+    print(f"Facebook token ok as: {info}")
+
+    # Already a Page token for the target page
+    if str(info.get("id")) == str(page_id):
+        return page_id, token, info
+
+    # User token (or wrong page) → look up pages
+    accounts = requests.get(
+        f"{GRAPH}/me/accounts",
+        params={
+            "fields": "id,name,access_token",
+            "access_token": token,
+            "limit": 100,
+        },
+        timeout=30,
+    )
+    if accounts.status_code >= 400:
+        raise RuntimeError(
+            f"token is not a Page token for {page_id}, and /me/accounts failed: "
+            f"{_graph_error(accounts)}"
+        )
+    pages = (accounts.json() or {}).get("data") or []
+    match = None
+    for p in pages:
+        if str(p.get("id")) == str(page_id):
+            match = p
+            break
+    if match is None and len(pages) == 1:
+        match = pages[0]
+        page_id = str(match.get("id"))
+        print(f"Using sole page from /me/accounts: {page_id} ({match.get('name')})")
+    if match is None:
+        ids = [str(p.get("id")) for p in pages]
+        raise RuntimeError(
+            f"Page {page_id} not in /me/accounts. Available: {ids}. "
+            "Set FACEBOOK_PAGE_ID to the Graph page id and use that page's access_token."
+        )
+    page_token = match.get("access_token")
+    if not page_token:
+        raise RuntimeError("matched page has no access_token")
+    print(
+        f"Exchanged User token → Page token for {match.get('id')} ({match.get('name')})"
+    )
+    return str(match.get("id")), page_token, match
+
+
 def _post_photo(page_id: str, token: str, caption: str, image_path: Path) -> dict:
     with image_path.open("rb") as fh:
         r = requests.post(
@@ -89,40 +148,38 @@ def publish_facebook(
     if not page_id or not token:
         return {"ok": False, "skipped": True, "reason": "missing FACEBOOK_PAGE_ID or token"}
 
-    # Quick auth probe (no secret printed)
     try:
-        who = requests.get(
-            f"{GRAPH}/me",
-            params={"fields": "id,name", "access_token": token},
-            timeout=30,
-        )
-        if who.status_code >= 400:
-            return {"ok": False, "error": f"token invalid: {_graph_error(who)}"}
-        print(f"Facebook token ok as: {who.json()}")
+        page_id, token, probe = _resolve_page_auth(page_id, token)
     except Exception as exc:
-        return {"ok": False, "error": f"token probe failed: {exc}"}
+        return {"ok": False, "error": str(exc)}
 
     # Prefer video when provided; fall back to photo so the day still posts.
     if video_path and video_path.exists():
         video_result = _post_video(page_id, token, caption, video_path)
         if video_result.get("ok"):
+            video_result["page_id"] = page_id
             return video_result
         print(f"Facebook video failed → {video_result.get('error')}; trying photo")
         if image_path and image_path.exists():
             photo_result = _post_photo(page_id, token, caption, image_path)
             if photo_result.get("ok"):
                 photo_result["video_error"] = video_result.get("error")
+                photo_result["page_id"] = page_id
                 return photo_result
             return {
                 "ok": False,
+                "page_id": page_id,
+                "probe": {"id": probe.get("id"), "name": probe.get("name")},
                 "error": photo_result.get("error"),
                 "video_error": video_result.get("error"),
             }
-        return video_result
+        return {**video_result, "page_id": page_id}
 
     if not image_path or not image_path.exists():
         return {"ok": False, "reason": "missing feed image"}
-    return _post_photo(page_id, token, caption, image_path)
+    result = _post_photo(page_id, token, caption, image_path)
+    result["page_id"] = page_id
+    return result
 
 
 def _ig_publish_container(ig_user_id: str, token: str, creation_id: str) -> dict:
