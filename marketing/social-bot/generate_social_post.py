@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import sys
 from datetime import datetime, timezone
@@ -206,21 +207,106 @@ VENUE_BY_TOPIC: dict[str, str] = {
     "soft_cleaning": "home",
 }
 
+# Keyword → venue (same idea as compose_blog_covers.venue_of). First match wins.
+VENUE_KEYWORDS: list[tuple[tuple[str, ...], str]] = [
+    (("โรงงาน",), "factory"),
+    (("โกดัง",), "warehouse"),
+    (("โรงแรม", "รีสอร์ท"), "hotel"),
+    (("โรงพยาบาล", "คลินิก"), "hospital"),
+    (("โรงเรียน", "มหาวิทยาลัย"), "school"),
+    (("ห้าง", "ศูนย์การค้า"), "mall"),
+    (("ร้านอาหาร", "คาเฟ่"), "restaurant"),
+    (("โชว์รูม",), "showroom"),
+    (("ตึกสูง",), "highrise"),
+    (("ฟิตเนส",), "gym"),
+    (("คอนโด", "บ้าน", "โฮม"), "home"),
+    (("ออฟฟิศ", "สำนักงาน", "อาคาร", "เอเจนซี่", "สตาร์ทอัพ", "tech"), "office"),
+    (("ก่อสร้าง", "ฝุ่นปูน", "คราบสี"), "warehouse"),
+]
 
-def _stock_background(topic: dict) -> Path | None:
-    """Pick a lifestyle photo from images/blog/bg (same approach as blog covers)."""
+VENUE_FALLBACK: dict[str, list[str]] = {
+    "school": ["office", "home"],
+    "mall": ["showroom", "office"],
+    "hospital": ["office"],
+    "restaurant": ["mall", "office"],
+    "home": ["highrise", "office"],
+    "hotel": ["home", "office"],
+    "warehouse": ["factory", "office"],
+    "factory": ["warehouse", "office"],
+    "showroom": ["mall", "office"],
+    "highrise": ["office", "home"],
+    "gym": ["office"],
+    "office": ["home"],
+}
+
+
+def _bg_venue(path: Path) -> str:
+    m = re.match(r"bg-([a-z]+)-\d+", path.stem)
+    return m.group(1) if m else ""
+
+
+def _venue_from_text(text: str) -> str | None:
+    blob = (text or "").lower()
+    for keys, venue in VENUE_KEYWORDS:
+        if any(k.lower() in blob for k in keys):
+            return venue
+    return None
+
+
+def _expected_venue(topic: dict, captions: dict | None = None) -> str:
+    """Infer venue from copy first, then topic default — so bg matches the post."""
+    parts = [
+        str(topic.get("headline", "")),
+        str(topic.get("angle", "")),
+        str(topic.get("label", "")),
+    ]
+    if captions:
+        for key in ("fb_ig", "image_subline", "tiktok", "line"):
+            if captions.get(key):
+                parts.append(str(captions[key]))
+    hit = _venue_from_text(" ".join(parts))
+    if hit:
+        return hit
+    return VENUE_BY_TOPIC.get(topic["id"], "office")
+
+
+def _venue_ok(need: str, got: str) -> bool:
+    if not got:
+        return False
+    if need == got:
+        return True
+    return got in VENUE_FALLBACK.get(need, [])
+
+
+def _list_stock_bgs(venue: str) -> list[Path]:
+    """Numbered venue files only: bg-{venue}-NN.jpg (same rule as blog covers)."""
     if not STOCK_BG_DIR.is_dir():
+        return []
+    files = sorted(STOCK_BG_DIR.glob(f"bg-{venue}-*.jpg"))
+    files += sorted(STOCK_BG_DIR.glob(f"bg-{venue}-*.png"))
+    return files
+
+
+def _stock_background(topic: dict, venue: str | None = None) -> Path | None:
+    """Pick a lifestyle photo matching the expected venue (+ related fallbacks)."""
+    need = venue or _expected_venue(topic)
+    order = [need] + [v for v in VENUE_FALLBACK.get(need, []) if v != need]
+    pool: list[Path] = []
+    for v in order:
+        pool = _list_stock_bgs(v)
+        if pool:
+            need = v
+            break
+    if not pool:
+        pool = _list_stock_bgs("office")
+        need = "office"
+    if not pool:
         return None
-    venue = VENUE_BY_TOPIC.get(topic["id"], "office")
-    files = sorted(STOCK_BG_DIR.glob(f"bg-{venue}*.jpg"))
-    files += sorted(STOCK_BG_DIR.glob(f"bg-{venue}*.png"))
-    if not files:
-        files = sorted(STOCK_BG_DIR.glob("bg-office*.jpg"))
-    if not files:
-        return None
-    seed = f"{_stamp()}:{topic['id']}"
-    idx = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % len(files)
-    return files[idx]
+    seed = f"{_stamp()}:{topic['id']}:{need}"
+    idx = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % len(pool)
+    chosen = pool[idx]
+    print(f"Stock venue need={need} file={chosen.name}")
+    return chosen
 
 
 def _gemini_background(topic: dict, out_dir: Path) -> Path | None:
@@ -248,26 +334,66 @@ def _gemini_background(topic: dict, out_dir: Path) -> Path | None:
     return path
 
 
-def _resolve_background(topic: dict, out_dir: Path) -> Path | None:
-    """Blog-style stock photo first; optional Gemini if SOCIAL_GEMINI_BG=1."""
-    if _env_bool("SOCIAL_GEMINI_BG", default=False):
+def _resolve_background(
+    topic: dict,
+    out_dir: Path,
+    captions: dict | None = None,
+    force_venue: str | None = None,
+) -> tuple[Path | None, dict]:
+    """Return (bg_path, meta) with venue relevance fields."""
+    need = force_venue or _expected_venue(topic, captions)
+    meta = {
+        "venue_need": need,
+        "venue_got": "",
+        "bg_source": "",
+        "relevance_ok": False,
+    }
+
+    if _env_bool("SOCIAL_GEMINI_BG", default=False) and not force_venue:
         gem = _gemini_background(topic, out_dir)
         if gem:
-            return gem
+            # Gemini has no venue tag — treat as ok but mark source
+            meta.update(
+                {
+                    "venue_got": "gemini",
+                    "bg_source": gem.name,
+                    "relevance_ok": True,
+                }
+            )
+            return gem, meta
         print("Gemini bg unavailable — falling back to stock lifestyle photo")
 
-    stock = _stock_background(topic)
+    stock = _stock_background(topic, venue=need)
     if stock and stock.exists():
+        got = _bg_venue(stock) or need
+        ok = _venue_ok(need, got)
         dest = out_dir / f"bg{stock.suffix.lower()}"
         shutil.copy2(stock, dest)
-        print(f"Stock lifestyle bg -> {stock.name} (copied as {dest.name})")
-        return dest
+        meta.update(
+            {
+                "venue_got": got,
+                "bg_source": stock.name,
+                "relevance_ok": ok,
+            }
+        )
+        print(
+            f"Stock lifestyle bg -> {stock.name} "
+            f"(need={need} got={got} ok={ok})"
+        )
+        if not ok:
+            print(f"RELEVANCE WARN: bg {stock.name} does not match venue {need}")
+        return dest, meta
 
     print("No stock bg found — gradient fallback")
-    return None
+    return None, meta
 
 
-def build_assets(topic: dict, captions: dict) -> dict[str, str]:
+def build_assets(
+    topic: dict,
+    captions: dict,
+    *,
+    force_venue: str | None = None,
+) -> dict[str, str]:
     """Create PNG (+ MP4 as needed). Returns relative paths under social-bot/."""
     day = _stamp()
     out = OUT_DIR / day
@@ -276,7 +402,9 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
     headline = topic["headline"]
     sub = clip_subline(str(captions.get("image_subline") or topic["angle"]))
 
-    bg_path = _resolve_background(topic, out)
+    bg_path, bg_meta = _resolve_background(
+        topic, out, captions=captions, force_venue=force_venue
+    )
 
     feed_png = out / "feed.png"
     stories_png = out / "stories.png"
@@ -286,6 +414,10 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
     assets: dict[str, str] = {
         "feed_png": str(feed_png.relative_to(ROOT)).replace("\\", "/"),
         "stories_png": str(stories_png.relative_to(ROOT)).replace("\\", "/"),
+        "venue_need": bg_meta.get("venue_need", ""),
+        "venue_got": bg_meta.get("venue_got", ""),
+        "bg_source": bg_meta.get("bg_source", ""),
+        "relevance_ok": "1" if bg_meta.get("relevance_ok") else "0",
     }
     if bg_path and bg_path.exists():
         assets["bg"] = str(bg_path.relative_to(ROOT)).replace("\\", "/")
@@ -309,6 +441,27 @@ def build_assets(topic: dict, captions: dict) -> dict[str, str]:
         assets["feed_mp4"] = str(feed_mp4.relative_to(ROOT)).replace("\\", "/")
 
     return assets
+
+
+def _ensure_bg_relevance(topic: dict, captions: dict, assets: dict[str, str]) -> dict[str, str]:
+    """Before publish: if stock venue mismatches copy, rebuild with correct venue."""
+    need = _expected_venue(topic, captions)
+    got = str(assets.get("venue_got") or "")
+    if assets.get("relevance_ok") == "1" and _venue_ok(need, got):
+        print(f"Relevance OK: venue={got} (need={need})")
+        return assets
+
+    if got == "gemini":
+        return assets
+
+    print(f"Relevance check FAIL: need={need} got={got or 'none'} — rebuilding assets")
+    rebuilt = build_assets(topic, captions, force_venue=need)
+    if rebuilt.get("relevance_ok") != "1":
+        # Last attempt: office is safest for most social topics
+        if need != "office":
+            print("Retry relevance with office venue")
+            rebuilt = build_assets(topic, captions, force_venue="office")
+    return rebuilt
 
 
 def publish_all(
@@ -386,7 +539,35 @@ def main() -> int:
 
     captions = _generate_captions(topic)
     assets = build_assets(topic, captions)
+    assets = _ensure_bg_relevance(topic, captions, assets)
     print("Assets:", json.dumps(assets, ensure_ascii=False))
+
+    if assets.get("relevance_ok") != "1" and assets.get("venue_got") != "gemini":
+        print(
+            "ABORT publish: image venue does not match post copy "
+            f"(need={assets.get('venue_need')} got={assets.get('venue_got')} "
+            f"source={assets.get('bg_source')})"
+        )
+        # Still write log for debugging, but do not publish.
+        entry = {
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "topic_id": topic["id"],
+            "format": fmt,
+            "dry_run": dry_run,
+            "assets": assets,
+            "captions": {
+                "fb_ig": captions.get("fb_ig", "")[:200],
+                "tiktok": captions.get("tiktok", "")[:120],
+                "line": captions.get("line", "")[:120],
+            },
+            "results": {"skipped": {"ok": False, "reason": "bg_relevance"}},
+        }
+        posts = log.get("posts") or []
+        posts.append(entry)
+        log["posts"] = posts[-60:]
+        log["last_topic"] = topic["id"]
+        _save_log(log)
+        return 1
 
     results = publish_all(topic, captions, assets, channels, dry_run)
 

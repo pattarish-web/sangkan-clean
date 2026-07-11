@@ -48,6 +48,7 @@ Optional env:
 - `DRY_RUN=1` — write assets + log only
 - `CHANNELS=facebook,instagram` — subset
 - `SOCIAL_GEMINI_BG=1` — try Gemini image for backgrounds (falls back to stock on 429)
+- Before publish, the bot checks that the stock photo **venue** matches the post copy (e.g. ออฟฟิศ → office, not warehouse). Mismatch rebuilds or aborts.
 - `TIKTOK_PUBLISH_MODE=draft` (default) or `public` after audit
 - `SOCIAL_FEED_IMAGE_URL` / `SOCIAL_REELS_VIDEO_URL` — explicit overrides
 
