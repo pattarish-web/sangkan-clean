@@ -268,8 +268,9 @@ h2 {
 .badge-hot {
     position: absolute; top: 1rem; right: 1rem;
     background: var(--accent); color: var(--white);
-    font-size: 0.7rem; font-weight: 700;
-    padding: 0.2rem 0.6rem; border-radius: 99px;
+    font-size: 0.65rem; font-weight: 700;
+    padding: 0.25rem 0.65rem; border-radius: 99px;
+    white-space: nowrap;
 }
 
 /* Why Choose Us Section */
