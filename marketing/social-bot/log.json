@@ -1,5 +1,5 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "tech_team",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -339,6 +339,50 @@
           "ok": true,
           "mode": "video",
           "id": "2099074551020692",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-13T10:31:55.236780+00:00",
+      "topic_id": "tech_team",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260713/feed.png",
+        "stories_png": "out/20260713/stories.png",
+        "venue_need": "office",
+        "venue_got": "office",
+        "bg_source": "bg-office-12.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260713/bg.jpg",
+        "stories_mp4": "out/20260713/stories.mp4"
+      },
+      "captions": {
+        "fb_ig": "ทีม Tech สายลุยที่ต้องพร้อมเสมอ ไม่ใช่แค่งานดี ไอเดียปัง แต่ออฟฟิศก็ต้องเนี้ยบพร้อมใช้งานด้วย! 🚀 เข้าใจเลยว่าบางทีเวลาจำกัด แต่อยากได้ออฟฟิศที่พร้อมลุยงานได้เลย ไม่ต้องมาเสียเวลากับความไม่เรียบร้อย Sa",
+        "tiktok": "ทีม Tech เตรียมลุย! ออฟฟิศพร้อมยัง? 🚀 Sangkan Clean เข้าใจดีว่าเวลาของทีมคุณมีค่า เราพร้อมเนรมิตออฟฟิศให้สะอาดเอี่ยมอ่อง",
+        "line": "ทีม Tech อยากได้ออฟฟิศพร้อมลุย? 🚀 Sangkan Clean พร้อมจัดให้!\n\nเราเข้าใจดีว่าเวลาของคุณมีค่าแค่ไหน ออฟฟิศต้องพร้อมเป๊ะทุก"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122095190925401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
