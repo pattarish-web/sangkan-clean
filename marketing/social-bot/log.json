@@ -1,5 +1,5 @@
 {
-  "last_topic": "tech_team",
+  "last_topic": "edu_big_clean_why",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -383,6 +383,52 @@
           "ok": true,
           "mode": "photo",
           "id": "122095190925401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-13T18:16:16.266196+00:00",
+      "topic_id": "edu_big_clean_why",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260713/feed.png",
+        "stories_png": "out/20260713/stories.png",
+        "venue_need": "office",
+        "venue_got": "office",
+        "bg_source": "bg-office-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260713/bg.jpg",
+        "stories_mp4": "out/20260713/stories.mp4"
+      },
+      "captions": {
+        "fb_ig": "สงสัยไหมว่าทำไมต้อง Big Cleaning ปีละ 2 ครั้ง? 🤔 การทำความสะอาดประจำวันอาจยังไม่พอจัดการ 'แขกไม่ได้รับเชิญ' ที่ซ่อนอยู่ตามซอกหลืบ\n\nคราบฝังลึก เชื้อรา แบคทีเรียร้าย มักแฝงตัวในจุดที่มองไม่เห็น เช่น พรม",
+        "tiktok": "รู้ยัง? Big Cleaning ปีละ 2 ครั้งคือสิ่งจำเป็น! 🤔 เพราะคราบฝังลึก เชื้อรา แบคทีเรียชอบแอบซ่อนในจุดที่มองไม่เห็น เช่น ในช",
+        "line": "ทำไมต้อง Big Cleaning อย่างน้อยปีละ 2 ครั้ง? 🤔 การทำความสะอาดประจำวันอาจจัดการได้แค่คราบทั่วไป แต่ไม่ใช่คราบฝังลึก เชื้อ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122095366695401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
