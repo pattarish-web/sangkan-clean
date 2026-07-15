@@ -195,7 +195,117 @@ def _stock_cover_filename(keyword: str, category: str) -> str:
     return _CATEGORY_STOCK.get(category, "blog-office.jpg")
 
 
-def _fallback_image_url(keyword: str, category: str) -> str:
+def _get_bg_prefix(keyword: str, category: str) -> str:
+    stock_file = _stock_cover_filename(keyword, category)
+    base = stock_file.replace("blog-", "").replace(".jpg", "")
+    return f"bg-{base}-"
+
+
+def _call_gemini_multimodal_select(
+    api_keys: list[str],
+    title: str,
+    keyword: str,
+    candidates_with_data: list[tuple[str, bytes]],
+) -> str | None:
+    import base64
+    import requests
+    from gemini_api import (
+        get_models,
+        build_generate_content_url,
+        wait_for_key,
+        is_key_exhausted,
+        bump_key_cooldown,
+        clear_key_health,
+    )
+    
+    parts = [{
+        "text": (
+            "You are Sangkan Clean's Creative Director. Select the single best-matching background image "
+            f"for a blog post.\nTitle: {title}\nKeyword: {keyword}\n\n"
+            "Analyze all candidate images below and select the one that visually matches the blog's topic the best. "
+            "Respond in JSON format: {\"best_image\": \"<filename>\"}"
+        )
+    }]
+    for filename, img_bytes in candidates_with_data:
+        parts.append({"text": f"Candidate image: {filename}"})
+        mime_type = "image/png" if filename.lower().endswith(".png") else "image/jpeg"
+        parts.append({
+            "inlineData": {
+                "mimeType": mime_type,
+                "data": base64.b64encode(img_bytes).decode("utf-8")
+            }
+        })
+        
+    payload = {
+        "contents": [{"parts": parts}],
+        "generationConfig": {"responseMimeType": "application/json"},
+    }
+    headers = {"Content-Type": "application/json"}
+    
+    for i, api_key in enumerate(api_keys):
+        label = f"bg-multimodal-{i+1}"
+        if is_key_exhausted(api_key):
+            print(f"  {label} key paused (quota) — skip multimodal")
+            continue
+            
+        for model in get_models():
+            url = build_generate_content_url(model, api_key)
+            try:
+                wait_for_key(api_key)
+                response = requests.post(url, headers=headers, json=payload, timeout=60)
+                if response.status_code == 429 or (
+                    response.status_code == 400 and "RESOURCE_EXHAUSTED" in response.text
+                ):
+                    bump_key_cooldown(api_key, label)
+                    break
+                if response.status_code != 200:
+                    continue
+                    
+                data = response.json()
+                text_response = data["candidates"][0]["content"]["parts"][0]["text"]
+                result = json.loads(text_response)
+                best_image = result.get("best_image")
+                if best_image:
+                    clear_key_health(api_key)
+                    return best_image
+            except Exception as exc:
+                print(f"  {label} multimodal error: {exc}")
+                continue
+    return None
+
+
+def _fallback_image_url(
+    keyword: str,
+    category: str,
+    title: str = "",
+    api_keys: list[str] = None,
+) -> str:
+    bg_dir = STOCK_DIR / "bg"
+    if bg_dir.exists() and title and api_keys:
+        prefix = _get_bg_prefix(keyword, category)
+        candidates = sorted([
+            f.name for f in bg_dir.iterdir()
+            if f.name.startswith(prefix) and f.suffix.lower() in (".jpg", ".jpeg", ".png")
+        ])
+        if candidates:
+            candidates_with_data = []
+            for name in candidates[:8]:
+                try:
+                    p = bg_dir / name
+                    candidates_with_data.append((name, p.read_bytes()))
+                except Exception:
+                    pass
+            if candidates_with_data:
+                print(f"  multimodal selection from {len(candidates_with_data)} candidates for '{title}'")
+                best_image = _call_gemini_multimodal_select(api_keys, title, keyword, candidates_with_data)
+                if best_image:
+                    clean_name = os.path.basename(best_image)
+                    target_path = bg_dir / clean_name
+                    if target_path.exists():
+                        print(f"  multimodal selected → {clean_name}")
+                        return f"{SITE_URL}/images/blog/bg/{clean_name}"
+
+    # Default fallback
     filename = _stock_cover_filename(keyword, category)
     path = STOCK_DIR / filename
     if path.exists():
@@ -215,7 +325,7 @@ def _save_cover(
     print(f"  cover: rotating across {len(api_keys)} Gemini API key(s)")
     raw = call_gemini_image_rotate(api_keys, prompt, key_label_prefix="blog-cover")
     if not raw:
-        url = _fallback_image_url(keyword, category)
+        url = _fallback_image_url(keyword, category, title, api_keys)
         print(f"  cover fallback → {url.split('/')[-1]} ({slug})")
         return url
 
