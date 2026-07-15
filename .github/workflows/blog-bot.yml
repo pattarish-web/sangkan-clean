@@ -48,12 +48,6 @@ jobs:
         echo "POSTS_PER_CATEGORY=$POSTS_PER_CATEGORY"
         python generate_blog.py
 
-    - name: Update Old Covers
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-        python update_old_covers.py
-
     - name: Commit and Push changes
       run: |
         set -e
