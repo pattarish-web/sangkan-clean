@@ -197,7 +197,9 @@ def _generate_captions(topic: dict) -> tuple[dict, str]:
 
 
 def _stamp() -> str:
-    return datetime.now(timezone.utc).strftime("%Y%m%d")
+    from datetime import timezone, timedelta
+    tz_bangkok = timezone(timedelta(hours=7))
+    return datetime.now(tz_bangkok).strftime("%Y%m%d")
 
 
 # Scene one-liners only — shared Instagram lifestyle brief is in creative_standard.
@@ -715,8 +717,10 @@ def main() -> int:
             f"source={assets.get('bg_source')})"
         )
         # Still write log for debugging, but do not publish.
+        from datetime import timezone, timedelta
+        tz_bangkok = timezone(timedelta(hours=7))
         entry = {
-            "ts": datetime.now(timezone.utc).isoformat(),
+            "ts": datetime.now(tz_bangkok).isoformat(),
             "topic_id": topic["id"],
             "type": topic_type,
             "caption_source": caption_source,
@@ -739,8 +743,10 @@ def main() -> int:
 
     results = publish_all(topic, captions, assets, channels, dry_run)
 
+    from datetime import timezone, timedelta
+    tz_bangkok = timezone(timedelta(hours=7))
     entry = {
-        "ts": datetime.now(timezone.utc).isoformat(),
+        "ts": datetime.now(tz_bangkok).isoformat(),
         "topic_id": topic["id"],
         "type": topic_type,
         "caption_source": caption_source,
