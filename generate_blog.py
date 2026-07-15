@@ -381,6 +381,7 @@ def generate_one_post(
         print("All API keys exhausted — stop generating.")
         return None, "quota"
 
+    ordered = api_keys
     if openai_key:
         print(f"[{category}] {keyword} via OpenAI GPT-4o-mini")
         result = call_openai_json(
@@ -389,7 +390,6 @@ def generate_one_post(
         )
     else:
         start = _pick_key(api_keys, key_offset)
-        ordered = api_keys
         if start and start in api_keys:
             i = api_keys.index(start)
             ordered = api_keys[i:] + api_keys[:i]
