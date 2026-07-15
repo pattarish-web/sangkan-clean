@@ -39,6 +39,7 @@ jobs:
     - name: Run AI Blog Generator
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         POSTS_PER_CATEGORY: ${{ github.event.inputs.posts_per_category || '1' }}
         GEMINI_MIN_INTERVAL: "20"
         BLOG_POST_GAP_SEC: "5"

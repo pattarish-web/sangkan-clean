@@ -15,6 +15,7 @@ from creative_standard import THAI_TONE_RULES, build_blog_cover_prompt
 from gemini_api import (
     call_gemini_image_rotate,
     call_gemini_json_rotate,
+    call_openai_json,
     get_api_keys,
     is_key_exhausted,
 )
@@ -201,76 +202,105 @@ def _get_bg_prefix(keyword: str, category: str) -> str:
     return f"bg-{base}-"
 
 
-def _call_gemini_multimodal_select(
-    api_keys: list[str],
+def call_openai_image(prompt: str) -> bytes | None:
+    """Generate cover image via DALL-E 3 and download the raw bytes."""
+    import os
+    import requests
+    from gemini_api import log
+    
+    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not api_key:
+        log("call_openai_image: No OPENAI_API_KEY found", level="WARN")
+        return None
+        
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}",
+    }
+    payload = {
+        "model": "dall-e-3",
+        "prompt": prompt,
+        "n": 1,
+        "size": "1024x1024",
+        "response_format": "url",
+    }
+    url = "https://api.openai.com/v1/images/generations"
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=120)
+        if response.status_code != 200:
+            log(f"OpenAI Image API error {response.status_code}: {response.text[:200]}", level="WARN")
+            return None
+        data = response.json()
+        img_url = data["data"][0]["url"]
+        log("OpenAI DALL-E 3 → success, downloading image...")
+        img_res = requests.get(img_url, timeout=60)
+        if img_res.status_code == 200:
+            return img_res.content
+        log(f"Failed to download OpenAI image from URL: {img_res.status_code}", level="WARN")
+    except Exception as exc:
+        log(f"call_openai_image error: {exc}", level="ERROR")
+    return None
+
+
+def _call_openai_multimodal_select(
     title: str,
     keyword: str,
     candidates_with_data: list[tuple[str, bytes]],
 ) -> str | None:
     import base64
+    import json
+    import os
     import requests
-    from gemini_api import (
-        get_models,
-        build_generate_content_url,
-        wait_for_key,
-        is_key_exhausted,
-        bump_key_cooldown,
-        clear_key_health,
-    )
+    from gemini_api import log
     
-    parts = [{
-        "text": (
-            "You are Sangkan Clean's Creative Director. Select the single best-matching background image "
-            f"for a blog post.\nTitle: {title}\nKeyword: {keyword}\n\n"
-            "Analyze all candidate images below and select the one that visually matches the blog's topic the best. "
-            "Respond in JSON format: {\"best_image\": \"<filename>\"}"
-        )
-    }]
+    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not api_key:
+        log("_call_openai_multimodal_select: No OPENAI_API_KEY found", level="WARN")
+        return None
+        
+    content_parts = [
+        {
+            "type": "text",
+            "text": (
+                "You are Sangkan Clean's Creative Director. Select the single best-matching background image "
+                f"for a blog post.\nTitle: {title}\nKeyword: {keyword}\n\n"
+                "Analyze all candidate images below and select the one that visually matches the blog's topic the best. "
+                "Respond in JSON format: {\"best_image\": \"<filename>\"}"
+            )
+        }
+    ]
     for filename, img_bytes in candidates_with_data:
-        parts.append({"text": f"Candidate image: {filename}"})
+        content_parts.append({"type": "text", "text": f"Candidate image: {filename}"})
         mime_type = "image/png" if filename.lower().endswith(".png") else "image/jpeg"
-        parts.append({
-            "inlineData": {
-                "mimeType": mime_type,
-                "data": base64.b64encode(img_bytes).decode("utf-8")
+        base64_data = base64.b64encode(img_bytes).decode("utf-8")
+        content_parts.append({
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:{mime_type};base64,{base64_data}"
             }
         })
         
-    payload = {
-        "contents": [{"parts": parts}],
-        "generationConfig": {"responseMimeType": "application/json"},
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}",
     }
-    headers = {"Content-Type": "application/json"}
-    
-    for i, api_key in enumerate(api_keys):
-        label = f"bg-multimodal-{i+1}"
-        if is_key_exhausted(api_key):
-            print(f"  {label} key paused (quota) — skip multimodal")
-            continue
-            
-        for model in get_models():
-            url = build_generate_content_url(model, api_key)
-            try:
-                wait_for_key(api_key)
-                response = requests.post(url, headers=headers, json=payload, timeout=60)
-                if response.status_code == 429 or (
-                    response.status_code == 400 and "RESOURCE_EXHAUSTED" in response.text
-                ):
-                    bump_key_cooldown(api_key, label)
-                    break
-                if response.status_code != 200:
-                    continue
-                    
-                data = response.json()
-                text_response = data["candidates"][0]["content"]["parts"][0]["text"]
-                result = json.loads(text_response)
-                best_image = result.get("best_image")
-                if best_image:
-                    clear_key_health(api_key)
-                    return best_image
-            except Exception as exc:
-                print(f"  {label} multimodal error: {exc}")
-                continue
+    payload = {
+        "model": "gpt-4o-mini",
+        "messages": [{"role": "user", "content": content_parts}],
+        "response_format": {"type": "json_object"},
+    }
+    url = "https://api.openai.com/v1/chat/completions"
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=60)
+        if response.status_code != 200:
+            log(f"OpenAI Multimodal API error {response.status_code}: {response.text[:200]}", level="WARN")
+            return None
+        data = response.json()
+        text_response = data["choices"][0]["message"]["content"]
+        result = json.loads(text_response)
+        return result.get("best_image")
+    except Exception as exc:
+        log(f"_call_openai_multimodal_select error: {exc}", level="ERROR")
     return None
 
 
@@ -278,10 +308,9 @@ def _fallback_image_url(
     keyword: str,
     category: str,
     title: str = "",
-    api_keys: list[str] = None,
 ) -> str:
     bg_dir = STOCK_DIR / "bg"
-    if bg_dir.exists() and title and api_keys:
+    if bg_dir.exists() and title and os.environ.get("OPENAI_API_KEY"):
         prefix = _get_bg_prefix(keyword, category)
         candidates = sorted([
             f.name for f in bg_dir.iterdir()
@@ -297,7 +326,7 @@ def _fallback_image_url(
                     pass
             if candidates_with_data:
                 print(f"  multimodal selection from {len(candidates_with_data)} candidates for '{title}'")
-                best_image = _call_gemini_multimodal_select(api_keys, title, keyword, candidates_with_data)
+                best_image = _call_openai_multimodal_select(title, keyword, candidates_with_data)
                 if best_image:
                     clean_name = os.path.basename(best_image)
                     target_path = bg_dir / clean_name
@@ -320,12 +349,12 @@ def _save_cover(
     keyword: str,
     category: str,
 ) -> str:
-    """Generate cover; rotate Gemini keys on 429 before stock fallback."""
+    """Generate cover via OpenAI DALL-E 3 before stock fallback."""
     prompt = _image_prompt(title, keyword, category)
-    print(f"  cover: rotating across {len(api_keys)} Gemini API key(s)")
-    raw = call_gemini_image_rotate(api_keys, prompt, key_label_prefix="blog-cover")
+    print("  cover: generating via OpenAI DALL-E 3")
+    raw = call_openai_image(prompt)
     if not raw:
-        url = _fallback_image_url(keyword, category, title, api_keys)
+        url = _fallback_image_url(keyword, category, title)
         print(f"  cover fallback → {url.split('/')[-1]} ({slug})")
         return url
 
@@ -347,25 +376,34 @@ def generate_one_post(
     existing_titles: set[str],
     existing_slugs: set[str],
 ):
-    if not api_keys or all(is_key_exhausted(k) for k in api_keys):
+    openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not openai_key and (not api_keys or all(is_key_exhausted(k) for k in api_keys)):
         print("All API keys exhausted — stop generating.")
         return None, "quota"
 
-    start = _pick_key(api_keys, key_offset)
-    ordered = api_keys
-    if start and start in api_keys:
-        i = api_keys.index(start)
-        ordered = api_keys[i:] + api_keys[:i]
+    if openai_key:
+        print(f"[{category}] {keyword} via OpenAI GPT-4o-mini")
+        result = call_openai_json(
+            _geo_prompt(keyword, category),
+            timeout=90,
+        )
+    else:
+        start = _pick_key(api_keys, key_offset)
+        ordered = api_keys
+        if start and start in api_keys:
+            i = api_keys.index(start)
+            ordered = api_keys[i:] + api_keys[:i]
 
-    print(f"[{category}] {keyword} via {len(ordered)} key(s)")
-    result = call_gemini_json_rotate(
-        ordered,
-        _geo_prompt(keyword, category),
-        key_label_prefix="blog",
-        timeout=90,
-    )
+        print(f"[{category}] {keyword} via {len(ordered)} key(s)")
+        result = call_gemini_json_rotate(
+            ordered,
+            _geo_prompt(keyword, category),
+            key_label_prefix="blog",
+            timeout=90,
+        )
+        
     if not result:
-        if all(is_key_exhausted(k) for k in api_keys):
+        if not openai_key and all(is_key_exhausted(k) for k in api_keys):
             return None, "quota"
         return None, "fail"
 
@@ -400,7 +438,7 @@ def generate_one_post(
         "date": today,
         "dateModified": today,
         "slug": slug,
-        "geo_source": "gemini",
+        "geo_source": "openai" if openai_key else "gemini",
     }
     print(f"  OK: {title[:70]}")
     return post, "ok"
@@ -408,8 +446,9 @@ def generate_one_post(
 
 def run_daily_batch() -> int:
     api_keys = get_api_keys()
-    if not api_keys:
-        print("Error: GEMINI_API_KEY environment variable not found.")
+    openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not api_keys and not openai_key:
+        print("Error: Neither GEMINI_API_KEY nor OPENAI_API_KEY environment variable found.")
         return 0
 
     if JSON_PATH.exists():
