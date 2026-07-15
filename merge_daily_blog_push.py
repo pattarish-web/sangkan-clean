@@ -39,8 +39,8 @@ def main() -> int:
                 check=False,
             )
 
-    import assign_strictly_unique_bg
-    assign_strictly_unique_bg.main()
+    import compose_blog_covers
+    compose_blog_covers.main()
 
     import build_blogs
     import build_listings
