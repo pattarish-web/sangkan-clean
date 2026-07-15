@@ -369,7 +369,8 @@ def call_openai_json(
     model: str = "gpt-4o-mini",
     timeout: int = 90,
 ) -> dict | None:
-    """Call OpenAI Chat Completions API with JSON response format."""
+    """Call OpenAI Chat Completions API with JSON response format and retry on 429."""
+    import time
     api_key = os.environ.get("OPENAI_API_KEY", "").strip()
     if not api_key:
         log("No OPENAI_API_KEY env var found", level="WARN")
@@ -386,17 +387,29 @@ def call_openai_json(
     }
 
     url = "https://api.openai.com/v1/chat/completions"
-    try:
-        response = requests.post(url, headers=headers, json=payload, timeout=timeout)
-        if response.status_code != 200:
-            log(f"OpenAI API error {response.status_code}: {response.text[:200]}", level="WARN")
-            return None
-        
-        result_json = response.json()
-        text_response = result_json["choices"][0]["message"]["content"]
-        log(f"OpenAI model '{model}' → success")
-        return json.loads(text_response)
-    except Exception as exc:
-        log(f"OpenAI error: {exc}", level="ERROR")
-        return None
+    max_retries = 3
+    base_delay = 15
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=timeout)
+            if response.status_code == 429:
+                wait_time = base_delay * (2 ** attempt)
+                log(f"OpenAI API 429 Rate Limit. Retrying in {wait_time}s... (Attempt {attempt+1}/{max_retries})", level="WARN")
+                time.sleep(wait_time)
+                continue
+            if response.status_code != 200:
+                log(f"OpenAI API error {response.status_code}: {response.text[:200]}", level="WARN")
+                return None
+            
+            result_json = response.json()
+            text_response = result_json["choices"][0]["message"]["content"]
+            log(f"OpenAI model '{model}' → success")
+            return json.loads(text_response)
+        except Exception as exc:
+            log(f"OpenAI error: {exc}", level="ERROR")
+            if attempt < max_retries - 1:
+                time.sleep(base_delay)
+            else:
+                return None
+    return None
 
