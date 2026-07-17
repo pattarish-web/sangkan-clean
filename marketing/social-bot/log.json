@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_outsource_vs_hire",
+  "last_topic": "edu_hidden_cost",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -843,6 +843,52 @@
           "ok": false,
           "mode": "photo",
           "error": "HTTP 500 code=1 sub=None msg=Please reduce the amount of data you're asking for, then retry your request",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-17T16:30:13.965730+07:00",
+      "topic_id": "edu_hidden_cost",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260717/feed.png",
+        "stories_png": "out/20260717/stories.png",
+        "venue_need": "home",
+        "venue_got": "home",
+        "bg_source": "bg-home-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260717/bg.jpg",
+        "stories_mp4": "out/20260717/stories.mp4"
+      },
+      "captions": {
+        "fb_ig": "คิดว่าจ้างแม่บ้านเองจะคุ้มกว่าใช่ไหม? หลายคนอาจจะมองว่าการจ้างแม่บ้านประจำมาดูแลออฟฟิศเองดูประหยัดกว่า แต่รู้ไหมว่าจริงๆ แล้วมี 'ต้นทุนแฝง' ที่เราอาจมองข้ามไปเพียบเลยนะ อย่างแรกเลยคือเรื่องประกันสังคม",
+        "tiktok": "จ้างแม่บ้านเอง คิดว่าคุ้ม? ลองดู 'ต้นทุนแฝง' ที่ไม่มีใครบอก!\n1. ประกันสังคม: จ้างพนักงานก็มีค่าสมทบนะ\n2. อุปกรณ์: ซื้อเอ",
+        "line": "เคยคิดไหมว่าการจ้างแม่บ้านเองมี 'ต้นทุนแฝง' ที่คาดไม่ถึง? หลายคนมักมองข้ามค่าใช้จ่ายเล็กๆ น้อยๆ แต่รวมกันแล้วไม่น้อยเลยน"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122097474279401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
