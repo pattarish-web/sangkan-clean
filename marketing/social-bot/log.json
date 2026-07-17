@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_hidden_cost",
+  "last_topic": "price_pack",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -889,6 +889,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122097474279401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-17T18:09:35.327454+07:00",
+      "topic_id": "price_pack",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "video",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260717/feed.png",
+        "stories_png": "out/20260717/stories.png",
+        "venue_need": "home",
+        "venue_got": "home",
+        "bg_source": "bg-home-08.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260717/bg.jpg",
+        "stories_mp4": "out/20260717/stories.mp4",
+        "feed_mp4": "out/20260717/feed.mp4"
+      },
+      "captions": {
+        "fb_ig": "เฮ้ย! ทีมไหนกำลังมองหาแม่บ้านออฟฟิศอยู่บ้าง? Sangkan Clean จัดให้แบบราคาชัดๆ เลือกได้ตามไซส์\n\n**แพ็ค S:** แค่ 2,900 บาท/เดือน สำหรับออฟฟิศไซส์เล็ก-กลาง ทีมไม่เยอะ เน้นสะอาดแต่ประหยัด\n**แพ็ค M:** 6,900",
+        "tiktok": "Sangkan Clean มีแพ็คแม่บ้านออฟฟิศราคาโดนใจ! 🏢\n**แพ็ค S:** 2,900 บาท/เดือน สำหรับออฟฟิศเล็ก\n**แพ็ค M:** 6,900 บาท/เดือน ส",
+        "line": "หาแม่บ้านออฟฟิศอยู่ใช่ไหม? Sangkan Clean จัดแพ็คราคาชัดๆ ให้คุณเลือกได้เลย!\n\n**แพ็ค S:** 2,900 บ./เดือน ออฟฟิศขนาดเล็กก็"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "video",
+          "id": "2928787784157996",
           "page_id": "1158266640711425"
         },
         "instagram": {
