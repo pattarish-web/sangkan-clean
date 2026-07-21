@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_germ_lifespan",
+  "last_topic": "office_ondemand",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -1445,6 +1445,55 @@
           "ok": true,
           "mode": "reel",
           "id": "2391670344657860",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-21T17:38:34.478019+07:00",
+      "topic_id": "office_ondemand",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "video",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260721/feed.png",
+        "stories_png": "out/20260721/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260721/bg.jpg",
+        "voiceover_mp3": "out/20260721/voiceover.mp3",
+        "stories_srt": "out/20260721/stories.srt",
+        "stories_mp4": "out/20260721/stories.mp4",
+        "feed_mp4": "out/20260721/feed.mp4"
+      },
+      "captions": {
+        "fb_ig": "Sangkan Clean เข้าใจเลยว่าบางทีออฟฟิศเราก็ต้องการความสะอาดแบบเร่งด่วน หรือแค่เป็นครั้งคราว โดยไม่ต้องจ้างประจำใช่ไหมครับ? 🤩 เรามีบริการแม่บ้านออฟฟิศแบบ On-Demand ที่ตอบโจทย์ทีมรุ่นใหม่ เอเจนซี่ หรือสต",
+        "tiktok": "ออฟฟิศเลอะ แต่ไม่อยากจ้างแม่บ้านประจำ? Sangkan Clean จัดให้! บริการแม่บ้าน On-Demand แค่ต้องการเมื่อไหร่ เราก็พร้อมไปลุย",
+        "line": "Sangkan Clean พร้อมช่วยให้ทีมคุณทำงานง่ายขึ้น! ✨ ไม่ต้องจ้างแม่บ้านประจำ แต่ได้ออฟฟิศที่สะอาดเนี้ยบทุกครั้งที่ต้องการ บร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "reel",
+          "id": "28850079227914374",
           "page_id": "1158266640711425"
         },
         "instagram": {
