@@ -661,10 +661,11 @@ def build_assets(
     if bg_path and bg_path.exists():
         assets["bg"] = str(bg_path.relative_to(ROOT)).replace("\\", "/")
 
+    disable_video = _env_bool("DISABLE_VIDEO", default=True)
     topic_type = topic.get("type", "promo")
-    fmt = "video" if topic_type == "edu" else topic.get("format", "image")
-    need_stories_video = True  # TikTok always
-    need_feed_video = fmt == "video"
+    fmt = "image" if disable_video else ("video" if topic_type == "edu" else topic.get("format", "image"))
+    need_stories_video = not disable_video
+    need_feed_video = (not disable_video) and (fmt == "video")
 
     if (need_stories_video or need_feed_video) and not has_ffmpeg():
         print("WARNING: ffmpeg not found — skipping video render")
@@ -755,8 +756,8 @@ def publish_all(
     channels: set[str],
     dry_run: bool,
 ) -> dict[str, dict]:
-    results: dict[str, dict] = {}
-    fmt = "video" if topic.get("type", "promo") == "edu" else topic.get("format", "image")
+    disable_video = _env_bool("DISABLE_VIDEO", default=True)
+    fmt = "image" if disable_video else ("video" if topic.get("type", "promo") == "edu" else topic.get("format", "image"))
     tags = captions.get("hashtags") or []
     tag_str = " ".join(tags) if isinstance(tags, list) else str(tags)
 
@@ -819,8 +820,8 @@ def main() -> int:
     log = _load_log()
     topic = pick_topic(log.get("last_topic"))
     topic_type = topic.get("type", "promo")
-    # Force video format for educational topics to generate Reels
-    fmt = "video" if topic_type == "edu" else topic.get("format", "image")
+    disable_video = _env_bool("DISABLE_VIDEO", default=True)
+    fmt = "image" if disable_video else ("video" if topic_type == "edu" else topic.get("format", "image"))
 
     print(f"Topic: {topic['id']} ({fmt}) type={topic_type} dry_run={dry_run} channels={sorted(channels)}")
 

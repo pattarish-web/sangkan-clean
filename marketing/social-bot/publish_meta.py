@@ -191,6 +191,11 @@ def publish_facebook(
 ) -> dict:
     page_id = _page_id()
     token = _token()
+    disable_video = os.environ.get("DISABLE_VIDEO", "1").strip().lower() not in {"0", "false", "no", "off"}
+    if disable_video:
+        video_path = None
+        use_reels = False
+
     if dry_run:
         mode = "reel" if use_reels and video_path else ("video" if video_path and video_path.exists() else "photo")
         return {
