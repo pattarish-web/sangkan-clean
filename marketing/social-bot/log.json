@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_server_room",
+  "last_topic": "tech_team",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -1701,6 +1701,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122101391559401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-22T19:08:53.413787+07:00",
+      "topic_id": "tech_team",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260722/feed.png",
+        "stories_png": "out/20260722/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260722/bg.jpg",
+        "voiceover_mp3": "out/20260722/voiceover.mp3",
+        "stories_srt": "out/20260722/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีม Tech/สตาร์ทอัพยุคใหม่ที่ต้องลุยงานหนักตลอดเวลา รู้ดีว่าออฟฟิศที่สะอาด พร้อมใช้งาน คือหัวใจสำคัญ Sangkan Clean เข้าใจตรงจุดนี้ เราพร้อมส่งทีมทำความสะอาดสำนักงานมืออาชีพไปดูแล ให้คุณหมดห่วงเรื่องฝุ่",
+        "tiktok": "ทีม Tech พร้อมลุยงานแบบไม่ต้องห่วงเรื่องออฟฟิศรก! Sangkan Clean ดูแลให้ คุณแค่โฟกัสงานสำคัญ เราเชี่ยวชาญทำความสะอาดสำนัก",
+        "line": "อยากให้ทีม Tech พร้อมลุยงานได้เต็มที่ ออฟฟิศต้องสะอาด เป๊ะ! Sangkan Clean ช่วยได้ครับ เราเป็นมืออาชีพด้านทำความสะอาดสำนั"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122101441107401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
