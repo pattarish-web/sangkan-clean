@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_dust_it",
+  "last_topic": "edu_server_room",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -1654,6 +1654,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122100798453401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-22T17:41:05.457413+07:00",
+      "topic_id": "edu_server_room",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260722/feed.png",
+        "stories_png": "out/20260722/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260722/bg.jpg",
+        "voiceover_mp3": "out/20260722/voiceover.mp3",
+        "stories_srt": "out/20260722/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "บางทีเราก็ลืมนึกถึง | มุมอับในออฟฟิศ | อย่าง Server Room | หรือหลังตู้ต่างๆ | ที่แอร์เข้าไม่ถึง | รู้ไหมว่า | จุดเหล่านี้ | ฝุ่นสะสมไวกว่าปกติถึง 3 เท่าเลยนะ! | และไม่ใช่แค่เรื่องสกปรก | แต่ฝุ่นพวกนี้",
+        "tiktok": "รู้ไหมว่า | Server Room | หรือมุมที่แอร์ไม่ถึงในออฟฟิศ | ฝุ่นสะสมเร็วกว่า 3 เท่า! | ไม่ใช่แค่สกปรก | แต่ยังทำให้ระบบ IT ",
+        "line": "รู้ไหมครับว่า | ห้อง Server Room | หรือมุมที่แอร์ไม่ถึงในออฟฟิศ | ฝุ่นสะสมได้เร็วกว่าปกติถึง 3 เท่าเลยนะ | ฝุ่นพวกนี้ | "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122101391559401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
