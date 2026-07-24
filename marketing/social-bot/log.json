@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_maid_absent",
+  "last_topic": "maid_backup",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -1983,6 +1983,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122103490947401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-24T18:28:24.987154+07:00",
+      "topic_id": "maid_backup",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260724/feed.png",
+        "stories_png": "out/20260724/stories.png",
+        "venue_need": "mall",
+        "venue_got": "mall",
+        "bg_source": "bg-mall-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260724/bg.jpg",
+        "voiceover_mp3": "out/20260724/voiceover.mp3",
+        "stories_srt": "out/20260724/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจดีว่าการหาแม่บ้านคุณภาพสำหรับธุรกิจคุณไม่ใช่เรื่องง่ายใช่ไหมครับ/คะ? โดยเฉพาะเวลาที่ต้องการความต่อเนื่อง ไม่ต้องกังวลเรื่องคนขาด หรือไม่มีคนดูแล ไม่ว่าจะเป็น แม่บ้านอาคารพาน",
+        "tiktok": "หมดห่วงเรื่อง แม่บ้านอาคารพานิชย์ หรือ แม่บ้านฟิตเนส ขาด! Sangkan Clean มีแม่บ้านประจำพร้อม QC และทีมสำรองพร้อมสแตนด์บาย",
+        "line": "กำลังมองหา แม่บ้านอาคารพานิชย์, แม่บ้านห้างสรรพสินค้า หรือ แม่บ้านฟิตเนส ที่ไว้ใจได้อยู่ใช่ไหมครับ/คะ? Sangkan Clean มีท"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122103532395401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
