@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_building_hygiene",
+  "last_topic": "edu_zone_clean",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -2357,6 +2357,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122105338167401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-27T21:00:41.263666+07:00",
+      "topic_id": "edu_zone_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260727/feed.png",
+        "stories_png": "out/20260727/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-08.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260727/bg.jpg",
+        "voiceover_mp3": "out/20260727/voiceover.mp3",
+        "stories_srt": "out/20260727/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "หลายคนอาจจะคิดว่าทำความสะอาดแค่ห้องใครห้องมันก็พอแล้ว แต่จริงๆ แล้วเรื่องความสะอาดมันเชื่อมโยงกันมากกว่าที่คิดนะ! ลองนึกภาพดูสิว่า แมลงตัวเล็กๆ ฝุ่นละอองที่มองไม่เห็น หรือแม้แต่กลิ่นไม่พึงประสงค์จากห้",
+        "tiktok": "ทำไมทำความสะอาดทั้งชั้น ถึงดีกว่าแค่ห้องเดียว? 🧐 ไม่ใช่แค่เรื่องฝุ่นนะ แต่แมลงและกลิ่นก็ชอบเดินทางข้ามห้อง! โดยเฉพาะหลัง",
+        "line": "สงสัยไหม ทำไมต้องสะอาดทั้งชั้น ไม่ใช่แค่ห้องเดียว?\n\nหลายคนมองข้าม แต่จริงๆ แล้วพวกฝุ่น แมลง หรือกลิ่นไม่พึงประสงค์ มันไม"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122105344815401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
