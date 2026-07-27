@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_zone_clean",
+  "last_topic": "affiliate",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -2404,6 +2404,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122105344815401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-28T00:25:36.232692+07:00",
+      "topic_id": "affiliate",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260728/feed.png",
+        "stories_png": "out/20260728/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260728/bg.jpg",
+        "voiceover_mp3": "out/20260728/voiceover.mp3",
+        "stories_srt": "out/20260728/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เฮ้! ทีมงาน Sangkan Clean มีข่าวดีมาบอกเพื่อน ๆ ที่กำลังมองหาผู้ช่วยมือโปรด้านความสะอาดเลยนะ! รู้ไหมว่า แค่ชวนเพื่อนในโซนเดียวกันมาใช้บริการกับ Sangkan Clean ไม่ว่าจะเป็นงานทำความสะอาดหลังก่อสร้างโกดั",
+        "tiktok": "Sangkan Clean มีดีลสุดปัง! ชวนเพื่อนในโซนเดียวกันมาใช้บริการกับเราสิ ไม่ว่าจะเป็นทำความสะอาดหลังก่อสร้างโกดัง, แม่บ้านศู",
+        "line": "สวัสดีครับ/ค่ะ ทีม Sangkan Clean มีโปรดี ๆ มาฝาก! ชวนเพื่อนในโซนเดียวกันมาใช้บริการ Sangkan Clean สิ! ไม่ว่าเพื่อนคุณจะม"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122105387037401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
