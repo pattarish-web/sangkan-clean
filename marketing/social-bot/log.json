@@ -1,5 +1,5 @@
 {
-  "last_topic": "price_pack",
+  "last_topic": "edu_building_hygiene",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -2310,6 +2310,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122105029119401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-27T20:29:39.174871+07:00",
+      "topic_id": "edu_building_hygiene",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260727/feed.png",
+        "stories_png": "out/20260727/stories.png",
+        "venue_need": "warehouse",
+        "venue_got": "warehouse",
+        "bg_source": "bg-warehouse-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260727/bg.jpg",
+        "voiceover_mp3": "out/20260727/voiceover.mp3",
+        "stories_srt": "out/20260727/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมว่าความสะอาดของออฟฟิศข้างๆ ก็ส่งผลถึงเราได้นะ! 🤔 ไม่ใช่แค่เรื่องภาพลักษณ์ แต่คือโอกาสที่เชื้อโรคจะปนเปื้อนข้ามห้องในตึกเดียวกัน การที่แต่ละออฟฟิศใส่ใจดูแลพื้นที่ตัวเองและบริเวณส่วนกลาง ไม่ว่าจะห",
+        "tiktok": "ตึกเราสะอาดแน่ ถ้าทุกออฟฟิศช่วยกัน! รู้ไหมว่าเชื้อโรคชอบแอบซ่อนแล้วเดินทางข้ามห้องในตึกเดียวกัน ถ้าแต่ละออฟฟิศใส่ใจดูแลค",
+        "line": "ความสะอาดในตึกเดียวกัน ไม่ใช่แค่เรื่องของใครคนใดคนหนึ่งนะ! การที่ทุกออฟฟิศ ไม่ว่าจะเป็นสำนักงานทั่วไป โชว์รูม หรือแม้แต่"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122105338167401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
