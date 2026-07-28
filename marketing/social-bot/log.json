@@ -1,5 +1,5 @@
 {
-  "last_topic": "edu_construction_dust",
+  "last_topic": "edu_move_in_clean",
   "posts": [
     {
       "ts": "2026-07-11T13:25:45.046874+00:00",
@@ -2498,6 +2498,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122105613285401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-28T19:23:42.846721+07:00",
+      "topic_id": "edu_move_in_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260728/feed.png",
+        "stories_png": "out/20260728/stories.png",
+        "venue_need": "home",
+        "venue_got": "home",
+        "bg_source": "bg-home-08.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260728/bg.jpg",
+        "voiceover_mp3": "out/20260728/voiceover.mp3",
+        "stories_srt": "out/20260728/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ย้ายเข้าออฟฟิศใหม่ ทั้งที ใครๆ ก็อยากให้ปังตั้งแต่ก้าวแรกใช่ไหมครับ? แต่รู้ไหมว่าหลังการก่อสร้างหรือปรับปรุงเนี่ย มันมีอะไรแฝงอยู่เยอะกว่าที่ตาเห็นนะ! ฝุ่นละอองเล็กๆ จากวัสดุก่อสร้าง คราบสี หรือแม้แต่",
+        "tiktok": "ย้ายเข้าออฟฟิศใหม่? อย่าลืม Deep Clean ก่อนนะ! 🚨 หลังก่อสร้างหรือปรับปรุง มีฝุ่น สารเคมี คราบสี ที่มองไม่เห็น แต่เราสูดเ",
+        "line": "ก่อนย้ายเข้าออฟฟิศใหม่ อย่าลืม Deep Clean! 🛋️ หลังก่อสร้างหรือปรับปรุง พื้นที่ทำงานใหม่ของเรา อาจมีฝุ่นละออง สารเคมีตกค้"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122105646933401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
