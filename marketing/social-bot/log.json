@@ -1,30 +1,6 @@
 {
-  "last_topic": "after_construction",
+  "last_topic": "edu_routine_clean",
   "posts": [
-    {
-      "ts": "2026-07-11T16:28:27.529384+00:00",
-      "topic_id": "agency_focus",
-      "format": "video",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "stories_mp4": "out/20260711/stories.mp4",
-        "feed_mp4": "out/20260711/feed.mp4"
-      },
-      "captions": {
-        "fb_ig": "ในโลกที่ความคิดสร้างสรรค์และไอเดียใหม่ ๆ สำคัญที่สุด ทีมเอเจนซี่และครีเอทีฟต่างต้องการสมาธิอย่างเต็มที่กับการสร้างสรรค์ผลงานชั้นเยี่ยม Sangkan Clean เข้าใจดีว่าเวลาอันมีค่าของทีมคุณควรถูกใช้ไปกับการขั",
-        "tiktok": "ทีมเอเจนซี่/ครีเอทีฟต้องโฟกัสงาน! 🤯 Sangkan Clean ช่วยให้คุณหมดกังวลเรื่องความสะอาดในออฟฟิศ ไม่ต้องจัดเวรแม่บ้านเอง มี Q",
-        "line": "ถึงทีมเอเจนซี่และครีเอทีฟทุกท่าน 💡\nให้ Sangkan Clean ดูแลความสะอาดออฟฟิศของคุณ เพื่อให้ทีมงานโฟกัสกับการสร้างสรรค์ผลงานไ"
-      },
-      "results": {
-        "facebook": {
-          "ok": false,
-          "error": "HTTP 403 code=200 sub=None msg=(#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead.",
-          "video_error": "HTTP 400 code=100 sub=None msg=(#100) No permission to publish the video"
-        }
-      }
-    },
     {
       "ts": "2026-07-11T16:39:11.445778+00:00",
       "topic_id": "tech_team",
@@ -2549,6 +2525,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122105721201401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-29T18:15:04.297085+07:00",
+      "topic_id": "edu_routine_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260729/feed.png",
+        "stories_png": "out/20260729/stories.png",
+        "venue_need": "restaurant",
+        "venue_got": "restaurant",
+        "bg_source": "bg-restaurant-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260729/bg.jpg",
+        "voiceover_mp3": "out/20260729/voiceover.mp3",
+        "stories_srt": "out/20260729/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "บางทีเราก็คิดว่า ออฟฟิศยังไม่สกปรกนี่นา หรือร้านอาหารเพิ่งปิดไปก็ดูสะอาดอยู่ แล้วจะคลีนบ่อยๆ ทำไม? จริงๆ แล้ว เชื้อโรคและแบคทีเรียมันไม่ได้รอให้เราเห็นคราบก่อนถึงจะเริ่มสะสมนะครับ มันก่อตัวทุกวันโดยที",
+        "tiktok": "อย่ารอให้เห็นคราบ! รู้ไหมว่าเชื้อโรคสะสมทุกวันเลยนะ? ทั้งในออฟฟิศ ร้านอาหาร หรือหลังก่อสร้างโชว์รูม การคลีนประจำคือหัวใจ",
+        "line": "จริงจังเรื่องความสะอาดนะรู้ยัง? หลายคนคิดว่าไม่เห็นคราบก็ไม่เป็นไร แต่เชื้อโรคและแบคทีเรียมันก่อตัวทุกวันแบบที่เรามองไม่"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122105947821401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
