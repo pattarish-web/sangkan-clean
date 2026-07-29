@@ -1,30 +1,6 @@
 {
-  "last_topic": "edu_routine_clean",
+  "last_topic": "edu_harsh_chemical",
   "posts": [
-    {
-      "ts": "2026-07-11T16:39:11.445778+00:00",
-      "topic_id": "tech_team",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "stories_mp4": "out/20260711/stories.mp4"
-      },
-      "captions": {
-        "fb_ig": "สำหรับทีม Tech และ Startup ที่ต้องการความคล่องตัว การมีสภาพแวดล้อมการทำงานที่สะอาดและพร้อมใช้งานอยู่เสมอคือกุญแจสำคัญสู่ประสิทธิภาพ สั่งการคลีนเข้าใจดีว่าเวลาของทีมคุณมีค่า เราจึงนำเสนอบริการทำความสะอ",
-        "tiktok": "ทีม Tech อยากได้ออฟฟิศที่สะอาด พร้อมทำงานเสมอใช่ไหม? สั่งการคลีน จัดการให้! ด้วยระบบ GPS check-in และรายงานรูปก่อน-หลัง ",
-        "line": "ออฟฟิศ Tech / Startup ที่ต้องการความพร้อมตลอดเวลา สั่งการคลีนเข้าใจดี! เราให้บริการทำความสะอาดสำนักงานด้วยระบบที่โปร่งใส"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122094357609401302",
-          "page_id": "1158266640711425"
-        }
-      }
-    },
     {
       "ts": "2026-07-11T17:02:01.997617+00:00",
       "topic_id": "big_cleaning",
@@ -2572,6 +2548,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122105947821401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-29T19:36:09.221886+07:00",
+      "topic_id": "edu_harsh_chemical",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260729/feed.png",
+        "stories_png": "out/20260729/stories.png",
+        "venue_need": "warehouse",
+        "venue_got": "warehouse",
+        "bg_source": "bg-warehouse-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260729/bg.jpg",
+        "voiceover_mp3": "out/20260729/voiceover.mp3",
+        "stories_srt": "out/20260729/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมครับว่าน้ำยาทำความสะอาดบางตัวที่เราใช้กันอยู่ อาจกำลังทำร้ายเฟอร์นิเจอร์ออฟฟิศของเราอยู่โดยไม่รู้ตัว! 😱 สารเคมีที่แรงเกินไป หรือไม่เหมาะกับวัสดุ มักเป็นตัวการสำคัญที่ทำให้เฟอร์นิเจอร์หนังอาจลอก ",
+        "tiktok": "อย่าให้ความสะอาด มาพร้อมกับความเสียหาย! ⚠️ น้ำยาแรงๆ หรือใช้ผิดประเภท อาจทำให้เฟอร์นิเจอร์ออฟฟิศพังได้ง่ายๆ ทั้งหนังลอก ",
+        "line": "รู้ไว้ก่อนพลาด! น้ำยาทำความสะอาดที่แรงเกินไป หรือไม่เหมาะกับวัสดุ อาจทำลายเฟอร์นิเจอร์ออฟฟิศคุณได้ง่ายๆ เช่น ทำให้หนังลอ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122105977383401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
