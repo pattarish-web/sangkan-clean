@@ -1,30 +1,6 @@
 {
-  "last_topic": "edu_desk_germ",
+  "last_topic": "edu_germ_lifespan",
   "posts": [
-    {
-      "ts": "2026-07-11T17:29:59.160976+00:00",
-      "topic_id": "service_area",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "stories_mp4": "out/20260711/stories.mp4"
-      },
-      "captions": {
-        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจดีว่าเวลาของสตาร์ทอัพและเอเจนซี่มีค่าแค่ไหน เพราะงั้นเรื่องความสะอาดในออฟฟิศหรือพื้นที่ทำงาน ปล่อยให้เราจัดการได้เลย! ไม่ต้องกังวลว่าเราจะไปไม่ถึง เพราะตอนนี้เราพร้อมบริการท",
-        "tiktok": "สตาร์ทอัพ เอเจนซี่ ทีมรุ่นใหม่! 🚀 เรื่องความสะอาดออฟฟิศยกให้ Sangkan Clean ดูแลสิครับ/ค่ะ เราพร้อมลุยทุกพื้นที่ใน กทม. ป",
-        "line": "Sangkan Clean ขยายพื้นที่บริการแล้ว! 💪 ไม่ว่าออฟฟิศคุณจะอยู่ที่ กทม. นนทบุรี ปทุมธานี สมุทรปราการ ชลบุรี หรือระยอง เราพร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122094378267401302",
-          "page_id": "1158266640711425"
-        }
-      }
-    },
     {
       "ts": "2026-07-11T17:46:46.809765+00:00",
       "topic_id": "price_pack",
@@ -2641,6 +2617,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106220827401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-30T17:40:35.036173+07:00",
+      "topic_id": "edu_germ_lifespan",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260730/feed.png",
+        "stories_png": "out/20260730/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260730/bg.jpg",
+        "voiceover_mp3": "out/20260730/voiceover.mp3",
+        "stories_srt": "out/20260730/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "หลายคนอาจคิดว่า โต๊ะทำงานเรา สะอาดดีอยู่แล้ว แต่รู้ไหมว่า เชื้อโรคบางชนิด น่ะอยู่กับเราได้นานกว่าที่คิดนะ! 🦠 เช่น ไวรัสไข้หวัดทั่วไป สามารถอยู่รอดบนพื้นผิวโต๊ะ ได้นานถึง 24 ชั่วโมงเลยทีเดียว ส่วนแบคที",
+        "tiktok": "รู้ไหมว่าเชื้อโรคบนโต๊ะทำงานเราเนี่ย อยู่ได้นานกว่าที่คิดนะ! 🦠 ไวรัสไข้หวัดอยู่ได้ 24 ชั่วโมง ส่วนแบคทีเรียหลายวันเลยนะ ",
+        "line": "สวัสดีครับทุกคน!\n\nเรื่องใกล้ตัวแต่หลายคนอาจมองข้าม เชื้อโรคบนโต๊ะทำงานเราเนี่ย อยู่ได้นานแค่ไหนกันนะ? 🦠\n\nจากข้อมูลพบว่า "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106291663401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
