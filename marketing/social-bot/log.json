@@ -1,31 +1,6 @@
 {
-  "last_topic": "office_ondemand",
+  "last_topic": "edu_productivity",
   "posts": [
-    {
-      "ts": "2026-07-11T18:15:24.022696+00:00",
-      "topic_id": "affiliate",
-      "format": "video",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "stories_mp4": "out/20260711/stories.mp4",
-        "feed_mp4": "out/20260711/feed.mp4"
-      },
-      "captions": {
-        "fb_ig": "ทีม Sangkan Clean มาพร้อมโปรเด็ด! 🚀 ชวนเพื่อนในโซนเดียวกันมาใช้บริการ Sangkan Clean วันนี้ รับเครดิตคืนไปเลย 10% ง่ายๆ แค่เพื่อนคอนเฟิร์มการใช้บริการ คุณก็ได้เครดิตคืนไปใช้ในบิลถัดไป เหมาะมากสำหรับออฟ",
-        "tiktok": "Sangkan Clean มีโปรดีๆ มาบอก! 🤩 ชวนเพื่อนออฟฟิศในโซนเดียวกันมาใช้บริการ Sangkan Clean รับเครดิตคืน 10% ทันที! ยิ่งชวนมาก",
-        "line": "เฮ้! 👋 มีข่าวดีมาบอกจาก Sangkan Clean! ตอนนี้เรามีโปรชวนเพื่อนในโซนเดียวกันมาใช้บริการ Sangkan Clean รับเครดิตคืนไปเลย 1"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "video",
-          "id": "2035720657305418",
-          "page_id": "1158266640711425"
-        }
-      }
-    },
     {
       "ts": "2026-07-11T18:45:12.144798+00:00",
       "topic_id": "after_construction",
@@ -2686,6 +2661,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106306531401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-31T00:02:29.545579+07:00",
+      "topic_id": "edu_productivity",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260730/feed.png",
+        "stories_png": "out/20260730/stories.png",
+        "venue_need": "gym",
+        "venue_got": "gym",
+        "bg_source": "bg-gym-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260730/bg.jpg",
+        "voiceover_mp3": "out/20260730/voiceover.mp3",
+        "stories_srt": "out/20260730/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ออฟฟิศที่สะอาดเอี่ยมอ่องเนี่ย ส่งผลดีต่อประสิทธิภาพการทำงานของเราได้จริงดิ? 🧐 ผลวิจัยชี้ชัดเลยว่า สภาพแวดล้อมที่สะอาดและเป็นระเบียบ ช่วยให้พนักงานมีสมาธิและโฟกัสกับงานได้ดีขึ้นถึง 15% เลยนะ!\n\nลองคิดดู",
+        "tiktok": "ออฟฟิศสะอาด เพิ่ม Productivity ได้จริงดิ? 🧐 งานวิจัยบอกว่า สภาพแวดล้อมที่คลีนๆ ช่วยให้เราโฟกัสงานได้ดีขึ้นถึง 15% เลยนะ!",
+        "line": "ออฟฟิศสะอาด ช่วยให้ทำงานดีขึ้นได้จริงหรือ? 🤔 งานวิจัยจากต่างประเทศชี้ว่า สภาพแวดล้อมที่สะอาดส่งผลให้เราโฟกัสกับงานได้ดีข"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106402393401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
