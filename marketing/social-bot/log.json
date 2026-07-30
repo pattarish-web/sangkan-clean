@@ -1,31 +1,6 @@
 {
-  "last_topic": "edu_germ_lifespan",
+  "last_topic": "office_ondemand",
   "posts": [
-    {
-      "ts": "2026-07-11T17:46:46.809765+00:00",
-      "topic_id": "price_pack",
-      "format": "video",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "stories_mp4": "out/20260711/stories.mp4",
-        "feed_mp4": "out/20260711/feed.mp4"
-      },
-      "captions": {
-        "fb_ig": "ทีมคุณโฟกัสงานโปรเจกต์ใหม่ได้เต็มที่ ไม่ต้องห่วงเรื่องความสะอาด! ✨ สั่งการคลีนเข้าใจดีว่าออฟฟิศสมัยใหม่ โดยเฉพาะสายเอเจนซี่หรือสตาร์ทอัพที่ใช้โฮมออฟฟิศ ต้องการความคลีนแบบมืออาชีพ แต่ก็ต้องไม่ยุ่งยาก\n\n",
-        "tiktok": "โฮมออฟฟิศ/เอเจนซี่ฟังทางนี้! 💡 อยากให้พื้นที่ทำงานสะอาดแบบมือโปรฯ แต่ไม่อยากปวดหัว? สั่งการคลีนมีแพ็คแม่บ้านออฟฟิศให้เลื",
-        "line": "ถึงทีมงานสายครีเอทีฟและสตาร์ทอัพทุกคน! 📢 เหนื่อยไหมกับความวุ่นวายเรื่องความสะอาดในออฟฟิศ? สั่งการคลีนมีแพ็คแม่บ้านออฟฟิศ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "video",
-          "id": "1430046375811795",
-          "page_id": "1158266640711425"
-        }
-      }
-    },
     {
       "ts": "2026-07-11T18:15:24.022696+00:00",
       "topic_id": "affiliate",
@@ -2664,6 +2639,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106291663401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-30T19:08:21.576292+07:00",
+      "topic_id": "office_ondemand",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260730/feed.png",
+        "stories_png": "out/20260730/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260730/bg.jpg",
+        "voiceover_mp3": "out/20260730/voiceover.mp3",
+        "stories_srt": "out/20260730/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานรุ่นใหม่แบบเราเข้าใจเลยว่า การมีแม่บ้านประจำออฟฟิศอาจจะยังไม่ตอบโจทย์ทุกธุรกิจเสมอไปใช่ไหมครับ? 😅 Sangkan Clean มีบริการแม่บ้านออฟฟิศแบบ On-Demand ที่ให้คุณเรียกใช้บริการได้ตามต้องการ ไม่ต้องแบก",
+        "tiktok": "ออฟฟิศรกแต่ไม่อยากจ้างแม่บ้านประจำ? Sangkan Clean จัดให้! บริการแม่บ้าน On-Demand สะอาดกริ๊บแค่เรียกใช้ ยืดหยุ่น ประหยัด",
+        "line": "ถึงทีมงานทุกท่านครับ กำลังมองหาแม่บ้านดูแลออฟฟิศ แต่ไม่อยากจ้างประจำอยู่รึเปล่า? Sangkan Clean มีบริการแม่บ้านออฟฟิศ On-"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106306531401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
