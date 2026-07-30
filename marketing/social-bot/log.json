@@ -1,30 +1,6 @@
 {
-  "last_topic": "soft_cleaning",
+  "last_topic": "edu_desk_germ",
   "posts": [
-    {
-      "ts": "2026-07-11T17:17:01.393367+00:00",
-      "topic_id": "maid_backup",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "stories_mp4": "out/20260711/stories.mp4"
-      },
-      "captions": {
-        "fb_ig": "ในการบริหารงานในสำนักงานที่รัดกุม การดูแลความสะอาดอย่างต่อเนื่องและสม่ำเสมอเป็นสิ่งสำคัญยิ่งที่ทุกองค์กรต้องการ สั่งการคลีนเข้าใจดีว่าทุกเวลาคือเรื่องสำคัญ เราจึงพร้อมเป็นพาร์ทเนอร์ด้านความสะอาดที่มือ",
-        "tiktok": "หมดกังวลเรื่องงานทำความสะอาดออฟฟิศ! Sangkan Clean มีทีมแม่บ้านประจำที่ทำงานในนามบริษัท พร้อมทีมสำรองเมื่อมีการลาหยุด และ",
-        "line": "เรียน ท่านผู้ประกอบการและผู้บริหารทุกท่าน,\n\nสั่งการคลีน (Sangkan Clean) เข้าใจถึงความสำคัญของการบริหารจัดการพื้นที่ทำงาน"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122094372579401302",
-          "page_id": "1158266640711425"
-        }
-      }
-    },
     {
       "ts": "2026-07-11T17:29:59.160976+00:00",
       "topic_id": "service_area",
@@ -2618,6 +2594,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106069099401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-30T12:14:02.568426+07:00",
+      "topic_id": "edu_desk_germ",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260730/feed.png",
+        "stories_png": "out/20260730/stories.png",
+        "venue_need": "mall",
+        "venue_got": "mall",
+        "bg_source": "bg-mall-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260730/bg.jpg",
+        "voiceover_mp3": "out/20260730/voiceover.mp3",
+        "stories_srt": "out/20260730/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "รู้หรือไม่ว่า จุดที่คุณสัมผัสบ่อยๆ ในออฟฟิศ อาจสกปรกกว่าฝารองนั่งในห้องน้ำเสียอีก! 😱\n\nลองนึกถึงคีย์บอร์ด โทรศัพท์ หรือแม้แต่ลูกบิดประตูที่คุณจับวันละหลายครั้งดูสิครับ พื้นผิวเหล่านี้คือแหล่งสะสมแบคทีเ",
+        "tiktok": "ระวัง! 😱 จุดที่คุณสัมผัสบ่อยๆ ในออฟฟิศอย่างคีย์บอร์ด โทรศัพท์ ลูกบิดประตู อาจสกปรกกว่าฝารองนั่งในห้องน้ำอีกนะ แบคทีเรียส",
+        "line": "รู้ยัง? 😱 ในออฟฟิศเรามี 5 จุดที่สกปรกกว่าฝารองนั่งห้องน้ำอีกนะ!\n\nไม่ว่าจะเป็นคีย์บอร์ด โทรศัพท์ หรือลูกบิดประตูที่เราจับ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106220827401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
