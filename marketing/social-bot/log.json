@@ -1,51 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-07-12T09:31:16.680421+00:00",
-      "topic_id": "office_ondemand",
-      "format": "video",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260712/feed.png",
-        "stories_png": "out/20260712/stories.png",
-        "venue_need": "home",
-        "venue_got": "home",
-        "bg_source": "bg-home-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260712/bg.jpg",
-        "stories_mp4": "out/20260712/stories.mp4",
-        "feed_mp4": "out/20260712/feed.mp4"
-      },
-      "captions": {
-        "fb_ig": "ทีมไหนกำลังมองหาแม่บ้านดูแลออฟฟิศ แต่ไม่อยากจ้างประจำให้ยุ่งยากเรื่องคน? Sangkan Clean ช่วยได้! เรามีบริการแม่บ้าน On-Demand สะดวกสำหรับออฟฟิศย่านอุดมสุข-บางนา ไม่ต้องแบกภาระพนักงานประจำ แค่เรียกใช้ตอ",
-        "tiktok": "ออฟฟิศโซนอุดมสุข-บางนา อยากได้แม่บ้านสะอาดเนี้ยบ แต่ไม่อยากจ้างประจำ? Sangkan Clean จัดให้! บริการแม่บ้าน On-Demand เรีย",
-        "line": "ใครกำลังหนักใจกับการหาแม่บ้านประจำออฟฟิศโซนอุดมสุข-บางนาอยู่บ้าง? 🙋‍♀️ Sangkan Clean มีทางออกให้คุณ! บริการแม่บ้าน On-De"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "video",
-          "id": "1049449504706285",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-13T09:53:21.004245+00:00",
       "topic_id": "agency_focus",
@@ -2748,6 +2703,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106632877401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-01T00:12:25.720506+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260801/feed.png",
+        "stories_png": "out/20260801/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260801/bg.jpg",
+        "voiceover_mp3": "out/20260801/voiceover.mp3",
+        "stories_srt": "out/20260801/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เพื่อนๆ ที่ทำงานกับคอมพิวเตอร์เป็นประจำ รู้ไหมว่าฝุ่นเล็กๆ ที่เราไม่ทันสังเกตเนี่ย เป็นภัยเงียบที่ทำร้ายอุปกรณ์ IT ของเราอยู่ทุกวัน? เจ้าฝุ่นพวกนี้เข้าไปสะสมในช่องระบายอากาศ พัดลมระบายความร้อน ทำให้เค",
+        "tiktok": "คอมร้อน พัดลมเสียงดัง? ระวัง! นั่นอาจเป็นสัญญาณเตือนจากฝุ่นนะ! ⚠️ ฝุ่นเล็กๆ ที่เรามองข้ามเนี่ย สะสมนานๆ เข้า ทำให้คอมทำง",
+        "line": "เคยสังเกตไหมว่าทำไมคอมถึงร้อนผิดปกติ หรือพัดลมทำงานเสียงดัง? 💻 สาเหตุหลักอาจมาจาก “ฝุ่น” ที่สะสมอยู่ภายในอุปกรณ์ IT ของค"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106684879401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
