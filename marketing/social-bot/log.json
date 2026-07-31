@@ -1,35 +1,6 @@
 {
-  "last_topic": "edu_creative_block",
+  "last_topic": "agency_focus",
   "posts": [
-    {
-      "ts": "2026-07-11T19:04:17.457021+00:00",
-      "topic_id": "soft_cleaning",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260711/feed.png",
-        "stories_png": "out/20260711/stories.png",
-        "venue_need": "home",
-        "venue_got": "home",
-        "bg_source": "bg-home-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260711/bg.jpg",
-        "stories_mp4": "out/20260711/stories.mp4"
-      },
-      "captions": {
-        "fb_ig": "ออฟฟิศหรือคอนโดของคุณต้องการการดูแลที่ใช่ ไม่ใช่แค่สะอาด แต่ต้องคลีนแบบอ่อนโยนไปพร้อมกันใช่ไหม? Sangkan Clean มีบริการ Soft Cleaning ที่ตอบโจทย์ทีมทำงานรุ่นใหม่และคนเมืองอย่างคุณ! ✨\n\nเราเข้าใจว่าเวลาเ",
-        "tiktok": "ทำงานในออฟฟิศหรืออยู่คอนโด อยากให้พื้นที่สะอาดตลอด แต่ไม่อยากให้สารเคมีแรงๆ มาทำลายของ? Sangkan Clean จัดให้! ✨ บริการ S",
-        "line": "ออฟฟิศหรือคอนโดของคุณ ต้องการความสะอาดแบบอ่อนโยน ที่ดูแลเป็นประจำอยู่เสมอใช่ไหม?\nSangkan Clean พร้อมดูแลพื้นที่ของคุณให้"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122094406809401302",
-          "page_id": "1158266640711425"
-        }
-      }
-    },
     {
       "ts": "2026-07-12T09:31:16.680421+00:00",
       "topic_id": "office_ondemand",
@@ -2730,6 +2701,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106621393401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-07-31T19:31:43.338831+07:00",
+      "topic_id": "agency_focus",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260731/feed.png",
+        "stories_png": "out/20260731/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260731/bg.jpg",
+        "voiceover_mp3": "out/20260731/voiceover.mp3",
+        "stories_srt": "out/20260731/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมเอเจนซี่และสตาร์ทอัพรู้ดีว่าเวลาทุกนาทีมีค่าแค่ไหน Sangkan Clean เข้าใจเลย! เราอยากให้คุณโฟกัสกับการสร้างสรรค์ไอเดียเจ๋งๆ ได้เต็มที่ โดยไม่ต้องกังวลเรื่องความสะอาดในออฟฟิศ 🤝 ไม่ว่าจะเป็นการทำความสะ",
+        "tiktok": "เอเจนซี่โฟกัสงาน | Sangkan Clean | ดูแลเรื่องคลีนเอง! 🤩 หมดห่วงเรื่องทำความสะอาดสำนักงาน | มีทีม QC | มีคนสำรอง | งานเดิ",
+        "line": "Sangkan Clean เข้าใจหัวอกคนทำงานเอเจนซี่! คุณอยากโฟกัสไอเดียสร้างสรรค์ | ไม่ใช่เรื่องความสะอาด 💡 เรามีทีมมืออาชีพดูแลการ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106632877401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
