@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_dust_it",
+  "last_topic": "edu_server_room",
   "posts": [
-    {
-      "ts": "2026-07-13T09:53:21.004245+00:00",
-      "topic_id": "agency_focus",
-      "format": "video",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260713/feed.png",
-        "stories_png": "out/20260713/stories.png",
-        "venue_need": "office",
-        "venue_got": "office",
-        "bg_source": "bg-office-09.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260713/bg.jpg",
-        "stories_mp4": "out/20260713/stories.mp4",
-        "feed_mp4": "out/20260713/feed.mp4"
-      },
-      "captions": {
-        "fb_ig": "ทีมครีเอทีฟ เอเจนซี่ หรือสตาร์ทอัพที่กำลังปั่นไอเดียเจ๋งๆ กันอยู่ งานสร้างสรรค์ก็ว่าท้าทายแล้ว จะให้มานั่งกังวลเรื่องออฟฟิศไม่สะอาดอีกเหรอ? Sangkan Clean เข้าใจดีว่าสภาพแวดล้อมที่ดีคือหัวใจสำคัญของงาน",
-        "tiktok": "ทีมครีเอทีฟสายปังฟังทางนี้! 📣 ไอเดียจะมาได้ไงถ้าออฟฟิศไม่คลีน? Sangkan Clean จัดการเรื่องทำความสะอาดให้เอง แบบมี QC เป๊ะ",
-        "line": "สวัสดีทีมครีเอทีฟและสตาร์ทอัพทุกท่าน!\n\nSangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลออฟฟิศคุณให้เนี้ยบกริบ เรามีระบบ QC ที่ได้มา"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "video",
-          "id": "2099074551020692",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-13T10:31:55.236780+00:00",
       "topic_id": "tech_team",
@@ -2750,6 +2705,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122106684879401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-01T16:38:24.884706+07:00",
+      "topic_id": "edu_server_room",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260801/feed.png",
+        "stories_png": "out/20260801/stories.png",
+        "venue_need": "warehouse",
+        "venue_got": "warehouse",
+        "bg_source": "bg-warehouse-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260801/bg.jpg",
+        "voiceover_mp3": "out/20260801/voiceover.mp3",
+        "stories_srt": "out/20260801/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "หลายคนอาจคิดว่า Server Room ไม่ต้องดูแลมาก แต่รู้ไหมว่าตรงนั้นฝุ่นสะสมเร็วกว่าปกติถึง 3 เท่าเลยนะ! จุดที่แอร์ไม่ถึง แถมยังมีอุปกรณ์อิเล็กทรอนิกส์เยอะ ยิ่งต้องระวังเป็นพิเศษ ถ้าปล่อยไว้นานๆ อาจกระทบระบ",
+        "tiktok": "Server Room กับมุมอับในออฟฟิศนี่ตัวดีเลยนะ! 😬 ฝุ่นสะสมเร็วกว่าปกติ 3 เท่า ตรงที่แอร์ไม่ถึง ยิ่งต้องระวัง! ถ้าปล่อยไว้นาน",
+        "line": "รู้ยัง? Server Room กับมุมอับในออฟฟิศเนี่ย คือแหล่งรวมฝุ่นชั้นดีเลยนะ! 😱 ตรงที่แอร์ไม่ถึง ฝุ่นจะสะสมเร็วกว่าที่อื่นถึง 3"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122106877371401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
