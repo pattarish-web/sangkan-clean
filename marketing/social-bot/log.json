@@ -1,52 +1,6 @@
 {
-  "last_topic": "after_construction",
+  "last_topic": "edu_routine_clean",
   "posts": [
-    {
-      "ts": "2026-07-19T21:43:55.775902+07:00",
-      "topic_id": "edu_routine_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260719/feed.png",
-        "stories_png": "out/20260719/stories.png",
-        "venue_need": "office",
-        "venue_got": "office",
-        "bg_source": "bg-office-11.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260719/bg.jpg",
-        "stories_mp4": "out/20260719/stories.mp4"
-      },
-      "captions": {
-        "fb_ig": "ทุกคนเคยสงสัยไหมว่าทำไมเราต้องคลีนออฟฟิศประจำ? ไม่รอจนเห็นคราบเหลืองหรือฝุ่นกองพะเนิน? Sangkan Clean มีคำตอบครับ! คืออย่างงี้...เชื้อโรคเนี่ยไม่ได้รอให้เราเห็นด้วยตาเปล่าถึงจะเริ่มก่อตัวนะ มันสะสมอยู่",
-        "tiktok": "เคยสงสัยไหม ทำไมต้องคลีนประจำ ไม่รอให้สกปรก? Sangkan Clean บอกเลยว่าเชื้อโรคไม่เคยรอ! มันสะสมทุกวันตามจุดสัมผัสต่างๆ ไม่",
-        "line": "รู้หรือไม่ว่าทำไมต้องคลีนประจำ ไม่ใช่รอจนสกปรก? Sangkan Clean อยากบอกว่าเชื้อโรคและแบคทีเรียไม่ได้รอให้คุณเห็นคราบถึงจะเ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122099158569401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-20T01:02:45.880414+07:00",
       "topic_id": "edu_harsh_chemical",
@@ -2771,6 +2725,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122108544039401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-07T19:02:43.677191+07:00",
+      "topic_id": "edu_routine_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260807/feed.png",
+        "stories_png": "out/20260807/stories.png",
+        "venue_need": "showroom",
+        "venue_got": "showroom",
+        "bg_source": "bg-showroom-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260807/bg.jpg",
+        "voiceover_mp3": "out/20260807/voiceover.mp3",
+        "stories_srt": "out/20260807/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เฮ้ยย รู้ยังว่าเชื้อโรคสะสมไวแค่ไหน? 🦠 หลายคนอาจจะคิดว่ารอให้เห็นคราบสกปรกก่อนค่อยทำความสะอาดก็ได้นี่นา แต่ความจริงคือเชื้อโรคและแบคทีเรียมันก่อตัวขึ้นใหม่ทุกวันนะ ไม่ต้องรอให้เราเห็นด้วยตาเปล่าหรอก\n\n",
+        "tiktok": "อย่ารอให้เห็นคราบแล้วค่อยคลีน! 🦠 เชื้อโรคสะสมทุกวัน แม้ตาเปล่าจะมองไม่เห็น การทำความสะอาดประจำนี่แหละกุญแจสำคัญ ช่วยลดกา",
+        "line": "ทำไมต้องคลีนประจำ ไม่รอจนสกปรก? เรื่องนี้สำคัญกว่าที่คิดนะ! 🦠 เพราะเชื้อโรคสะสมอยู่ทุกวัน ไม่ได้รอให้คุณเห็นคราบก่อนถึงจ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122108615241401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
