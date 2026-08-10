@@ -1,53 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-07-21T23:13:59.939862+07:00",
-      "topic_id": "edu_dust_it",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260721/feed.png",
-        "stories_png": "out/20260721/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260721/bg.jpg",
-        "voiceover_mp3": "out/20260721/voiceover.mp3",
-        "stories_srt": "out/20260721/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "รู้ไหมว่าฝุ่นตัวเล็กๆ ที่มองข้ามเนี่ย คือตัวร้ายทำลายอุปกรณ์ IT ของเราอยู่ทุกวันนะ! 💨\n\nพอฝุ่นเข้าไปสะสมในคอมพิวเตอร์หรือโน้ตบุ๊ก จะทำให้ระบบระบายความร้อนทำงานหนักขึ้น คอมจะร้อน อืด และประสิทธิภาพการทำ",
-        "tiktok": "รู้ยัง? ฝุ่นในคอมนี่แหละ ตัวการทำคอมร้อน อืด พัดลมทำงานหนักจนพังไว! 🥵\n\nหลายคนมองข้าม แต่เจ้านี่แหละที่ทำให้ประสิทธิภาพเค",
-        "line": "รู้ไหมว่าฝุ่นในคอมพิวเตอร์ของคุณ กำลังเป็นตัวร้ายทำลายประสิทธิภาพเครื่องอยู่! 🖥️\n\nฝุ่นที่สะสมทำให้คอมร้อน พัดลมทำงานหนัก"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122100798453401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-22T17:41:05.457413+07:00",
       "topic_id": "edu_server_room",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122109338877401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-10T19:04:21.811308+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260810/feed.png",
+        "stories_png": "out/20260810/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260810/bg.jpg",
+        "voiceover_mp3": "out/20260810/voiceover.mp3",
+        "stories_srt": "out/20260810/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานทุกคนรู้ไหมว่า ฝุ่นเล็กๆ ที่เรามองข้ามไปนี่แหละ คือตัวการสำคัญที่ทำให้อุปกรณ์ IT ของเราทำงานได้ไม่เต็มที่ และอายุสั้นลง! 😲\n\nลองนึกภาพคอมพิวเตอร์ของคุณที่ทำงานหนักทุกวัน พัดลมระบายความร้อนต้องพยา",
+        "tiktok": "ฝุ่นคือศัตรูตัวฉกาจของอุปกรณ์ IT! 💻 มันทำให้คอมร้อน พัดลมทำงานหนักจนเครื่องรวน และอายุสั้นลงแบบไม่รู้ตัว ไม่ว่าจะใน **โร",
+        "line": "วันนี้ Sangkan Clean มีเรื่องใกล้ตัวมาเล่าให้ฟังครับ! รู้ไหมว่าฝุ่นในออฟฟิศหรือที่ทำงานนี่แหละ ตัวการร้ายที่ทำให้คอมพิวเ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122109455097401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
