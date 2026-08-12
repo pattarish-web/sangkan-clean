@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_hidden_dirt",
+  "last_topic": "big_cleaning",
   "posts": [
-    {
-      "ts": "2026-07-23T19:04:54.622575+07:00",
-      "topic_id": "big_cleaning",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260723/feed.png",
-        "stories_png": "out/20260723/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-08.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260723/bg.jpg",
-        "voiceover_mp3": "out/20260723/voiceover.mp3",
-        "stories_srt": "out/20260723/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "บางทีงาน Big Cleaning มันก็เหนื่อยใช่ไหมครับ? โดยเฉพาะคราบฝังลึกที่เจอในหลายๆ ที่ อย่างแม่บ้านศูนย์การค้า หรือแม่บ้านคลินิกที่ต้องเนี๊ยบเป็นพิเศษ Sangkan Clean เข้าใจดีครับว่าการหาทีมที่เก็บงานได้ละเอ",
-        "tiktok": "เจอคราบฝังลึกทีไร ปวดหัวทุกทีใช่ไหม? 😫 Sangkan Clean ช่วยได้! ทีมงานเราประสบการณ์กว่า 30 ปี เชี่ยวชาญ Big Cleaning ทั้งศ",
-        "line": "เบื่อไหมกับงาน Big Cleaning ที่คราบฝังลึกยังหลงเหลือ? Sangkan Clean มีคำตอบ! เราคือทีมมืออาชีพประสบการณ์กว่า 30 ปี ที่เข"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122102608581401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-23T23:55:12.202833+07:00",
       "topic_id": "edu_checklist",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122110073385401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-12T13:44:50.228942+07:00",
+      "topic_id": "big_cleaning",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260812/feed.png",
+        "stories_png": "out/20260812/stories.png",
+        "venue_need": "gym",
+        "venue_got": "gym",
+        "bg_source": "bg-gym-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260812/bg.jpg",
+        "voiceover_mp3": "out/20260812/voiceover.mp3",
+        "stories_srt": "out/20260812/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจดีว่า งาน Big Cleaning หลังก่อสร้าง ไม่ว่าจะเป็น ทำความสะอาดหลังก่อสร้างคอนโด ทำความสะอาดหลังก่อสร้างฟิตเนส หรืออาคารพานิชย์ ทุกที่มักมีคราบฝังแน่นที่จัดการยาก เรามีทีมแม่บ้",
+        "tiktok": "งาน Big Cleaning หลังก่อสร้าง ให้ Sangkan Clean ดูแล! 🚧 คราบฝังลึก ฝุ่นหนักแค่ไหนก็ไม่หวั่น ทีมเรามืออาชีพ มีประสบการณ์ก",
+        "line": "เจอคราบฝังแน่น หลังงานก่อสร้าง ทั้งคอนโด ฟิตเนส หรืออาคารพานิชย์ จนปวดหัวใช่ไหม? ให้ Sangkan Clean เข้าไปช่วยจัดการ! เรา"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122110090641401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
