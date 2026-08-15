@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_hidden_cost",
+  "last_topic": "price_pack",
   "posts": [
-    {
-      "ts": "2026-07-26T22:38:05.276909+07:00",
-      "topic_id": "price_pack",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260726/feed.png",
-        "stories_png": "out/20260726/stories.png",
-        "venue_need": "restaurant",
-        "venue_got": "restaurant",
-        "bg_source": "bg-restaurant-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260726/bg.jpg",
-        "voiceover_mp3": "out/20260726/voiceover.mp3",
-        "stories_srt": "out/20260726/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีมงานคนรุ่นใหม่ หรือเอเจนซี่สุดคูล ที่กำลังหาตัวช่วยทำความสะอาดออฟฟิศอยู่รึเปล่าครับ? Sangkan Clean เข้าใจเลยว่า เวลาเป็นของมีค่า! เรามีแพ็คสุดคุ้มให้เลือก ไม่ว่าจะเป็นแม่บ้านคาเฟ่ หรือบริการทำความสะ",
-        "tiktok": "ออฟฟิศรกจนหมดไอเดีย? Sangkan Clean ช่วยได้! เรามีแพ็คดูแลทำความสะอาดออฟฟิศ เริ่มแค่ ฿2,900 ต่อเดือน จะแม่บ้านคาเฟ่ หรือบ",
-        "line": "ออฟฟิศคุณ สะอาดพร้อมทำงานรึยัง? 🚀 Sangkan Clean มีแพ็คดูแลทำความสะอาดออฟฟิศสุดคุ้ม! เลือกได้ตามไซส์ออฟฟิศ แพ็ค S เริ่ม ฿"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122105029119401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-27T20:29:39.174871+07:00",
       "topic_id": "edu_building_hygiene",
@@ -2794,6 +2747,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122111172381401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-15T12:43:14.685014+07:00",
+      "topic_id": "price_pack",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260815/feed.png",
+        "stories_png": "out/20260815/stories.png",
+        "venue_need": "warehouse",
+        "venue_got": "warehouse",
+        "bg_source": "bg-warehouse-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260815/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีม Sangkan Clean เข้าใจดีว่าการจัดการเรื่องความสะอาดในออฟฟิศ มันไม่ใช่เรื่องเล็กๆ เลย โดยเฉพาะถ้าคุณต้องดูแลโปรเจกต์ใหญ่ๆ หรือธุรกิจที่กำลังเติบโต ถ้าการหาแม่บ้านมหาวิทยาลัย แม่บ้านห้างสรรพสินค้า หรื",
+        "tiktok": "ออฟฟิศรกๆ ไม่มีเวลาจัดการ? Sangkan Clean มาช่วยแล้ว! 👋 เรามีแพ็คแม่บ้านออฟฟิศ ราคาดีงาม เริ่มแค่ 2,900 บาท/เดือน จะแม่บ้",
+        "line": "เพื่อนๆ ที่ดูแลออฟฟิศอยู่ Sangkan Clean เข้าใจดีว่าความสะอาดคือเรื่องสำคัญ! 😊 เรามีแพ็คเกจแม่บ้านออฟฟิศที่ตอบโจทย์คุณ ไม"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122111199033401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
