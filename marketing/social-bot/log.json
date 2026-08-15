@@ -1,53 +1,6 @@
 {
-  "last_topic": "price_pack",
+  "last_topic": "edu_building_hygiene",
   "posts": [
-    {
-      "ts": "2026-07-27T20:29:39.174871+07:00",
-      "topic_id": "edu_building_hygiene",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260727/feed.png",
-        "stories_png": "out/20260727/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260727/bg.jpg",
-        "voiceover_mp3": "out/20260727/voiceover.mp3",
-        "stories_srt": "out/20260727/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "รู้ไหมว่าความสะอาดของออฟฟิศข้างๆ ก็ส่งผลถึงเราได้นะ! 🤔 ไม่ใช่แค่เรื่องภาพลักษณ์ แต่คือโอกาสที่เชื้อโรคจะปนเปื้อนข้ามห้องในตึกเดียวกัน การที่แต่ละออฟฟิศใส่ใจดูแลพื้นที่ตัวเองและบริเวณส่วนกลาง ไม่ว่าจะห",
-        "tiktok": "ตึกเราสะอาดแน่ ถ้าทุกออฟฟิศช่วยกัน! รู้ไหมว่าเชื้อโรคชอบแอบซ่อนแล้วเดินทางข้ามห้องในตึกเดียวกัน ถ้าแต่ละออฟฟิศใส่ใจดูแลค",
-        "line": "ความสะอาดในตึกเดียวกัน ไม่ใช่แค่เรื่องของใครคนใดคนหนึ่งนะ! การที่ทุกออฟฟิศ ไม่ว่าจะเป็นสำนักงานทั่วไป โชว์รูม หรือแม้แต่"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122105338167401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-27T21:00:41.263666+07:00",
       "topic_id": "edu_zone_clean",
@@ -2792,6 +2745,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122111199033401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-15T18:38:53.455065+07:00",
+      "topic_id": "edu_building_hygiene",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260815/feed.png",
+        "stories_png": "out/20260815/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260815/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เคยคิดไหมว่า ออฟฟิศเราจะสะอาดแค่ไหน แต่ถ้าออฟฟิศข้างๆ ไม่ค่อยดูแล มันก็ส่งผลกระทบต่อเราได้นะ! ✨ เพราะเชื้อโรคและฝุ่นผงไม่ได้มีกำแพงกั้น\n\nการดูแลเรื่อง ทำความสะอาดหลังก่อสร้างสำนักงาน ให้เรียบร้อยตั้งแ",
+        "tiktok": "ออฟฟิศเราจะสะอาดแค่ไหน แต่ถ้าเพื่อนร่วมตึกไม่ช่วยกันดูแล สุขอนามัยรวมๆ ก็ยังไม่เต็มร้อยนะ 😅\n\nเรื่องความสะอาด ไม่ใช่แค่กา",
+        "line": "รู้ไหมว่าความสะอาดในออฟฟิศเรา มีผลกับออฟฟิศข้างๆ ด้วยนะ\n\nถ้าออฟฟิศคุณดูแลดี แต่เพื่อนร่วมชั้นไม่ค่อยใส่ใจ โอกาสที่สิ่งสก"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122111358093401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
