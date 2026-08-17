@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_move_in_clean",
+  "last_topic": "after_construction",
   "posts": [
-    {
-      "ts": "2026-07-28T23:57:33.590463+07:00",
-      "topic_id": "after_construction",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260728/feed.png",
-        "stories_png": "out/20260728/stories.png",
-        "venue_need": "mall",
-        "venue_got": "mall",
-        "bg_source": "bg-mall-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260728/bg.jpg",
-        "voiceover_mp3": "out/20260728/voiceover.mp3",
-        "stories_srt": "out/20260728/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "หลังก่อสร้าง ฝุ่นเยอะ คราบแน่น Sangkan Clean จัดการให้ชัวร์! ✨\n\nHey ทีม! ใครเจอโปรเจกต์ที่ก่อสร้างเสร็จแล้ว แต่ดันเหลือฝุ่นปูนเกรอะกรัง คราบสีแข็งๆ หรือเศษวัสดุที่จัดการยากบ้าง? เข้าใจเลยว่างานหลังก่อ",
-        "tiktok": "งานก่อสร้างเสร็จ แต่ฝุ่นปูน คราบสี ยังตามหลอกหลอน? Sangkan Clean ช่วยได้! เราพร้อมจัดการทุกความสกปรก ไม่ว่าจะเป็น บิ๊กคล",
-        "line": "โปรเจกต์สร้างเสร็จแล้ว แต่เจอปัญหาฝุ่นปูน คราบสีติดแน่นอยู่ไหมครับ? Sangkan Clean เข้าใจดีว่างานเคลียร์หลังก่อสร้างมันละ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122105721201401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-29T18:15:04.297085+07:00",
       "topic_id": "edu_routine_clean",
@@ -2782,6 +2735,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122111886849401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-17T12:51:46.361499+07:00",
+      "topic_id": "after_construction",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260817/feed.png",
+        "stories_png": "out/20260817/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260817/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "สร้างเสร็จแล้ว แต่เจอปัญหาฝุ่นปูน คราบสีทั่วพื้นที่เหรอ? 😩 ไม่ต้องกังวล! Sangkan Clean พร้อมช่วยให้งานของคุณง่ายขึ้น ทีมเราเชี่ยวชาญเรื่อง ทำความสะอาดหลังก่อสร้างโรงแรม โดยเฉพาะ ไม่ว่าจะเป็น บิ๊กคลีนน",
+        "tiktok": "หลังก่อสร้าง ฝุ่นเยอะ คราบเต็มไปหมด? Sangkan Clean ช่วยได้! เราเชี่ยวชาญ ทำความสะอาดหลังก่อสร้างโรงแรม และ บิ๊กคลีนนิ่งร",
+        "line": "หมดปัญหาฝุ่นปูน คราบสีหลังก่อสร้าง! Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลความสะอาดให้คุณครับ เราคือมือโปรด้าน ทำความสะอา"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122111902131401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
