@@ -1,53 +1,6 @@
 {
-  "last_topic": "office_ondemand",
+  "last_topic": "edu_productivity",
   "posts": [
-    {
-      "ts": "2026-07-31T00:02:29.545579+07:00",
-      "topic_id": "edu_productivity",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260730/feed.png",
-        "stories_png": "out/20260730/stories.png",
-        "venue_need": "gym",
-        "venue_got": "gym",
-        "bg_source": "bg-gym-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260730/bg.jpg",
-        "voiceover_mp3": "out/20260730/voiceover.mp3",
-        "stories_srt": "out/20260730/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ออฟฟิศที่สะอาดเอี่ยมอ่องเนี่ย ส่งผลดีต่อประสิทธิภาพการทำงานของเราได้จริงดิ? 🧐 ผลวิจัยชี้ชัดเลยว่า สภาพแวดล้อมที่สะอาดและเป็นระเบียบ ช่วยให้พนักงานมีสมาธิและโฟกัสกับงานได้ดีขึ้นถึง 15% เลยนะ!\n\nลองคิดดู",
-        "tiktok": "ออฟฟิศสะอาด เพิ่ม Productivity ได้จริงดิ? 🧐 งานวิจัยบอกว่า สภาพแวดล้อมที่คลีนๆ ช่วยให้เราโฟกัสงานได้ดีขึ้นถึง 15% เลยนะ!",
-        "line": "ออฟฟิศสะอาด ช่วยให้ทำงานดีขึ้นได้จริงหรือ? 🤔 งานวิจัยจากต่างประเทศชี้ว่า สภาพแวดล้อมที่สะอาดส่งผลให้เราโฟกัสกับงานได้ดีข"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106402393401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-31T18:38:58.242559+07:00",
       "topic_id": "edu_creative_block",
@@ -2768,6 +2721,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122112472965401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-19T18:46:22.344552+07:00",
+      "topic_id": "edu_productivity",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260819/feed.png",
+        "stories_png": "out/20260819/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260819/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมว่า ออฟฟิศที่สะอาดเอี่ยม ไม่ใช่แค่ดูดี แต่ยังช่วยให้คุณทำงานดีขึ้นได้จริง! 📈 งานวิจัยหลายชิ้นยืนยันตรงกันว่า สภาพแวดล้อมที่ถูกสุขอนามัย ช่วยให้พนักงานมีสมาธิและโฟกัสกับงานได้ดีขึ้นถึง 15% เลยนะ\n",
+        "tiktok": "ออฟฟิศสะอาด ช่วยให้ทำงานดีขึ้นจริงเหรอ? งานวิจัยบอกว่า 'จริง!' สภาพแวดล้อมที่ถูกสุขอนามัยช่วยเพิ่มสมาธิให้พนักงาน โฟกัสง",
+        "line": "หลายคนคงเคยคิดว่า ออฟฟิศสะอาดเกี่ยวอะไรกับ Productivity? งานวิจัยจากต่างประเทศยืนยันแล้วว่า เกี่ยวเต็มๆ ครับ! สภาพแวดล้อ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122112545541401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
