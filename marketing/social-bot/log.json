@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_productivity",
+  "last_topic": "edu_creative_block",
   "posts": [
-    {
-      "ts": "2026-07-31T18:38:58.242559+07:00",
-      "topic_id": "edu_creative_block",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260731/feed.png",
-        "stories_png": "out/20260731/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260731/bg.jpg",
-        "voiceover_mp3": "out/20260731/voiceover.mp3",
-        "stories_srt": "out/20260731/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ใครเคยมีอาการ Creative Block กันบ้าง? 🤯 บางทีไม่ใช่แค่ความเครียดนะ แต่สภาพแวดล้อมรอบตัวก็มีผลมากๆ สังเกตไหมว่าเวลาพื้นที่ทำงานรกๆ หรือไม่ค่อยสะอาดเนี่ย สมองเราเหมือนต้องใช้พลังงานไปกับการจัดการความวุ่",
-        "tiktok": "ไอเดียตัน สมองไม่แล่น? 🤯 ลองมองรอบตัวดูสิ! ออฟฟิศรกๆ ไม่สะอาด ก็ทำให้สมองเราต้องสู้กับความวุ่นวาย แทนที่จะไปคิดสร้างสรรค",
-        "line": "รู้ไหมว่า Creative Block ที่แท้คือออฟฟิศ? 🤯 บางทีไอเดียไม่ออก ไม่ใช่เพราะเครียดนะ แต่เป็นเพราะสภาพแวดล้อมไม่เอื้อต่างหาก"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106621393401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-07-31T19:31:43.338831+07:00",
       "topic_id": "agency_focus",
@@ -2766,6 +2719,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122112545541401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-20T10:18:37.443183+07:00",
+      "topic_id": "edu_creative_block",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260820/feed.png",
+        "stories_png": "out/20260820/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260820/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "Creative Block ที่แท้คือออฟฟิศ? 🤔 ไม่น่าเชื่อว่าสภาพแวดล้อมรอบตัวเรา มีผลต่อความคิดสร้างสรรค์มากจริงๆ นะครับ สมองคนเราชอบความโล่งโปร่งสบาย เพื่อให้คิดงานได้อย่างเต็มที่ การที่โต๊ะทำงานรก พื้นที่สกปรก ",
+        "tiktok": "ใครเคย Creative Block บ้าง? 🤯 บางทีไม่ได้เป็นที่เรานะ แต่เป็นที่ออฟฟิศ! สมองเราชอบที่โล่งๆ สะอาดๆ ถ้าเจอพื้นที่รกๆ สมาธิ",
+        "line": "Creative Block ที่แท้คือออฟฟิศ? 💡 ไม่น่าเชื่อว่าพื้นที่ทำงานส่งผลต่อความคิดสร้างสรรค์ของเราได้ขนาดนี้! สมองชอบความโปร่ง "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122112774717401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
