@@ -277,15 +277,27 @@ def dedupe_keywords(keywords: list[dict]) -> list[dict]:
 
 
 def write_redirect_files(redirects: list[dict]) -> int:
+    """Write GH Pages–compatible HTML redirect stubs (+ optional _redirects for proxies).
+
+    If the canonical target file is missing but the source still has content,
+    copy source → target first so we never point visitors at a 404.
+    """
     blog_dir = ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
     written = 0
     for rule in redirects:
         from_path = rule["from"]  # /blog/slug.html
-        slug = Path(from_path).stem
-        target_url = SITE_URL + rule["to"]
-        out = blog_dir / f"{slug}.html"
-        out.write_text(redirect_html(target_url), encoding="utf-8")
+        to_path = rule["to"]
+        from_file = ROOT / from_path.lstrip("/")
+        to_file = ROOT / to_path.lstrip("/")
+        target_url = SITE_URL + to_path
+
+        if from_file.is_file() and not to_file.is_file():
+            to_file.parent.mkdir(parents=True, exist_ok=True)
+            to_file.write_text(from_file.read_text(encoding="utf-8"), encoding="utf-8")
+
+        from_file.parent.mkdir(parents=True, exist_ok=True)
+        from_file.write_text(redirect_html(target_url), encoding="utf-8")
         written += 1
 
     # Cloudflare / Netlify style redirects (ignored by plain GH Pages, useful if proxy added)

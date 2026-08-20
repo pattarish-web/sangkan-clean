@@ -54,7 +54,7 @@ if start_idx != -1 and end_idx != -1:
             "name": "กรุงเทพมหานคร และปริมณฑล"
           },
           "sameAs": [
-            "https://www.facebook.com/100067763717435",
+            "https://www.facebook.com/61592039062581",
             "https://line.me/ti/p/@sangkanclean"
           ]
         },

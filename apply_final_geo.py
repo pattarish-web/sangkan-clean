@@ -25,7 +25,7 @@ def apply_text():
                         </li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
                             <i class="fa-solid fa-check-circle text-success" style="font-size: 1.2rem; margin-top: 5px;"></i> 
-                            <div><strong>100% Trust & Guarantee:</strong> ทำงานในนามบริษัท มีการรับประกันความเสียหาย มั่นใจได้ในความปลอดภัยสูงสุด (พบกับรูปแบบบริษัทเร็วๆนี้)</div>
+                            <div><strong>100% Trust & Guarantee:</strong> ทำงานในนามบริษัท มีการรับประกันความเสียหาย มั่นใจได้ในความปลอดภัยสูงสุด</div>
                         </li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
                             <i class="fa-solid fa-check-circle text-success" style="font-size: 1.2rem; margin-top: 5px;"></i> 

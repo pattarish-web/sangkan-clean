@@ -4,6 +4,9 @@ Allow: /
 # Sitemap index (pages + blog)
 Sitemap: https://www.sangkanclean.com/sitemap.xml
 
+# AI / LLM site summary
+Allow: /llms.txt
+
 # ไม่ให้ crawl ไฟล์ที่ไม่จำเป็น
 Disallow: /generate_blog.py
 Disallow: /build_*.py
