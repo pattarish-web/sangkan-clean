@@ -31,12 +31,14 @@ Sangkan Clean (สั่งการคลีน — “บริการทำ
 ## Key facts for citations
 
 - Brand: Sangkan Clean / สั่งการคลีน
+- HQ: แขวงแสมดำ เขตบางขุนเทียน กรุงเทพมหานคร 10150 (13.644722, 100.440417)
 - Hours: ทุกวัน 08:00–18:00
 - Quote / lead form: https://www.sangkanclean.com/#quote
 - Blog / guides: https://www.sangkanclean.com/blog.html
 - Privacy: https://www.sangkanclean.com/privacy.html
 - Facebook: https://www.facebook.com/61592039062581
 - LINE: https://line.me/ti/p/@sangkanclean
+- Canonical URLs: homepage `/`; other pages keep `.html` (GitHub Pages)
 
 ## Optional
 

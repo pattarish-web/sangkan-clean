@@ -50,15 +50,22 @@ BUSINESS = {
     "facebook": "https://www.facebook.com/61592039062581",
     "messenger": "https://m.me/61592039062581",
     "email": FORM_SUBMIT_EMAIL,
-    # HQ / primary service hub (Bangkok) — replace with exact shop coords when available
-    "latitude": 13.7563,
-    "longitude": 100.5018,
-    "maps_url": "https://maps.google.com/?q=13.7563,100.5018",
+    # HQ: 13°38'41.0"N 100°26'25.5"E → แขวงแสมดำ เขตบางขุนเทียน กรุงเทพฯ 10150
+    "latitude": 13.644722,
+    "longitude": 100.440417,
+    "maps_url": "https://maps.google.com/?q=13.644722,100.440417",
+    "street_address": "แขวงแสมดำ เขตบางขุนเทียน",
     "address_locality": "กรุงเทพมหานคร",
     "address_region": "กรุงเทพมหานคร",
-    "postal_code": "10110",
+    "postal_code": "10150",
     "address_country": "TH",
 }
+
+# Canonical URL policy (GitHub Pages, long-term host):
+# - Homepage: https://www.sangkanclean.com/  (not /index.html)
+# - Other pages: keep .html in canonical + sitemap (matches files + internal links)
+# - Extensionless URLs are GH Pages aliases of the same .html file; do not create
+#   a second canonical form. Soft HTML stubs handle cannibalization (no true 301).
 
 SERVICE_LANDINGS = [
     {

@@ -276,11 +276,19 @@ def dedupe_keywords(keywords: list[dict]) -> list[dict]:
     return out
 
 
+def is_redirect_stub(path: Path) -> bool:
+    """True if file is already a soft-redirect stub (do not copy as content)."""
+    if not path.is_file():
+        return False
+    head = path.read_text(encoding="utf-8", errors="ignore")[:2500].lower()
+    return 'http-equiv="refresh"' in head or "location.replace" in head
+
+
 def write_redirect_files(redirects: list[dict]) -> int:
     """Write GH Pages–compatible HTML redirect stubs (+ optional _redirects for proxies).
 
-    If the canonical target file is missing but the source still has content,
-    copy source → target first so we never point visitors at a 404.
+    If the canonical target file is missing but the source still has real content
+    (not already a stub), copy source → target first so we never 404.
     """
     blog_dir = ROOT / "blog"
     blog_dir.mkdir(exist_ok=True)
@@ -292,7 +300,7 @@ def write_redirect_files(redirects: list[dict]) -> int:
         to_file = ROOT / to_path.lstrip("/")
         target_url = SITE_URL + to_path
 
-        if from_file.is_file() and not to_file.is_file():
+        if from_file.is_file() and not to_file.is_file() and not is_redirect_stub(from_file):
             to_file.parent.mkdir(parents=True, exist_ok=True)
             to_file.write_text(from_file.read_text(encoding="utf-8"), encoding="utf-8")
 
