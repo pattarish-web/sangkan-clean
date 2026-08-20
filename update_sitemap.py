@@ -79,9 +79,12 @@ def update_sitemap():
         posts = json.load(f)
 
     blog_urls = []
+    from seo.redirects_util import redirect_from_slugs
+
+    blocked = redirect_from_slugs()
     for post in posts:
         slug = post.get("slug")
-        if not slug:
+        if not slug or slug in blocked:
             continue
         blog_path = f"blog/{slug}.html"
         # Skip soft-redirect stubs so sitemap only lists indexable content

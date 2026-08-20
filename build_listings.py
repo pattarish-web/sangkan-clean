@@ -10,8 +10,11 @@ HOME_ARTICLES = 3
 
 
 def load_posts():
+    from seo.redirects_util import filter_indexable_posts
+
     with open("posts.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+        posts = json.load(f)
+    return filter_indexable_posts(posts)
 
 
 def write_posts_index(posts):

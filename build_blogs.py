@@ -14,9 +14,16 @@ def slugify(text):
 
 
 def stable_related_posts(posts, current_idx, count=3):
+    from seo.redirects_util import redirect_from_slugs
+
+    blocked = redirect_from_slugs()
     current = posts[current_idx]
     category = current.get("category", "")
-    pool = [p for i, p in enumerate(posts) if i != current_idx and p.get("slug")]
+    pool = [
+        p
+        for i, p in enumerate(posts)
+        if i != current_idx and p.get("slug") and p.get("slug") not in blocked
+    ]
     same_cat = [p for p in pool if p.get("category") == category]
     others = [p for p in pool if p not in same_cat]
     ordered = same_cat + others
@@ -157,20 +164,9 @@ def extract_faq_schema(content):
 
 def redirect_slugs():
     """Slugs kept as HTML redirect stubs (must not be pruned)."""
-    path = os.path.join("seo", "redirects.json")
-    if not os.path.isfile(path):
-        return set()
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            rules = json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return set()
-    slugs = set()
-    for rule in rules:
-        from_path = rule.get("from") or ""
-        if from_path.endswith(".html"):
-            slugs.add(os.path.splitext(os.path.basename(from_path))[0])
-    return slugs
+    from seo.redirects_util import redirect_from_slugs
+
+    return redirect_from_slugs()
 
 
 def prune_orphan_blogs(valid_slugs):
@@ -247,8 +243,15 @@ def render_blog_html(posts, idx, template):
 
 def build_single_blog(posts, idx):
     """Build one blog HTML file (used for per-post checkpoint saves)."""
+    from seo.redirects_util import redirect_from_slugs
+
     if not os.path.exists("blog"):
         os.makedirs("blog")
+    post = posts[idx]
+    slug = post.get("slug") or slugify(post.get("title") or "") or f"post-{idx}"
+    if slug in redirect_from_slugs():
+        # Keep existing soft-redirect stub; do not regenerate full content
+        return slug
     with open("blog_template.html", "r", encoding="utf-8") as f:
         template = f.read()
     slug, html = render_blog_html(posts, idx, template)
@@ -259,6 +262,8 @@ def build_single_blog(posts, idx):
 
 
 def build_blogs():
+    from seo.redirects_util import redirect_from_slugs
+
     if not os.path.exists("blog"):
         os.makedirs("blog")
 
@@ -268,10 +273,18 @@ def build_blogs():
     with open("blog_template.html", "r", encoding="utf-8") as f:
         template = f.read()
 
+    blocked = redirect_from_slugs()
     updated_posts = []
     valid_slugs = set()
+    skipped = 0
 
     for i, post in enumerate(posts):
+        slug = post.get("slug") or slugify(post.get("title") or "") or f"post-{i}"
+        post["slug"] = slug
+        if slug in blocked:
+            skipped += 1
+            continue
+
         slug, html = render_blog_html(posts, i, template)
         valid_slugs.add(slug)
 
@@ -287,7 +300,10 @@ def build_blogs():
         json.dump(updated_posts, f, ensure_ascii=False, indent=2)
 
     write_analytics_js()
-    print(f"Generated {len(updated_posts)} static blog posts in blog/ directory.")
+    print(
+        f"Generated {len(updated_posts)} static blog posts in blog/ directory "
+        f"(skipped {skipped} redirect stubs)."
+    )
     if removed:
         print(f"Removed {removed} orphan blog HTML files.")
 
