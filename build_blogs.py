@@ -213,7 +213,7 @@ def render_blog_html(posts, idx, template):
     title = re.sub(r"\s*[–—\-]\s*Sangkan Clean\s*$", "", post["title"], flags=re.I).strip()
     post["title"] = title
     if "unsplash.com" in (post.get("image") or ""):
-        post["image"] = f"{SITE_URL}/og-image.png"
+        post["image"] = f"{SITE_URL}/og-image.jpg"
 
     page_title = title if re.search(r"sangkan\s*clean", title, re.I) else f"{title} | Sangkan Clean"
 

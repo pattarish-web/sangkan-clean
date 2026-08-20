@@ -51,6 +51,24 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Organization",
+          "@id": "https://www.sangkanclean.com/#organization",
+          "name": "Sangkan Clean",
+          "alternateName": "สั่งการคลีน",
+          "url": "https://www.sangkanclean.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.sangkanclean.com/logo.png"
+          },
+          "email": "info@sangkanclean.com",
+          "telephone": "+66636865134",
+          "sameAs": [
+            "https://www.facebook.com/61592039062581",
+            "https://line.me/ti/p/@sangkanclean",
+            "https://m.me/61592039062581"
+          ]
+        },
+        {
           "@type": "LocalBusiness",
           "@id": "https://www.sangkanclean.com/#business",
           "name": "Sangkan Clean สั่งการคลีน บริการทำความสะอาด สั่งได้ดั่งใจ",
@@ -63,6 +81,7 @@
           "logo": "https://www.sangkanclean.com/logo.png",
           "priceRange": "฿฿",
           "foundingDate": "1993",
+          "parentOrganization": { "@id": "https://www.sangkanclean.com/#organization" },
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "แขวงแสมดำ เขตบางขุนเทียน",
@@ -155,9 +174,23 @@
         },
         {
           "@type": "WebSite",
+          "@id": "https://www.sangkanclean.com/#website",
           "name": "Sangkan Clean",
           "url": "https://www.sangkanclean.com/",
-          "publisher": { "@id": "https://www.sangkanclean.com/#business" }
+          "inLanguage": "th-TH",
+          "publisher": { "@id": "https://www.sangkanclean.com/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.sangkanclean.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "หน้าแรก",
+              "item": "https://www.sangkanclean.com/"
+            }
+          ]
         }
       ]
     }
@@ -628,23 +661,23 @@
                         </div>
                     </article><article class="article-card">
                         <div class="article-img">
-                            <img src="https://www.sangkanclean.com/images/blog/covers/c198.jpg" alt="KPI ทีมแม่บ้านออฟฟิศ: วัดความสำเร็จอย่างไรให้เห็นผล" loading="lazy" width="400" height="240">
+                            <img src="https://www.sangkanclean.com/images/blog/covers/c198.jpg" alt="KPI ทีมแม่บ้านออฟฟิศที่วัดได้เพื่อเพิ่มประสิทธิภาพ" loading="lazy" width="400" height="240">
                             <span class="article-tag">ธุรกิจ</span>
                         </div>
                         <div class="article-body">
-                            <h3>KPI ทีมแม่บ้านออฟฟิศ: วัดความสำเร็จอย่างไรให้เห็นผล</h3>
+                            <h3>KPI ทีมแม่บ้านออฟฟิศที่วัดได้เพื่อเพิ่มประสิทธิภาพ</h3>
                             <p>เรียนรู้การตั้ง KPI ทีมแม่บ้านออฟฟิศเพื่อวัดผลสัมฤทธิ์และสร้างความมีระเบียบในองค์กร.</p>
-                            <a href="blog/kpi-ทีมแม่บ้านออฟฟิศ-วัดความสำเร็จอย่างไรให้เห็นผล.html" class="read-more">อ่านต่อ <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="blog/kpi-ทีมแม่บ้านออฟฟิศที่วัดได้เพื่อเพิ่มประสิทธิภาพ.html" class="read-more">อ่านต่อ <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article><article class="article-card">
                         <div class="article-img">
-                            <img src="https://www.sangkanclean.com/images/blog/covers/c197.jpg" alt="กำจัดเชื้อราในห้องน้ำแบบยั่งยืน วิธีที่คุณต้องลอง!" loading="lazy" width="400" height="240">
+                            <img src="https://www.sangkanclean.com/images/blog/covers/c197.jpg" alt="วิธีการกำจัดเชื้อราในห้องน้ำแบบยั่งยืนที่คุณต้องรู้" loading="lazy" width="400" height="240">
                             <span class="article-tag">เคล็ดลับ</span>
                         </div>
                         <div class="article-body">
-                            <h3>กำจัดเชื้อราในห้องน้ำแบบยั่งยืน วิธีที่คุณต้องลอง!</h3>
+                            <h3>วิธีการกำจัดเชื้อราในห้องน้ำแบบยั่งยืนที่คุณต้องรู้</h3>
                             <p>เคล็ดลับกำจัดเชื้อราในห้องน้ำอย่างยั่งยืนด้วยวิธีง่ายๆ ที่คุณทำได้เองที่บ้าน!</p>
-                            <a href="blog/กำจัดเชื้อราในห้องน้ำแบบยั่งยืน-วิธีที่คุณต้องลอง.html" class="read-more">อ่านต่อ <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="blog/วิธีการกำจัดเชื้อราในห้องน้ำแบบยั่งยืนที่คุณต้องรู้.html" class="read-more">อ่านต่อ <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article><!-- STATIC_ARTICLES_END -->
             </div>

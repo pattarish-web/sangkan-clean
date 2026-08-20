@@ -83,10 +83,18 @@ def update_sitemap():
         slug = post.get("slug")
         if not slug:
             continue
-        date = post.get(
-            "dateModified", post.get("date", today)
-        )
-        blog_urls.append(url_entry(f"blog/{slug}.html", "0.7", "monthly", date))
+        blog_path = f"blog/{slug}.html"
+        # Skip soft-redirect stubs so sitemap only lists indexable content
+        try:
+            with open(blog_path, encoding="utf-8") as bf:
+                head = bf.read(2500).lower()
+        except OSError:
+            continue
+        if 'http-equiv="refresh"' in head or "location.replace" in head:
+            continue
+        # Prefer today's lastmod when the HTML file exists (reflects recent SEO/GEO edits)
+        date = today
+        blog_urls.append(url_entry(blog_path, "0.7", "monthly", date))
 
     write_urlset("sitemap-pages.xml", page_urls)
     write_urlset("sitemap-blog.xml", blog_urls)

@@ -59,6 +59,16 @@
               "@type": "Question",
               "name": "{{faq3_q}}",
               "acceptedAnswer": { "@type": "Answer", "text": "{{faq3_a}}" }
+            },
+            {
+              "@type": "Question",
+              "name": "{{faq4_q}}",
+              "acceptedAnswer": { "@type": "Answer", "text": "{{faq4_a}}" }
+            },
+            {
+              "@type": "Question",
+              "name": "{{faq5_q}}",
+              "acceptedAnswer": { "@type": "Answer", "text": "{{faq5_a}}" }
             }
           ]
         }
@@ -85,7 +95,7 @@
     </style>
     {{analytics_script}}
     <meta name="geo.region" content="TH-10">
-    <meta name="geo.placename" content="Bangkok">
+    <meta name="geo.placename" content="Bang Khun Thian, Bangkok">
     <meta name="geo.position" content="13.644722;100.440417">
     <meta name="ICBM" content="13.644722, 100.440417">
 </head>
@@ -112,6 +122,16 @@
     <main class="svc-content">
         <p>{{intro}}</p>
 
+        <h2>ทำไมเลือก Sangkan Clean</h2>
+        <div class="svc-box">
+            <ul>
+                {{why_html}}
+            </ul>
+        </div>
+
+        <h2>พื้นที่ให้บริการ</h2>
+        <p>{{areas_html}}</p>
+
         <h2>เหมาะกับงานแบบไหน</h2>
         <div class="svc-box">
             <ul>
@@ -132,11 +152,20 @@
             <li>บริการกรุงเทพ ปริมณฑล และโปรเจกต์ขนาดใหญ่ทั่วประเทศ</li>
         </ul>
 
+        <h2>เคล็ดลับก่อนจอง</h2>
+        <div class="svc-box">
+            <ul>
+                {{tips_html}}
+            </ul>
+        </div>
+
         <h2>คำถามที่พบบ่อย</h2>
         <div class="svc-faq">
             <details><summary>{{faq1_q}}</summary><p>{{faq1_a}}</p></details>
             <details><summary>{{faq2_q}}</summary><p>{{faq2_a}}</p></details>
             <details><summary>{{faq3_q}}</summary><p>{{faq3_a}}</p></details>
+            <details><summary>{{faq4_q}}</summary><p>{{faq4_a}}</p></details>
+            <details><summary>{{faq5_q}}</summary><p>{{faq5_a}}</p></details>
         </div>
 
         <div class="svc-cta">

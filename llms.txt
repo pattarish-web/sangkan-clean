@@ -39,6 +39,7 @@ Sangkan Clean (สั่งการคลีน — “บริการทำ
 - Facebook: https://www.facebook.com/61592039062581
 - LINE: https://line.me/ti/p/@sangkanclean
 - Canonical URLs: homepage `/`; other pages keep `.html` (GitHub Pages)
+- Social share image: https://www.sangkanclean.com/og-image.jpg (prefer over legacy og-image.png)
 
 ## Optional
 
