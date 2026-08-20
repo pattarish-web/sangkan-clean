@@ -1,53 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-08-01T00:12:25.720506+07:00",
-      "topic_id": "edu_dust_it",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260801/feed.png",
-        "stories_png": "out/20260801/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260801/bg.jpg",
-        "voiceover_mp3": "out/20260801/voiceover.mp3",
-        "stories_srt": "out/20260801/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เพื่อนๆ ที่ทำงานกับคอมพิวเตอร์เป็นประจำ รู้ไหมว่าฝุ่นเล็กๆ ที่เราไม่ทันสังเกตเนี่ย เป็นภัยเงียบที่ทำร้ายอุปกรณ์ IT ของเราอยู่ทุกวัน? เจ้าฝุ่นพวกนี้เข้าไปสะสมในช่องระบายอากาศ พัดลมระบายความร้อน ทำให้เค",
-        "tiktok": "คอมร้อน พัดลมเสียงดัง? ระวัง! นั่นอาจเป็นสัญญาณเตือนจากฝุ่นนะ! ⚠️ ฝุ่นเล็กๆ ที่เรามองข้ามเนี่ย สะสมนานๆ เข้า ทำให้คอมทำง",
-        "line": "เคยสังเกตไหมว่าทำไมคอมถึงร้อนผิดปกติ หรือพัดลมทำงานเสียงดัง? 💻 สาเหตุหลักอาจมาจาก “ฝุ่น” ที่สะสมอยู่ภายในอุปกรณ์ IT ของค"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106684879401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-01T16:38:24.884706+07:00",
       "topic_id": "edu_server_room",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122112792771401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-20T18:48:38.825469+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260820/feed.png",
+        "stories_png": "out/20260820/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260820/bg.jpg",
+        "voiceover_mp3": "out/20260820/voiceover.mp3",
+        "stories_srt": "out/20260820/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "น้องฝุ่นตัวร้าย ใกล้ตัวกว่าที่คิด! 👾\n\nหลายคนอาจจะมองข้ามว่า ฝุ่นเล็กๆ เนี่ยแหละคือศัตรูตัวฉกาจของอุปกรณ์ IT ของเรา มันไม่ได้แค่ทำให้เครื่องดูสกปรกนะ แต่ยังเป็นตัวการที่ทำให้คอมพิวเตอร์และเซิร์ฟเวอร์ขอ",
+        "tiktok": "รู้ยัง? ฝุ่นคือตัวร้ายของคอมคุณ! 👾\n\nมันทำให้เครื่องร้อน พัดลมทำงานหนัก สุดท้ายก็พังเร็ว อย่าปล่อยให้ฝุ่นทำลายประสิทธิภาพ",
+        "line": "คุณเคยสงสัยไหมว่า ทำไมคอมพิวเตอร์ถึงชอบร้อนเร็ว? 🥵\n\nหนึ่งในสาเหตุหลักเลยคือ 'ฝุ่น' ครับ! ฝุ่นเล็กๆ ที่สะสมตามพัดลมและช่อ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122112873381401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
