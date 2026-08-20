@@ -1,0 +1,11 @@
+# Cloudflare Worker for HTTP 301 redirects in front of GitHub Pages.
+# Deploy: see docs/CLOUDFLARE_REDIRECTS.md
+name = "sangkan-clean-redirects"
+main = "worker.js"
+compatibility_date = "2026-03-01"
+
+# After `wrangler deploy`, attach routes in the dashboard (or uncomment):
+# routes = [
+#   { pattern = "www.sangkanclean.com/*", zone_name = "sangkanclean.com" },
+#   { pattern = "sangkanclean.com/*", zone_name = "sangkanclean.com" },
+# ]

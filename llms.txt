@@ -40,6 +40,7 @@ Sangkan Clean (สั่งการคลีน — “บริการทำ
 - LINE: https://line.me/ti/p/@sangkanclean
 - Canonical URLs: homepage `/`; other pages keep `.html` (GitHub Pages)
 - Social share image: https://www.sangkanclean.com/og-image.jpg
+- HTTP 301 plan: Cloudflare Worker in front of GitHub Pages (see docs/CLOUDFLARE_REDIRECTS.md); HTML soft redirects remain as fallback
 
 ## Optional
 

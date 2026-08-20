@@ -17,7 +17,15 @@ def apply_redirect_stubs() -> int:
     redirects_path = Path("seo/redirects.json")
     if not redirects_path.exists():
         return 0
-    return write_redirect_files(json.loads(redirects_path.read_text(encoding="utf-8")))
+    written = write_redirect_files(json.loads(redirects_path.read_text(encoding="utf-8")))
+    # Keep Cloudflare Worker map in sync (deploy is still manual — see docs/CLOUDFLARE_REDIRECTS.md)
+    try:
+        from seo.generate_cloudflare_redirects import main as gen_cf
+
+        gen_cf()
+    except Exception as exc:
+        print(f"Cloudflare redirect map refresh skipped: {exc}")
+    return written
 
 
 def rebuild_blog_surface() -> None:
