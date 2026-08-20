@@ -535,14 +535,9 @@ def _write_posts(posts: list) -> None:
 
 
 def _rebuild_site() -> None:
-    import build_blogs
-    import build_listings
-    import update_sitemap
+    import build_site
 
-    build_blogs.build_blogs()
-    build_listings.build_listings()
-    update_sitemap.update_sitemap()
-    print("Rebuild blogs + listings + sitemap done.")
+    build_site.rebuild_blog_surface()
 
 
 def main() -> int:

@@ -42,13 +42,9 @@ def main() -> int:
     import compose_blog_covers
     compose_blog_covers.main()
 
-    import build_blogs
-    import build_listings
-    import update_sitemap
+    import build_site
 
-    build_blogs.build_blogs()
-    build_listings.build_listings()
-    update_sitemap.update_sitemap()
+    build_site.rebuild_blog_surface()
     print("rebuild done")
     return 0
 

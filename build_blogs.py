@@ -172,7 +172,8 @@ def redirect_slugs():
 def prune_orphan_blogs(valid_slugs):
     if not os.path.isdir("blog"):
         return 0
-    keep = set(valid_slugs) | redirect_slugs()
+    # Keep redirect stubs + special /blog/ index stub
+    keep = set(valid_slugs) | redirect_slugs() | {"index"}
     removed = 0
     for name in os.listdir("blog"):
         if not name.endswith(".html"):

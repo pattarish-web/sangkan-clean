@@ -5,8 +5,7 @@ import random
 import re
 from datetime import datetime
 
-from build_blogs import build_blogs, extract_faq_schema
-from build_blogs import slugify
+from build_blogs import extract_faq_schema, slugify
 from offline_geo_upgrade import FAQ_BANK
 
 FAQ_BLOCK = """
@@ -62,7 +61,9 @@ def main():
   with open("posts.json", "w", encoding="utf-8") as f:
     json.dump(posts, f, ensure_ascii=False, indent=2)
 
-  build_blogs()
+  import build_site
+
+  build_site.rebuild_blog_surface()
   after = sum(1 for p in posts if extract_faq_schema(p.get("content", "")))
   print(f"Fixed {fixed} posts. FAQ schema coverage: {after}/{len(posts)}")
 

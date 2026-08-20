@@ -12,13 +12,28 @@ from build_assets import patch_root_html_files, write_analytics_js
 from seo.cannibalization import write_redirect_files
 
 
+def apply_redirect_stubs() -> int:
+    """Rewrite soft-redirect HTML stubs from seo/redirects.json. Returns count written."""
+    redirects_path = Path("seo/redirects.json")
+    if not redirects_path.exists():
+        return 0
+    return write_redirect_files(json.loads(redirects_path.read_text(encoding="utf-8")))
+
+
+def rebuild_blog_surface() -> None:
+    """Blogs + redirect stubs + listings + sitemap (safe for blog-bot / merge paths)."""
+    build_blogs.build_blogs()
+    apply_redirect_stubs()
+    build_listings.build_listings()
+    update_sitemap.update_sitemap()
+    print("Blog surface rebuild complete.")
+
+
 def build_all():
     write_analytics_js()
     patch_root_html_files()
     build_blogs.build_blogs()
-    redirects_path = Path("seo/redirects.json")
-    if redirects_path.exists():
-        write_redirect_files(json.loads(redirects_path.read_text(encoding="utf-8")))
+    apply_redirect_stubs()
     build_listings.build_listings()
     build_local_pages.build_local_pages()
     build_service_landings.build_service_landings()

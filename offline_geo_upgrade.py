@@ -16,7 +16,7 @@ import re
 from datetime import date
 from typing import Any
 
-from build_blogs import build_blogs, slugify
+from build_blogs import slugify
 
 GEO_MARKER = "สรุปประเด็นสำคัญ"
 
@@ -408,14 +408,9 @@ def upgrade_offline(limit: int = 0) -> dict[str, int]:
 
     if upgraded:
         print("Building blog HTML…", flush=True)
-        build_blogs()
-        try:
-            from update_sitemap import update_sitemap
+        import build_site
 
-            update_sitemap()
-            print("Sitemap updated.", flush=True)
-        except Exception as exc:
-            print(f"Sitemap update skipped: {exc}", flush=True)
+        build_site.rebuild_blog_surface()
 
     geo_total = sum(1 for p in posts if GEO_MARKER in p.get("content", ""))
     gemini = sum(1 for p in posts if p.get("geo_source") == "gemini")
