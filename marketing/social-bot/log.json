@@ -1,53 +1,6 @@
 {
-  "last_topic": "tech_team",
+  "last_topic": "edu_big_clean_why",
   "posts": [
-    {
-      "ts": "2026-08-01T21:51:44.709738+07:00",
-      "topic_id": "edu_big_clean_why",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260801/feed.png",
-        "stories_png": "out/20260801/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260801/bg.jpg",
-        "voiceover_mp3": "out/20260801/voiceover.mp3",
-        "stories_srt": "out/20260801/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทำไมต้อง Big Cleaning ปีละ 2 ครั้ง? 🤔 หลายคนอาจมองข้ามว่า การทำความสะอาดตามปกติก็เพียงพอแล้ว แต่ความจริงคือ พื้นที่ทำงานต่างๆ เช่น โรงงาน ฟิตเนส หรือแม้แต่พื้นที่ที่เพิ่งผ่านการ ทำความสะอาดหลังก่อสร้า",
-        "tiktok": "รู้ไหม ทำไมต้อง Big Cleaning ปีละ 2 ครั้ง? พื้นที่อย่าง โรงงาน ฟิตเนส หรือแม้แต่หลัง ทำความสะอาดหลังก่อสร้างโรงเรียน มัก",
-        "line": "เคยสงสัยไหมว่า ทำไมต้อง Big Cleaning อย่างน้อยปีละ 2 ครั้ง?\n\nเพราะคราบฝังลึก เชื้อรา และแบคทีเรีย มักสะสมอยู่ในจุดที่เรา"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106949365401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-02T16:40:45.164485+07:00",
       "topic_id": "edu_hidden_dirt",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122113045437401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-21T18:47:52.040148+07:00",
+      "topic_id": "edu_big_clean_why",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260821/feed.png",
+        "stories_png": "out/20260821/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260821/bg.jpg",
+        "voiceover_mp3": "out/20260821/voiceover.mp3",
+        "stories_srt": "out/20260821/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เฮ้ย รู้ยังว่าทำไม Big Cleaning ถึงควรทำอย่างน้อยปีละ 2 ครั้ง? 🧐 หลายคนอาจจะคิดว่าทำความสะอาดปกติก็พอแล้ว แต่จริงๆ แล้วมันมีอะไรที่ลึกซึ้งกว่านั้นนะ\n\nเพราะแค่การทำความสะอาดประจำวัน อาจจะจัดการแค่คราบส",
+        "tiktok": "รู้ยัง? Big Cleaning ต้องปีละ 2 ครั้ง! 😱 เพราะคราบฝังลึก เชื้อรา แบคทีเรีย ชอบแอบตามซอกมุมที่มองไม่เห็น โดยเฉพาะในฟิตเนส",
+        "line": "เพื่อนๆ ครับ! เคยสงสัยไหมว่าทำไม Big Cleaning ถึงสำคัญมากๆ และต้องทำอย่างน้อยปีละ 2 ครั้ง? 🤔\n\nเพราะการทำความสะอาดประจำวั"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113094613401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
