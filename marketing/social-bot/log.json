@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_dust_it",
+  "last_topic": "edu_server_room",
   "posts": [
-    {
-      "ts": "2026-08-01T16:38:24.884706+07:00",
-      "topic_id": "edu_server_room",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260801/feed.png",
-        "stories_png": "out/20260801/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260801/bg.jpg",
-        "voiceover_mp3": "out/20260801/voiceover.mp3",
-        "stories_srt": "out/20260801/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "หลายคนอาจคิดว่า Server Room ไม่ต้องดูแลมาก แต่รู้ไหมว่าตรงนั้นฝุ่นสะสมเร็วกว่าปกติถึง 3 เท่าเลยนะ! จุดที่แอร์ไม่ถึง แถมยังมีอุปกรณ์อิเล็กทรอนิกส์เยอะ ยิ่งต้องระวังเป็นพิเศษ ถ้าปล่อยไว้นานๆ อาจกระทบระบ",
-        "tiktok": "Server Room กับมุมอับในออฟฟิศนี่ตัวดีเลยนะ! 😬 ฝุ่นสะสมเร็วกว่าปกติ 3 เท่า ตรงที่แอร์ไม่ถึง ยิ่งต้องระวัง! ถ้าปล่อยไว้นาน",
-        "line": "รู้ยัง? Server Room กับมุมอับในออฟฟิศเนี่ย คือแหล่งรวมฝุ่นชั้นดีเลยนะ! 😱 ตรงที่แอร์ไม่ถึง ฝุ่นจะสะสมเร็วกว่าที่อื่นถึง 3"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106877371401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-01T17:54:58.146890+07:00",
       "topic_id": "tech_team",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122112873381401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-21T10:21:42.154033+07:00",
+      "topic_id": "edu_server_room",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260821/feed.png",
+        "stories_png": "out/20260821/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260821/bg.jpg",
+        "voiceover_mp3": "out/20260821/voiceover.mp3",
+        "stories_srt": "out/20260821/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมว่า Server Room และมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติถึง 3 เท่าเลยนะ! เพราะแอร์ไปไม่ถึงไง จุดเหล่านี้สำคัญมาก เพราะฝุ่นผงเล็กๆ อาจส่งผลต่อระบบไอที ทำให้รวนหรือพังได้ง่าย\n\nการดูแลความสะอาดเลยต้องละเ",
+        "tiktok": "รู้ไหม Server Room หรือมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติ 3 เท่า! เพราะแอร์ไปไม่ถึงไง ฝุ่นพวกนี้อันตรายต่อระบบไอทีนะ ต้องทำ",
+        "line": "เรื่องนี้หลายคนอาจมองข้าม!\nรู้ไหมว่า Server Room กับมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติถึง 3 เท่าเลยนะ เพราะแอร์ไปไม่ถึงไง! "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113027107401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
