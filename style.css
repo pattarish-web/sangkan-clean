@@ -157,9 +157,14 @@ h2 {
 .logo img {
     height: 45px;
     width: auto;
-    aspect-ratio: 398 / 231;
+    aspect-ratio: 523 / 423;
     object-fit: contain;
     flex-shrink: 0;
+}
+.footer-logo img {
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
 }
 .logo span span { color: var(--primary); }
 .brand-icon { color: var(--primary); animation: pulse 2s infinite; }
