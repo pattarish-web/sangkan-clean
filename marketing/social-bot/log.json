@@ -1,241 +1,6 @@
 {
-  "last_topic": "edu_dust_it",
+  "last_topic": "big_cleaning",
   "posts": [
-    {
-      "ts": "2026-08-01T16:38:24.884706+07:00",
-      "topic_id": "edu_server_room",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260801/feed.png",
-        "stories_png": "out/20260801/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260801/bg.jpg",
-        "voiceover_mp3": "out/20260801/voiceover.mp3",
-        "stories_srt": "out/20260801/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "หลายคนอาจคิดว่า Server Room ไม่ต้องดูแลมาก แต่รู้ไหมว่าตรงนั้นฝุ่นสะสมเร็วกว่าปกติถึง 3 เท่าเลยนะ! จุดที่แอร์ไม่ถึง แถมยังมีอุปกรณ์อิเล็กทรอนิกส์เยอะ ยิ่งต้องระวังเป็นพิเศษ ถ้าปล่อยไว้นานๆ อาจกระทบระบ",
-        "tiktok": "Server Room กับมุมอับในออฟฟิศนี่ตัวดีเลยนะ! 😬 ฝุ่นสะสมเร็วกว่าปกติ 3 เท่า ตรงที่แอร์ไม่ถึง ยิ่งต้องระวัง! ถ้าปล่อยไว้นาน",
-        "line": "รู้ยัง? Server Room กับมุมอับในออฟฟิศเนี่ย คือแหล่งรวมฝุ่นชั้นดีเลยนะ! 😱 ตรงที่แอร์ไม่ถึง ฝุ่นจะสะสมเร็วกว่าที่อื่นถึง 3"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106877371401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
-    {
-      "ts": "2026-08-01T17:54:58.146890+07:00",
-      "topic_id": "tech_team",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260801/feed.png",
-        "stories_png": "out/20260801/stories.png",
-        "venue_need": "school",
-        "venue_got": "school",
-        "bg_source": "bg-school-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260801/bg.jpg",
-        "voiceover_mp3": "out/20260801/voiceover.mp3",
-        "stories_srt": "out/20260801/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีม Tech พร้อมลุยงาน แต่สตาร์ทอัพคุณยังวุ่นวายกับการจัดออฟฟิศอยู่หรือเปล่า? 🚀 Sangkan Clean เข้าใจดี! เราพร้อมเป็นพาร์ทเนอร์ดูแลความสะอาดให้คุณโฟกัสที่งานได้เต็มที่ เหมือนมีแม่บ้านโรงเรียนคอยจัดระเบีย",
-        "tiktok": "ทีม Tech พร้อม แต่โต๊ะยังรก? 🤯 Sangkan Clean เข้าใจ! เราพร้อมเปลี่ยนออฟฟิศคุณให้สะอาดเอี่ยมอ่องเหมือนได้บิ๊กคลีนนิ่งสำนั",
-        "line": "สำหรับทีม Tech และสตาร์ทอัพที่อยากให้ออฟฟิศพร้อมลุยทุกวัน! Sangkan Clean พร้อมดูแลความสะอาดให้คุณโฟกัสที่งานได้เต็มที่ 💡"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106894759401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
-    {
-      "ts": "2026-08-01T21:51:44.709738+07:00",
-      "topic_id": "edu_big_clean_why",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260801/feed.png",
-        "stories_png": "out/20260801/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260801/bg.jpg",
-        "voiceover_mp3": "out/20260801/voiceover.mp3",
-        "stories_srt": "out/20260801/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทำไมต้อง Big Cleaning ปีละ 2 ครั้ง? 🤔 หลายคนอาจมองข้ามว่า การทำความสะอาดตามปกติก็เพียงพอแล้ว แต่ความจริงคือ พื้นที่ทำงานต่างๆ เช่น โรงงาน ฟิตเนส หรือแม้แต่พื้นที่ที่เพิ่งผ่านการ ทำความสะอาดหลังก่อสร้า",
-        "tiktok": "รู้ไหม ทำไมต้อง Big Cleaning ปีละ 2 ครั้ง? พื้นที่อย่าง โรงงาน ฟิตเนส หรือแม้แต่หลัง ทำความสะอาดหลังก่อสร้างโรงเรียน มัก",
-        "line": "เคยสงสัยไหมว่า ทำไมต้อง Big Cleaning อย่างน้อยปีละ 2 ครั้ง?\n\nเพราะคราบฝังลึก เชื้อรา และแบคทีเรีย มักสะสมอยู่ในจุดที่เรา"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122106949365401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
-    {
-      "ts": "2026-08-02T16:40:45.164485+07:00",
-      "topic_id": "edu_hidden_dirt",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260802/feed.png",
-        "stories_png": "out/20260802/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260802/bg.jpg",
-        "voiceover_mp3": "out/20260802/voiceover.mp3",
-        "stories_srt": "out/20260802/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เคยสงสัยไหมว่าทำไม | ทำความสะอาดเท่าไหร่ก็ยังไม่กริ๊ง? | นั่นเพราะมีจุดซ่อนคราบฝังลึก | ที่เครื่องมือปกติเข้าไม่ถึงไง! 😮\nลองมองใต้เฟอร์นิเจอร์หนักๆ | ในรางแอร์ หรือตามร่องกระเบื้อง | จุดเหล่านี้คือมุม",
-        "tiktok": "ทำความสะอาดแล้วยังไม่กริ๊ง? 🤔 นั่นเพราะมีมุมลับที่ซ่อนคราบฝังลึก! ใต้เฟอร์นิเจอร์ รางแอร์ ร่องกระเบื้อง... คือจุดที่เครื",
-        "line": "เคยสงสัยไหมว่าทำไม | ทำความสะอาดเท่าไหร่ก็ยังไม่สุด? | นั่นเพราะมีมุมที่ถูกลืมไง! 💡\nใต้เฟอร์นิเจอร์หนักๆ | ในรางแอร์ หรื"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122107134843401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
-    {
-      "ts": "2026-08-02T17:57:12.640733+07:00",
-      "topic_id": "big_cleaning",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260802/feed.png",
-        "stories_png": "out/20260802/stories.png",
-        "venue_need": "mall",
-        "venue_got": "mall",
-        "bg_source": "bg-mall-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260802/bg.jpg",
-        "voiceover_mp3": "out/20260802/voiceover.mp3",
-        "stories_srt": "out/20260802/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "การทำความสะอาดปกติ อาจไม่พอสำหรับคราบฝังลึกในพื้นที่ธุรกิจอย่าง ทำความสะอาดออฟฟิศ หรือห้างสรรพสินค้าขนาดใหญ่ ที่ต้องการมืออาชีพจริง ๆ Sangkan Clean เข้าใจดีว่า Big Cleaning ที่จบงานจริง ต้องอาศัยทีมงา",
-        "tiktok": "คราบฝังลึกในออฟฟิศ หรือทำความสะอาดห้างสรรพสินค้า เป็นเรื่องที่ต้องเจอ! Sangkan Clean มีทีมแม่บ้านศูนย์การค้ามืออาชีพกว่า",
-        "line": "งาน Big Cleaning ที่ว่ายาก เราทำให้ง่าย! Sangkan Clean มีทีมงานเชี่ยวชาญกว่า 30 ปี พร้อมดูแลคราบฝังลึก ไม่ว่าจะเป็นการ ท"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122107149867401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-02T19:20:03.078008+07:00",
       "topic_id": "edu_checklist",
@@ -2762,6 +2527,241 @@
           "ok": true,
           "mode": "photo",
           "id": "122112873381401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-21T10:21:42.154033+07:00",
+      "topic_id": "edu_server_room",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260821/feed.png",
+        "stories_png": "out/20260821/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260821/bg.jpg",
+        "voiceover_mp3": "out/20260821/voiceover.mp3",
+        "stories_srt": "out/20260821/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมว่า Server Room และมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติถึง 3 เท่าเลยนะ! เพราะแอร์ไปไม่ถึงไง จุดเหล่านี้สำคัญมาก เพราะฝุ่นผงเล็กๆ อาจส่งผลต่อระบบไอที ทำให้รวนหรือพังได้ง่าย\n\nการดูแลความสะอาดเลยต้องละเ",
+        "tiktok": "รู้ไหม Server Room หรือมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติ 3 เท่า! เพราะแอร์ไปไม่ถึงไง ฝุ่นพวกนี้อันตรายต่อระบบไอทีนะ ต้องทำ",
+        "line": "เรื่องนี้หลายคนอาจมองข้าม!\nรู้ไหมว่า Server Room กับมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติถึง 3 เท่าเลยนะ เพราะแอร์ไปไม่ถึงไง! "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113027107401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-21T12:50:05.218436+07:00",
+      "topic_id": "tech_team",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260821/feed.png",
+        "stories_png": "out/20260821/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260821/bg.jpg",
+        "voiceover_mp3": "out/20260821/voiceover.mp3",
+        "stories_srt": "out/20260821/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีม Tech/Startup ยุคใหม่ ที่เน้นความคล่องตัวและต้องการออฟฟิศที่พร้อมลุยงานทันที Sangkan Clean เข้าใจดีที่สุด! เราไม่ได้มองแค่งานทำความสะอาดทั่วไป แต่เราใส่ใจในรายละเอียดเหมือนกับดูแล แม่บ้านห้างสรรพสิ",
+        "tiktok": "ทีม Tech/Startup ฟังทางนี้! 🚀 ออฟฟิศสะอาดพร้อมลุย Sangkan Clean จัดให้! เราดูแลละเอียดเหมือน แม่บ้านห้างสรรพสินค้า ใช้ G",
+        "line": "รู้ไหมว่า ออฟฟิศที่สะอาด มีผลต่อ Productivity ของทีม Tech/Startup มากแค่ไหน? Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลคุณ เร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113045437401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-21T18:47:52.040148+07:00",
+      "topic_id": "edu_big_clean_why",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260821/feed.png",
+        "stories_png": "out/20260821/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260821/bg.jpg",
+        "voiceover_mp3": "out/20260821/voiceover.mp3",
+        "stories_srt": "out/20260821/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เฮ้ย รู้ยังว่าทำไม Big Cleaning ถึงควรทำอย่างน้อยปีละ 2 ครั้ง? 🧐 หลายคนอาจจะคิดว่าทำความสะอาดปกติก็พอแล้ว แต่จริงๆ แล้วมันมีอะไรที่ลึกซึ้งกว่านั้นนะ\n\nเพราะแค่การทำความสะอาดประจำวัน อาจจะจัดการแค่คราบส",
+        "tiktok": "รู้ยัง? Big Cleaning ต้องปีละ 2 ครั้ง! 😱 เพราะคราบฝังลึก เชื้อรา แบคทีเรีย ชอบแอบตามซอกมุมที่มองไม่เห็น โดยเฉพาะในฟิตเนส",
+        "line": "เพื่อนๆ ครับ! เคยสงสัยไหมว่าทำไม Big Cleaning ถึงสำคัญมากๆ และต้องทำอย่างน้อยปีละ 2 ครั้ง? 🤔\n\nเพราะการทำความสะอาดประจำวั"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113094613401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-22T10:18:11.753595+07:00",
+      "topic_id": "edu_hidden_dirt",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260822/feed.png",
+        "stories_png": "out/20260822/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260822/bg.jpg",
+        "voiceover_mp3": "out/20260822/voiceover.mp3",
+        "stories_srt": "out/20260822/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เวลาเราพูดถึงความสะอาด ภาพแรกที่นึกถึงอาจเป็นการปัดกวาดเช็ดถูทั่วไปใช่ไหมครับ? แต่รู้ไหมว่าบางที คราบฝังลึกที่มองไม่เห็นนี่แหละตัวปัญหา! 🧐\n\nในพื้นที่ใหญ่ๆ อย่างการทำความสะอาดหลังก่อสร้างโกดัง หรือแม้แ",
+        "tiktok": "ทำความสะอาดปกติก็ว่าทั่วแล้ว แต่มีมุมไหนที่ยังมองข้ามไปบ้าง? ใต้เฟอร์นิเจอร์ รางแอร์ ร่องกระเบื้อง จุดพวกนี้แหละ คือแหล่",
+        "line": "มุมอับในพื้นที่ทำงานคุณ สะอาดจริงแค่ไหน? 🤔\n\nหลายครั้งที่เราทำความสะอาดกันแบบปกติ ก็อาจลืมจุดสำคัญอย่างใต้เฟอร์นิเจอร์, ร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113240125401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-22T12:44:25.956414+07:00",
+      "topic_id": "big_cleaning",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260822/feed.png",
+        "stories_png": "out/20260822/stories.png",
+        "venue_need": "warehouse",
+        "venue_got": "warehouse",
+        "bg_source": "bg-warehouse-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260822/bg.jpg",
+        "voiceover_mp3": "out/20260822/voiceover.mp3",
+        "stories_srt": "out/20260822/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "โปรเจกต์ใหม่เพิ่งเสร็จ? กำลังมองหาทีม Big Cleaning ที่ 'จบงานจริง' ใช่ไหมครับ/คะ? Sangkan Clean เข้าใจดีว่าการทำความสะอาดหลังก่อสร้าง หรือการดูแลพื้นที่ขนาดใหญ่ ต้องเป๊ะทุกรายละเอียด. เรามีทีมมืออาชีพ",
+        "tiktok": "หลังโปรเจกต์ใหญ่ คุณไม่อยากเสียเวลามาจัดการเรื่องคราบสกปรกใช่ไหม? Sangkan Clean ช่วยได้! เราคือทีม Big Cleaning มืออาชีพ",
+        "line": "โปรเจกต์เสร็จ แต่คราบฝังลึกยังอยู่ใช่ไหมครับ/คะ? Sangkan Clean มาพร้อมทีม Big Cleaning มืออาชีพ ประสบการณ์กว่า 30 ปี ที่"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113259493401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
