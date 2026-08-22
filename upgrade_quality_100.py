@@ -6,7 +6,7 @@ from datetime import date
 
 from site_config import SITE_URL
 
-BRAND_IMAGE = f"{SITE_URL}/og-image.jpg"
+BRAND_IMAGE = f"{SITE_URL}/og-image.jpg?v=20260823"
 CTA_MARKER = "<!-- SANGKAN_CTA -->"
 CTA_HTML = (
     f'{CTA_MARKER}<section class="inline-cta">'
