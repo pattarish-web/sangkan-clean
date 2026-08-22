@@ -353,7 +353,7 @@ def _fallback_image_url(
     path = STOCK_DIR / filename
     if path.exists():
         return f"{SITE_URL}/images/blog/{filename}"
-    return f"{SITE_URL}/og-image.jpg?v=20260823"
+    return f"{SITE_URL}/og-image.jpg?v=20260824"
 
 
 def _save_cover(
