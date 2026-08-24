@@ -1,53 +1,6 @@
 {
-  "last_topic": "service_area",
+  "last_topic": "edu_outsource_vs_hire",
   "posts": [
-    {
-      "ts": "2026-08-04T20:15:31.340579+07:00",
-      "topic_id": "edu_outsource_vs_hire",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260804/feed.png",
-        "stories_png": "out/20260804/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260804/bg.jpg",
-        "voiceover_mp3": "out/20260804/voiceover.mp3",
-        "stories_srt": "out/20260804/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "หลายธุรกิจมักเจอคำถามโลกแตก: ‘เราควรจ้างแม่บ้านเอง หรือ Outsource ดีกว่ากันนะ?’ 🤔 Sangkan Clean เข้าใจดีว่าการตัดสินใจนี้มีผลต่อทั้งต้นทุนและประสิทธิภาพการทำงานของคุณ\n\nลองมาเทียบกันชัดๆ ครับ:\n\n*   **จ",
-        "tiktok": "จ้างแม่บ้านเอง หรือ Outsource อะไรคุ้มกว่ากัน? 🤔 ถ้าจ้างเองต้องดูแลเองหมด ทั้งสรรหา ฝึกอบรม สวัสดิการ เหมือนมีแม่บ้านโรง",
-        "line": "จ้างแม่บ้านเอง vs. Outsource อะไรคุ้มกว่า? Sangkan Clean มีข้อมูลมาแชร์ครับ 🤔\n\nถ้าจ้างเอง: คุณรับผิดชอบทุกอย่าง ตั้งแต่ส"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122107660473401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-05T12:29:10.507667+07:00",
       "topic_id": "edu_hidden_cost",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122113663035401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-24T18:49:26.460239+07:00",
+      "topic_id": "edu_outsource_vs_hire",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260824/feed.png",
+        "stories_png": "out/20260824/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260824/bg.jpg",
+        "voiceover_mp3": "out/20260824/voiceover.mp3",
+        "stories_srt": "out/20260824/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "สงสัยมั้ยว่า การจ้างแม่บ้านเอง กับใช้บริการ Outsource แบบมืออาชีพ อะไรจะตอบโจทย์กว่ากัน? ลองมาดูมุมมอง เปรียบเทียบเรื่องต้นทุน เวลา และความเสี่ยง กันชัดๆ \n\nถ้าคุณมีโปรเจกต์ ทำความสะอาดบ้าน ทั่วไป หรือ",
+        "tiktok": "จ้างแม่บ้านเอง หรือ Outsource คุ้มกว่ากัน? 🤔 ถ้าแค่ทำความสะอาดบ้าน อาจจ้างเองได้ แต่ถ้าต้องดูแล แม่บ้านโรงพยาบาล หรือบิ๊",
+        "line": "เปรียบเทียบชัดๆ: จ้างแม่บ้านเอง vs. Outsource อะไรจะคุ้มค่ากับธุรกิจคุณ?\n\nการทำความสะอาดบ้าน ทั่วไป อาจดูง่าย ด้วยการจ้า"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113722735401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
