@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_outsource_vs_hire",
+  "last_topic": "edu_hidden_cost",
   "posts": [
-    {
-      "ts": "2026-08-05T12:29:10.507667+07:00",
-      "topic_id": "edu_hidden_cost",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260805/feed.png",
-        "stories_png": "out/20260805/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260805/bg.jpg",
-        "voiceover_mp3": "out/20260805/voiceover.mp3",
-        "stories_srt": "out/20260805/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "💡 รู้ไหมว่า การจ้างแม่บ้านประจำเอง อาจมีต้นทุนแฝงที่คุณคาดไม่ถึง! หลายธุรกิจ ไม่ว่าจะสำนักงาน คลินิก หรือแม้แต่คนที่ต้องการบริการ **บิ๊กคลีนนิ่งคอนโด** ก็อาจต้องเจอกับภาระเหล่านี้ครับ\n\nนอกจากเงินเดือน",
-        "tiktok": "จ้างแม่บ้านเอง คิดว่าประหยัด? จริงๆ แล้วมีต้นทุนแฝงที่หลายคนมองข้าม! ทั้งเรื่องประกันสังคม ค่าอุปกรณ์ทำความสะอาด หรือแม้",
-        "line": "รู้ยัง? จ้างแม่บ้านเอง ไม่ได้มีแค่เงินเดือนนะ!\nจริงๆ แล้วมันมีต้นทุนแฝงซ่อนอยู่เพียบ ไม่ว่าจะเป็นค่าประกันสังคม สวัสดิกา"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122107913739401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-05T14:50:50.928965+07:00",
       "topic_id": "price_pack",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122113722735401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-25T10:17:27.588559+07:00",
+      "topic_id": "edu_hidden_cost",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260825/feed.png",
+        "stories_png": "out/20260825/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260825/bg.jpg",
+        "voiceover_mp3": "out/20260825/voiceover.mp3",
+        "stories_srt": "out/20260825/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เคยสงสัยไหมว่า การจ้างแม่บ้านเอง มีค่าใช้จ่ายอะไรมากกว่าที่เห็นบ้าง? 🤔 หลายคนอาจโฟกัสแค่ค่าแรง แต่จริงๆ แล้ว ยังมี \"ต้นทุนแฝง\" ที่เราอาจมองข้ามไปเพียบเลยนะ\n\nลองคิดดูสิ ทั้งค่าประกันสังคมและสวัสดิการ, ",
+        "tiktok": "จ้างแม่บ้านเอง นึกว่าประหยัด? 🤔 ระวังต้นทุนแฝง! ทั้งค่าประกันสังคม ค่าอุปกรณ์ทำความสะอาด ไปจนถึงหาคนสำรองตอนแม่บ้านลาหยุ",
+        "line": "รู้ไหมว่าการจ้างแม่บ้านเอง มีต้นทุนที่ซ่อนอยู่มากกว่าค่าแรง? 🧐 นอกจากค่าจ้างแล้ว ยังมีค่าประกันสังคม, ค่าอุปกรณ์ทำความสะ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122113844583401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
