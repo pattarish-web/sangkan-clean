@@ -1,53 +1,6 @@
 {
-  "last_topic": "affiliate",
+  "last_topic": "edu_construction_dust",
   "posts": [
-    {
-      "ts": "2026-08-06T20:07:50.183605+07:00",
-      "topic_id": "edu_construction_dust",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260806/feed.png",
-        "stories_png": "out/20260806/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260806/bg.jpg",
-        "voiceover_mp3": "out/20260806/voiceover.mp3",
-        "stories_srt": "out/20260806/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ใครกำลังจะรีโนเวทหรือเพิ่งสร้างเสร็จ คงคุ้นกับฝุ่นปูนหลังก่อสร้างกันดีใช่ไหมครับ? 👷‍♂️ แต่รู้ไหมว่า ฝุ่นพวกนี้อันตรายกว่าที่คิดเยอะเลยนะ!\n\nในฝุ่นปูนมี 'ผงซิลิกา' ขนาดเล็กมากๆ ที่เรามองไม่เห็นด้วยตาเปล",
-        "tiktok": "รีโนเวทเสร็จใหม่ๆ แต่ฝุ่นปูนเพียบ! รู้ไหมว่าฝุ่นพวกนี้มี 'ซิลิกา' ที่อันตรายต่อปอดมาก ⚠️ หายใจเข้าไปสะสมนานๆ เสี่ยงโรคทา",
-        "line": "รู้ไหมครับว่า ฝุ่นปูนหลังรีโนเวทใหม่ๆ อันตรายกว่าที่คิดนะ! ในฝุ่นมี 'ซิลิกา' ขนาดเล็กจิ๋ว ที่เข้าปอดเราได้ง่ายๆ เลย ถ้าส"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122108306757401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-07T11:37:28.134736+07:00",
       "topic_id": "edu_move_in_clean",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122114073171401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-26T18:50:48.599860+07:00",
+      "topic_id": "edu_construction_dust",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260826/feed.png",
+        "stories_png": "out/20260826/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260826/bg.jpg",
+        "voiceover_mp3": "out/20260826/voiceover.mp3",
+        "stories_srt": "out/20260826/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "หลายคนอาจมองข้ามว่า ฝุ่นปูนหลังรีโนเวท นี่ไม่ใช่แค่เรื่องความสกปรกธรรมดานะครับ แต่เป็นฝุ่นซิลิกา ที่อันตรายกว่า PM2.5 ซะอีก เพราะมันเล็กมากๆ จนเข้าสู่ระบบทางเดินหายใจเราได้ง่าย ทำให้เกิดผลเสียต่อสุขภา",
+        "tiktok": "ฝุ่นปูนหลังรีโนเวท อันตรายกว่าที่คิด! ⚠️ เพราะฝุ่นซิลิกามันเล็กกว่า PM2.5 อีกนะ เข้าปอดง่ายมาก สูดดมนานๆ ไม่ดีต่อสุขภาพเ",
+        "line": "เคยสังเกตไหมครับว่า ฝุ่นปูนหลังรีโนเวท มันไม่ใช่แค่ความสกปรก แต่มันคือฝุ่นซิลิกาที่อันตรายต่อปอดเรามากๆ เพราะเล็กกว่า PM"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122114127039401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
