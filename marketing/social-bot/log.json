@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_move_in_clean",
+  "last_topic": "after_construction",
   "posts": [
-    {
-      "ts": "2026-08-07T13:20:58.178137+07:00",
-      "topic_id": "after_construction",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260807/feed.png",
-        "stories_png": "out/20260807/stories.png",
-        "venue_need": "showroom",
-        "venue_got": "showroom",
-        "bg_source": "bg-showroom-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260807/bg.jpg",
-        "voiceover_mp3": "out/20260807/voiceover.mp3",
-        "stories_srt": "out/20260807/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจเลยว่า หลังก่อสร้างเสร็จ ออฟฟิศหรือโชว์รูมใหม่ ต้องเจอกับงานหนักแค่ไหน ทั้งฝุ่นปูน คราบสี ที่กองเต็มไปหมด การจะเริ่มงานหรือเปิดกิจการได้ ต้องจัดการตรงนี้ให้เป๊ะก่อน Sangkan ",
-        "tiktok": "หลังก่อสร้าง ออฟฟิศคุณเต็มไปด้วยฝุ่น คราบสีใช่ไหม? Sangkan Clean จัดการให้! เราเชี่ยวชาญ ทำความสะอาดหลังก่อสร้างออฟฟิศ พ",
-        "line": "ใครที่กำลังปวดหัวกับงาน ทำความสะอาดหลังก่อสร้างออฟฟิศ หรือบิ๊กคลีนนิ่งโชว์รูมอยู่บ้างครับ? 🤔 Sangkan Clean เข้าใจเลยว่าห"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122108544039401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-07T19:02:43.677191+07:00",
       "topic_id": "edu_routine_clean",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122114386479401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-27T23:35:26.718330+07:00",
+      "topic_id": "after_construction",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260827/feed.png",
+        "stories_png": "out/20260827/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260827/bg.jpg",
+        "voiceover_mp3": "out/20260827/voiceover.mp3",
+        "stories_srt": "out/20260827/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "หลังโปรเจกต์ใหญ่ๆ เสร็จ ไม่ว่าจะเป็นคาเฟ่ใหม่ โชว์รูมเปิดตัว หรืออาคารมหาวิทยาลัย ฝุ่นปูนกับคราบสีนี่คือเรื่องปวดหัวอันดับต้นๆ เลยใช่ไหมครับ? 😓\nไม่ต้องกังวล Sangkan Clean พร้อมเคลียร์ให้จบ เราเชี่ยวชา",
+        "tiktok": "โปรเจกต์สร้างเสร็จ แต่ฝุ่นปูน คราบสีเพียบ? 😫\nSangkan Clean พร้อมช่วย! เราเชี่ยวชาญ ทำความสะอาดหลังก่อสร้างคาเฟ่ โชว์รูม ",
+        "line": "หลังโปรเจกต์ก่อสร้างเสร็จใหม่ๆ ไม่ว่าจะคาเฟ่ มหาวิทยาลัย หรือโชว์รูม ฝุ่นปูนกับคราบสีนี่เยอะใช่ไหมครับ?\nSangkan Clean เข"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122114425371401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
