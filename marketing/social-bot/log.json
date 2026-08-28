@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_routine_clean",
+  "last_topic": "edu_harsh_chemical",
   "posts": [
-    {
-      "ts": "2026-08-08T10:47:58.179506+07:00",
-      "topic_id": "edu_harsh_chemical",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260808/feed.png",
-        "stories_png": "out/20260808/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260808/bg.jpg",
-        "voiceover_mp3": "out/20260808/voiceover.mp3",
-        "stories_srt": "out/20260808/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทุกคนรู้ไหมว่า น้ำยาทำความสะอาดบางตัว ที่เราใช้กันอยู่ทุกวันเนี่ย ถ้าเลือกไม่ดี อาจกำลังทำร้ายเฟอร์นิเจอร์ออฟฟิศคุณอยู่แบบไม่รู้ตัวนะ ✨\n\nลองคิดดูสิว่าเฟอร์นิเจอร์หนัง อาจจะลอกหรือร่อนง่ายขึ้น ส่วนโต๊ะ",
-        "tiktok": "รู้ยัง? น้ำยาแรงๆ ที่คิดว่าสะอาด บางทีอาจกำลังทำร้ายเฟอร์นิเจอร์ออฟฟิศคุณอยู่! หนังลอกง่าย ไม้ด่าง สีซีด นี่คือสัญญาณเตื",
-        "line": "เคยสงสัยไหมว่า ทำไมเฟอร์นิเจอร์ออฟฟิศถึงดูโทรมเร็วจัง? สาเหตุหนึ่งอาจมาจากน้ำยาทำความสะอาดที่ใช้ไม่เหมาะนี่แหละครับ\n\nสาร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122108758881401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-08T12:57:51.451616+07:00",
       "topic_id": "soft_cleaning",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122114458101401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-28T21:26:50.699155+07:00",
+      "topic_id": "edu_harsh_chemical",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260828/feed.png",
+        "stories_png": "out/20260828/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260828/bg.jpg",
+        "voiceover_mp3": "out/20260828/voiceover.mp3",
+        "stories_srt": "out/20260828/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "สงสัยไหมว่าทำไม เฟอร์นิเจอร์ออฟฟิศเราถึงดูเก่าเร็วจัง? บางทีไม่ใช่เพราะใช้งานหนัก แต่อาจเป็นเพราะ 'น้ำยาทำความสะอาด' ที่ไม่เหมาะ! สารเคมีแรงๆ ที่คิดว่าจะช่วยให้สะอาด บางทีมันกำลังกัดกร่อนของรักเราไปเร",
+        "tiktok": "รู้ไหมว่า น้ำยาทำความสะอาดแรงๆ อาจทำลายเฟอร์นิเจอร์ออฟฟิศได้! หนังลอก ไม้ด่าง สีเปลี่ยน เพราะสารเคมีกัดกร่อน ถ้า แม่บ้าน",
+        "line": "เคยสังเกตไหมว่าทำไมเฟอร์นิเจอร์ออฟฟิศบางชิ้นถึงดูโทรมเร็วจัง? สาเหตุหนึ่งอาจมาจาก 'น้ำยาทำความสะอาด' ที่มีสารเคมีแรงเกิน"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122114672013401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
