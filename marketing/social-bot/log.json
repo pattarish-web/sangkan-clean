@@ -1,53 +1,6 @@
 {
-  "last_topic": "soft_cleaning",
+  "last_topic": "edu_desk_germ",
   "posts": [
-    {
-      "ts": "2026-08-08T18:49:07.596713+07:00",
-      "topic_id": "edu_desk_germ",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260808/feed.png",
-        "stories_png": "out/20260808/stories.png",
-        "venue_need": "mall",
-        "venue_got": "mall",
-        "bg_source": "bg-mall-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260808/bg.jpg",
-        "voiceover_mp3": "out/20260808/voiceover.mp3",
-        "stories_srt": "out/20260808/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เคยคิดไหมว่า ออฟฟิศที่เราใช้เวลาอยู่เกือบทั้งวัน จะมีมุมที่สกปรกกว่าฝารองนั่งในห้องน้ำเสียอีก? 😱 Sangkan Clean ชวนคุณมาสำรวจ 5 จุดเสี่ยงที่ไม่ควรละเลย!\n\n1. คีย์บอร์ด: แหล่งรวมเศษอาหารและเชื้อโรคจากการ",
-        "tiktok": "คุณรู้ไหมว่าออฟฟิศเรามี 5 จุดที่สกปรกกว่าฝารองนั่งห้องน้ำ? คีย์บอร์ด โทรศัพท์ และลูกบิดประตู ที่เราใช้ทุกวันเนี่ยแหละ คื",
-        "line": "วันนี้ Sangkan Clean มีเรื่องใกล้ตัวมาบอก! รู้ไหมว่าในออฟฟิศที่เรานั่งทำงานทุกวัน มีจุดที่สกปรกกว่าฝารองนั่งในห้องน้ำอีก"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122108845299401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-09T10:58:11.974282+07:00",
       "topic_id": "edu_germ_lifespan",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122114706693401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-29T04:30:04.047785+07:00",
+      "topic_id": "edu_desk_germ",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260829/feed.png",
+        "stories_png": "out/20260829/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260829/bg.jpg",
+        "voiceover_mp3": "out/20260829/voiceover.mp3",
+        "stories_srt": "out/20260829/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เคยสงสัยไหมว่า อุปกรณ์ใกล้ตัวในออฟฟิศเรา สะสมเชื้อโรคไว้แค่ไหน? เชื่อเถอะว่า คีย์บอร์ด โทรศัพท์ หรือแม้แต่ลูกบิดประตูที่เราจับกันทุกวันเนี่ย สกปรกกว่าฝารองนั่งเยอะเลยนะ! 😱 แบคทีเรียเพียบ ยิ่งเป็นออฟฟิ",
+        "tiktok": "ตกใจมั้ย? 😱 5 จุดในออฟฟิศที่เจอทุกวันอย่างคีย์บอร์ด โทรศัพท์ ลูกบิดประตู จริงๆ แล้วสกปรกกว่าฝารองนั่งเยอะเลยนะ! แบคทีเรี",
+        "line": "รู้ยัง? 5 จุดที่เราสัมผัสบ่อยๆ ในออฟฟิศนี่แหละ ที่สกปรกกว่าฝารองนั่งซะอีก! 😱 ทั้งคีย์บอร์ด โทรศัพท์ ลูกบิดประตู คือแหล่ง"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122114741247401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
