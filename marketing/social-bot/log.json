@@ -1,53 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-08-10T19:04:21.811308+07:00",
-      "topic_id": "edu_dust_it",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260810/feed.png",
-        "stories_png": "out/20260810/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260810/bg.jpg",
-        "voiceover_mp3": "out/20260810/voiceover.mp3",
-        "stories_srt": "out/20260810/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีมงานทุกคนรู้ไหมว่า ฝุ่นเล็กๆ ที่เรามองข้ามไปนี่แหละ คือตัวการสำคัญที่ทำให้อุปกรณ์ IT ของเราทำงานได้ไม่เต็มที่ และอายุสั้นลง! 😲\n\nลองนึกภาพคอมพิวเตอร์ของคุณที่ทำงานหนักทุกวัน พัดลมระบายความร้อนต้องพยา",
-        "tiktok": "ฝุ่นคือศัตรูตัวฉกาจของอุปกรณ์ IT! 💻 มันทำให้คอมร้อน พัดลมทำงานหนักจนเครื่องรวน และอายุสั้นลงแบบไม่รู้ตัว ไม่ว่าจะใน **โร",
-        "line": "วันนี้ Sangkan Clean มีเรื่องใกล้ตัวมาเล่าให้ฟังครับ! รู้ไหมว่าฝุ่นในออฟฟิศหรือที่ทำงานนี่แหละ ตัวการร้ายที่ทำให้คอมพิวเ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122109455097401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-11T10:59:52.069370+07:00",
       "topic_id": "edu_server_room",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122115070431401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-30T22:24:44.085950+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260830/feed.png",
+        "stories_png": "out/20260830/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260830/bg.jpg",
+        "voiceover_mp3": "out/20260830/voiceover.mp3",
+        "stories_srt": "out/20260830/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทุกคนรู้ไหมครับว่า ฝุ่นจิ๋วๆ ที่เราเห็นบ่อยๆ เนี่ย จริงๆ แล้วเป็นตัวร้ายกาจที่คอยทำลายอุปกรณ์ IT ของเราอยู่ทุกวันเลยนะ โดยเฉพาะคอมพิวเตอร์และเซิร์ฟเวอร์ ถ้าฝุ่นไปอุดตันช่องระบายอากาศ พัดลมจะทำงานหนักข",
+        "tiktok": "รู้ยัง? ฝุ่นในออฟฟิศนี่แหละ ตัวการทำลายคอมคุณ! มันทำให้เครื่องร้อน พัดลมทำงานหนัก และพังเร็วกว่าที่คิด ปัญหาคล้ายๆ กับที",
+        "line": "สวัสดีครับทุกคน 👋 เคยสงสัยไหมว่าทำไมคอมถึงร้อนผิดปกติ? สาเหตุหลักๆ หนึ่งคือฝุ่นที่สะสมจนไปอุดตันช่องระบายอากาศครับ พอเคร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122115129693401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
