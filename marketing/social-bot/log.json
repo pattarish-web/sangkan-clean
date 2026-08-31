@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_server_room",
+  "last_topic": "tech_team",
   "posts": [
-    {
-      "ts": "2026-08-11T13:06:18.411051+07:00",
-      "topic_id": "tech_team",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260811/feed.png",
-        "stories_png": "out/20260811/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260811/bg.jpg",
-        "voiceover_mp3": "out/20260811/voiceover.mp3",
-        "stories_srt": "out/20260811/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีม Tech ครับ! รู้ว่าเวลาทุกนาทีมีค่าสุดๆ Sangkan Clean เข้าใจเลยว่าคุณอยากโฟกัสที่งาน ไม่ใช่เรื่องดูแลออฟฟิศ เราพร้อมช่วยทำความสะอาดออฟฟิศให้เป๊ะ พร้อมรับทุกโปรเจกต์ใหม่ๆ จะมุมทำงาน โซนพักผ่อน หรือพื",
-        "tiktok": "ทีม Tech ครับ! ออฟฟิศพร้อมลุยทุกวัน? Sangkan Clean จัดให้! เราช่วยทำความสะอาดออฟฟิศให้คุณโฟกัสกับงานได้เต็มที่ จะก่อนหรื",
-        "line": "ชาว Tech ครับ! ออฟฟิศพร้อมลุยทุกโปรเจกต์แล้วหรือยัง? Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลความสะอาดให้คุณแบบมืออาชีพ เรา"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122109751191401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-11T19:03:03.266136+07:00",
       "topic_id": "edu_big_clean_why",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122115268431401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-08-31T18:38:27.202378+07:00",
+      "topic_id": "tech_team",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260831/feed.png",
+        "stories_png": "out/20260831/stories.png",
+        "venue_need": "restaurant",
+        "venue_got": "restaurant",
+        "bg_source": "bg-restaurant-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260831/bg.jpg",
+        "voiceover_mp3": "out/20260831/voiceover.mp3",
+        "stories_srt": "out/20260831/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ไหน ใครว่า Tech team จะเก่งแต่เรื่อง Coding? เรื่องออฟฟิศพร้อมลุยก็สำคัญไม่แพ้กันนะ! 🚀\nรู้ดีว่าสตาร์ทอัพ หรือเอเจนซี่ อย่างพวกคุณไม่มีเวลามานั่งกังวลเรื่องความสะอาด Sangkan Clean เลยจัดเต็ม! ด้วยระบบ ",
+        "tiktok": "Tech team พร้อมลุย! 🚀 แต่ออฟฟิศยังไม่จึ้ง? Sangkan Clean จัดให้! ด้วยระบบ GPS เราส่งทีมมืออาชีพเข้าทำความสะอาดออฟฟิศคุณแ",
+        "line": "ทีม Tech พร้อมลุยงาน ออฟฟิศก็ต้องพร้อมสิ! 💯\nSangkan Clean เข้าใจดีว่าเวลาของสตาร์ทอัพมีค่า เราเลยมาพร้อมบริการทำความสะอา"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122115296475401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
