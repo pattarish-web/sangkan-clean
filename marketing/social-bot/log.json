@@ -1,53 +1,6 @@
 {
-  "last_topic": "big_cleaning",
+  "last_topic": "edu_checklist",
   "posts": [
-    {
-      "ts": "2026-08-12T19:04:38.271207+07:00",
-      "topic_id": "edu_checklist",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260812/feed.png",
-        "stories_png": "out/20260812/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260812/bg.jpg",
-        "voiceover_mp3": "out/20260812/voiceover.mp3",
-        "stories_srt": "out/20260812/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ออฟฟิศคลีน ๆ คือภาพลักษณ์ที่ดีของแบรนด์! Sangkan Clean เข้าใจดีว่าการดูแลพื้นที่ทำงานให้สะอาดเป๊ะสำคัญแค่ไหน ไม่ว่าจะเป็นออฟฟิศทั่วไป โกดังสินค้า รีสอร์ท หรือแม้แต่คาเฟ่เล็ก ๆ การมีแม่บ้านมืออาชีพเข้า",
-        "tiktok": "อยากให้ทีมงานแฮปปี้ ลูกค้าประทับใจ? 🤩 Sangkan Clean ชวนดู Checklist คลีนออฟฟิศมืออาชีพ! ไม่ว่าจะเป็นออฟฟิศ โกดัง หรือคาเ",
-        "line": "สวัสดีครับ Sangkan Clean เอา Checklist ทำความสะอาดออฟฟิศฉบับมืออาชีพมาฝาก!\nรู้ไหมว่าแค่แบ่งงานทำความสะอาดเป็นรายวัน รายส"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122110166457401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-13T11:25:18.039788+07:00",
       "topic_id": "edu_maid_absent",
@@ -2762,6 +2715,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122115594147401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-01T22:32:00.680950+07:00",
+      "topic_id": "edu_checklist",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260901/feed.png",
+        "stories_png": "out/20260901/stories.png",
+        "venue_need": "mall",
+        "venue_got": "mall",
+        "bg_source": "bg-mall-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260901/bg.jpg",
+        "voiceover_mp3": "out/20260901/voiceover.mp3",
+        "stories_srt": "out/20260901/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ออฟฟิศสะอาดใครๆ ก็อยากได้ แต่จะจัดระเบียบยังไงให้เป๊ะเหมือนมืออาชีพมาเอง? Sangkan Clean มี Checklist ง่ายๆ มาฝาก แบ่งตามความถี่ รับรองว่าออฟฟิศคุณจะน่าทำงานขึ้นเยอะ!\n\n✅ ทุกวัน: เช็ดโต๊ะ, เก็บเอกสาร, เ",
+        "tiktok": "ออฟฟิศคุณสะอาดจริงดิ? Sangkan Clean มี Checklist คลีนออฟฟิศแบบมืออาชีพมาฝาก! มาดูกันว่าอะไรต้องทำทุกวัน ทุกสัปดาห์ ทุกเด",
+        "line": "อยากให้ #ออฟฟิศสะอาดเหมือนใหม่ ตลอดเวลา? Sangkan Clean มี Checklist ทำความสะอาดมาฝากครับ! แบ่งง่ายๆ รายวัน, รายสัปดาห์, "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122115762537401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
