@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_construction_dust",
+  "last_topic": "edu_move_in_clean",
   "posts": [
-    {
-      "ts": "2026-08-17T10:21:48.659996+07:00",
-      "topic_id": "edu_move_in_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260817/feed.png",
-        "stories_png": "out/20260817/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260817/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ย้ายออฟฟิศใหม่ทั้งที ก็อยากได้ความเฟรชพร้อมเริ่มงานจริงไหม? 🚀 หลายคนอาจมองข้ามเรื่อง Deep Clean ก่อนย้ายเข้า แต่บอกเลยว่าสำคัญมากนะ! เพราะนอกจากฝุ่น คราบสีที่ตาเห็นแล้ว ยังมีสารเคมีและสิ่งสกปรกเล็กๆ ท",
-        "tiktok": "ย้ายออฟฟิศใหม่? อย่าลืม Deep Clean ก่อน! 💥 ฝุ่น คราบสี สารเคมี ที่มองไม่เห็น อาจเป็นภัยกับสุขภาพทีมคุณได้นะ เพราะมันลอยอ",
-        "line": "เรื่องออฟฟิศใหม่นี่ ต้อง Deep Clean ให้สุด! 🧤 หลายคนอาจมองข้ามว่านอกจากฝุ่น คราบสีหลังก่อสร้างแล้ว ยังมีสารเคมีที่มองไม่"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122111886849401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-17T12:51:46.361499+07:00",
       "topic_id": "after_construction",
@@ -2780,6 +2735,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122116855779401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-06T14:16:19.852470+07:00",
+      "topic_id": "edu_move_in_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260906/feed.png",
+        "stories_png": "out/20260906/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260906/bg.jpg",
+        "voiceover_mp3": "out/20260906/voiceover.mp3",
+        "stories_srt": "out/20260906/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ย้ายเข้าออฟฟิศใหม่ใครว่าแค่ปัดๆ กวาดๆ ก็สะอาดแล้ว? 🙅‍♀️ รู้ไหมว่าฝุ่น คราบสี และสารเคมีบางอย่างที่มองไม่เห็น มันแฝงตัวอยู่เต็มไปหมดจากการก่อสร้างหรือออฟฟิศเก่าเนี่ยแหละครับ ซึ่งพวกนี้แหละเป็นภัยเงียบต",
+        "tiktok": "ย้ายเข้าออฟฟิศใหม่ อย่าเพิ่งคิดว่าสะอาดนะ! เพราะสารเคมี ฝุ่น และคราบสีจากการก่อสร้าง ซ่อนอยู่เพียบเลย การทำ **บิ๊กคลีนนิ",
+        "line": "ใครกำลังจะย้ายเข้าออฟฟิศใหม่บ้าง? ต้องฟังทางนี้เลย! อย่าเพิ่งรีบจัดของเข้านะครับ เพราะออฟฟิศใหม่ที่ดูสะอาดตา อาจมีฝุ่นผง"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122117054625401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
