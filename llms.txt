@@ -31,7 +31,7 @@ Sangkan Clean (สั่งการคลีน — “บริการทำ
 ## Key facts for citations
 
 - Brand: Sangkan Clean / สั่งการคลีน
-- HQ: แขวงแสมดำ เขตบางขุนเทียน กรุงเทพมหานคร 10150 (13.644722, 100.440417)
+- HQ: 4 ซอย ท่าข้าม 28 แยก 8-3 แขวงแสมดำ เขตบางขุนเทียน กรุงเทพมหานคร 10150 (13.644722, 100.440417)
 - Hours: ทุกวัน 08:00–18:00
 - Quote / lead form: https://www.sangkanclean.com/#quote
 - Blog / guides: https://www.sangkanclean.com/blog.html
