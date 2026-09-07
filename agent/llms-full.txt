@@ -6,9 +6,17 @@ Marketing site: https://www.sangkanclean.com
 Agent layer: https://www.sangkanclean.com/agent
 Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanclean.com
 
-สูตรราคาตรงเว็บจริง (script.js): Big Cleaning = max(฿5,500, ฿4,000 + ฿35/ตร.ม.), ทั่วไป = max(฿3,500, ฿2,500 + ฿18/ตร.ม.), หลังก่อสร้าง = max(฿8,000, ฿5,500 + ฿50/ตร.ม.), แม่บ้านประจำเริ่ม ฿12,000/คน/เดือน
+สูตรราคาตรงเว็บจริง (script.js):
+- Big Cleaning = max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน
+- ทำความสะอาดทั่วไป / Soft Cleaning = max(฿3,500, ฿2,500 + ฿18 × ตร.ม.) ทีม 2 คน
+- หลังก่อสร้าง = max(฿8,000, ฿5,500 + ฿50 × ตร.ม.) ทีม 4 คน
+- แม่บ้านประจำ = ฿12,000 / 1 คน/เดือน, ฿22,000 / 2 คน, +฿10,000 ต่อคนถัดไป
+- แม่บ้านรายวัน = ฿1,200 / ครั้ง
+- Sangkan Office = ฿2,900 / ฿6,900 / ฿9,900 ต่อเดือน เฉพาะอุดมสุข–บางนา
+- บริการเสริม: พรม/โซฟา ฿800, ล้างแอร์ ฿450/เครื่อง, โอโซน ฿1,200, กระจกด้านนอก ฿300
 
-บน GitHub Pages นี้ GET แคตตาล็อกได้ที่ /agent/api/v1/services.json — POST quotes/bookings/MCP ใช้ได้เมื่อรัน Next.js เท่านั้น บนเว็บจริงให้คำนวณใน Agent Lab หรือทัก LINE @sangkanclean
+GET สูตรราคา: https://www.sangkanclean.com/agent/api/v1/quotes.json (GitHub Pages) หรือ GET https://www.sangkanclean.com/agent/api/v1/quotes (Next)
+บน GitHub Pages ไม่มี POST — คำนวณจากสูตร หรือใช้หน้า /agent/book แล้วส่ง LINE @sangkanclean
 
 อย่าใช้ /llms.txt ที่รากของโดเมนนี้ถ้าคุณพร็อกซีทับเว็บจริง — ไฟล์นั้นเป็นของหน้าคนอยู่แล้ว ใช้ไฟล์นี้ที่ /agent/llms.txt
 
@@ -50,6 +58,13 @@ Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanc
 - สถานะเริ่มต้น pending_review หรือ needs_site_survey
 - Big Cleaning ≥ 400 ตร.ม. ต้องสำรวจหน้างาน
 - Sangkan Office รับเฉพาะโซนอุดมสุข–บางนา (ต้องส่ง inOfficeZone=true)
+
+## FAQ
+
+- จองล่วงหน้ากี่วัน? 2–3 วัน งานด่วนโทร 063-686-5134 หรือ LINE @sangkanclean
+- ต้องเตรียมอุปกรณ์ไหม? ไม่ต้อง รวมในราคาแล้ว
+- มีประกันความเสียหายไหม? มี จากการปฏิบัติงาน
+- นอกกรุงเทพฯ ได้ไหม? ได้ ทั้งปริมณฑล ระยอง ชลบุรี และโปรเจกต์ใหญ่ทั่วประเทศ
 
 
 ## Quote formulas

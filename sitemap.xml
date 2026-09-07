@@ -7,4 +7,7 @@
     <loc>https://www.sangkanclean.com/sitemap-blog.xml</loc>
     <lastmod>2026-09-07</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://www.sangkanclean.com/sitemap-agent.xml</loc>
+  </sitemap>
 </sitemapindex>

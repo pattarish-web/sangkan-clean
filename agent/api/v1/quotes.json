@@ -1,0 +1,79 @@
+{
+  "currency": "THB",
+  "minJobSqm": 20,
+  "formulas": {
+    "big-cleaning": {
+      "base": 4000,
+      "perSqm": 35,
+      "floor": 5500,
+      "teamSize": 3,
+      "sqmPerHour": 35,
+      "expression": "max(5500, 4000 + 35 × sqm)"
+    },
+    "general-cleaning": {
+      "base": 2500,
+      "perSqm": 18,
+      "floor": 3500,
+      "teamSize": 2,
+      "sqmPerHour": 45,
+      "expression": "max(3500, 2500 + 18 × sqm)"
+    },
+    "post-construction": {
+      "base": 5500,
+      "perSqm": 50,
+      "floor": 8000,
+      "teamSize": 4,
+      "sqmPerHour": 25,
+      "expression": "max(8000, 5500 + 50 × sqm)"
+    }
+  },
+  "maidMonthly": {
+    "1": 12000,
+    "2": 22000,
+    "extraPerson": 10000
+  },
+  "maidDaily": 1200,
+  "officePacks": {
+    "office-lite": {
+      "price": 2900,
+      "visits": 4
+    },
+    "office-growth": {
+      "price": 6900,
+      "visits": 8
+    },
+    "office-premium": {
+      "price": 9900,
+      "visits": 12
+    }
+  },
+  "addons": [
+    {
+      "id": "carpet",
+      "nameTh": "ซักพรม/โซฟา",
+      "unitPrice": 800,
+      "unit": "job"
+    },
+    {
+      "id": "ac",
+      "nameTh": "ล้างแอร์",
+      "unitPrice": 450,
+      "unit": "unit"
+    },
+    {
+      "id": "ozone",
+      "nameTh": "อบโอโซนฆ่าเชื้อ",
+      "unitPrice": 1200,
+      "unit": "job"
+    },
+    {
+      "id": "exterior-glass",
+      "nameTh": "เช็ดกระจกด้านนอก",
+      "unitPrice": 300,
+      "unit": "job"
+    }
+  ],
+  "officeZone": "อุดมสุข–บางนา (inOfficeZone=true)",
+  "postOnNext": "/agent/api/v1/quotes",
+  "staticNote": "บน GitHub Pages ไม่มี POST — คำนวณจากสูตรนี้หรือใช้หน้า /agent/book แล้วส่ง LINE @sangkanclean"
+}
