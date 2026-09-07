@@ -1,6 +1,6 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><title>Sangkan Office Growth (M)</title></head><body><pre># Sangkan Office Growth (M)
+# Sangkan Office Growth (M)
 
-&gt; 8 ครั้ง/เดือน พร้อม Mini Deep ประจำเดือน สำหรับออฟฟิศเอเจนซี่ / Tech
+> 8 ครั้ง/เดือน พร้อม Mini Deep ประจำเดือน สำหรับออฟฟิศเอเจนซี่ / Tech
 
 - รหัสบริการ: `office-growth`
 - ราคาเริ่มต้น: ฿6,900
@@ -22,4 +22,3 @@
 - ล้างแอร์: ฿450
 - อบโอโซนฆ่าเชื้อ: ฿1,200
 - เช็ดกระจกด้านนอก: ฿300
-</pre></body></html>

@@ -1,9 +1,9 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><title>Sangkan Office Growth (M)</title></head><body><pre># Sangkan Office Growth (M)
+# Sangkan Office Premium (L)
 
-&gt; 8 ครั้ง/เดือน พร้อม Mini Deep ประจำเดือน สำหรับออฟฟิศเอเจนซี่ / Tech
+> 12 ครั้ง/เดือน พร้อม Full Big Clean ประจำเดือน
 
-- รหัสบริการ: `office-growth`
-- ราคาเริ่มต้น: ฿6,900
+- รหัสบริการ: `office-premium`
+- ราคาเริ่มต้น: ฿9,900
 - จองล่วงหน้า: 7 วัน
 - เว็บจริง: https://www.sangkanclean.com/landing-sangkan-office.html
 - จองผ่านเอเจนต์: POST /agent/api/v1/quotes แล้ว POST /agent/api/v1/bookings
@@ -12,9 +12,9 @@
 
 ## ตัวอย่างใบประเมิน
 
-รหัส QT-CA455493 รวม ฿6,900
+รหัส QT-C2F85AA9 รวม ฿9,900
 
-- Sangkan Office Growth (M) · 8 ครั้ง/เดือน: ฿6,900
+- Sangkan Office Premium (L) · 12 ครั้ง/เดือน: ฿9,900
 
 ## บริการเสริม
 
@@ -22,4 +22,3 @@
 - ล้างแอร์: ฿450
 - อบโอโซนฆ่าเชื้อ: ฿1,200
 - เช็ดกระจกด้านนอก: ฿300
-</pre></body></html>

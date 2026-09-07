@@ -6,7 +6,9 @@ Marketing site: https://www.sangkanclean.com
 Agent layer: https://www.sangkanclean.com/agent
 Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanclean.com
 
-สูตรราคาตรงเว็บจริง: Big Cleaning = max(฿5,500, ฿4,000 + ฿35/ตร.ม.), แม่บ้านประจำเริ่ม ฿12,000/คน/เดือน
+สูตรราคาตรงเว็บจริง (script.js): Big Cleaning = max(฿5,500, ฿4,000 + ฿35/ตร.ม.), ทั่วไป = max(฿3,500, ฿2,500 + ฿18/ตร.ม.), หลังก่อสร้าง = max(฿8,000, ฿5,500 + ฿50/ตร.ม.), แม่บ้านประจำเริ่ม ฿12,000/คน/เดือน
+
+บน GitHub Pages นี้ GET แคตตาล็อกได้ที่ /agent/api/v1/services.json — POST quotes/bookings/MCP ใช้ได้เมื่อรัน Next.js เท่านั้น บนเว็บจริงให้คำนวณใน Agent Lab หรือทัก LINE @sangkanclean
 
 อย่าใช้ /llms.txt ที่รากของโดเมนนี้ถ้าคุณพร็อกซีทับเว็บจริง — ไฟล์นั้นเป็นของหน้าคนอยู่แล้ว ใช้ไฟล์นี้ที่ /agent/llms.txt
 
@@ -17,8 +19,9 @@ Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanc
 - [Agent Card ชุดนี้](https://www.sangkanclean.com/agent/well-known/agent-card.json): สำเนาใต้ /agent
 - [UCP profile](https://www.sangkanclean.com/.well-known/ucp)
 - [MCP JSON-RPC](https://www.sangkanclean.com/agent/api/mcp)
-- [Service catalog](https://www.sangkanclean.com/agent/api/v1/services)
-- [JSON-LD](https://www.sangkanclean.com/agent/api/v1/business)
+- [Service catalog (Next)](https://www.sangkanclean.com/agent/api/v1/services)
+- [Service catalog (GitHub Pages JSON)](https://www.sangkanclean.com/agent/api/v1/services.json)
+- [JSON-LD](https://www.sangkanclean.com/agent/api/v1/business.json)
 
 ## Human pages on this gateway
 
@@ -41,8 +44,9 @@ Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanc
 
 ## Booking rules for agents
 
-- POST /agent/api/v1/quotes แล้ว POST /agent/api/v1/bookings
-- ต้องส่ง pdpaConsent=true และช่องทางติดต่อของลูกค้าจริง
+- POST /agent/api/v1/quotes แล้ว POST /agent/api/v1/bookings ใช้ได้บนเซิร์ฟเวอร์ Next — บน www.sangkanclean.com ให้ใช้หน้า /agent/book หรือ LINE
+- ต้องส่ง pdpaConsent=true (ลูกค้าติ๊กเอง) ชื่อ และโทรหรืออีเมล
+- เอเจนต์ต้องส่ง agent.name และ agent.principal
 - สถานะเริ่มต้น pending_review หรือ needs_site_survey
 - Big Cleaning ≥ 400 ตร.ม. ต้องสำรวจหน้างาน
-- Sangkan Office รับเฉพาะโซนอุดมสุข–บางนา
+- Sangkan Office รับเฉพาะโซนอุดมสุข–บางนา (ต้องส่ง inOfficeZone=true)
