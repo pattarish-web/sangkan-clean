@@ -42,6 +42,14 @@
       }
     },
     "/agent/api/v1/quotes": {
+      "get": {
+        "summary": "Quote formulas (works on GitHub Pages as quotes.json)",
+        "responses": {
+          "200": {
+            "description": "Pricing formulas matching live script.js"
+          }
+        }
+      },
       "post": {
         "summary": "Create an estimate quote",
         "requestBody": {

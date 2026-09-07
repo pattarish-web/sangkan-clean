@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /agent/
+Allow: /agent/llms.txt
+Allow: /.well-known/
+
+# Agent LLM file: https://www.sangkanclean.com/agent/llms.txt
 
 # Sitemap index (pages + blog)
 Sitemap: https://www.sangkanclean.com/sitemap.xml
