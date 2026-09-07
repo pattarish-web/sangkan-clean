@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.sangkanclean.com/agent</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/discover</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/catalog</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/book</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/ops</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/skills</loc></url>
   <url><loc>https://www.sangkanclean.com/agent/llms.txt</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/api/openapi.json</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/api/v1/services.json</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/big-cleaning</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/maid-monthly</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/maid-daily</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/office-lite</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/office-growth</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/office-premium</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/general-cleaning</loc></url>
+  <url><loc>https://www.sangkanclean.com/agent/md/post-construction</loc></url>
 </urlset>

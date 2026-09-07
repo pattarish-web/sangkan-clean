@@ -163,6 +163,9 @@
           "preferredDate": {
             "type": "string",
             "format": "date"
+          },
+          "inOfficeZone": {
+            "type": "boolean"
           }
         }
       },
@@ -204,6 +207,9 @@
           "pdpaConsent": {
             "type": "boolean"
           },
+          "inOfficeZone": {
+            "type": "boolean"
+          },
           "customer": {
             "type": "object",
             "required": [
@@ -226,6 +232,10 @@
           },
           "agent": {
             "type": "object",
+            "required": [
+              "name",
+              "principal"
+            ],
             "properties": {
               "name": {
                 "type": "string"
