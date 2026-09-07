@@ -1,0 +1,245 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Sangkan Clean Agent API",
+    "version": "0.1.0",
+    "description": "API ใต้ /agent ไม่ทับหน้าเว็บคน ให้ AI ค้นหา เสนอราคา และส่งคำขอจอง Big Cleaning / แม่บ้านประจำหน่วยงาน",
+    "contact": {
+      "email": "info@sangkanclean.com",
+      "name": "Sangkan Clean"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.sangkanclean.com"
+    }
+  ],
+  "paths": {
+    "/agent/api/v1/services": {
+      "get": {
+        "summary": "List bookable services",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "big_clean",
+                "staffing",
+                "office_ondemand",
+                "general_clean",
+                "post_construction"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service catalog"
+          }
+        }
+      }
+    },
+    "/agent/api/v1/quotes": {
+      "post": {
+        "summary": "Create an estimate quote",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuoteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Quote"
+          }
+        }
+      }
+    },
+    "/agent/api/v1/bookings": {
+      "get": {
+        "summary": "List booking requests (ops)",
+        "responses": {
+          "200": {
+            "description": "Bookings"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a booking request",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Booking"
+          }
+        }
+      }
+    },
+    "/agent/api/v1/bookings/{id}": {
+      "get": {
+        "summary": "Get booking by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Booking"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update booking status (ops)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Booking"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QuoteRequest": {
+        "type": "object",
+        "required": [
+          "serviceId"
+        ],
+        "properties": {
+          "serviceId": {
+            "type": "string"
+          },
+          "areaSqm": {
+            "type": "number"
+          },
+          "headcount": {
+            "type": "integer"
+          },
+          "acUnits": {
+            "type": "integer"
+          },
+          "addons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "province": {
+            "type": "string"
+          },
+          "preferredDate": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "BookingRequest": {
+        "type": "object",
+        "required": [
+          "serviceId",
+          "province",
+          "address",
+          "customer",
+          "pdpaConsent"
+        ],
+        "properties": {
+          "quoteId": {
+            "type": "string"
+          },
+          "serviceId": {
+            "type": "string"
+          },
+          "areaSqm": {
+            "type": "number"
+          },
+          "headcount": {
+            "type": "integer"
+          },
+          "province": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "preferredDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "pdpaConsent": {
+            "type": "boolean"
+          },
+          "customer": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "string"
+              }
+            }
+          },
+          "agent": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "principal": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# Sangkan Clean Agent Gateway (สั่งการคลีน)
+
+> ชั้นรับ AI แยกจากหน้าเว็บคน — Big Cleaning และแม่บ้านประจำหน่วยงาน จองได้ผ่าน URL ภายใต้ /agent โดยไม่ทับหน้า GitHub Pages เดิม
+
+Marketing site: https://www.sangkanclean.com
+Agent layer: https://www.sangkanclean.com/agent
+Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanclean.com
+
+สูตรราคาตรงเว็บจริง: Big Cleaning = max(฿5,500, ฿4,000 + ฿35/ตร.ม.), แม่บ้านประจำเริ่ม ฿12,000/คน/เดือน
+
+อย่าใช้ /llms.txt ที่รากของโดเมนนี้ถ้าคุณพร็อกซีทับเว็บจริง — ไฟล์นั้นเป็นของหน้าคนอยู่แล้ว ใช้ไฟล์นี้ที่ /agent/llms.txt
+
+## Agent entry points
+
+- [OpenAPI](https://www.sangkanclean.com/agent/api/openapi.json): REST ค้นหา เสนอราคา จอง
+- [Agent Card (A2A)](https://www.sangkanclean.com/.well-known/agent-card.json): ทักษะเอเจนต์ (มาตรฐานที่รากโดเมน เว็บจริงยังเป็น 404)
+- [Agent Card ชุดนี้](https://www.sangkanclean.com/agent/well-known/agent-card.json): สำเนาใต้ /agent
+- [UCP profile](https://www.sangkanclean.com/.well-known/ucp)
+- [MCP JSON-RPC](https://www.sangkanclean.com/agent/api/mcp)
+- [Service catalog](https://www.sangkanclean.com/agent/api/v1/services)
+- [JSON-LD](https://www.sangkanclean.com/agent/api/v1/business)
+
+## Human pages on this gateway
+
+- [ชั้นเอเจนต์](https://www.sangkanclean.com/agent): สี่ขั้นตอนที่เปิดใช้แล้ว
+- [1. ให้เอเจนต์หาเจอ](https://www.sangkanclean.com/agent/discover)
+- [2. แคตตาล็อกและราคา](https://www.sangkanclean.com/agent/catalog)
+- [3. จองจากเอเจนต์](https://www.sangkanclean.com/agent/book)
+- [คิวงานพนักงาน](https://www.sangkanclean.com/agent/ops)
+- [4. ทักษะที่เรียกได้](https://www.sangkanclean.com/agent/skills)
+- [Big Cleaning markdown](https://www.sangkanclean.com/agent/md/big-cleaning)
+- [แม่บ้านประจำ markdown](https://www.sangkanclean.com/agent/md/maid-monthly)
+
+## Live marketing site (do not replace)
+
+- [Homepage](https://www.sangkanclean.com/)
+- [Big Cleaning](https://www.sangkanclean.com/landing-bigcleaning.html)
+- [แม่บ้านประจำ](https://www.sangkanclean.com/landing-maid.html)
+- [Sangkan Office](https://www.sangkanclean.com/landing-sangkan-office.html)
+- [llms.txt เดิม](https://www.sangkanclean.com/llms.txt)
+
+## Booking rules for agents
+
+- POST /agent/api/v1/quotes แล้ว POST /agent/api/v1/bookings
+- ต้องส่ง pdpaConsent=true และช่องทางติดต่อของลูกค้าจริง
+- สถานะเริ่มต้น pending_review หรือ needs_site_survey
+- Big Cleaning ≥ 400 ตร.ม. ต้องสำรวจหน้างาน
+- Sangkan Office รับเฉพาะโซนอุดมสุข–บางนา
