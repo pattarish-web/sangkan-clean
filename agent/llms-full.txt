@@ -23,7 +23,7 @@ GET สูตรราคา: https://www.sangkanclean.com/agent/api/v1/quotes.j
 ## Agent entry points
 
 - [OpenAPI](https://www.sangkanclean.com/agent/api/openapi.json): REST ค้นหา เสนอราคา จอง
-- [Agent Card (A2A)](https://www.sangkanclean.com/.well-known/agent-card.json): ทักษะเอเจนต์ (มาตรฐานที่รากโดเมน เว็บจริงยังเป็น 404)
+- [Agent Card (A2A)](https://www.sangkanclean.com/.well-known/agent-card.json): ทักษะเอเจนต์ ตามมาตรฐานที่รากโดเมน
 - [Agent Card ชุดนี้](https://www.sangkanclean.com/agent/well-known/agent-card.json): สำเนาใต้ /agent
 - [UCP profile](https://www.sangkanclean.com/.well-known/ucp)
 - [MCP JSON-RPC](https://www.sangkanclean.com/agent/api/mcp)
