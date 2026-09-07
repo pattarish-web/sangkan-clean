@@ -1,0 +1,142 @@
+{
+  "merchant": "Sangkan Clean",
+  "currency": "THB",
+  "services": [
+    {
+      "id": "big-cleaning",
+      "category": "big_clean",
+      "nameTh": "Big Cleaning",
+      "nameEn": "Big Cleaning",
+      "summary": "ทำความสะอาดครั้งใหญ่เชิงลึกด้วยทีม 3 คน อุปกรณ์อุตสาหกรรม เหมาะกับโรงงาน อาคาร สำนักงาน",
+      "liveUrl": "https://www.sangkanclean.com/landing-bigcleaning.html",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "requiresSiteSurveyAboveSqm": 400,
+      "minLeadDays": 2,
+      "rushHours": 24,
+      "unit": "job",
+      "startingPrice": 5500
+    },
+    {
+      "id": "maid-monthly",
+      "category": "staffing",
+      "nameTh": "แม่บ้านประจำหน่วยงาน",
+      "nameEn": "Monthly office maid staffing",
+      "summary": "จัดหาแม่บ้านประจำสำนักงาน คอนโด อาคาร มีคนสำรอง ดูแลเงินเดือนและประกันสังคม",
+      "liveUrl": "https://www.sangkanclean.com/landing-maid.html",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "minLeadDays": 3,
+      "unit": "month",
+      "startingPrice": 12000
+    },
+    {
+      "id": "maid-daily",
+      "category": "staffing",
+      "nameTh": "แม่บ้านรายวัน",
+      "nameEn": "Daily maid visit",
+      "summary": "แม่บ้านรายวันสำหรับงานเสริมหรือทดแทนชั่วคราว เริ่มต้นครั้งละ 1,200 บาท",
+      "liveUrl": "https://www.sangkanclean.com/landing-maid.html",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "minLeadDays": 1,
+      "unit": "visit",
+      "startingPrice": 1200
+    },
+    {
+      "id": "office-lite",
+      "category": "office_ondemand",
+      "nameTh": "Sangkan Office Lite (S)",
+      "nameEn": "Sangkan Office Lite",
+      "summary": "แม่บ้านออฟฟิศ On-Demand โซนอุดมสุข–บางนา 4 ครั้ง/เดือน ไม่ต้องจ้างประจำ",
+      "liveUrl": "https://www.sangkanclean.com/landing-sangkan-office.html",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "zoneRestriction": "อุดมสุข–บางนา",
+      "minLeadDays": 7,
+      "unit": "month",
+      "startingPrice": 2900
+    },
+    {
+      "id": "office-growth",
+      "category": "office_ondemand",
+      "nameTh": "Sangkan Office Growth (M)",
+      "nameEn": "Sangkan Office Growth",
+      "summary": "8 ครั้ง/เดือน พร้อม Mini Deep ประจำเดือน สำหรับออฟฟิศเอเจนซี่ / Tech",
+      "liveUrl": "https://www.sangkanclean.com/landing-sangkan-office.html",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "zoneRestriction": "อุดมสุข–บางนา",
+      "minLeadDays": 7,
+      "unit": "month",
+      "startingPrice": 6900
+    },
+    {
+      "id": "office-premium",
+      "category": "office_ondemand",
+      "nameTh": "Sangkan Office Premium (L)",
+      "nameEn": "Sangkan Office Premium",
+      "summary": "12 ครั้ง/เดือน พร้อม Full Big Clean ประจำเดือน",
+      "liveUrl": "https://www.sangkanclean.com/landing-sangkan-office.html",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "zoneRestriction": "อุดมสุข–บางนา",
+      "minLeadDays": 7,
+      "unit": "month",
+      "startingPrice": 9900
+    },
+    {
+      "id": "general-cleaning",
+      "category": "general_clean",
+      "nameTh": "ทำความสะอาดทั่วไป",
+      "nameEn": "General cleaning",
+      "summary": "ทีม 2 คน งานดูแลประจำ อ่อนโยนกว่า Big Cleaning",
+      "liveUrl": "https://www.sangkanclean.com/",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "minLeadDays": 2,
+      "unit": "job",
+      "startingPrice": 2500
+    },
+    {
+      "id": "post-construction",
+      "category": "post_construction",
+      "nameTh": "ทำความสะอาดหลังก่อสร้าง",
+      "nameEn": "Post-construction cleaning",
+      "summary": "ทีม 4 คน เก็บฝุ่นปูน คราบสี และเศษวัสดุก่อสร้าง",
+      "liveUrl": "https://www.sangkanclean.com/",
+      "currency": "THB",
+      "bookableByAgent": true,
+      "requiresSiteSurveyAboveSqm": 250,
+      "minLeadDays": 3,
+      "unit": "job",
+      "startingPrice": 5500
+    }
+  ],
+  "addons": [
+    {
+      "id": "carpet",
+      "nameTh": "ซักพรม/โซฟา",
+      "unitPrice": 800,
+      "unit": "job"
+    },
+    {
+      "id": "ac",
+      "nameTh": "ล้างแอร์",
+      "unitPrice": 450,
+      "unit": "unit"
+    },
+    {
+      "id": "ozone",
+      "nameTh": "อบโอโซนฆ่าเชื้อ",
+      "unitPrice": 1200,
+      "unit": "job"
+    },
+    {
+      "id": "exterior-glass",
+      "nameTh": "เช็ดกระจกด้านนอก",
+      "unitPrice": 300,
+      "unit": "job"
+    }
+  ]
+}

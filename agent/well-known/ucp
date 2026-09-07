@@ -1,0 +1,41 @@
+{
+  "ucp": {
+    "version": "2026-01-11",
+    "services": {
+      "dev.ucp.shopping": [
+        {
+          "version": "2026-01-11",
+          "transport": "rest",
+          "endpoint": "https://www.sangkanclean.com/agent/api/v1",
+          "schema": "https://www.sangkanclean.com/agent/api/openapi.json"
+        },
+        {
+          "version": "2026-01-11",
+          "transport": "mcp",
+          "endpoint": "https://www.sangkanclean.com/agent/api/mcp"
+        }
+      ]
+    }
+  },
+  "business": {
+    "name": "Sangkan Clean",
+    "legal_name": "Sangkan Clean",
+    "url": "https://www.sangkanclean.com",
+    "merchant_of_record": "Sangkan Clean"
+  },
+  "capabilities": {
+    "dev.ucp.shopping.catalog": [
+      {
+        "version": "2026-01-11",
+        "spec": "https://www.sangkanclean.com/agent/api/v1/services"
+      }
+    ],
+    "dev.ucp.shopping.checkout": [
+      {
+        "version": "2026-01-11",
+        "spec": "https://www.sangkanclean.com/agent/api/v1/bookings",
+        "notes": "Checkout here creates a human-reviewed booking request. Payment is collected after staff confirmation, not via AP2 yet."
+      }
+    ]
+  }
+}

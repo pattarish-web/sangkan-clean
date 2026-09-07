@@ -1,0 +1,54 @@
+{
+  "protocolVersion": "0.2.9",
+  "name": "Sangkan Clean Booking Agent",
+  "description": "ค้นหา คำนวณราคา และส่งคำขอจอง Big Cleaning กับแม่บ้านประจำหน่วยงานของสั่งการคลีน พนักงานยืนยันงานก่อนเข้าปฏิบัติ",
+  "url": "https://www.sangkanclean.com/agent/api/mcp",
+  "version": "0.1.0",
+  "provider": {
+    "organization": "Sangkan Clean",
+    "url": "https://www.sangkanclean.com"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "search-services",
+      "name": "Search cleaning services",
+      "description": "ค้นหาบริการ Big Clean, แม่บ้านประจำ, Sangkan Office",
+      "tags": [
+        "catalog",
+        "cleaning",
+        "thailand"
+      ]
+    },
+    {
+      "id": "quote-job",
+      "name": "Instant service quote",
+      "description": "คำนวณราคาประมาณการตามสูตรเว็บจริง",
+      "tags": [
+        "pricing",
+        "big-clean",
+        "maid"
+      ]
+    },
+    {
+      "id": "create-booking",
+      "name": "Create booking request",
+      "description": "เปิดคำขอจองให้พนักงานรีวิว ไม่ตัดบัตร",
+      "tags": [
+        "booking",
+        "rfq"
+      ]
+    }
+  ]
+}
