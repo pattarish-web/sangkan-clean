@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_desk_germ",
+  "last_topic": "edu_germ_lifespan",
   "posts": [
-    {
-      "ts": "2026-08-19T10:20:09.619791+07:00",
-      "topic_id": "edu_germ_lifespan",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260819/feed.png",
-        "stories_png": "out/20260819/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260819/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "เคยสงสัยไหมครับว่า เชื้อโรคบนโต๊ะทำงานเราเนี่ย มันอยู่ได้นานแค่ไหน? 🤔 บางคนอาจคิดว่าไม่นาน แต่จริงๆ แล้วมันดื้อกว่าที่คิดเยอะเลยนะ!\n\nไวรัสไข้หวัดที่เราคุ้นเคยกันดี สามารถอยู่รอดบนพื้นผิวต่างๆ ได้นานถึ",
-        "tiktok": "ช็อกเลย! เชื้อโรคบนโต๊ะทำงานเราเนี่ย อึดกว่าที่คิดเยอะนะ! 🤯 ไวรัสไข้หวัดอยู่บนพื้นผิวได้ 24 ชั่วโมง ส่วนแบคทีเรียบางชนิด",
-        "line": "เคยเช็คไหมว่าโต๊ะทำงานเราสะอาดแค่ไหน? 🦠 ไม่น่าเชื่อว่าไวรัสไข้หวัดอยู่บนพื้นผิวได้ 24 ชั่วโมง ส่วนแบคทีเรียบางชนิดอยู่ได"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122112449379401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-19T12:48:05.288276+07:00",
       "topic_id": "office_ondemand",
@@ -2792,6 +2747,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122117505309401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-08T14:20:04.907671+07:00",
+      "topic_id": "edu_germ_lifespan",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260908/feed.png",
+        "stories_png": "out/20260908/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260908/bg.jpg",
+        "voiceover_mp3": "out/20260908/voiceover.mp3",
+        "stories_srt": "out/20260908/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "โต๊ะทำงานที่เรานั่งทุกวันนี่แหละครับ มีเชื้อโรคมากกว่าที่คิดเยอะเลยนะ! 🤯 รู้ไหมว่าไวรัสไข้หวัด สามารถอยู่รอดบนพื้นผิวได้นานถึง 24 ชั่วโมง ส่วนแบคทีเรียบางชนิดนี่สิ อยู่ได้เป็นหลายวันเลยนะ คิดดูสิว่าเร",
+        "tiktok": "เอ๊ะ! บนโต๊ะทำงานเรามีอะไรบ้างนะ? 😱 รู้ไหมว่าไวรัสไข้หวัด อยู่ได้นาน 24 ชม. ส่วนแบคทีเรียบางชนิด อยู่ได้เป็นวันๆ เลยนะ! ",
+        "line": "รู้ไหมว่า โต๊ะทำงานเรานี่แหละ แหล่งรวมเชื้อโรคชั้นดีเลยนะ! ไวรัสไข้หวัดอยู่ได้ 24 ชั่วโมง ส่วนแบคทีเรียบางตัวอยู่ได้หลาย"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122117855109401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
