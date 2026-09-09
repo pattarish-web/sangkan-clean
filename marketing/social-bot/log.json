@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_creative_block",
+  "last_topic": "agency_focus",
   "posts": [
-    {
-      "ts": "2026-08-20T12:48:10.989043+07:00",
-      "topic_id": "agency_focus",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260820/feed.png",
-        "stories_png": "out/20260820/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260820/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ทีมงานครีเอทีฟหรือเอเจนซี่เจนใหม่รู้ดีว่าเวลาทุกนาทีมีค่าสุดๆ Sangkan Clean เข้าใจเลยครับ! เราอยากให้คุณโฟกัสกับการสร้างสรรค์ผลงานได้เต็มที่ ไม่ต้องกังวลเรื่องความสะอาดที่ต้องเป๊ะทุกจุด ไม่ว่าจะออฟฟิศ",
-        "tiktok": "เอเจนซี่ & ทีมครีเอทีฟ จัดไป! Sangkan Clean ดูแลความสะอาดให้คุณแบบไร้กังวล ไม่ว่าจะ แม่บ้านโชว์รูม แม่บ้านโรงแรม หรือ แม",
-        "line": "ทีมครีเอทีฟและเอเจนซี่ต้องรู้! Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลเรื่องความสะอาดให้คุณโฟกัสงานได้เต็มที่ ไม่ว่าจะต้อง"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122112792771401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-20T18:48:38.825469+07:00",
       "topic_id": "edu_dust_it",
@@ -2800,6 +2755,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122118276927401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-09T16:49:40.504832+07:00",
+      "topic_id": "agency_focus",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260909/feed.png",
+        "stories_png": "out/20260909/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260909/bg.jpg",
+        "voiceover_mp3": "out/20260909/voiceover.mp3",
+        "stories_srt": "out/20260909/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "สำหรับทีมครีเอทีฟ หรือเอเจนซี่รุ่นใหม่ ที่อยากโฟกัสงานสร้างสรรค์เต็มที่ แต่ก็ต้องการพื้นที่ทำงานที่สะอาดเป๊ะ Sangkan Clean เข้าใจดีครับ 🤝 เราพร้อมดูแลความสะอาดให้คุณแบบมืออาชีพ ให้คุณได้ลุยไอเดียใหม่ๆ",
+        "tiktok": "เอเจนซี่กับงานคลีนเนี่ย ไม่ต้องปวดหัวครับ! Sangkan Clean ดูแลให้เอง เรามีแม่บ้านมืออาชีพ พร้อม QC และทีมสำรอง จะตึกสูง ศ",
+        "line": "ทีมเอเจนซี่ หรือสตาร์ทอัพที่อยากให้พื้นที่ทำงานสะอาดแบบมือโปร Sangkan Clean จัดการให้คุณได้ครับ! เรามีทีมแม่บ้านคุณภาพสู"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122118298077401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
