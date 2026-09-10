@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_dust_it",
+  "last_topic": "edu_server_room",
   "posts": [
-    {
-      "ts": "2026-08-21T10:21:42.154033+07:00",
-      "topic_id": "edu_server_room",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260821/feed.png",
-        "stories_png": "out/20260821/stories.png",
-        "venue_need": "school",
-        "venue_got": "school",
-        "bg_source": "bg-school-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260821/bg.jpg",
-        "voiceover_mp3": "out/20260821/voiceover.mp3",
-        "stories_srt": "out/20260821/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "รู้ไหมว่า Server Room และมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติถึง 3 เท่าเลยนะ! เพราะแอร์ไปไม่ถึงไง จุดเหล่านี้สำคัญมาก เพราะฝุ่นผงเล็กๆ อาจส่งผลต่อระบบไอที ทำให้รวนหรือพังได้ง่าย\n\nการดูแลความสะอาดเลยต้องละเ",
-        "tiktok": "รู้ไหม Server Room หรือมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติ 3 เท่า! เพราะแอร์ไปไม่ถึงไง ฝุ่นพวกนี้อันตรายต่อระบบไอทีนะ ต้องทำ",
-        "line": "เรื่องนี้หลายคนอาจมองข้าม!\nรู้ไหมว่า Server Room กับมุมอับในออฟฟิศ ฝุ่นเยอะกว่าปกติถึง 3 เท่าเลยนะ เพราะแอร์ไปไม่ถึงไง! "
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122113027107401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-21T12:50:05.218436+07:00",
       "topic_id": "tech_team",
@@ -2802,6 +2755,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122118350181401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-10T14:24:59.963554+07:00",
+      "topic_id": "edu_server_room",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260910/feed.png",
+        "stories_png": "out/20260910/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260910/bg.jpg",
+        "voiceover_mp3": "out/20260910/voiceover.mp3",
+        "stories_srt": "out/20260910/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานรุ่นใหม่/เอเจนซี่/สตาร์ทอัพที่ใช้พื้นที่ออฟฟิศกันอย่างคุ้มค่า Sangkan Clean อยากชวนมาเช็กจุดที่ไม่ค่อยได้มองกันหน่อยครับ นั่นคือ 'ห้อง Server Room' และมุมอับต่างๆ ในออฟฟิศ ที่แอร์ไม่ถึงเลย พวกนี",
+        "tiktok": "รู้ยัง? ห้อง Server Room กับมุมอับในออฟฟิศของคุณน่ะ คือจุดที่ฝุ่นสะสมไวที่สุดเลยนะ เพราะแอร์เข้าไม่ถึง ฝุ่นเลยกองเป็นสาม",
+        "line": "Sangkan Clean มาบอกทิปส์สำคัญสำหรับออฟฟิศครับ! รู้ไหมว่า 'ห้อง Server Room' กับมุมอับต่างๆ ที่แอร์ไม่ถึง คือแหล่งสะสมฝุ่"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122118485625401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
