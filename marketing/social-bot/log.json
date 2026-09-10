@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_server_room",
+  "last_topic": "tech_team",
   "posts": [
-    {
-      "ts": "2026-08-21T12:50:05.218436+07:00",
-      "topic_id": "tech_team",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260821/feed.png",
-        "stories_png": "out/20260821/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260821/bg.jpg",
-        "voiceover_mp3": "out/20260821/voiceover.mp3",
-        "stories_srt": "out/20260821/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีม Tech/Startup ยุคใหม่ ที่เน้นความคล่องตัวและต้องการออฟฟิศที่พร้อมลุยงานทันที Sangkan Clean เข้าใจดีที่สุด! เราไม่ได้มองแค่งานทำความสะอาดทั่วไป แต่เราใส่ใจในรายละเอียดเหมือนกับดูแล แม่บ้านห้างสรรพสิ",
-        "tiktok": "ทีม Tech/Startup ฟังทางนี้! 🚀 ออฟฟิศสะอาดพร้อมลุย Sangkan Clean จัดให้! เราดูแลละเอียดเหมือน แม่บ้านห้างสรรพสินค้า ใช้ G",
-        "line": "รู้ไหมว่า ออฟฟิศที่สะอาด มีผลต่อ Productivity ของทีม Tech/Startup มากแค่ไหน? Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลคุณ เร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122113045437401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-21T18:47:52.040148+07:00",
       "topic_id": "edu_big_clean_why",
@@ -2802,6 +2755,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122118485625401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-10T16:47:41.882397+07:00",
+      "topic_id": "tech_team",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260910/feed.png",
+        "stories_png": "out/20260910/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260910/bg.jpg",
+        "voiceover_mp3": "out/20260910/voiceover.mp3",
+        "stories_srt": "out/20260910/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีม Tech และสตาร์ทอัพยุคใหม่ Sangkan Clean เข้าใจดีว่าคุณต้องการออฟฟิศที่พร้อมลุยเสมอ ไม่มีเวลามาห่วงเรื่องความสะอาด เรามีทีมแม่บ้านมืออาชีพพร้อมดูแลพื้นที่ทำงานของคุณให้เป๊ะ เหมือนที่เราดูแลแม่บ้านคา",
+        "tiktok": "ทีม Tech/สตาร์ทอัพ ที่อยากได้ออฟฟิศพร้อมลุย Sangkan Clean จัดให้! เรามีแม่บ้านมืออาชีพดูแลความสะอาดให้เป๊ะ เหมือน แม่บ้า",
+        "line": "สำหรับทีม Tech และสตาร์ทอัพ ที่ต้องการออฟฟิศสะอาดพร้อมลุย Sangkan Clean พร้อมช่วยคุณครับ เรามีทีมแม่บ้านมืออาชีพดูแลพื้น"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122118502671401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
