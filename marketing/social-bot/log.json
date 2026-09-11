@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_big_clean_why",
+  "last_topic": "edu_hidden_dirt",
   "posts": [
-    {
-      "ts": "2026-08-22T10:18:11.753595+07:00",
-      "topic_id": "edu_hidden_dirt",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260822/feed.png",
-        "stories_png": "out/20260822/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260822/bg.jpg",
-        "voiceover_mp3": "out/20260822/voiceover.mp3",
-        "stories_srt": "out/20260822/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เวลาเราพูดถึงความสะอาด ภาพแรกที่นึกถึงอาจเป็นการปัดกวาดเช็ดถูทั่วไปใช่ไหมครับ? แต่รู้ไหมว่าบางที คราบฝังลึกที่มองไม่เห็นนี่แหละตัวปัญหา! 🧐\n\nในพื้นที่ใหญ่ๆ อย่างการทำความสะอาดหลังก่อสร้างโกดัง หรือแม้แ",
-        "tiktok": "ทำความสะอาดปกติก็ว่าทั่วแล้ว แต่มีมุมไหนที่ยังมองข้ามไปบ้าง? ใต้เฟอร์นิเจอร์ รางแอร์ ร่องกระเบื้อง จุดพวกนี้แหละ คือแหล่",
-        "line": "มุมอับในพื้นที่ทำงานคุณ สะอาดจริงแค่ไหน? 🤔\n\nหลายครั้งที่เราทำความสะอาดกันแบบปกติ ก็อาจลืมจุดสำคัญอย่างใต้เฟอร์นิเจอร์, ร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122113240125401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-22T12:44:25.956414+07:00",
       "topic_id": "big_cleaning",
@@ -2802,6 +2755,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122118550875401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-11T14:22:37.240709+07:00",
+      "topic_id": "edu_hidden_dirt",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260911/feed.png",
+        "stories_png": "out/20260911/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260911/bg.jpg",
+        "voiceover_mp3": "out/20260911/voiceover.mp3",
+        "stories_srt": "out/20260911/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เคยสังเกตกันไหมครับว่า บางทีทำความสะอาดปกติแล้ว เหมือนจะยังไม่สุด นั่นอาจเพราะมีคราบฝังลึก ไปแอบซ่อนอยู่ในจุดที่เรา มองข้ามไปบ่อยๆ ก็ได้นะ ไม่ว่าจะเป็นใต้เฟอร์นิเจอร์ที่นานๆ ขยับที ร่องกระเบื้องในห้อง",
+        "tiktok": "รู้ยัง? คราบฝังลึกไม่ได้มีแค่บนพื้นนะ มันแอบซ่อนอยู่ใต้เฟอร์นิเจอร์ ร่องกระเบื้อง และรางแอร์ด้วย! จุดที่ทำความสะอาดปกติไ",
+        "line": "เคยสงสัยไหมว่าทำไม ทำความสะอาดแล้วก็ยังรู้สึกไม่สุด? นั่นอาจเป็นเพราะคราบฝังลึก ที่ไปแอบอยู่ตามจุดที่มองข้ามไง! ลองนึกภา"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122118699291401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
