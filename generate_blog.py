@@ -28,7 +28,7 @@ STOCK_DIR = ROOT / "images" / "blog"
 
 POSTS_PER_CATEGORY = max(1, int(os.environ.get("POSTS_PER_CATEGORY", "1")))
 # Soft pause between posts (per-key throttle also applies in gemini_api).
-POST_GAP_SEC = float(os.environ.get("BLOG_POST_GAP_SEC", "5"))
+POST_GAP_SEC = float(os.environ.get("BLOG_POST_GAP_SEC", "1"))
 EXPECTED_DAILY = POSTS_PER_CATEGORY * 3  # เคล็ดลับ / ธุรกิจ / คู่มือ — ไม่รวมบริการ
 
 TOPICS = [
@@ -402,7 +402,7 @@ def generate_one_post(
         print(f"[{category}] {keyword} via OpenAI GPT-4o-mini")
         result = call_openai_json(
             _geo_prompt(keyword, category),
-            timeout=90,
+            timeout=45,
         )
     else:
         start = _pick_key(api_keys, key_offset)
