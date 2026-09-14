@@ -17,7 +17,7 @@
     function adsSendTo(kind) {
         var map = window.adsConversions || {};
         if (kind && map[kind]) return map[kind];
-        return window.adsLeadSendTo || '';
+        return ''; 
     }
 
     function fireAdsConversion(kind, extra) {
