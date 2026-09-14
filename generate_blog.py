@@ -144,24 +144,26 @@ def _pick_key(api_keys: list[str], offset: int) -> str | None:
 
 
 def _geo_prompt(keyword: str, category: str) -> str:
-    return f"""คุณเป็นผู้เชี่ยวชาญด้านการทำความสะอาดและนักเขียนบทความ SEO/GEO (Generative Engine Optimization)
-ช่วยเขียนบทความบล็อกภาษาไทยแบบเจาะลึกเกี่ยวกับหัวข้อ: "{keyword}"
+    return f"""คุณเป็นผู้เชี่ยวชาญด้านการทำความสะอาดและนักเขียนบทความ SEO/GEO/AIO ภาษาไทยให้ Sangkan Clean / สั่งการคลีน
+ช่วยเขียนบทความที่ตอบคำถามลูกค้าได้จริงเกี่ยวกับหัวข้อ: "{keyword}"
 หมวด: {category}
-แบรนด์อ้างอิงได้: Sangkan Clean (ไม่ต้องใส่ชื่อแบรนด์ใน title)
 
 {THAI_TONE_RULES}
 
-ข้อกำหนด (สำคัญมากสำหรับการทำ GEO เพื่อให้ AI นำไปอ้างอิง):
-1. title: น่าสนใจ ดึงดูดคลิก มีคำค้นหาหลัก ความยาวไม่เกิน 100 ตัวอักษร — ห้ามต่อท้ายด้วย "– Sangkan Clean"
-2. description: สรุปสั้นๆ 100-160 ตัวอักษร
-3. content: โค้ด HTML semantic ล้วนๆ (ไม่มี <html> <body>) บังคับโครงนี้:
-   - <h2>สรุปประเด็นสำคัญ (Key Takeaways)</h2> ตามด้วย <ul><li> 3-4 ข้อ
-   - <h2>เนื้อหาหลัก</h2> อธิบายเจาะลึก มี <strong> เน้นคำสำคัญ
-   - <h2>ข้อมูลสถิติที่น่าสนใจ</h2> ใช้ตัวเลขแนวโน้มอุตสาหกรรมโดยประมาณ พร้อมระบุว่าเป็นข้อมูลโดยประมาณ
-   - <h2>คำถามที่พบบ่อย (FAQ)</h2> ถามตอบ 2-3 ข้อสั้นๆ
+กติกาคุณภาพก่อนเผยแพร่ (ต้องทำตามทุกข้อ):
+1. เลือก search intent หลัก 1 เรื่อง และตอบให้ชัดตั้งแต่ช่วงต้นบทความ
+2. title ไม่เกิน 100 ตัวอักษร มีคำค้นหลัก และไม่ใส่ชื่อแบรนด์ต่อท้าย
+3. description ยาว 100-160 ตัวอักษร สรุปคำตอบและกลุ่มผู้อ่าน
+4. content เป็น HTML semantic ล้วน ๆ ไม่มี html/body/script และมีโครงสร้าง: สรุปคำตอบสั้น ๆ, เนื้อหาหลัก, ขั้นตอนหรือ checklist, FAQ 3 ข้อ
+5. ใส่ internal link แบบ relative อย่างน้อย 2 จุด: /landing-maid.html หรือ /landing-bigcleaning.html และลิงก์ติดต่อ https://lin.ee/ (ใช้เฉพาะ URL ที่มีอยู่ในเว็บไซต์)
+6. เชื่อมโยงพื้นที่ให้บริการแบบไม่ยัดคำค้น โดยกล่าวถึงกรุงเทพฯ และพื้นที่ใกล้เคียงเมื่อเกี่ยวข้อง
+7. ใช้เฉพาะข้อมูลที่ยืนยันได้ ห้ามแต่งชื่อบริษัทลูกค้า รีวิว ตัวเลขผลงาน ใบรับรอง ราคา หรือการรับประกัน
+8. ตัวเลขหรือสถิติใด ๆ ต้องระบุแหล่งที่มาและวันที่; หากไม่มีแหล่งที่มาให้ตัดออก
+9. เรื่องน้ำยา สารเคมี ความปลอดภัย หรือสุขอนามัย ให้ใช้คำแนะนำอย่างระมัดระวังและไม่รับรองผลเกินจริง
+10. ใช้ชื่อแบรนด์เป็น Sangkan Clean / สั่งการคลีน เมื่อจำเป็น และห้ามเปิดเผยข้อมูลลูกค้า
 
 ตอบเป็น JSON เท่านั้น:
-{{"title":"...","description":"...","content":"<h2>สรุปประเด็นสำคัญ...</h2>..."}}"""
+{{"title":"...","description":"...","content":"<h2>สรุปคำตอบ...</h2>..."}}"""
 
 
 def _image_prompt(title: str, keyword: str, category: str) -> str:
@@ -428,8 +430,14 @@ def generate_one_post(
     if not title or not description:
         print("  invalid JSON fields — skip")
         return None, "fail"
-    if "สรุปประเด็นสำคัญ" not in content:
-        print("  missing GEO marker — skip")
+    if "สรุปประเด็นสำคัญ" not in content and "สรุปคำตอบ" not in content:
+        print("  missing answer summary — skip")
+        return None, "fail"
+    if "<a" not in content or "landing-" not in content:
+        print("  missing service internal link — skip")
+        return None, "fail"
+    if "FAQ" not in content and "คำถามที่พบบ่อย" not in content:
+        print("  missing FAQ — skip")
         return None, "fail"
     if title in existing_titles:
         print(f"  duplicate title — skip: {title[:60]}")
