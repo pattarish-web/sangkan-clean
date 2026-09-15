@@ -213,7 +213,7 @@ foreach ($i in 0..3) {
 
 # Phone pill
 Draw-RoundedRect $g 78 500 320 44 22 $primary $primary 0
-$g.DrawString("063-686-5134", $fontPhone, (New-Object System.Drawing.SolidBrush $white), 108, 508)
+$g.DrawString("092-914-9978", $fontPhone, (New-Object System.Drawing.SolidBrush $white), 108, 508)
 $g.DrawString("Hotline", (New-Font "Segoe UI" 13 ([System.Drawing.FontStyle]::Regular)), (New-Object System.Drawing.SolidBrush $white), 278, 516)
 
 # Site URL watermark on hero side

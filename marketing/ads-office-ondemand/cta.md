@@ -6,7 +6,7 @@
 |---------|-----|
 | LINE | https://line.me/ti/p/@sangkanclean |
 | Display | ทัก LINE @sangkanclean |
-| โทร (สำรอง) | 063-686-5134 |
+| โทร (สำรอง) | 092-914-9978 |
 
 ## ปลายทางที่อนุญาต
 

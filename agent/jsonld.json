@@ -18,7 +18,7 @@
       "url": "https://www.sangkanclean.com",
       "logo": "https://www.sangkanclean.com/og-image.jpg",
       "image": "https://www.sangkanclean.com/og-image.jpg",
-      "telephone": "+66636865134",
+      "telephone": ["+66929149978", "+66806941998"],
       "email": "info@sangkanclean.com",
       "priceRange": "฿฿",
       "currenciesAccepted": "THB",
@@ -481,7 +481,7 @@
         "@type": "CleaningService",
         "name": "Sangkan Clean",
         "url": "https://www.sangkanclean.com",
-        "telephone": "+66636865134"
+        "telephone": ["+66929149978", "+66806941998"]
       },
       "areaServed": [
         "กรุงเทพฯ",
@@ -516,7 +516,7 @@
         "@type": "CleaningService",
         "name": "Sangkan Clean",
         "url": "https://www.sangkanclean.com",
-        "telephone": "+66636865134"
+        "telephone": ["+66929149978", "+66806941998"]
       },
       "areaServed": [
         "กรุงเทพฯ",
@@ -551,7 +551,7 @@
         "@type": "CleaningService",
         "name": "Sangkan Clean",
         "url": "https://www.sangkanclean.com",
-        "telephone": "+66636865134"
+        "telephone": ["+66929149978", "+66806941998"]
       },
       "areaServed": [
         "กรุงเทพฯ",
@@ -583,7 +583,7 @@
           "name": "จองคิวบริการทำความสะอาดล่วงหน้ากี่วัน?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "แนะนำจองล่วงหน้า 2–3 วัน งานด่วนโทร 063-686-5134 หรือทัก LINE @sangkanclean ได้ภายใน 24 ชั่วโมงถ้ามีคิว"
+            "text": "แนะนำจองล่วงหน้า 2–3 วัน งานด่วนโทร 092-914-9978 / 080-694-1998 หรือทัก LINE @sangkanclean ได้ภายใน 24 ชั่วโมงถ้ามีคิว"
           }
         },
         {

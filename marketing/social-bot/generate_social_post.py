@@ -42,7 +42,7 @@ OUT_DIR = ROOT / "out"
 
 SITE = "https://www.sangkanclean.com"
 LINE_OA = "@sangkanclean"
-PHONE = "063-686-5134"
+PHONE = "092-914-9978 / 080-694-1998"
 
 
 def _env_bool(name: str, default: bool = False) -> bool:

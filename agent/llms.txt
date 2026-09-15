@@ -4,7 +4,7 @@
 
 Marketing site: https://www.sangkanclean.com
 Agent layer: https://www.sangkanclean.com/agent
-Preferred contact: LINE @sangkanclean | Phone 063-686-5134 | Email info@sangkanclean.com
+Preferred contact: LINE @sangkanclean | Phone 092-914-9978 | Email info@sangkanclean.com
 
 สูตรราคาตรงเว็บจริง (script.js):
 - Big Cleaning = max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน
@@ -61,7 +61,7 @@ GET สูตรราคา: https://www.sangkanclean.com/agent/api/v1/quotes.j
 
 ## FAQ
 
-- จองล่วงหน้ากี่วัน? 2–3 วัน งานด่วนโทร 063-686-5134 หรือ LINE @sangkanclean
+- จองล่วงหน้ากี่วัน? 2–3 วัน งานด่วนโทร 092-914-9978 / 080-694-1998 หรือ LINE @sangkanclean
 - ต้องเตรียมอุปกรณ์ไหม? ไม่ต้อง รวมในราคาแล้ว
 - มีประกันความเสียหายไหม? มี จากการปฏิบัติงาน
 - นอกกรุงเทพฯ ได้ไหม? ได้ ทั้งปริมณฑล ระยอง ชลบุรี และโปรเจกต์ใหญ่ทั่วประเทศ

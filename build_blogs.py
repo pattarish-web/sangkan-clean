@@ -4,7 +4,7 @@ import os
 import re
 
 from build_assets import write_analytics_js
-from site_config import SITE_URL, analytics_script_tag
+from site_config import BUSINESS, SITE_URL, analytics_script_tag
 
 
 def slugify(text):
@@ -197,11 +197,12 @@ def render_blog_html(posts, idx, template):
                    <p>สนใจสอบถามบริการทำความสะอาดเพิ่มเติม ติดต่อทีมงาน Sangkan Clean ได้เลยครับ</p>"""
 
     # Ensure CTA signals exist in body for GEO/AIO (phone / quote)
-    if "063-686" not in content and "ใบเสนอราคา" not in content:
+    if BUSINESS["phone_display"] not in content and BUSINESS["phone2_display"] not in content and "ใบเสนอราคา" not in content:
         content += (
             '<section class="inline-cta"><h3>สนใจบริการทำความสะอาดครบวงจร?</h3>'
             "<p>ทีมงาน Sangkan Clean พร้อมประเมินราคาฟรี "
-            'โทร <a href="tel:0636865134">063-686-5134</a> '
+            f'โทร <a href="tel:{BUSINESS["phone_tel"]}">{BUSINESS["phone_display"]}</a> / '
+            f'<a href="tel:{BUSINESS["phone2_tel"]}">{BUSINESS["phone2_display"]}</a> '
             'หรือ LINE <a href="https://line.me/ti/p/@sangkanclean">@sangkanclean</a> '
             "หรือขอใบเสนอราคาได้ทันที</p></section>"
         )

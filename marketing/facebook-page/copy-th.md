@@ -30,7 +30,7 @@ Sangkan Clean (สั่งการคลีน) บริการทำคว
 พื้นที่ให้บริการ: กรุงเทพฯ นนทบุรี สมุทรปราการ ปทุมธานี ชลบุรี ระยอง และโปรเจกต์ใหญ่ทั่วประเทศ
 
 คำนวณราคาเบื้องต้นฟรี: https://www.sangkanclean.com/
-Line @sangkanclean | โทร 063-686-5134 | อีเมล info@sangkanclean.com
+Line @sangkanclean | โทร 092-914-9978 / 080-694-1998 | อีเมล info@sangkanclean.com
 เปิดบริการทุกวัน 08:00–18:00
 ```
 
@@ -51,7 +51,7 @@ Big Cleaning | แม่บ้านประจำ | หลังก่อส�
 คำนวณราคาเบื้องต้นฟรีบนเว็บ
 https://www.sangkanclean.com/
 
-Line @sangkanclean | โทร 063-686-5134
+Line @sangkanclean | โทร 092-914-9978 / 080-694-1998
 
 ติดตามเพจนี้เพื่อรับข่าวสาร โปรโมชัน และตัวอย่างผลงานครับ
 ```
@@ -82,7 +82,7 @@ https://www.sangkanclean.com/
 และโปรเจกต์ใหญ่ทั่วประเทศ
 
 เปิดทุกวัน 08:00–18:00
-โทร 063-686-5134
+โทร 092-914-9978 / 080-694-1998
 Line @sangkanclean
 เว็บ https://www.sangkanclean.com/
 ```
@@ -105,7 +105,7 @@ Line @sangkanclean
 เพจนี้คือช่องทางติดตามผลงานและอัปเดตบริการของ Sangkan Clean
 
 กดติดตามเพจ + ทัก Inbox ได้เมื่อพร้อมสอบถามราคา
-หรือแอด Line @sangkanclean / โทร 063-686-5134
+หรือแอด Line @sangkanclean / โทร 092-914-9978 / 080-694-1998
 
 เว็บคำนวณราคา: https://www.sangkanclean.com/
 ```
@@ -119,7 +119,7 @@ Line @sangkanclean
 ```
 ขอบคุณมากครับที่ไว้วางใจ Sangkan Clean
 ยินดีดูแลให้ทุกครั้งที่มีงานครับ
-Line @sangkanclean | 063-686-5134
+Line @sangkanclean | 092-914-9978
 ```
 
 ### รีวิวมีข้อเสนอแนะ

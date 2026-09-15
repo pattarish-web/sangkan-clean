@@ -17,7 +17,7 @@ Messenger: [m.me/61592039062581](https://m.me/61592039062581)
 | ชื่อผู้ใช้ (username) | `sangkanclean` → ลิงก์จะเป็น `facebook.com/sangkanclean` |
 | Page ID | `61592039062581` |
 | เว็บไซต์ | `https://www.sangkanclean.com/` |
-| โทรศัพท์ | `063-686-5134` |
+| โทรศัพท์ | `092-914-9978` |
 | อีเมล | `info@sangkanclean.com` |
 | LINE | `https://line.me/ti/p/@sangkanclean` |
 | ที่อยู่ | กรุงเทพมหานคร (หรือที่อยู่จริงของบริษัท ถ้ามี) |
@@ -51,7 +51,7 @@ Sangkan Clean (สั่งการคลีน) บริการทำคว
 พื้นที่ให้บริการ: กรุงเทพฯ นนทบุรี สมุทรปราการ ปทุมธานี ชลบุรี ระยอง และโปรเจกต์ใหญ่ทั่วประเทศ
 
 คำนวณราคาเบื้องต้นฟรี: https://www.sangkanclean.com/
-Line @sangkanclean | โทร 063-686-5134 | อีเมล info@sangkanclean.com
+Line @sangkanclean | โทร 092-914-9978 / 080-694-1998 | อีเมล info@sangkanclean.com
 เปิดบริการทุกวัน 08:00–18:00
 ```
 

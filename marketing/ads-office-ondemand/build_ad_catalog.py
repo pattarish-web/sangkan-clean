@@ -36,7 +36,7 @@ VENUES = [
 
 ANGLES = [
     {"id": "hook", "chip": "ทีมมืออาชีพ", "cta": "ทัก LINE @sangkanclean"},
-    {"id": "speed", "chip": "เข้างานไว", "cta": "โทร 063-686-5134"},
+    {"id": "speed", "chip": "เข้างานไว", "cta": "โทร 092-914-9978 / 080-694-1998"},
     {"id": "trust", "chip": "รับประกันคุณภาพ", "cta": "ขอใบเสนอราคา"},
 ]
 
@@ -51,7 +51,7 @@ EXTRAS = [
     {"headline": ["ซักพรม โซฟา", "ขจัดไรฝุ่น"], "sub": "เริ่มต้น ฿800 · ทีมมืออาชีพ", "chip": "Deep Fabric", "arts": ["art-hotel-v2", "art-condo-v2"], "cta": "ทัก LINE @sangkanclean"},
     {"headline": ["เช็ดกระจก", "อาคารสูง"], "sub": "อุปกรณ์มาตรฐานความปลอดภัย", "chip": "Safety First", "arts": ["art-highrise-v2", "art-highrise-v3"], "cta": "สอบถามราคา"},
     {"headline": ["30+ ปี", "ประสบการณ์"], "sub": "5,000+ โปรเจกต์ · รับประกันคุณภาพ 100%", "chip": "Trusted", "arts": ["art-hotel-v3", "art-showroom-v2"], "cta": "ทัก LINE @sangkanclean"},
-    {"headline": ["เข้างานภายใน", "24 ชม."], "sub": "รับงานด่วน · กรุงเทพและปริมณฑล", "chip": "Speed", "arts": ["art-warehouse-v2", "art-factory-v2"], "cta": "โทร 063-686-5134"},
+    {"headline": ["เข้างานภายใน", "24 ชม."], "sub": "รับงานด่วน · กรุงเทพและปริมณฑล", "chip": "Speed", "arts": ["art-warehouse-v2", "art-factory-v2"], "cta": "โทร 092-914-9978 / 080-694-1998"},
     {"headline": ["มาตรฐานเคมี", "ISO / อย."], "sub": "SevenSave · ปลอดภัยต่อคนและสิ่งแวดล้อม", "chip": "Green", "arts": ["art-hospital", "art-school-v2"], "cta": "ทัก LINE @sangkanclean"},
     {"headline": ["Soft Cleaning", "ดูแลประจำ"], "sub": "อ่อนโยนกับพื้นผิว · เริ่ม ฿3,500", "chip": "Gentle Care", "arts": ["art-showroom-v3", "art-cafe-v3"], "cta": "ทัก LINE @sangkanclean"},
     {"headline": ["ครอบคลุม", "กทม. + ปริมณฑล"], "sub": "บางนา อุดมสุข ระยอง ชลบุรี และทั่วประเทศ", "chip": "Service Area", "arts": ["art-mall-v3", "art-highrise"], "cta": "ทัก LINE @sangkanclean"},

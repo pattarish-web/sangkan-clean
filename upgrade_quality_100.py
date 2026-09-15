@@ -4,7 +4,7 @@ import json
 import re
 from datetime import date
 
-from site_config import SITE_URL
+from site_config import BUSINESS, SITE_URL
 
 BRAND_IMAGE = f"{SITE_URL}/og-image.jpg?v=20260824"
 CTA_MARKER = "<!-- SANGKAN_CTA -->"
@@ -12,7 +12,8 @@ CTA_HTML = (
     f'{CTA_MARKER}<section class="inline-cta">'
     f"<h3>สนใจบริการทำความสะอาดครบวงจร?</h3>"
     f"<p>ทีมงาน Sangkan Clean พร้อมประเมินราคาฟรี "
-    f'โทร <a href="tel:0636865134">063-686-5134</a> '
+    f'โทร <a href="tel:{BUSINESS["phone_tel"]}">{BUSINESS["phone_display"]}</a> / '
+    f'<a href="tel:{BUSINESS["phone2_tel"]}">{BUSINESS["phone2_display"]}</a> '
     f'หรือ LINE <a href="https://line.me/ti/p/@sangkanclean">@sangkanclean</a> '
     f"หรือขอใบเสนอราคาได้ทันที</p></section>"
 )
@@ -26,8 +27,8 @@ TITLE_BRAND_SUFFIX = re.compile(
 def ensure_cta(content: str) -> str:
     if not content:
         content = ""
-    if CTA_MARKER in content or "063-686-5134" in content or "ใบเสนอราคา" in content:
-        if "063-686" not in content and "ใบเสนอราคา" not in content:
+    if CTA_MARKER in content or BUSINESS["phone_display"] in content or BUSINESS["phone2_display"] in content or "ใบเสนอราคา" in content:
+        if BUSINESS["phone_display"] not in content and "ใบเสนอราคา" not in content:
             return content.rstrip() + CTA_HTML
         return content
     return content.rstrip() + CTA_HTML
