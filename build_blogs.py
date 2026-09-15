@@ -4,7 +4,7 @@ import os
 import re
 
 from build_assets import write_analytics_js
-from site_config import BUSINESS, SITE_URL, analytics_script_tag
+from site_config import BUSINESS, SITE_URL, analytics_script_tag, scrub_retired_phones
 
 
 def slugify(text):
@@ -190,7 +190,7 @@ def render_blog_html(posts, idx, template):
     slug = post.get("slug") or slugify(post["title"]) or f"post-{idx}"
     post["slug"] = slug
 
-    content = post.get("content", "")
+    content = scrub_retired_phones(post.get("content", ""))
     if not content:
         content = f"""<p>{post['description']}</p>
                    <p>บทความนี้กำลังอยู่ในระหว่างการจัดทำเนื้อหาเพิ่มเติม โปรดติดตามอัปเดตจากเราได้เร็วๆ นี้ครับ</p>
@@ -206,12 +206,12 @@ def render_blog_html(posts, idx, template):
             'หรือ LINE <a href="https://line.me/ti/p/@sangkanclean">@sangkanclean</a> '
             "หรือขอใบเสนอราคาได้ทันที</p></section>"
         )
-        post["content"] = content
+    post["content"] = content
 
     title = re.sub(r"\s*[–—\-]\s*Sangkan Clean\s*$", "", post["title"], flags=re.I).strip()
     post["title"] = title
     if "unsplash.com" in (post.get("image") or ""):
-        post["image"] = f"{SITE_URL}/og-image.jpg?v=20260824"
+        post["image"] = f"{SITE_URL}/og-image.jpg?v=20260915"
 
     page_title = title if re.search(r"sangkan\s*clean", title, re.I) else f"{title} | Sangkan Clean"
 

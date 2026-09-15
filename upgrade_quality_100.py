@@ -4,9 +4,9 @@ import json
 import re
 from datetime import date
 
-from site_config import BUSINESS, SITE_URL
+from site_config import BUSINESS, SITE_URL, scrub_retired_phones
 
-BRAND_IMAGE = f"{SITE_URL}/og-image.jpg?v=20260824"
+BRAND_IMAGE = f"{SITE_URL}/og-image.jpg?v=20260915"
 CTA_MARKER = "<!-- SANGKAN_CTA -->"
 CTA_HTML = (
     f'{CTA_MARKER}<section class="inline-cta">'
@@ -25,8 +25,7 @@ TITLE_BRAND_SUFFIX = re.compile(
 
 
 def ensure_cta(content: str) -> str:
-    if not content:
-        content = ""
+    content = scrub_retired_phones(content or "")
     if CTA_MARKER in content or BUSINESS["phone_display"] in content or BUSINESS["phone2_display"] in content or "ใบเสนอราคา" in content:
         if BUSINESS["phone_display"] not in content and "ใบเสนอราคา" not in content:
             return content.rstrip() + CTA_HTML

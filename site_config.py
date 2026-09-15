@@ -66,6 +66,16 @@ BUSINESS = {
     "address_country": "TH",
 }
 
+
+def scrub_retired_phones(text: str) -> str:
+    """Replace the retired 063-686-5134 hotline so AI bots cannot write it back."""
+    if not text:
+        return text
+    text = text.replace("+66636865134", BUSINESS["phone"])
+    text = text.replace("0636865134", BUSINESS["phone_tel"])
+    text = text.replace("063-686-5134", BUSINESS["phone_display"])
+    return text
+
 # Canonical URL policy (GitHub Pages, long-term host):
 # - Homepage: https://www.sangkanclean.com/  (not /index.html)
 # - Other pages: keep .html in canonical + sitemap (matches files + internal links)

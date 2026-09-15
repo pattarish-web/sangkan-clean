@@ -19,7 +19,7 @@ from gemini_api import (
     get_api_keys,
     is_key_exhausted,
 )
-from site_config import SITE_URL
+from site_config import BUSINESS, SITE_URL
 
 ROOT = Path(__file__).resolve().parent
 JSON_PATH = ROOT / "posts.json"
@@ -161,6 +161,7 @@ def _geo_prompt(keyword: str, category: str) -> str:
 8. ตัวเลขหรือสถิติใด ๆ ต้องระบุแหล่งที่มาและวันที่; หากไม่มีแหล่งที่มาให้ตัดออก
 9. เรื่องน้ำยา สารเคมี ความปลอดภัย หรือสุขอนามัย ให้ใช้คำแนะนำอย่างระมัดระวังและไม่รับรองผลเกินจริง
 10. ใช้ชื่อแบรนด์เป็น Sangkan Clean / สั่งการคลีน เมื่อจำเป็น และห้ามเปิดเผยข้อมูลลูกค้า
+11. ถ้าต้องใส่เบอร์โทร ใช้ได้เฉพาะ {BUSINESS["phones_text"]} และ LINE @sangkanclean — ห้ามใช้เบอร์อื่น โดยเฉพาะ 063-686-5134
 
 ตอบเป็น JSON เท่านั้น:
 {{"title":"...","description":"...","content":"<h2>สรุปคำตอบ...</h2>..."}}"""
@@ -355,7 +356,7 @@ def _fallback_image_url(
     path = STOCK_DIR / filename
     if path.exists():
         return f"{SITE_URL}/images/blog/{filename}"
-    return f"{SITE_URL}/og-image.jpg?v=20260824"
+    return f"{SITE_URL}/og-image.jpg?v=20260915"
 
 
 def _save_cover(

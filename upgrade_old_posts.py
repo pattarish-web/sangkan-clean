@@ -9,6 +9,7 @@ from datetime import datetime
 from queue import Queue
 
 from build_blogs import build_single_blog
+from site_config import BUSINESS
 from gemini_api import (
     active_keys_exhausted,
     all_keys_exhausted,
@@ -74,6 +75,7 @@ def generate_geo_content(api_keys, api_key, title, description):
 - <h2>เนื้อหาหลัก</h2> อธิบายเนื้อหาแบบเจาะลึก มีการใช้ <strong> เพื่อเน้นคำสำคัญ
 - <h2>ข้อมูลสถิติที่น่าสนใจ</h2> สร้างข้อมูลเชิงประมาณหรือแนวโน้มทั่วไปในอุตสาหกรรม (ไม่ใช่ตัวเลขเฉพาะบริษัท) พร้อมข้อความว่า "ข้อมูลโดยประมาณจากแนวโน้มอุตสาหกรรม"
 - <h2>คำถามที่พบบ่อย (FAQ)</h2> ถามตอบ 2-3 ข้อแบบสั้นๆ ตรงประเด็น
+- ถ้าต้องใส่เบอร์โทร ใช้ได้เฉพาะ {BUSINESS["phones_text"]} และ LINE @sangkanclean — ห้ามใช้เบอร์ 063-686-5134
 
 ตอบกลับเป็น JSON format เท่านั้น:
 {{"content": "<h2>สรุปประเด็น...</h2>..."}}"""
