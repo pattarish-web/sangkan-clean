@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_construction_dust",
+  "last_topic": "edu_move_in_clean",
   "posts": [
-    {
-      "ts": "2026-08-27T19:56:41.111049+07:00",
-      "topic_id": "edu_move_in_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260827/feed.png",
-        "stories_png": "out/20260827/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-07.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260827/bg.jpg",
-        "voiceover_mp3": "out/20260827/voiceover.mp3",
-        "stories_srt": "out/20260827/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ย้ายเข้าออฟฟิศใหม่ทั้งที ก็อยากให้ทีมงานแฮปปี้ใช่ไหมครับ? 💪 รู้ไหมว่าแค่ดูสะอาดด้วยตาเปล่า อาจไม่พอ เพราะออฟฟิศใหม่ที่เรากำลังจะเข้าไปใช้งาน อาจซ่อนสารเคมีตกค้างจากงานก่อสร้าง ฝุ่นละอองที่สะสมมานาน หร",
-        "tiktok": "ย้ายเข้าออฟฟิศใหม่ ใครๆ ก็อยากให้ปัง! ✨ แต่รู้ไหมว่า ฝุ่น สารเคมี หรือคราบสีที่มองไม่เห็น มันแฝงตัวอยู่เต็มไปหมด การ Dee",
-        "line": "เฮ้ย! จะย้ายออฟฟิศใหม่ทั้งที อย่าลืม Deep Clean ก่อนนะ! 🧹 หลายคนอาจมองข้ามว่าออฟฟิศใหม่เอี่ยมเนี่ยแหละตัวดีเลย อาจมีฝุ่น"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122114386479401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-27T23:35:26.718330+07:00",
       "topic_id": "after_construction",
@@ -2802,6 +2755,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122119540005401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-16T14:46:57.909519+07:00",
+      "topic_id": "edu_move_in_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260916/feed.png",
+        "stories_png": "out/20260916/stories.png",
+        "venue_need": "restaurant",
+        "venue_got": "restaurant",
+        "bg_source": "bg-restaurant-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260916/bg.jpg",
+        "voiceover_mp3": "out/20260916/voiceover.mp3",
+        "stories_srt": "out/20260916/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ย้ายเข้าออฟฟิศใหม่ เป็นอะไรที่น่าตื่นเต้นเสมอใช่ไหมครับ? 🎉 แต่ก่อนจะขนของเข้ามาเต็มพื้นที่ อยากชวนมามองเรื่องสำคัญที่หลายคนอาจมองข้าม นั่นคือ \"ความสะอาดลึก\" หลังการก่อสร้างหรือปรับปรุง มักจะมีฝุ่นผงเล",
+        "tiktok": "ออฟฟิศใหม่เอี่ยม แต่มีอะไรซ่อนอยู่บ้าง? ฝุ่น คราบเคมี จากการก่อสร้าง อาจเล็กจนมองไม่เห็น แต่ไม่ดีต่อสุขภาพแน่ๆ การ Deep ",
+        "line": "สวัสดีครับทุกคน! 💡 รู้ไหมว่าออฟฟิศใหม่ที่เรากำลังจะย้ายเข้า อาจมีสารเคมี ฝุ่นผง หรือคราบสี ที่ตกค้างจากการก่อสร้างซ่อนอย"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122119784931401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
