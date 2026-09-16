@@ -1,53 +1,6 @@
 {
-  "last_topic": "after_construction",
+  "last_topic": "edu_routine_clean",
   "posts": [
-    {
-      "ts": "2026-08-28T04:06:51.972104+07:00",
-      "topic_id": "edu_routine_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260828/feed.png",
-        "stories_png": "out/20260828/stories.png",
-        "venue_need": "home",
-        "venue_got": "home",
-        "bg_source": "bg-home-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260828/bg.jpg",
-        "voiceover_mp3": "out/20260828/voiceover.mp3",
-        "stories_srt": "out/20260828/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "หลายคนคิดว่า ต้องรอเห็นคราบถึงจะทำความสะอาดใช่ไหม? 🧐\nรู้ไหมว่า เชื้อโรคและแบคทีเรียมันสะสมได้ทุกวัน ไม่ต้องรอให้เราเห็น โดยเฉพาะในอาคารพานิชย์ที่มีคนเข้าออกเยอะ\nการทำความสะอาดอาคารพานิชย์ เป็นประจำจึง",
-        "tiktok": "ต้องรอเห็นคราบถึงจะคลีนเหรอ? 🙅‍♀️\nเชื้อโรคสะสมได้ทุกวัน โดยเฉพาะในอาคารพานิชย์\nการทำความสะอาดอาคารพานิชย์ เป็นประจำจึงสำ",
-        "line": "รู้ไหมครับว่า เชื้อโรค แบคทีเรียมันสะสมได้ทุกวัน ไม่ต้องรอเห็นคราบ! 🦠\nโดยเฉพาะในอาคารพานิชย์ หรือออฟฟิศที่มีคนเข้าออกเยอ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122114458101401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-28T21:26:50.699155+07:00",
       "topic_id": "edu_harsh_chemical",
@@ -2802,6 +2755,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122119804215401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-16T22:29:35.494408+07:00",
+      "topic_id": "edu_routine_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260916/feed.png",
+        "stories_png": "out/20260916/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260916/bg.jpg",
+        "voiceover_mp3": "out/20260916/voiceover.mp3",
+        "stories_srt": "out/20260916/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "คุณคิดว่าการทำความสะอาดเนี่ย ต้องรอให้เห็นคราบ เห็นฝุ่นก่อนถึงค่อยทำรึเปล่า? 🤔 บอกเลยว่า จริงๆ แล้วไม่ใช่เลยนะ! เชื้อโรคและสิ่งสกปรกหลายอย่างมองไม่เห็นด้วยตาเปล่า มันสะสมอยู่ทุกวัน รอแค่โอกาสที่จะแพร่",
+        "tiktok": "อย่ารอให้เห็นคราบแล้วค่อยคลีน! 🦠 เพราะเชื้อโรคสะสมทุกวัน แม้คุณจะมองไม่เห็น ไม่ว่าจะทำความสะอาดฟิตเนส หรือออฟฟิศ คลีนประ",
+        "line": "รู้ยัง? การทำความสะอาด ไม่ต้องรอให้เห็นคราบก็ได้นะ! เชื้อโรคและแบคทีเรียมันซ่อนตัวอยู่ทุกที่ สะสมทุกวันแบบที่เรามองไม่เห"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122119884183401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
