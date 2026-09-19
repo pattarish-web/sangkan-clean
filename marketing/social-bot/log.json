@@ -1,53 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-08-30T22:24:44.085950+07:00",
-      "topic_id": "edu_dust_it",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260830/feed.png",
-        "stories_png": "out/20260830/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260830/bg.jpg",
-        "voiceover_mp3": "out/20260830/voiceover.mp3",
-        "stories_srt": "out/20260830/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทุกคนรู้ไหมครับว่า ฝุ่นจิ๋วๆ ที่เราเห็นบ่อยๆ เนี่ย จริงๆ แล้วเป็นตัวร้ายกาจที่คอยทำลายอุปกรณ์ IT ของเราอยู่ทุกวันเลยนะ โดยเฉพาะคอมพิวเตอร์และเซิร์ฟเวอร์ ถ้าฝุ่นไปอุดตันช่องระบายอากาศ พัดลมจะทำงานหนักข",
-        "tiktok": "รู้ยัง? ฝุ่นในออฟฟิศนี่แหละ ตัวการทำลายคอมคุณ! มันทำให้เครื่องร้อน พัดลมทำงานหนัก และพังเร็วกว่าที่คิด ปัญหาคล้ายๆ กับที",
-        "line": "สวัสดีครับทุกคน 👋 เคยสงสัยไหมว่าทำไมคอมถึงร้อนผิดปกติ? สาเหตุหลักๆ หนึ่งคือฝุ่นที่สะสมจนไปอุดตันช่องระบายอากาศครับ พอเคร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122115129693401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-08-31T15:44:41.502520+07:00",
       "topic_id": "edu_server_room",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122120842191401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-19T21:31:24.461695+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260919/feed.png",
+        "stories_png": "out/20260919/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260919/bg.jpg",
+        "voiceover_mp3": "out/20260919/voiceover.mp3",
+        "stories_srt": "out/20260919/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทุกคนรู้ไหมครับ ว่าเจ้าฝุ่นตัวจิ๋วที่เรามองข้ามเนี่ย มันคือภัยเงียบของอุปกรณ์ IT เลยนะ! 💻 ไม่ว่าจะเป็นคอมพิวเตอร์เซิร์ฟเวอร์ในโรงงาน คอมพิวเตอร์ส่วนตัวในออฟฟิศ หรือแม้แต่จอควบคุมระบบต่างๆ ฝุ่นที่สะสมอ",
+        "tiktok": "รู้ไหมครับว่าฝุ่นตัวร้าย ใกล้ตัวกว่าที่คิด! 💻 มันไม่แค่ทำให้ห้องดูสกปรกนะ แต่มันเข้าไปในอุปกรณ์ไอทีเรานี่แหละ ทำให้คอมพิ",
+        "line": "ฝุ่น ไม่ใช่แค่เรื่องเล็กๆ ที่ทำให้ห้องสกปรกนะ แต่สำหรับอุปกรณ์ไอที มันคือตัวการร้ายเลยครับ 💻 เวลาฝุ่นสะสมในคอมพิวเตอร์ พ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122120891517401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
