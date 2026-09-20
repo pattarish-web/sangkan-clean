@@ -561,9 +561,12 @@
             function animateCounters() {
                 var stats = document.querySelectorAll('.proof-stat .number');
                 stats.forEach(function(stat) {
-                    var text = stat.textContent;
-                    var suffix = text.replace(/[\d,]/g, '');
-                    var target = parseInt(text.replace(/[^\d]/g, ''));
+                    var text = stat.textContent.trim();
+                    var numberMatch = text.match(/\d[\d,]*/);
+                    if (!numberMatch) return;
+                    var target = Number(numberMatch[0].replace(/,/g, ''));
+                    if (!Number.isFinite(target)) return;
+                    var suffix = text.slice(numberMatch.index + numberMatch[0].length);
                     var current = 0;
                     var increment = Math.ceil(target / 50);
                     var interval = setInterval(function() {
