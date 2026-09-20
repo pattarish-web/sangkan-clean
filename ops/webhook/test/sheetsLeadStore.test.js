@@ -6,7 +6,7 @@ import {
   memoryLeadIo,
   planLeadTabSetup,
 } from "../src/lib/leadSheetMap.js";
-import { SHEET_VALUES_RANGE } from "../src/lib/sheets.js";
+import { normalizeSpreadsheetId, SHEET_VALUES_RANGE } from "../src/lib/sheets.js";
 
 test("Sheets value range covers all lead columns", () => {
   assert.equal(LEAD_HEADERS.length, 29);
@@ -22,6 +22,21 @@ test("planLeadTabSetup renames Sheet1 and adds the other lead tabs", () => {
     "lead_dashboard",
     "ads_conversions",
   ]);
+});
+
+test("planLeadTabSetup renames a google ads tab to leads", () => {
+  const plan = planLeadTabSetup(["google ads"]);
+  assert.deepEqual(plan.rename, [{ from: "google ads", to: "leads" }]);
+  assert.equal(plan.add.includes("leads"), false);
+});
+
+test("normalizeSpreadsheetId accepts a full Sheets URL", () => {
+  const id = "1AbCdefGhijkLMNOPQRstuVWXYZ0123456789-_";
+  assert.equal(
+    normalizeSpreadsheetId(`https://docs.google.com/spreadsheets/d/${id}/edit?gid=0#gid=0`),
+    id
+  );
+  assert.equal(normalizeSpreadsheetId(id), id);
 });
 
 test("Sheets lead store is idempotent and queues Ads conversions without PII", async () => {

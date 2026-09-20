@@ -28,12 +28,33 @@ export const SHEET_VALUES_RANGE = "A:AZ";
 function parseServiceAccount() {
   const raw = getConfig().sheets.serviceAccountJson;
   if (!raw) return null;
+  let creds;
   try {
-    return JSON.parse(raw);
+    creds = JSON.parse(raw);
   } catch {
-    // allow base64-encoded JSON
-    return JSON.parse(Buffer.from(raw, "base64").toString("utf8"));
+    try {
+      creds = JSON.parse(Buffer.from(raw, "base64").toString("utf8"));
+    } catch {
+      return null;
+    }
   }
+  if (!creds || typeof creds !== "object") return null;
+  if (creds.web || creds.installed) return null;
+  if (!creds.private_key || !creds.client_email) return null;
+  return creds;
+}
+
+/** Accept a raw ID or a full Google Sheets URL. */
+export function normalizeSpreadsheetId(raw) {
+  const value = String(raw || "").trim();
+  const fromUrl = value.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+  return fromUrl ? fromUrl[1] : value;
+}
+
+function sheetsErrorMessage(err) {
+  const g = err?.response?.data?.error;
+  if (g?.message) return String(g.message);
+  return String(err?.message || "sheets_error");
 }
 
 let _sheets = null;
@@ -53,7 +74,7 @@ async function client() {
 }
 
 function spreadsheetId() {
-  return getConfig().sheets.spreadsheetId;
+  return normalizeSpreadsheetId(getConfig().sheets.spreadsheetId);
 }
 
 /** @returns {Promise<Record<string, string>[]>} */
@@ -157,57 +178,62 @@ export function newId(prefix) {
 
 /** Create marketing lead tabs + header rows. Safe to run repeatedly. */
 export async function ensureLeadTabs() {
-  if (!spreadsheetId() || !parseServiceAccount()) {
+  const id = spreadsheetId();
+  const creds = parseServiceAccount();
+  if (!id || !creds) {
     return { ok: false, skipped: true, reason: "sheets_unconfigured" };
   }
-  const sheets = await client();
-  const id = spreadsheetId();
-  const meta = await sheets.spreadsheets.get({ spreadsheetId: id });
-  const existing = new Map(
-    (meta.data.sheets || []).map((s) => [s.properties.title, s.properties.sheetId])
-  );
-  const plan = planLeadTabSetup([...existing.keys()]);
-  const requests = [];
-  for (const { from, to } of plan.rename) {
-    const sheetId = existing.get(from);
-    if (sheetId == null) continue;
-    requests.push({
-      updateSheetProperties: {
-        properties: { sheetId, title: to },
-        fields: "title",
-      },
-    });
+  try {
+    const sheets = await client();
+    const meta = await sheets.spreadsheets.get({ spreadsheetId: id });
+    const existing = new Map(
+      (meta.data.sheets || []).map((s) => [s.properties.title, s.properties.sheetId])
+    );
+    const plan = planLeadTabSetup([...existing.keys()]);
+    const requests = [];
+    for (const { from, to } of plan.rename) {
+      const sheetId = existing.get(from);
+      if (sheetId == null) continue;
+      requests.push({
+        updateSheetProperties: {
+          properties: { sheetId, title: to },
+          fields: "title",
+        },
+      });
+    }
+    for (const title of plan.add) {
+      requests.push({ addSheet: { properties: { title } } });
+    }
+    if (requests.length) {
+      await sheets.spreadsheets.batchUpdate({
+        spreadsheetId: id,
+        requestBody: { requests },
+      });
+    }
+    const headersWritten = [];
+    for (const title of LEAD_TABS) {
+      const headers = LEAD_TAB_HEADERS[title];
+      const row = await sheets.spreadsheets.values.get({
+        spreadsheetId: id,
+        range: `${title}!1:1`,
+      });
+      const current = (row.data.values?.[0] || []).map((h) => String(h).trim());
+      if (current.join(",") === headers.join(",")) continue;
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: id,
+        range: `${title}!A1`,
+        valueInputOption: "RAW",
+        requestBody: { values: [headers] },
+      });
+      headersWritten.push(title);
+    }
+    return {
+      ok: true,
+      renamed: plan.rename,
+      added: plan.add,
+      headersWritten,
+    };
+  } catch (err) {
+    return { ok: false, error: sheetsErrorMessage(err) };
   }
-  for (const title of plan.add) {
-    requests.push({ addSheet: { properties: { title } } });
-  }
-  if (requests.length) {
-    await sheets.spreadsheets.batchUpdate({
-      spreadsheetId: id,
-      requestBody: { requests },
-    });
-  }
-  const headersWritten = [];
-  for (const title of LEAD_TABS) {
-    const headers = LEAD_TAB_HEADERS[title];
-    const row = await sheets.spreadsheets.values.get({
-      spreadsheetId: id,
-      range: `${title}!1:1`,
-    });
-    const current = (row.data.values?.[0] || []).map((h) => String(h).trim());
-    if (current.join(",") === headers.join(",")) continue;
-    await sheets.spreadsheets.values.update({
-      spreadsheetId: id,
-      range: `${title}!A1`,
-      valueInputOption: "RAW",
-      requestBody: { values: [headers] },
-    });
-    headersWritten.push(title);
-  }
-  return {
-    ok: true,
-    renamed: plan.rename,
-    added: plan.add,
-    headersWritten,
-  };
 }

@@ -102,7 +102,13 @@ export const LEAD_TAB_HEADERS = {
   ads_conversions: CONV_HEADERS,
 };
 
-const DEFAULT_SHEET_TITLES = new Set(["Sheet1", "Sheet 1", "ชีต1"]);
+const DEFAULT_SHEET_TITLES = new Set([
+  "Sheet1",
+  "Sheet 1",
+  "ชีต1",
+  "google ads",
+  "Google Ads",
+]);
 
 /** Plan add/rename requests from current spreadsheet titles. */
 export function planLeadTabSetup(existingTitles) {
