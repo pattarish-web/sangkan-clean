@@ -370,6 +370,8 @@ test("website does not fire Google Ads conversions on raw phone or LINE clicks",
   assert.doesNotMatch(tracking, /fireAdsConversion\(\s*'line'/);
   assert.match(tracking, /fireAdsConversion\('lead'/);
   assert.match(tracking, /generate_lead/);
+  assert.match(tracking, /sangkan-office-ops\.onrender\.com\/api\/leads/);
+  assert.match(leadForm, /sangkan-office-ops\.onrender\.com\/api\/leads/);
   assert.doesNotMatch(leadForm, /generate_lead/);
   assert.doesNotMatch(leadForm, /fireAdsConversion/);
 });

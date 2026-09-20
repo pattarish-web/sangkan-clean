@@ -23,8 +23,11 @@ ADS_LINE_CONVERSION_LABEL = os.environ.get(
     "ADS_LINE_CONVERSION_LABEL", "ahW4CM6qxs0cEOWCgZZE"
 )
 ADS_LEAD_CONVERSION_LABEL = os.environ.get("ADS_LEAD_CONVERSION_LABEL", "")
-# Public Lead API (Render). Empty = FormSubmit only on GitHub Pages; same-origin on local preview.
-LEAD_API_PUBLIC_URL = os.environ.get("LEAD_API_PUBLIC_URL", "https://sangkan-office-ops.onrender.com/api/leads")
+# Public Lead API (Render). Override with env; set LEAD_API_PUBLIC_URL= to force FormSubmit-only.
+_DEFAULT_LEAD_API_PUBLIC_URL = "https://sangkan-office-ops.onrender.com/api/leads"
+LEAD_API_PUBLIC_URL = os.environ.get(
+    "LEAD_API_PUBLIC_URL", _DEFAULT_LEAD_API_PUBLIC_URL
+)
 FORM_SUBMIT_EMAIL = "info@sangkanclean.com"
 
 

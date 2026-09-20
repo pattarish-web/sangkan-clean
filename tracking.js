@@ -40,6 +40,9 @@
         if (host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0') {
             return '/api/leads';
         }
+        if (host === 'www.sangkanclean.com' || host === 'sangkanclean.com') {
+            return 'https://sangkan-office-ops.onrender.com/api/leads';
+        }
         return '';
     }
 

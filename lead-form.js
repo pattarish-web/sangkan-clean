@@ -5,6 +5,12 @@
 
     function apiUrl() {
         if (window.LEAD_API_URL) return String(window.LEAD_API_URL).replace(/\/$/, "");
+        try {
+            var host = window.location.hostname;
+            if (host === "www.sangkanclean.com" || host === "sangkanclean.com") {
+                return "https://sangkan-office-ops.onrender.com/api/leads";
+            }
+        } catch (e) { /* ignore */ }
         return "/api/leads";
     }
 
