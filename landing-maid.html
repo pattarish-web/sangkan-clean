@@ -102,7 +102,7 @@
 </head>
 <body>
 <nav aria-label="เมนูหลัก" style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);box-shadow:0 2px 14px rgba(13,148,136,.12);padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;">
-<a href="index.html" style="font-weight:800;color:#0f766e;text-decoration:none;">Sangkan Clean</a><div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;"><a href="index.html" style="color:#334155;text-decoration:none;">หน้าหลัก</a><a href="landing-bigcleaning.html" style="color:#334155;text-decoration:none;">Big Cleaning</a><a href="landing-maid.html" style="color:#0f766e;font-weight:700;text-decoration:none;">แม่บ้านประจำ</a><a href="blog.html" style="color:#334155;text-decoration:none;">บทความ</a><a href="index.html#quote" style="background:#0d9488;color:#fff;padding:9px 16px;border-radius:999px;text-decoration:none;font-weight:700;">ขอใบเสนอราคา</a></div></nav>
+<a href="index.html" style="font-weight:800;color:#0f766e;text-decoration:none;">Sangkan Clean</a><div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;"><a href="index.html" style="color:#334155;text-decoration:none;">หน้าหลัก</a><a href="landing-bigcleaning.html" style="color:#334155;text-decoration:none;">Big Cleaning</a><a href="landing-maid.html" style="color:#0f766e;font-weight:700;text-decoration:none;">แม่บ้านประจำ</a><a href="blog.html" style="color:#334155;text-decoration:none;">บทความ</a><a href="#quote" style="background:#0d9488;color:#fff;padding:9px 16px;border-radius:999px;text-decoration:none;font-weight:700;">ขอใบเสนอราคา</a></div></nav>
 
 
     <!-- ===== HERO ===== -->
@@ -404,6 +404,40 @@
         </div>
     </section>
 
+    <!-- ===== QUOTE FORM ===== -->
+    <section id="quote" style="background:#f8fafc;padding:64px 16px;">
+        <div class="container" style="max-width:720px;margin:0 auto;">
+            <div style="text-align:center;margin-bottom:2rem;">
+                <h2>ขอใบเสนอราคาฟรี</h2>
+                <p>กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</p>
+            </div>
+            <form id="quoteForm" action="https://formsubmit.co/info@sangkanclean.com" method="POST" class="quote-form" style="background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+                <input type="hidden" name="_subject" value="คำขอใบเสนอราคา แม่บ้านประจำ - Sangkan Clean">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_next" value="https://www.sangkanclean.com/landing-maid.html?submitted=true#quote">
+                <div style="display:grid;gap:1rem;">
+                    <input type="text" name="name" required placeholder="ชื่อ-นามสกุล *" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;">
+                    <input type="tel" name="phone" required placeholder="เบอร์โทรศัพท์ *" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;">
+                    <select name="service" required style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;">
+                        <option value="แม่บ้านประจำ" selected>แม่บ้านประจำ</option>
+                        <option>Big Cleaning</option>
+                        <option>ทำความสะอาดทั่วไป</option>
+                        <option>หลังก่อสร้าง</option>
+                        <option>อื่นๆ</option>
+                    </select>
+                    <input type="text" name="area" placeholder="พื้นที่/จังหวัด (เช่น บางนา, กรุงเทพฯ)" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;">
+                    <textarea name="message" rows="3" placeholder="รายละเอียดเพิ่มเติม (ขนาดพื้นที่, จำนวนวันต่อสัปดาห์)" style="padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:1rem;resize:vertical;"></textarea>
+                    <label style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.85rem;color:#64748b;">
+                        <input type="checkbox" name="consent" required style="margin-top:0.2rem;">
+                        <span>ยินยอมให้เก็บและใช้ข้อมูลส่วนบุคคลตาม <a href="privacy.html" target="_blank">นโยบายความเป็นส่วนตัว</a></span>
+                    </label>
+                    <button type="submit" style="width:100%;background:#0d9488;color:#fff;border:0;padding:0.9rem 1rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;">ส่งคำขอใบเสนอราคา</button>
+                </div>
+                <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:#64748b;">หรือติดต่อด่วน <a href="tel:0929149978">092-914-9978</a> | <a href="https://line.me/ti/p/@sangkanclean" target="_blank" rel="noopener">LINE @sangkanclean</a></p>
+            </form>
+        </div>
+    </section>
+
     <!-- ===== FINAL CTA ===== -->
     <section class="final-cta" id="final-cta">
         <div class="container">
@@ -420,7 +454,7 @@
                 <a href="tel:0929149978" class="btn btn-warm btn-lg" id="final-cta-hotline">
                     <i class="fas fa-phone"></i> Hotline 092-914-9978 / 080-694-1998
                 </a>
-                <a href="index.html#quote" class="btn btn-outline" id="final-cta-quote">
+                <a href="#quote" class="btn btn-outline" id="final-cta-quote">
                     <i class="fas fa-file-lines"></i> กรอกแบบฟอร์มขอใบเสนอราคา
                 </a>
             </div>
@@ -545,7 +579,8 @@
         })();
     </script>
     <script>window.LEAD_API_URL=window.LEAD_API_URL||"https://sangkan-office-ops.onrender.com/api/leads";</script>
-    <script src="lead-form.js"></script>
+    <script src="attribution.js"></script>
     <script src="tracking.js"></script>
+    <script src="lead-form.js"></script>
 </body>
 </html>

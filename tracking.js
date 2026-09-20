@@ -46,6 +46,22 @@
         return '';
     }
 
+    function preserveClickIdsOnQuoteLinks() {
+        var search = '';
+        try {
+            search = window.location.search || '';
+        } catch (e) {
+            return;
+        }
+        if (!search) return;
+        document.querySelectorAll('a[href*="#quote"]').forEach(function (el) {
+            var href = el.getAttribute('href') || '';
+            if (!href || href.indexOf('?') !== -1) return;
+            var parts = href.split('#');
+            el.setAttribute('href', parts[0] + search + (parts[1] ? '#' + parts[1] : ''));
+        });
+    }
+
     function attributionSnapshot() {
         try {
             if (window.SangkanAttribution && window.SangkanAttribution.snapshot) {
@@ -141,6 +157,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         bindContactClicks();
+        preserveClickIdsOnQuoteLinks();
 
         document.querySelectorAll('#hero-cta-line, #hero-cta-phone').forEach(function (el) {
             el.addEventListener('click', function () {
