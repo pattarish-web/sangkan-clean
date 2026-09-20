@@ -6,12 +6,13 @@
 
 ## Phase 0 — เตรียมพร้อม (ทำก่อนเปิดแคมเปญ)
 
-- [ ] ตั้ง Conversion ใน Google Ads (โทร + Line) — ดู `google_ads/check_conversions.py`
+- [ ] ตั้ง Conversion ใน Google Ads — `python google_ads/setup_offline_conversions.py` แล้ว `--apply` (primary: phone_click + line_click + generate_lead)
 - [ ] ใส่ labels ใน env แล้วรัน `python build_assets.py`
 - [ ] ทดสอบ gtag `AW-18299765093` + GA4 `G-MJG0VZPFKS` บน landing
 - [ ] หยุดแคมเปญ Big Clean เก่าใน SangkanClean ถ้ายังมี (ไม่แข่งกับ HFT)
 - [ ] ตรวจ landing: https://www.sangkanclean.com/landing-bigcleaning.html
-- [ ] ตรวจ landing: https://www.sangkanclean.com/landing-maid.html
+- [ ] ตรวจ landing: https://www.sangkanclean.com/landing-sangkan-office.html
+- [ ] อย่าใช้หน้าแม่บ้านประจำ (`landing-maid.html`) เป็น Final URL ของ Ads — คนละออฟเฟอร์กับ Sangkan Office
 
 ---
 
@@ -65,14 +66,16 @@
 
 ---
 
-## Phase 3 — แคมเปญแม่บ้าน (สัปดาห์ 5+)
+## Phase 3 — แคมเปญ Sangkan Office (สัปดาห์ 5+)
 
 เปิดเมื่อ Big Clean CPA นิ่ง ≤ ฿200 อย่างน้อย 7 วัน
 
-**แคมเปญ:** `SK-Maid-Search` | งบ **฿300/วัน** | CPA Target ฿190 | **จันทร์–ศุกร์เท่านั้น**
+**แคมเปญ:** `SK-Office-Search` | งบ **฿300/วัน** | CPA Target ฿190 | **จันทร์–ศุกร์เท่านั้น**
 
-ไฟล์: `03_keywords_maid_phase2.csv`  
-Landing: landing-maid.html
+ไฟล์: `03_keywords_office.csv`  
+Landing: **landing-sangkan-office.html** (แม่บ้านออฟฟิศ On-Demand — **ไม่ใช่** แม่บ้านประจำเต็มเวลา)
+
+อย่าอิมพอร์ต `03_keywords_maid_phase2.csv` เข้าแคมเปญนี้ — คีย์เวิร์ดจัดหาแม่บ้านประจำต้องชี้ไปหน้า maid แยกต่างหากถ้าจะเปิดในอนาคต
 
 ---
 
@@ -106,7 +109,7 @@ Landing: landing-maid.html
 |------|--------|----------|---------------|----------|
 | เลี้ยง (สัปดาห์ 1–4) | ฿250 | ~฿5,500 | 15–25 | Mon–Fri 8–18, BC-Core เท่านั้น |
 | ขยาย (สัปดาห์ 5–8) | ฿400 | ~฿8,800 | 35–50 | + BC-Expand, ใส่ tCPA ฿180 |
-| +แม่บ้าน (สัปดาห์ 9+) | ฿650 | ~฿14,300 | 55–75 | + SK-Maid ฿250 |
+| +Sangkan Office (สัปดาห์ 9+) | ฿650 | ~฿14,300 | 55–75 | + SK-Office ฿250 |
 
 *อ้างอิง HFT เก่า CPA ฿176, CPC ฿26*
 

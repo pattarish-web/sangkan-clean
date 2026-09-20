@@ -5,6 +5,7 @@ const SITE = "https://www.sangkanclean.com";
 export const SERVICE_URLS = {
   bigclean: `${SITE}/landing-bigcleaning.html`,
   maid: `${SITE}/landing-maid.html`,
+  office: `${SITE}/landing-sangkan-office.html`,
 };
 
 /** First-touch chooser: Big Clean / แม่บ้านประจำ / Sangkan Office */

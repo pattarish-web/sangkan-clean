@@ -11,14 +11,31 @@ import {
   normalizePhone,
   adsSafeConversionRow,
   sanitizeAttribution,
+  SERVICES,
 } from "../src/lib/leadValidation.js";
 import { conversionsToEnqueue, conversionsToCsv } from "../src/lib/adsConversions.js";
 import { FileLeadStore } from "../src/lib/leadStore.js";
 import { hitRateLimit, resetRateLimits } from "../src/lib/rateLimit.js";
 
+test("lead services include Sangkan Office as a distinct offer from แม่บ้านประจำ", () => {
+  assert.equal(SERVICES.includes("Sangkan Office"), true);
+  assert.equal(SERVICES.includes("แม่บ้านประจำ"), true);
+});
+
 test("normalize Thai mobile numbers", () => {
   assert.equal(normalizePhone("081-234-5678"), "0812345678");
   assert.equal(normalizePhone("+66812345678"), "0812345678");
+});
+
+test("accept Sangkan Office as a form service", () => {
+  const ok = validateLeadCreate({
+    name: "สมชาย",
+    phone: "0812345678",
+    service: "Sangkan Office",
+    consent: true,
+  });
+  assert.equal(ok.ok, true);
+  assert.equal(ok.lead.service, "Sangkan Office");
 });
 
 test("reject lead without consent or invalid phone", () => {
@@ -379,13 +396,18 @@ test("website does not fire Google Ads conversions on raw phone or LINE clicks",
 
 test("Ads landings have an on-page quote form that posts to the Lead API scripts", async () => {
   const big = await readFile(new URL("../../../landing-bigcleaning.html", import.meta.url), "utf8");
-  const maid = await readFile(new URL("../../../landing-maid.html", import.meta.url), "utf8");
+  const office = await readFile(
+    new URL("../../../landing-sangkan-office.html", import.meta.url),
+    "utf8"
+  );
   assert.match(big, /id="quoteForm"/);
-  assert.match(maid, /id="quoteForm"/);
+  assert.match(office, /id="quoteForm"/);
   assert.match(big, /name="consent"/);
-  assert.match(maid, /name="consent"/);
+  assert.match(office, /name="consent"/);
   assert.match(big, /lead-form\.js/);
-  assert.match(maid, /lead-form\.js/);
+  assert.match(office, /lead-form\.js/);
+  assert.match(office, /value="Sangkan Office" selected/);
+  assert.doesNotMatch(office, /value="แม่บ้านประจำ" selected/);
 });
 
 test("sanitizeAttribution drops PII-like keys", () => {
