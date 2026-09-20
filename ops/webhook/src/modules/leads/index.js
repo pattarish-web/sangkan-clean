@@ -14,6 +14,7 @@ import {
 import { clientIp, hitRateLimit } from "../../lib/rateLimit.js";
 import { getConfig } from "../../config/env.js";
 import { demoLeads } from "./demoData.js";
+import { ensureLeadTabs } from "../../lib/sheets.js";
 
 const MAX_BODY = 24 * 1024;
 
@@ -261,6 +262,16 @@ export async function handleLeadRequest(req, res, url) {
         failed: ads_upload.failed || 0,
       },
     });
+    return true;
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/leads/setup-tabs") {
+    if (!staffAuthorized(req)) {
+      sendLeadJson(req, res, 401, { ok: false, error: "unauthorized" });
+      return true;
+    }
+    const result = await ensureLeadTabs();
+    sendLeadJson(req, res, result.ok ? 200 : 503, result);
     return true;
   }
 

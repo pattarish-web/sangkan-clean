@@ -18,6 +18,7 @@ import {
 } from "./lib/billing.js";
 import { handleLeadRequest, ensureDemoSeed } from "./modules/leads/index.js";
 import { serveStaticFile, shouldServeStatic } from "./lib/serveStatic.js";
+import { ensureLeadTabs } from "./lib/sheets.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const liffRoot = path.join(__dirname, "../../modules");
@@ -274,6 +275,9 @@ export function startServer() {
     }
   });
   ensureDemoSeed().catch((err) => console.warn("lead seed:", err.message));
+  ensureLeadTabs()
+    .then((result) => console.log("lead tabs", result))
+    .catch((err) => console.warn("lead tabs:", err.message));
   return server;
 }
 

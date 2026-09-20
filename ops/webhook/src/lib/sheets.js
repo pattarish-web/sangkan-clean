@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import { getConfig } from "../config/env.js";
+import { LEAD_TAB_HEADERS, LEAD_TABS, planLeadTabSetup } from "./leadSheetMap.js";
 
 const LINE_SHEETS = [
   "customers",
@@ -152,4 +153,61 @@ export function newId(prefix) {
   const t = Date.now().toString(36).toUpperCase();
   const r = Math.random().toString(36).slice(2, 6).toUpperCase();
   return `${prefix}-${t}${r}`;
+}
+
+/** Create marketing lead tabs + header rows. Safe to run repeatedly. */
+export async function ensureLeadTabs() {
+  if (!spreadsheetId() || !parseServiceAccount()) {
+    return { ok: false, skipped: true, reason: "sheets_unconfigured" };
+  }
+  const sheets = await client();
+  const id = spreadsheetId();
+  const meta = await sheets.spreadsheets.get({ spreadsheetId: id });
+  const existing = new Map(
+    (meta.data.sheets || []).map((s) => [s.properties.title, s.properties.sheetId])
+  );
+  const plan = planLeadTabSetup([...existing.keys()]);
+  const requests = [];
+  for (const { from, to } of plan.rename) {
+    const sheetId = existing.get(from);
+    if (sheetId == null) continue;
+    requests.push({
+      updateSheetProperties: {
+        properties: { sheetId, title: to },
+        fields: "title",
+      },
+    });
+  }
+  for (const title of plan.add) {
+    requests.push({ addSheet: { properties: { title } } });
+  }
+  if (requests.length) {
+    await sheets.spreadsheets.batchUpdate({
+      spreadsheetId: id,
+      requestBody: { requests },
+    });
+  }
+  const headersWritten = [];
+  for (const title of LEAD_TABS) {
+    const headers = LEAD_TAB_HEADERS[title];
+    const row = await sheets.spreadsheets.values.get({
+      spreadsheetId: id,
+      range: `${title}!1:1`,
+    });
+    const current = (row.data.values?.[0] || []).map((h) => String(h).trim());
+    if (current.join(",") === headers.join(",")) continue;
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: id,
+      range: `${title}!A1`,
+      valueInputOption: "RAW",
+      requestBody: { values: [headers] },
+    });
+    headersWritten.push(title);
+  }
+  return {
+    ok: true,
+    renamed: plan.rename,
+    added: plan.add,
+    headersWritten,
+  };
 }

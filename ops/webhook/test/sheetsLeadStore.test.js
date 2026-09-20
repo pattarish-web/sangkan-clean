@@ -1,12 +1,27 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { SheetsLeadStore } from "../src/lib/sheetsLeadStore.js";
-import { LEAD_HEADERS, memoryLeadIo } from "../src/lib/leadSheetMap.js";
+import {
+  LEAD_HEADERS,
+  memoryLeadIo,
+  planLeadTabSetup,
+} from "../src/lib/leadSheetMap.js";
 import { SHEET_VALUES_RANGE } from "../src/lib/sheets.js";
 
 test("Sheets value range covers all lead columns", () => {
   assert.equal(LEAD_HEADERS.length, 29);
   assert.equal(SHEET_VALUES_RANGE, "A:AZ");
+});
+
+test("planLeadTabSetup renames Sheet1 and adds the other lead tabs", () => {
+  const plan = planLeadTabSetup(["Sheet1"]);
+  assert.deepEqual(plan.rename, [{ from: "Sheet1", to: "leads" }]);
+  assert.deepEqual(plan.add, [
+    "lead_pipeline",
+    "lead_attribution",
+    "lead_dashboard",
+    "ads_conversions",
+  ]);
 });
 
 test("Sheets lead store is idempotent and queues Ads conversions without PII", async () => {

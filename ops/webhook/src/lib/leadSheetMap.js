@@ -72,6 +72,60 @@ export const CONV_HEADERS = [
   "upload_error",
 ];
 
+export const PIPELINE_HEADERS = [
+  "lead_id",
+  "status",
+  "value_thb",
+  "lost_reason",
+  "updated_at",
+  "updated_by",
+];
+
+export const DASHBOARD_HEADERS = [
+  "date_bkk",
+  "leads",
+  "qualified",
+  "won",
+  "revenue_thb",
+  "google_ads",
+  "facebook",
+  "line",
+  "organic",
+  "other",
+];
+
+export const LEAD_TAB_HEADERS = {
+  leads: LEAD_HEADERS,
+  lead_pipeline: PIPELINE_HEADERS,
+  lead_attribution: ATTR_HEADERS,
+  lead_dashboard: DASHBOARD_HEADERS,
+  ads_conversions: CONV_HEADERS,
+};
+
+const DEFAULT_SHEET_TITLES = new Set(["Sheet1", "Sheet 1", "ชีต1"]);
+
+/** Plan add/rename requests from current spreadsheet titles. */
+export function planLeadTabSetup(existingTitles) {
+  const titles = new Set(existingTitles);
+  const rename = [];
+  const add = [];
+  if (!titles.has("leads")) {
+    const defaultTitle = [...titles].find((title) => DEFAULT_SHEET_TITLES.has(title));
+    if (defaultTitle) {
+      rename.push({ from: defaultTitle, to: "leads" });
+      titles.delete(defaultTitle);
+      titles.add("leads");
+    } else {
+      add.push("leads");
+      titles.add("leads");
+    }
+  }
+  for (const title of LEAD_TABS) {
+    if (!titles.has(title)) add.push(title);
+  }
+  return { rename, add };
+}
+
 function cell(value) {
   if (value === true) return "true";
   if (value === false) return "false";
