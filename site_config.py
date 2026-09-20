@@ -23,6 +23,8 @@ ADS_LINE_CONVERSION_LABEL = os.environ.get(
     "ADS_LINE_CONVERSION_LABEL", "ahW4CM6qxs0cEOWCgZZE"
 )
 ADS_LEAD_CONVERSION_LABEL = os.environ.get("ADS_LEAD_CONVERSION_LABEL", "")
+# Public Lead API (Render). Empty = FormSubmit only on GitHub Pages; same-origin on local preview.
+LEAD_API_PUBLIC_URL = os.environ.get("LEAD_API_PUBLIC_URL", "https://sangkan-office-ops.onrender.com/api/leads")
 FORM_SUBMIT_EMAIL = "info@sangkanclean.com"
 
 
@@ -299,5 +301,16 @@ def analytics_script_tag(prefix=""):
   gtag('js', new Date());
 {ga4_config}  gtag('config', '{ADS_CONVERSION_ID}');
   window.adsConversions = {labels_json};
-  window.adsLeadSendTo = window.adsConversions.phone || window.adsConversions.lead || window.adsConversions.line || '';
+  window.adsLeadSendTo = window.adsConversions.lead || '';
 </script>"""
+
+
+def tracking_script_tags(prefix=""):
+    """Attribution + GA4/Ads tracking + quote-form Lead API. Prefix is '' or '../'."""
+    url_js = json.dumps(LEAD_API_PUBLIC_URL or "")
+    return (
+        f'<script>window.LEAD_API_URL={url_js};</script>\n'
+        f'<script src="{prefix}attribution.js"></script>\n'
+        f'<script src="{prefix}tracking.js"></script>\n'
+        f'<script src="{prefix}lead-form.js"></script>'
+    )

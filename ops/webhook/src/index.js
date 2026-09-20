@@ -16,6 +16,8 @@ import {
   confirmPayment,
   rejectPayment,
 } from "./lib/billing.js";
+import { handleLeadRequest, ensureDemoSeed } from "./modules/leads/index.js";
+import { serveStaticFile, shouldServeStatic } from "./lib/serveStatic.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const liffRoot = path.join(__dirname, "../../modules");
@@ -71,7 +73,11 @@ async function serveLiff(res, moduleFolder, file = "index.html") {
 }
 
 async function handleApi(req, res, url) {
-  if (req.method === "OPTIONS") {
+  if (
+    req.method === "OPTIONS" &&
+    !url.pathname.startsWith("/api/leads") &&
+    url.pathname !== "/ops/leads"
+  ) {
     res.writeHead(204, {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
@@ -82,9 +88,22 @@ async function handleApi(req, res, url) {
   }
 
   if (req.method === "GET" && url.pathname === "/health") {
-    sendJson(res, 200, { ok: true, service: "sangkan-office-ops" });
+    const cfg = getConfig();
+    sendJson(res, 200, {
+      ok: true,
+      service: "sangkan-office-ops",
+      leads: cfg.leads.staffToken ? "enabled" : "disabled",
+    });
     return;
   }
+
+  if (req.method === "GET" && url.pathname === "/dashboard") {
+    res.writeHead(302, { Location: "/ops/leads" });
+    res.end();
+    return;
+  }
+
+  if (await handleLeadRequest(req, res, url)) return;
 
   if (req.method === "GET" && url.pathname === "/liff/booking") {
     await serveLiff(res, "customer", "liff-booking.html");
@@ -227,6 +246,11 @@ async function handleApi(req, res, url) {
     return;
   }
 
+  const staticRoot = getConfig().serveStaticRoot;
+  if (staticRoot && shouldServeStatic(url.pathname)) {
+    if (serveStaticFile(res, staticRoot, url.pathname)) return;
+  }
+
   res.writeHead(404);
   res.end("Not found");
 }
@@ -242,9 +266,14 @@ export function startServer() {
       sendJson(res, 500, { error: "internal" });
     }
   });
-  server.listen(cfg.port, () => {
+  server.listen(cfg.port, "0.0.0.0", () => {
     console.log(`Sangkan Office ops webhook on :${cfg.port}`);
+    if (cfg.serveStaticRoot) {
+      console.log(`Static site + lead dashboard: http://127.0.0.1:${cfg.port}/`);
+      console.log(`Daily activity report: http://127.0.0.1:${cfg.port}/ops/leads`);
+    }
   });
+  ensureDemoSeed().catch((err) => console.warn("lead seed:", err.message));
   return server;
 }
 

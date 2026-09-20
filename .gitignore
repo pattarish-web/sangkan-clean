@@ -17,3 +17,4 @@ google_ads/client_secret.json
 !.agents/**
 !.cursor/skills/
 !.cursor/skills/**
+ops/webhook/node_modules/

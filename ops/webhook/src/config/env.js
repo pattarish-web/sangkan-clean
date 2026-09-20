@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 function loadDotEnv() {
   const candidates = [
     path.join(path.dirname(fileURLToPath(import.meta.url)), "../../.env"),
+    path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../../.env"),
     path.join(process.cwd(), ".env"),
   ];
   for (const file of candidates) {
@@ -26,7 +27,6 @@ function loadDotEnv() {
       }
       if (process.env[key] === undefined) process.env[key] = val;
     }
-    break;
   }
 }
 
@@ -89,6 +89,30 @@ export function getConfig() {
       clientId: required("GOOGLE_DRIVE_CLIENT_ID", ""),
       clientSecret: required("GOOGLE_DRIVE_CLIENT_SECRET", ""),
       refreshToken: required("GOOGLE_DRIVE_REFRESH_TOKEN", ""),
+    },
+    leads: {
+      staffToken: required("LEAD_STAFF_TOKEN", ""),
+      allowedOrigins: required(
+        "LEAD_ALLOWED_ORIGINS",
+        "https://www.sangkanclean.com,https://sangkanclean.com"
+      )
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean),
+      seedDemo: required("LEAD_SEED_DEMO", "") === "1",
+      storeFile: required("LEAD_STORE_FILE", ""),
+      publicApiUrl: required("LEAD_API_PUBLIC_URL", ""),
+    },
+    serveStaticRoot: required("SERVE_STATIC_ROOT", ""),
+    trustProxy: required("TRUST_PROXY", "") === "1",
+    googleAds: {
+      developerToken: required("GOOGLE_ADS_DEVELOPER_TOKEN", ""),
+      clientId: required("GOOGLE_ADS_CLIENT_ID", ""),
+      clientSecret: required("GOOGLE_ADS_CLIENT_SECRET", ""),
+      refreshToken: required("GOOGLE_ADS_REFRESH_TOKEN", ""),
+      customerId: required("GOOGLE_ADS_TARGET_CUSTOMER_ID", "6151208199"),
+      loginCustomerId: required("GOOGLE_ADS_LOGIN_CUSTOMER_ID", "7915729299"),
+      apiVersion: required("GOOGLE_ADS_API_VERSION", "v19"),
     },
   };
 }

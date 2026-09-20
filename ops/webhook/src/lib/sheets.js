@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 import { getConfig } from "../config/env.js";
 
-const SHEETS = [
+const LINE_SHEETS = [
   "customers",
   "staff",
   "jobs",
@@ -10,6 +10,19 @@ const SHEETS = [
   "affiliate",
   "payments",
 ];
+
+const LEAD_SHEETS = [
+  "leads",
+  "lead_pipeline",
+  "lead_attribution",
+  "lead_dashboard",
+  "ads_conversions",
+];
+
+const SHEETS = [...LINE_SHEETS, ...LEAD_SHEETS];
+
+/** leads has 29 columns (beyond Z). Keep all marketing tabs on a wide range. */
+export const SHEET_VALUES_RANGE = "A:AZ";
 
 function parseServiceAccount() {
   const raw = getConfig().sheets.serviceAccountJson;
@@ -50,7 +63,7 @@ export async function readTable(sheetName) {
   const sheets = await client();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: spreadsheetId(),
-    range: `${sheetName}!A:Z`,
+    range: `${sheetName}!${SHEET_VALUES_RANGE}`,
   });
   const rows = res.data.values || [];
   if (rows.length < 2) return [];
@@ -81,7 +94,7 @@ export async function appendRow(sheetName, rowObject) {
   );
   await sheets.spreadsheets.values.append({
     spreadsheetId: spreadsheetId(),
-    range: `${sheetName}!A:Z`,
+    range: `${sheetName}!${SHEET_VALUES_RANGE}`,
     valueInputOption: "USER_ENTERED",
     requestBody: { values: [values] },
   });
@@ -92,7 +105,7 @@ export async function updateRow(sheetName, matchFn, patch) {
   const sheets = await client();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: spreadsheetId(),
-    range: `${sheetName}!A:Z`,
+    range: `${sheetName}!${SHEET_VALUES_RANGE}`,
   });
   const rows = res.data.values || [];
   if (rows.length < 2) return false;
@@ -110,7 +123,7 @@ export async function updateRow(sheetName, matchFn, patch) {
     const rowNum = i + 1;
     await sheets.spreadsheets.values.update({
       spreadsheetId: spreadsheetId(),
-      range: `${sheetName}!A${rowNum}:Z${rowNum}`,
+      range: `${sheetName}!A${rowNum}:AZ${rowNum}`,
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [values] },
     });

@@ -21,6 +21,7 @@
     }
 
     function fireAdsConversion(kind, extra) {
+        /* Phone/LINE must not use this on click — staff confirms first, then offline import. */
         var sendTo = adsSendTo(kind);
         if (!sendTo) return false;
         var key = 'sc_ads_conv_' + kind + '_' + pagePath();
@@ -30,6 +31,56 @@
         } catch (e) { /* private mode */ }
         trackEvent('conversion', Object.assign({ send_to: sendTo }, extra || {}));
         return true;
+    }
+
+    function leadApiBase() {
+        var configured = String(window.LEAD_API_URL || '').replace(/\/$/, '');
+        if (configured) return configured;
+        var host = window.location.hostname;
+        if (host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0') {
+            return '/api/leads';
+        }
+        return '';
+    }
+
+    function attributionSnapshot() {
+        try {
+            if (window.SangkanAttribution && window.SangkanAttribution.snapshot) {
+                return window.SangkanAttribution.snapshot();
+            }
+        } catch (e) { /* attribution is best effort */ }
+        return {};
+    }
+
+    function captureContactClick(method, el) {
+        var base = leadApiBase();
+        if (!base) return;
+
+        var now = Date.now();
+        var dedupeKey = 'sc_contact_click_' + method;
+        try {
+            var last = Number(sessionStorage.getItem(dedupeKey) || 0);
+            if (now - last < 10000) return;
+            sessionStorage.setItem(dedupeKey, String(now));
+        } catch (e) { /* private mode */ }
+
+        var payload = {
+            contact_method: method,
+            clicked_target: (el && el.getAttribute('href')) || '',
+            page_path: pagePath(),
+            attribution: attributionSnapshot(),
+            idempotency_key:
+                'click-' + method + '-' + now.toString(36) + '-' +
+                Math.random().toString(36).slice(2, 7),
+        };
+        try {
+            fetch(base + '/contact-click', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(payload),
+                keepalive: true,
+            }).catch(function () { /* never block phone/LINE navigation */ });
+        } catch (e) { /* old browser: keep contact link working */ }
     }
 
     function bindClick(selector, eventName, extra) {
@@ -54,12 +105,8 @@
             if (el.dataset.adsPhoneBound) return;
             el.dataset.adsPhoneBound = '1';
             el.addEventListener('click', function () {
-                fireAdsConversion('phone', { event_category: 'lead', method: 'phone' });
-                trackEvent('generate_lead', {
-                    method: 'phone',
-                    currency: 'THB',
-                    event_category: 'lead',
-                });
+                captureContactClick('phone', el);
+                /* Google Ads conversion waits until staff confirms the click in /ops/leads. */
             });
         });
 
@@ -67,24 +114,20 @@
             if (el.dataset.adsLineBound) return;
             el.dataset.adsLineBound = '1';
             el.addEventListener('click', function () {
-                fireAdsConversion('line', { event_category: 'lead', method: 'line' });
-                trackEvent('generate_lead', {
-                    method: 'line',
-                    currency: 'THB',
-                    event_category: 'lead',
-                });
+                captureContactClick('line', el);
+                /* Google Ads conversion waits until staff confirms the click in /ops/leads. */
             });
         });
     }
 
     function trackLeadSuccess() {
-        var key = 'sc_lead_' + pagePath() + '_' + (window.location.search || '');
+        var key = 'sc_lead_' + pagePath();
         try {
             if (sessionStorage.getItem(key) === '1') return;
             sessionStorage.setItem(key, '1');
         } catch (e) { /* private mode */ }
 
-        trackEvent('quote_form_success', { event_category: 'lead' });
+        trackEvent('quote_form_success', { event_category: 'lead', method: 'quote_form' });
         trackEvent('generate_lead', {
             method: 'quote_form',
             currency: 'THB',
@@ -130,9 +173,11 @@
                 clearTimeout(searchTimer);
                 searchTimer = setTimeout(function () {
                     if (blogSearch.value.trim()) {
+                        /* Do not send search text — it may contain names or phone numbers. */
                         trackEvent('blog_search', {
                             event_category: 'engagement',
-                            search_term: blogSearch.value.trim(),
+                            has_query: true,
+                            query_len: blogSearch.value.trim().length,
                         });
                     }
                 }, 800);

@@ -1,0 +1,30 @@
+# Retry pending offline conversions. Manual only — confirm already uploads immediately.
+
+name: ads-upload-conversions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Flush pending conversions
+        env:
+          LEAD_API_PUBLIC_URL: ${{ secrets.LEAD_API_PUBLIC_URL }}
+          LEAD_STAFF_TOKEN: ${{ secrets.LEAD_STAFF_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${LEAD_API_PUBLIC_URL}" ] || [ -z "${LEAD_STAFF_TOKEN}" ]; then
+            echo "LEAD_API_PUBLIC_URL / LEAD_STAFF_TOKEN not set — skip"
+            exit 0
+          fi
+          url="${LEAD_API_PUBLIC_URL%/}/ads-conversions/upload"
+          resp="$(curl -fsS -X POST "$url" \
+            -H "Authorization: Bearer ${LEAD_STAFF_TOKEN}" \
+            -H "Accept: application/json")"
+          printf '%s\n' "$resp"
+          printf '%s' "$resp" | python3 -c 'import json,sys
+d=json.load(sys.stdin)
+failed=(d.get("ads_upload") or {}).get("failed") or 0
+sys.exit(1 if failed else 0)'

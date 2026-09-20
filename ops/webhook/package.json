@@ -11,9 +11,15 @@
     "early-warning": "node src/jobs/earlyWarning.js",
     "generate-jobs": "node src/jobs/generateJobs.js",
     "richmenu:images": "python scripts/generate-rich-menu-images.py",
-    "richmenu:upload": "node scripts/upload-rich-menus.mjs"
+    "richmenu:upload": "node scripts/upload-rich-menus.mjs",
+    "test": "node --test test/*.test.js",
+    "preview": "node scripts/preview.mjs",
+    "setup-lead-tabs": "node scripts/setup-lead-tabs.mjs",
+    "ads-upload": "node src/jobs/uploadAdsConversions.js"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@line/bot-sdk": "^9.5.0",
     "googleapis": "^144.0.0"

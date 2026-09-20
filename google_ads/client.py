@@ -26,13 +26,15 @@ def _norm_id(customer_id: str) -> str:
 
 
 def _base_config() -> dict:
-    return {
-        "developer_token": DEVELOPER_TOKEN,
+    config = {
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,
         "refresh_token": REFRESH_TOKEN,
         "use_proto_plus": True,
     }
+    if DEVELOPER_TOKEN:
+        config["developer_token"] = DEVELOPER_TOKEN
+    return config
 
 
 def list_accessible_customer_ids(client: GoogleAdsClient) -> set[str]:
