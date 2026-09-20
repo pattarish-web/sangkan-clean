@@ -4,6 +4,7 @@ import { SheetsLeadStore } from "../src/lib/sheetsLeadStore.js";
 import {
   LEAD_HEADERS,
   memoryLeadIo,
+  pickSharedLeadSpreadsheet,
   planLeadTabSetup,
 } from "../src/lib/leadSheetMap.js";
 import { normalizeSpreadsheetId, SHEET_VALUES_RANGE } from "../src/lib/sheets.js";
@@ -37,6 +38,16 @@ test("normalizeSpreadsheetId accepts a full Sheets URL", () => {
     id
   );
   assert.equal(normalizeSpreadsheetId(id), id);
+});
+
+test("pickSharedLeadSpreadsheet prefers the google ads file", () => {
+  const picked = pickSharedLeadSpreadsheet([
+    { id: "other", name: "Office Ops" },
+    { id: "leads-file", name: "google ads" },
+  ]);
+  assert.equal(picked.id, "leads-file");
+  assert.equal(pickSharedLeadSpreadsheet([{ id: "only", name: "My Sheet" }]).id, "only");
+  assert.equal(pickSharedLeadSpreadsheet([]), null);
 });
 
 test("Sheets lead store is idempotent and queues Ads conversions without PII", async () => {

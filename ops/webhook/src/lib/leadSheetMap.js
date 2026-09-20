@@ -110,6 +110,20 @@ const DEFAULT_SHEET_TITLES = new Set([
   "Google Ads",
 ]);
 
+/** Pick the marketing lead spreadsheet from Drive files shared with the SA. */
+export function pickSharedLeadSpreadsheet(files) {
+  const list = (files || []).filter((file) => file && file.id);
+  const byName = (pattern) =>
+    list.find((file) => pattern.test(String(file.name || "").trim()));
+  return (
+    byName(/^google ads$/i) ||
+    byName(/^sangkan.*lead/i) ||
+    byName(/lead/i) ||
+    (list.length === 1 ? list[0] : null) ||
+    null
+  );
+}
+
 /** Plan add/rename requests from current spreadsheet titles. */
 export function planLeadTabSetup(existingTitles) {
   const titles = new Set(existingTitles);

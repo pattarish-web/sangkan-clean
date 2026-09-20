@@ -1,6 +1,11 @@
 import { google } from "googleapis";
 import { getConfig } from "../config/env.js";
-import { LEAD_TAB_HEADERS, LEAD_TABS, planLeadTabSetup } from "./leadSheetMap.js";
+import {
+  LEAD_TAB_HEADERS,
+  LEAD_TABS,
+  pickSharedLeadSpreadsheet,
+  planLeadTabSetup,
+} from "./leadSheetMap.js";
 
 const LINE_SHEETS = [
   "customers",
@@ -57,24 +62,95 @@ function sheetsErrorMessage(err) {
   return String(err?.message || "sheets_error");
 }
 
+let _auth = null;
 let _sheets = null;
+let _resolvedSpreadsheetId = "";
+let _resolvedSpreadsheetSource = "";
 
-async function client() {
-  if (_sheets) return _sheets;
+async function getAuth() {
+  if (_auth) return _auth;
   const creds = parseServiceAccount();
   if (!creds) {
     throw new Error("GOOGLE_SERVICE_ACCOUNT_JSON missing or invalid");
   }
-  const auth = new google.auth.GoogleAuth({
+  _auth = new google.auth.GoogleAuth({
     credentials: creds,
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    scopes: [
+      "https://www.googleapis.com/auth/spreadsheets",
+      "https://www.googleapis.com/auth/drive.metadata.readonly",
+    ],
   });
-  _sheets = google.sheets({ version: "v4", auth });
+  return _auth;
+}
+
+async function client() {
+  if (_sheets) return _sheets;
+  _sheets = google.sheets({ version: "v4", auth: await getAuth() });
   return _sheets;
 }
 
-function spreadsheetId() {
+function configuredSpreadsheetId() {
   return normalizeSpreadsheetId(getConfig().sheets.spreadsheetId);
+}
+
+function isNotFoundError(err) {
+  const status = err?.response?.status || err?.code;
+  if (status === 404) return true;
+  return /not found/i.test(sheetsErrorMessage(err));
+}
+
+async function listSharedSpreadsheets() {
+  const drive = google.drive({ version: "v3", auth: await getAuth() });
+  const queries = [
+    "mimeType='application/vnd.google-apps.spreadsheet' and trashed=false",
+    "sharedWithMe and mimeType='application/vnd.google-apps.spreadsheet' and trashed=false",
+  ];
+  const found = new Map();
+  for (const q of queries) {
+    try {
+      const listed = await drive.files.list({
+        q,
+        fields: "files(id,name)",
+        pageSize: 50,
+        supportsAllDrives: true,
+        includeItemsFromAllDrives: true,
+      });
+      for (const file of listed.data.files || []) {
+        if (file?.id) found.set(file.id, file);
+      }
+    } catch (err) {
+      if (queries.indexOf(q) === queries.length - 1 && found.size === 0) throw err;
+    }
+  }
+  return [...found.values()];
+}
+
+async function resolveSpreadsheetId() {
+  if (_resolvedSpreadsheetId) return _resolvedSpreadsheetId;
+  const sheets = await client();
+  const configured = configuredSpreadsheetId();
+  if (configured) {
+    try {
+      await sheets.spreadsheets.get({
+        spreadsheetId: configured,
+        fields: "spreadsheetId",
+      });
+      _resolvedSpreadsheetId = configured;
+      _resolvedSpreadsheetSource = "configured";
+      return _resolvedSpreadsheetId;
+    } catch (err) {
+      if (!isNotFoundError(err)) throw err;
+    }
+  }
+  const picked = pickSharedLeadSpreadsheet(await listSharedSpreadsheets());
+  if (!picked?.id) {
+    throw new Error(
+      "Requested entity was not found. Share the google ads spreadsheet with the service account, or set GOOGLE_SHEETS_ID to that file's ID."
+    );
+  }
+  _resolvedSpreadsheetId = picked.id;
+  _resolvedSpreadsheetSource = "shared_file";
+  return _resolvedSpreadsheetId;
 }
 
 /** @returns {Promise<Record<string, string>[]>} */
@@ -83,8 +159,9 @@ export async function readTable(sheetName) {
     throw new Error(`Unknown sheet: ${sheetName}`);
   }
   const sheets = await client();
+  const id = await resolveSpreadsheetId();
   const res = await sheets.spreadsheets.values.get({
-    spreadsheetId: spreadsheetId(),
+    spreadsheetId: id,
     range: `${sheetName}!${SHEET_VALUES_RANGE}`,
   });
   const rows = res.data.values || [];
@@ -101,8 +178,9 @@ export async function readTable(sheetName) {
 
 export async function appendRow(sheetName, rowObject) {
   const sheets = await client();
+  const id = await resolveSpreadsheetId();
   const existing = await sheets.spreadsheets.values.get({
-    spreadsheetId: spreadsheetId(),
+    spreadsheetId: id,
     range: `${sheetName}!1:1`,
   });
   const headers = (existing.data.values?.[0] || []).map((h) => String(h).trim());
@@ -115,7 +193,7 @@ export async function appendRow(sheetName, rowObject) {
       : String(rowObject[h])
   );
   await sheets.spreadsheets.values.append({
-    spreadsheetId: spreadsheetId(),
+    spreadsheetId: id,
     range: `${sheetName}!${SHEET_VALUES_RANGE}`,
     valueInputOption: "USER_ENTERED",
     requestBody: { values: [values] },
@@ -125,8 +203,9 @@ export async function appendRow(sheetName, rowObject) {
 /** Update first row matching predicate; returns true if updated */
 export async function updateRow(sheetName, matchFn, patch) {
   const sheets = await client();
+  const id = await resolveSpreadsheetId();
   const res = await sheets.spreadsheets.values.get({
-    spreadsheetId: spreadsheetId(),
+    spreadsheetId: id,
     range: `${sheetName}!${SHEET_VALUES_RANGE}`,
   });
   const rows = res.data.values || [];
@@ -144,7 +223,7 @@ export async function updateRow(sheetName, matchFn, patch) {
     );
     const rowNum = i + 1;
     await sheets.spreadsheets.values.update({
-      spreadsheetId: spreadsheetId(),
+      spreadsheetId: id,
       range: `${sheetName}!A${rowNum}:AZ${rowNum}`,
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [values] },
@@ -178,13 +257,13 @@ export function newId(prefix) {
 
 /** Create marketing lead tabs + header rows. Safe to run repeatedly. */
 export async function ensureLeadTabs() {
-  const id = spreadsheetId();
   const creds = parseServiceAccount();
-  if (!id || !creds) {
+  if (!creds) {
     return { ok: false, skipped: true, reason: "sheets_unconfigured" };
   }
   try {
     const sheets = await client();
+    const id = await resolveSpreadsheetId();
     const meta = await sheets.spreadsheets.get({ spreadsheetId: id });
     const existing = new Map(
       (meta.data.sheets || []).map((s) => [s.properties.title, s.properties.sheetId])
@@ -229,6 +308,9 @@ export async function ensureLeadTabs() {
     }
     return {
       ok: true,
+      spreadsheet_id: id,
+      spreadsheet_title: meta.data.properties?.title || "",
+      source: _resolvedSpreadsheetSource || "configured",
       renamed: plan.rename,
       added: plan.add,
       headersWritten,
