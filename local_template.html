@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}} | Sangkan Clean</title>
     <meta name="description" content="{{description}}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="{{canonical}}">
     <link rel="alternate" hreflang="th" href="{{canonical}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="Sangkan Clean">
     <meta property="og:title" content="{{title}}">
     <meta property="og:description" content="{{description}}">
     <meta property="og:url" content="{{canonical}}">
@@ -20,12 +24,20 @@
       "@graph": [
         {
           "@type": "LocalBusiness",
+          "@id": "{{site_url}}/#business",
           "name": "Sangkan Clean - {{slug}}",
           "description": "{{description}}",
           "url": "{{canonical}}",
           "telephone": "+66929149978",
           "email": "info@sangkanclean.com",
           "areaServed": "{{slug}}",
+          "parentOrganization": { "@id": "{{site_url}}/#organization" },
+          "sameAs": [
+            "https://www.facebook.com/61592039062581",
+            "https://line.me/ti/p/@sangkanclean",
+            "https://m.me/61592039062581"
+          ],
+          "priceRange": "฿฿",
           "geo": { "@type": "GeoCoordinates", "latitude": {{latitude}}, "longitude": {{longitude}} },
           "hasMap": "https://maps.google.com/?q={{latitude}},{{longitude}}",
           "address": { "@type": "PostalAddress", "streetAddress": "4 ซอย ท่าข้าม 28 แยก 8-3 แขวงแสมดำ เขตบางขุนเทียน", "addressLocality": "กรุงเทพมหานคร", "addressRegion": "กรุงเทพมหานคร", "postalCode": "10150", "addressCountry": "TH" }
