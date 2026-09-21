@@ -1,0 +1,28 @@
+name: SEO and Core Web Vitals Audit
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "30 2 * * 1"
+  workflow_dispatch:
+
+jobs:
+  static-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate crawl-critical SEO signals
+        run: python seo/validate_site.py
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Measure production Core Web Vitals
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://www.sangkanclean.com/
+            https://www.sangkanclean.com/landing-maid.html
+            https://www.sangkanclean.com/landing-bigcleaning.html
+          temporaryPublicStorage: true
