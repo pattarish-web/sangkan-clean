@@ -78,7 +78,7 @@ export function demoLeads() {
       phone: "0891112233",
       service: "แม่บ้านประจำ",
       area: "พระโขนง",
-      message: "ออฟฟิศ 120 ตร.ม. ต้องการแม่บ้าน 3 วัน/สัปดาห์",
+      message: "ออฟฟิศ 120 ตร.ม. ต้องการแม่บ้านประจำ 5 วัน/สัปดาห์",
       status: "contacted",
       note: "โทรแล้ว นัดคุยต่อพรุ่งนี้",
       created_at: t1,

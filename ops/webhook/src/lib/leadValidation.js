@@ -28,6 +28,7 @@ export function contactMethodOf(lead) {
 
 export const SERVICES = [
   "Big Cleaning",
+  "Sangkan Office",
   "แม่บ้านประจำ",
   "ทำความสะอาดทั่วไป",
   "หลังก่อสร้าง",
