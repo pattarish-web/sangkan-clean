@@ -2,6 +2,12 @@
 
 บัญชี: `615-120-8199` | อ้างอิงข้อมูล HFT Big Clean Search **เก่า** (CPA ฿176)
 
+| แคมเปญ | สินค้า | Final URL |
+|--------|--------|-----------|
+| `SK-BigClean-Search` | Big Cleaning | https://www.sangkanclean.com/landing-bigcleaning.html |
+| `SK-Maid-Search` | แม่บ้านประจำ | https://www.sangkanclean.com/landing-maid.html |
+| `SK-Office-Search` (คนละสินค้า อย่าใช้แทนแม่บ้าน) | Sangkan Office | https://www.sangkanclean.com/landing-sangkan-office.html |
+
 ---
 
 ## Phase 0 — เตรียมพร้อม (ทำก่อนเปิดแคมเปญ)
@@ -10,9 +16,9 @@
 - [ ] ใส่ labels ใน env แล้วรัน `python build_assets.py`
 - [ ] ทดสอบ gtag `AW-18299765093` + GA4 `G-MJG0VZPFKS` บน landing
 - [ ] หยุดแคมเปญ Big Clean เก่าใน SangkanClean ถ้ายังมี (ไม่แข่งกับ HFT)
-- [ ] ตรวจ landing: https://www.sangkanclean.com/landing-bigcleaning.html
-- [ ] ตรวจ landing: https://www.sangkanclean.com/landing-sangkan-office.html
-- [ ] อย่าใช้หน้าแม่บ้านประจำ (`landing-maid.html`) เป็น Final URL ของ Ads — คนละออฟเฟอร์กับ Sangkan Office
+- [ ] ตรวจ landing Big Cleaning: https://www.sangkanclean.com/landing-bigcleaning.html
+- [ ] ตรวจ landing แม่บ้านประจำ: https://www.sangkanclean.com/landing-maid.html
+- [ ] Sangkan Office (`landing-sangkan-office.html`) คนละออฟเฟอร์ — ห้ามใช้เป็น Final URL ของแคมเปญแม่บ้านประจำ
 
 ---
 
@@ -66,16 +72,16 @@
 
 ---
 
-## Phase 3 — แคมเปญ Sangkan Office (สัปดาห์ 5+)
+## Phase 3 — แคมเปญแม่บ้านประจำ (สัปดาห์ 5+)
 
 เปิดเมื่อ Big Clean CPA นิ่ง ≤ ฿200 อย่างน้อย 7 วัน
 
-**แคมเปญ:** `SK-Office-Search` | งบ **฿300/วัน** | CPA Target ฿190 | **จันทร์–ศุกร์เท่านั้น**
+**แคมเปญ:** `SK-Maid-Search` | งบ **฿300/วัน** | CPA Target ฿190 | **จันทร์–ศุกร์เท่านั้น**
 
-ไฟล์: `03_keywords_office.csv`  
-Landing: **landing-sangkan-office.html** (แม่บ้านออฟฟิศ On-Demand — **ไม่ใช่** แม่บ้านประจำเต็มเวลา)
+ไฟล์: `03_keywords_maid_phase2.csv`  
+Landing: **https://www.sangkanclean.com/landing-maid.html**
 
-อย่าอิมพอร์ต `03_keywords_maid_phase2.csv` เข้าแคมเปญนี้ — คีย์เวิร์ดจัดหาแม่บ้านประจำต้องชี้ไปหน้า maid แยกต่างหากถ้าจะเปิดในอนาคต
+Sangkan Office คนละสินค้า — ห้ามอิมพอร์ต `03_keywords_office.csv` หรือชี้ Final URL ไป `landing-sangkan-office.html` ในแคมเปญนี้
 
 ---
 
@@ -109,7 +115,7 @@ Landing: **landing-sangkan-office.html** (แม่บ้านออฟฟิ�
 |------|--------|----------|---------------|----------|
 | เลี้ยง (สัปดาห์ 1–4) | ฿250 | ~฿5,500 | 15–25 | Mon–Fri 8–18, BC-Core เท่านั้น |
 | ขยาย (สัปดาห์ 5–8) | ฿400 | ~฿8,800 | 35–50 | + BC-Expand, ใส่ tCPA ฿180 |
-| +Sangkan Office (สัปดาห์ 9+) | ฿650 | ~฿14,300 | 55–75 | + SK-Office ฿250 |
+| +แม่บ้านประจำ (สัปดาห์ 9+) | ฿650 | ~฿14,300 | 55–75 | + SK-Maid ฿250 → landing-maid.html |
 
 *อ้างอิง HFT เก่า CPA ฿176, CPC ฿26*
 

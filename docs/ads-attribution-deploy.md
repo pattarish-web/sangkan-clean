@@ -4,7 +4,11 @@
 
 บัญชี `AW-18299765093` / customer `615-120-8199` (MCC `791-572-9299`)
 
-อย่าแก้โครงแคมเปญ `SK-BigClean-Search` — Final URL ต้องเป็น `landing-bigcleaning.html`
+อย่าสลับ Final URL ข้ามออฟเฟอร์:
+
+- `SK-BigClean-Search` → `landing-bigcleaning.html`
+- `SK-Maid-Search` (แม่บ้านประจำ) → `landing-maid.html`
+- Sangkan Office (`landing-sangkan-office.html`) คนละสินค้า ห้ามใช้แทนแคมเปญแม่บ้านประจำ
 
 สร้าง **Google Ads API ใหม่ใน Google Cloud** ของโปรเจ็กต์เดียวกับ OAuth ที่ใส่ Render แล้ว — อย่าสมัครโทเค็นนักพัฒนาจากศูนย์ API ของ MCC (เลิกใช้ 9 ก.ย. 2026)
 
