@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_checklist",
+  "last_topic": "edu_maid_absent",
   "posts": [
-    {
-      "ts": "2026-09-02T14:11:51.785421+07:00",
-      "topic_id": "edu_maid_absent",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260902/feed.png",
-        "stories_png": "out/20260902/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260902/bg.jpg",
-        "voiceover_mp3": "out/20260902/voiceover.mp3",
-        "stories_srt": "out/20260902/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทุกคนคงเคยเจอโมเมนต์ที่แม่บ้านประจำออฟฟิศลาหยุดกะทันหันใช่มั้ยครับ? 😩 ความว้าวุ่นก็มาทันที เพราะไม่มีใครมาช่วยดูแลเรื่อง ทำความสะอาดบ้าน หรือพื้นที่ส่วนกลางในออฟฟิศ ยิ่งถ้าเราดูแล บิ๊กคลีนนิ่งคอนโด หร",
-        "tiktok": "แม่บ้านลาหยุดกะทันหัน ออฟฟิศป่วนจริงมั้ย? 😩 ถ้าต้อง ทำความสะอาดบ้าน ทั้งที แต่คนดูแลไม่อยู่เนี่ยยย แย่เลยนะ! ไม่ว่าจะ บิ",
-        "line": "เช้านี้ แม่บ้านลาหยุดกะทันหัน ออฟฟิศว้าวุ่นเลยใช่มั้ยครับ? 😩 การขาดคนดูแล ทำความสะอาดบ้าน หรือพื้นที่ทำงานไปเนี่ย ส่งผลต"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122115911829401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-02T16:41:48.382833+07:00",
       "topic_id": "maid_backup",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122121877359401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-22T14:48:14.416067+07:00",
+      "topic_id": "edu_maid_absent",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260922/feed.png",
+        "stories_png": "out/20260922/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260922/bg.jpg",
+        "voiceover_mp3": "out/20260922/voiceover.mp3",
+        "stories_srt": "out/20260922/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ปวดหัวเลยใช่ไหมครับ? เวลาแม่บ้านประจำลาหยุดกะทันหัน ไม่ว่าจะเป็นออฟฟิศขนาดเล็กไปจนถึงอาคารพานิชย์ใหญ่ๆ หรือแม้แต่โชว์รูมที่ต้องการความเนี้ยบตลอดเวลา ปัญหาพื้นที่ไม่สะอาดสะอ้านก็เป็นเรื่องใหญ่ที่กระทบต",
+        "tiktok": "แม่บ้านลาหยุดฉุกเฉิน ทำยังไงดีนะ? ออฟฟิศเราก็ต้องใช้ แม่บ้านโรงพยาบาลก็ต้องมี แม่บ้านโชว์รูมก็ขาดไม่ได้! ความสะอาดคือหน้",
+        "line": "เมื่อแม่บ้านประจำลาหยุดกะทันหัน ออฟฟิศหรืออาคารพานิชย์ของคุณจะรับมือยังไงดี? 🧐 ปัญหาพื้นที่ไม่สะอาดเป็นเรื่องใหญ่ที่กระท"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122122334745401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
