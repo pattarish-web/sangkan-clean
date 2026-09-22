@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_maid_absent",
+  "last_topic": "maid_backup",
   "posts": [
-    {
-      "ts": "2026-09-02T16:41:48.382833+07:00",
-      "topic_id": "maid_backup",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260902/feed.png",
-        "stories_png": "out/20260902/stories.png",
-        "venue_need": "restaurant",
-        "venue_got": "restaurant",
-        "bg_source": "bg-restaurant-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260902/bg.jpg",
-        "voiceover_mp3": "out/20260902/voiceover.mp3",
-        "stories_srt": "out/20260902/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เบื่อไหมครับ/คะ กับปัญหา แม่บ้านคอนโด หรือ แม่บ้านอาคารพานิชย์ ที่มักจะลางานบ่อยๆ จนงานสะดุด? Sangkan Clean เข้าใจดีว่าการมีทีมที่ไว้ใจได้นั้นสำคัญแค่ไหน เรามี แม่บ้านประจำ ที่พร้อมดูแลพื้นที่ของคุณอย",
-        "tiktok": "เบื่อไหมกับ แม่บ้านคอนโด / แม่บ้านอาคารพานิชย์ ลาบ่อย? Sangkan Clean จัดการให้! เรามี แม่บ้านประจำ ที่ไม่ทิ้งงานกลางคัน ",
-        "line": "ทีมงาน Sangkan Clean เข้าใจดีว่าการมี แม่บ้านคอนโด หรือ แม่บ้านอาคารพานิชย์ ที่ไว้ใจได้สำคัญแค่ไหน เราเลยจัดเต็มด้วยบริก"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122115951855401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-02T22:29:04.638435+07:00",
       "topic_id": "edu_zone_problems",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122122334745401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-22T17:02:35.202390+07:00",
+      "topic_id": "maid_backup",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260922/feed.png",
+        "stories_png": "out/20260922/stories.png",
+        "venue_need": "restaurant",
+        "venue_got": "restaurant",
+        "bg_source": "bg-restaurant-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260922/bg.jpg",
+        "voiceover_mp3": "out/20260922/voiceover.mp3",
+        "stories_srt": "out/20260922/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "เคยปวดหัวกับปัญหาแม่บ้านลาบ่อยๆ ไหมครับ? Sangkan Clean เข้าใจดีว่าการหาแม่บ้านอาคารพานิชย์ หรือแม่บ้านร้านอาหาร ที่ไว้ใจได้และอยู่กับเรานานๆ เป็นเรื่องสำคัญมาก ทีมงานเรามีระบบดูแลที่ครบวงจร ตั้งแต่การ",
+        "tiktok": "เบื่อไหม แม่บ้านลาบ่อย? Sangkan Clean มีแม่บ้านประจำ ที่ไว้ใจได้ แถมมีคนสำรองให้ ไม่ต้องกลัวงานสะดุด! มี QC คอยเช็กงานให",
+        "line": "หมดกังวลเรื่องงานสะดุด! Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลความสะอาดให้ธุรกิจคุณ ด้วยทีมแม่บ้านประจำคุณภาพ ที่ผ่านการฝ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122122358577401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
