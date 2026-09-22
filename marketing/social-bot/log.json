@@ -1,53 +1,6 @@
 {
-  "last_topic": "maid_backup",
+  "last_topic": "edu_zone_problems",
   "posts": [
-    {
-      "ts": "2026-09-02T22:29:04.638435+07:00",
-      "topic_id": "edu_zone_problems",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260902/feed.png",
-        "stories_png": "out/20260902/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260902/bg.jpg",
-        "voiceover_mp3": "out/20260902/voiceover.mp3",
-        "stories_srt": "out/20260902/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทุกคนรู้ไหมครับว่าออฟฟิศแต่ละย่านเนี่ย เจอปัญหาความสะอาดไม่เหมือนกันเลยนะ! 🧐\n\n📍 ถ้าออฟฟิศคุณอยู่ริมถนนใหญ่ สิ่งที่เจอแน่ๆ คือ \"ฝุ่น\" ทั้งวัน ทำให้ต้องเน้น ทำความสะอาดสำนักงาน เป็นพิเศษ เพื่อให้พื้นที่",
-        "tiktok": "ออฟฟิศคุณอยู่ย่านไหน? ปัญหาความสะอาดก็ต่างกันนะ! 🏙️\n\nริมถนนใหญ่เจอฝุ่นเยอะ ต้องเน้น ทำความสะอาดสำนักงาน บ่อยๆ ส่วนใกล้น้",
-        "line": "รู้ไหมว่าออฟฟิศแต่ละย่าน เจอปัญหาความสะอาดต่างกันนะ! 🧐\n\n📍 ออฟฟิศริมถนนใหญ่: ฝุ่นเยอะ ต้องเน้น ทำความสะอาดสำนักงาน เป็นปร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122116092717401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-03T14:16:33.517587+07:00",
       "topic_id": "edu_pm25",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122122358577401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-22T22:35:41.860959+07:00",
+      "topic_id": "edu_zone_problems",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260922/feed.png",
+        "stories_png": "out/20260922/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260922/bg.jpg",
+        "voiceover_mp3": "out/20260922/voiceover.mp3",
+        "stories_srt": "out/20260922/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "สงสัยกันไหมว่า ออฟฟิศแต่ละย่าน มีปัญหาเรื่องความสะอาดที่ไม่เหมือนกันเลยนะ! 🧐\n\nลองดูสิ ออฟฟิศริมถนนใหญ่ หรือใกล้แหล่งช้อปปิ้งอย่าง ศูนย์การค้า เนี่ย ปัญหาหลักคือฝุ่นละออง PM2.5 ที่มากับปริมาณรถและความพ",
+        "tiktok": "ออฟฟิศคุณอยู่ย่านไหน? ปัญหาความสะอาดไม่เหมือนกันนะ! 🧐\n\nริมถนนใหญ่ เจอฝุ่น PM2.5 จัดเต็ม! ใกล้แม่น้ำ ระวังชื้นง่าย เชื้อร",
+        "line": "ออฟฟิศแต่ละย่าน เจอปัญหาความสะอาดไม่เหมือนกันนะรู้ยัง! 🤔\n\nริมถนนใหญ่ ฝุ่น PM2.5 จัดหนัก ส่วนย่านที่ติดน้ำ ก็ต้องระวังควา"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122122417473401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
