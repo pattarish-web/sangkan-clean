@@ -99,8 +99,23 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://www.sangkanclean.com/"},{"@type":"ListItem","position":2,"name":"Big Cleaning","item":"https://www.sangkanclean.com/landing-bigcleaning.html"}]}</script>
 </head>
 <body>
-<nav aria-label="เมนูหลัก" style="position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);box-shadow:0 2px 14px rgba(13,148,136,.12);padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;">
-<a href="index.html" style="font-weight:800;color:#0f766e;text-decoration:none;">Sangkan Clean</a><div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;"><a href="index.html" style="color:#334155;text-decoration:none;">หน้าหลัก</a><a href="landing-bigcleaning.html" style="color:#0f766e;font-weight:700;text-decoration:none;">Big Cleaning</a><a href="landing-sangkan-office.html" style="color:#334155;text-decoration:none;">Sangkan Office</a><a href="landing-maid.html" style="color:#334155;text-decoration:none;">แม่บ้านประจำ</a><a href="blog.html" style="color:#334155;text-decoration:none;">บทความ</a><a href="#quote" style="background:#0d9488;color:#fff;padding:9px 16px;border-radius:999px;text-decoration:none;font-weight:700;">ขอใบเสนอราคา</a></div></nav>
+<header class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo"><img src="logo.png?v=20260823" alt="Sangkan Clean" width="523" height="423"><span>Sangkan<span> Clean</span></span></a>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html#services" class="nav-link">บริการของเรา</a>
+            <a href="index.html#why-us" class="nav-link">ทำไมต้องเรา</a>
+            <a href="index.html#calculator" class="nav-link">คำนวณราคา</a>
+            <a href="landing-bigcleaning.html" class="nav-link" style="color: var(--primary); font-weight:700;">Big Cleaning</a>
+            <a href="landing-maid.html" class="nav-link">แม่บ้านประจำ</a>
+            <a href="blog.html" class="nav-link">บทความทั้งหมด</a>
+            <a href="index.html#areas" class="nav-link">พื้นที่ให้บริการ</a>
+            <a href="index.html#faq" class="nav-link">FAQ</a>
+            <a href="index.html#quote" class="btn btn-primary nav-cta">ขอใบเสนอราคา</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="เมนู" aria-controls="navMenu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+</header>
 
 
     <!-- ===== HERO SECTION ===== -->
@@ -1017,6 +1032,13 @@
         })();
     </script>
     <script>window.LEAD_API_URL=window.LEAD_API_URL||"https://sangkan-office-ops.onrender.com/api/leads";</script>
+    <script>
+        document.getElementById('menuToggle')?.addEventListener('click', function () {
+            const menu = document.getElementById('navMenu');
+            const expanded = menu.classList.toggle('active');
+            this.setAttribute('aria-expanded', expanded);
+        });
+    </script>
     <script src="attribution.js"></script>
     <script src="tracking.js"></script>
     <script src="lead-form.js"></script>
