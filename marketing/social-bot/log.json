@@ -1,53 +1,6 @@
 {
-  "last_topic": "after_construction",
+  "last_topic": "edu_routine_clean",
   "posts": [
-    {
-      "ts": "2026-09-06T21:16:12.593452+07:00",
-      "topic_id": "edu_routine_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260906/feed.png",
-        "stories_png": "out/20260906/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260906/bg.jpg",
-        "voiceover_mp3": "out/20260906/voiceover.mp3",
-        "stories_srt": "out/20260906/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจดีว่าหลายคนอาจคิดว่าเรื่องความสะอาดค่อยทำตอนที่เห็นคราบสกปรกชัดๆ ก็พอ แต่ความจริงแล้ว เชื้อโรคและแบคทีเรียไม่ได้รอให้เราเห็นด้วยตาเปล่าถึงจะเริ่มสะสมนะ! 🦠\nไม่ว่าจะเป็นพื้นที",
-        "tiktok": "หยุดความคิดที่ว่าต้องรอให้เห็นคราบถึงจะคลีน! ✋ เชื้อโรคสะสมทุกวัน แม้มองไม่เห็นนะ ยิ่งเป็นพื้นที่ใช้งานบ่อยอย่างทำความสะ",
-        "line": "รู้ไหมว่าเชื้อโรคไม่ได้รอให้เราเห็นคราบสกปรกถึงจะเริ่มสะสม! 🦠 ไม่ว่าจะในสำนักงาน ทำความสะอาดร้านอาหาร หรือแม้แต่พื้นที่ล"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122117115585401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-07T14:25:48.001391+07:00",
       "topic_id": "edu_harsh_chemical",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122123877417401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-26T22:02:47.388337+07:00",
+      "topic_id": "edu_routine_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260926/feed.png",
+        "stories_png": "out/20260926/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260926/bg.jpg",
+        "voiceover_mp3": "out/20260926/voiceover.mp3",
+        "stories_srt": "out/20260926/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมครับว่า เชื้อโรคไม่เคยรอให้เราเห็นคราบสกปรกก่อนถึงจะเริ่มสะสม? ทุกวัน ทุกพื้นที่ ไม่ว่าจะเป็นออฟฟิศ ร้านกาแฟ หรือแม้แต่ในโรงพยาบาลที่เรามองว่าสะอาด การทำความสะอาดประจำคือหัวใจสำคัญเลยนะ 🦠\n\nลองคิ",
+        "tiktok": "จริงจังแค่ไหน กับเรื่องคลีน? รู้ไหมว่าเชื้อโรคไม่ได้รอให้เห็นคราบถึงจะเริ่มสะสม! ทุกวันเลยนะ ไม่ว่าจะเป็นออฟฟิศ คาเฟ่ หร",
+        "line": "เฮ้ย! รู้ยังว่าเชื้อโรคสะสมทุกวัน ไม่ได้รอให้เห็นคราบสกปรกนะ! 🦠\n\nจริงจังแค่ไหนกับเรื่องคลีน? ไม่ว่าจะเป็นออฟฟิศ คาเฟ่ หร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122123949945401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
