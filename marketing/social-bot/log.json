@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_harsh_chemical",
+  "last_topic": "soft_cleaning",
   "posts": [
-    {
-      "ts": "2026-09-07T17:21:52.173114+07:00",
-      "topic_id": "soft_cleaning",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260907/feed.png",
-        "stories_png": "out/20260907/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260907/bg.jpg",
-        "voiceover_mp3": "out/20260907/voiceover.mp3",
-        "stories_srt": "out/20260907/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เฮ้ย! แบรนด์ไหนกำลังมองหาตัวช่วยเรื่องความสะอาด 👋 ที่ดูแลแบบประจำ และอ่อนโยนสุดๆ บ้าง? Sangkan Clean มี Soft Cleaning ที่เหมาะกับออฟฟิศและคอนโดของคุณเลยนะ เราเข้าใจว่าการดูแลพื้นที่ทำงานให้สะอาดอยู่เส",
-        "tiktok": "ออฟฟิศหรือคอนโด ใครกำลังหาคนคลีนประจำแบบอ่อนโยน? Sangkan Clean มี Soft Cleaning มาช่วย! ไม่ว่าจะเป็นทำความสะอาดคลินิก, แ",
-        "line": "ทีมงาน Sangkan Clean แวะมาบอก! สำหรับธุรกิจที่ต้องการ Soft Cleaning แบบคลีนประจำ | ดูแลออฟฟิศหรือคอนโดอย่างอ่อนโยน | ไม่"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122117286465401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-07T23:33:33.097058+07:00",
       "topic_id": "edu_desk_germ",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122124129813401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-27T17:35:35.947841+07:00",
+      "topic_id": "soft_cleaning",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260927/feed.png",
+        "stories_png": "out/20260927/stories.png",
+        "venue_need": "restaurant",
+        "venue_got": "restaurant",
+        "bg_source": "bg-restaurant-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260927/bg.jpg",
+        "voiceover_mp3": "out/20260927/voiceover.mp3",
+        "stories_srt": "out/20260927/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีม Sangkan Clean เข้าใจดีว่าการดูแลความสะอาดประจำวัน สำคัญกับภาพลักษณ์องค์กรและชีวิตส่วนตัวมากแค่ไหน โดยเฉพาะสำหรับน้องๆ ทีมงานที่ต้องการพื้นที่ทำงานแบบคลีนๆ หรือเจ้าของคอนโดที่อยากได้ความเป็นส่วนตัว",
+        "tiktok": "เหนื่อยไหม กับงานคลีนประจำ? Sangkan Clean จัดให้!\nด้วยบริการ Soft Cleaning ที่ดูแลออฟฟิศ คอนโด และคาเฟ่ของคุณอย่างอ่อนโย",
+        "line": "หาแม่บ้านดูแลออฟฟิศ คอนโด หรือคาเฟ่ประจำอยู่ใช่ไหม?\nSangkan Clean มีบริการ Soft Cleaning ที่เน้นความสะอาดอ่อนโยน ไม่ทำลา"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122124160545401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
