@@ -68,6 +68,23 @@ test("accepts a valid lead and strips unknown attribution keys", () => {
   assert.equal(result.lead.attribution.name, undefined);
 });
 
+test("keeps searchterm and drops unreplaced ValueTrack tokens", () => {
+  const kept = sanitizeAttribution({
+    gclid: "abc",
+    keyword: "รับทำความสะอาดบ้าน",
+    searchterm: "รับทำความสะอาดบ้านใกล้ฉัน",
+  });
+  assert.equal(kept.searchterm, "รับทำความสะอาดบ้านใกล้ฉัน");
+  assert.equal(kept.keyword, "รับทำความสะอาดบ้าน");
+  const dropped = sanitizeAttribution({
+    gclid: "abc",
+    keyword: "{keyword}",
+    searchterm: "{searchterm}",
+  });
+  assert.equal(dropped.searchterm, undefined);
+  assert.equal(dropped.keyword, undefined);
+});
+
 test("resolveLeadChannel treats gclid and google cpc as ads, empty as direct", () => {
   assert.equal(resolveLeadChannel({ gclid: "Cjw" }), "google_ads");
   assert.equal(resolveLeadChannel({ utm_source: "google", utm_medium: "cpc" }), "google_ads");
@@ -114,6 +131,7 @@ test("Ads conversion rows never include PII", () => {
       message: "บ้านฉัน",
       gclid: "GCLID-1",
       value_thb: 9900,
+      attribution: { searchterm: "รับทำความสะอาดบ้านใกล้ฉัน", gclid: "GCLID-1" },
     },
     "won_deal",
     "2026-09-19 10:00:00+07:00"
@@ -121,7 +139,7 @@ test("Ads conversion rows never include PII", () => {
   const blob = JSON.stringify(row);
   assert.equal(row.gclid, "GCLID-1");
   assert.equal(row.conversion_currency, "THB");
-  assert.doesNotMatch(blob, /SECRET|0812345678|บ้านฉัน/);
+  assert.doesNotMatch(blob, /SECRET|0812345678|บ้านฉัน|searchterm|รับทำความสะอาด/);
 });
 
 test("qualified and won conversions enqueue once when GCLID exists", () => {

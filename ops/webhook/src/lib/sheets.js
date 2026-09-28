@@ -27,7 +27,7 @@ const LEAD_SHEETS = [
 
 const SHEETS = [...LINE_SHEETS, ...LEAD_SHEETS];
 
-/** leads has 29 columns (beyond Z). Keep all marketing tabs on a wide range. */
+/** leads has 30 columns (beyond Z). Keep all marketing tabs on a wide range. */
 export const SHEET_VALUES_RANGE = "A:AZ";
 
 function parseServiceAccount() {

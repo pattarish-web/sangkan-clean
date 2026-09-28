@@ -40,6 +40,7 @@ export const LEAD_HEADERS = [
   "ads_qualified_sent_at",
   "ads_won_sent_at",
   "ads_order_id",
+  "searchterm",
 ];
 
 export const ATTR_HEADERS = [
@@ -60,6 +61,7 @@ export const ATTR_HEADERS = [
   "last_channel",
   "landing_page",
   "referrer",
+  "searchterm",
 ];
 
 export const CONV_HEADERS = [
@@ -196,6 +198,7 @@ export function leadToSheetRow(lead) {
   row.utm_source = attr.utm_source || "";
   row.utm_campaign = attr.utm_campaign || "";
   row.keyword = attr.keyword || "";
+  row.searchterm = attr.searchterm || attr.utm_term || "";
   row.landing_page = attr.landing_page || "";
   row.ads_contact_sent_at = lead.ads_contact_sent_at || "";
   row.ads_qualified_sent_at = lead.ads_qualified_sent_at || "";
@@ -219,6 +222,7 @@ export function sheetRowToLead(row) {
     "adgroupid",
     "creative",
     "keyword",
+    "searchterm",
     "channel",
     "first_channel",
     "landing_page",

@@ -47,6 +47,7 @@ const ATTR_KEYS = [
   "adgroupid",
   "creative",
   "keyword",
+  "searchterm",
   "channel",
   "first_channel",
   "landing_page",
@@ -115,6 +116,7 @@ export function sanitizeAttribution(input) {
   for (const key of ATTR_KEYS) {
     if (src[key] == null || src[key] === "") continue;
     out[key] = String(src[key]).trim().slice(0, 180);
+    if (out[key].startsWith("{") && out[key].endsWith("}")) delete out[key];
   }
   out.channel = resolveLeadChannel(out, out.gclid || "");
   if (!out.first_channel) out.first_channel = out.channel;

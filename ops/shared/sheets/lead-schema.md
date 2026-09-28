@@ -6,7 +6,7 @@ Spreadsheet เดิมหรือไฟล์ใหม่ก็ได้ แ�
 
 ## leads
 
-id, created_at, created_date_bkk, event_type, contact_method, clicked_target, name, phone, service, area, message, consent, status, value_thb, lost_reason, note, page_path, idempotency_key, gclid, channel, first_channel, utm_source, utm_campaign, keyword, landing_page, ads_contact_sent_at, ads_qualified_sent_at, ads_won_sent_at, ads_order_id
+id, created_at, created_date_bkk, event_type, contact_method, clicked_target, name, phone, service, area, message, consent, status, value_thb, lost_reason, note, page_path, idempotency_key, gclid, channel, first_channel, utm_source, utm_campaign, keyword, landing_page, ads_contact_sent_at, ads_qualified_sent_at, ads_won_sent_at, ads_order_id, searchterm
 
 - `event_type`: `form_submit`, `phone_click` หรือ `line_click`
 - คลิกโทร/LINE เริ่มที่ `status=unverified` และยังไม่มีชื่อ/เบอร์ลูกค้า
@@ -14,6 +14,7 @@ id, created_at, created_date_bkk, event_type, contact_method, clicked_target, na
 - หลังยืนยันแล้วระบบยิง Google Ads API ทันที และคิว `phone_click` / `line_click` เข้า `ads_conversions` (เฉพาะเมื่อมี GCLID) — คลิกดิบไม่ถูกส่งไป Google Ads
 - มาร์ก `lost` จากสถานะรอตรวจสอบ = ไม่ใช่ลูกค้าจริง และไม่ส่ง Ads
 - ฟอร์มเป็น `contact_method=form` / `event_type=form_submit` สถานะเริ่มที่ `new` — Ads เว็บไซต์ยิง `generate_lead` ครั้งเดียว ไม่คิว `phone_click`/`line_click`
+- `searchterm` คือข้อความที่ลูกค้าพิมพ์ใน Google (`{searchterm}`) — อยู่ท้ายแถวเพื่อไม่เลื่อนคอลัมน์เดิม ห้ามส่งค่านี้เข้า Google Ads API
 
 ## lead_pipeline
 
@@ -21,7 +22,7 @@ lead_id, status, value_thb, lost_reason, updated_at, updated_by
 
 ## lead_attribution
 
-lead_id, gclid, gbraid, wbraid, utm_source, utm_medium, utm_campaign, utm_content, utm_term, campaignid, adgroupid, creative, keyword, first_channel, last_channel, landing_page, referrer
+lead_id, gclid, gbraid, wbraid, utm_source, utm_medium, utm_campaign, utm_content, utm_term, campaignid, adgroupid, creative, keyword, first_channel, last_channel, landing_page, referrer, searchterm
 
 ## lead_dashboard
 

@@ -21,6 +21,7 @@ Marketing site (`pattarish-web/sangkan-clean`) owns capture. ERP owns quotations
     "utm_source": "string",
     "utm_campaign": "string",
     "keyword": "string",
+    "searchterm": "string",
     "first_channel": "string",
     "landing_page": "/landing-bigcleaning.html"
   }

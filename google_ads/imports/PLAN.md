@@ -139,7 +139,8 @@ Sangkan Office คนละสินค้า — ห้ามอิมพอร
 4. ตั้ง location + language (ไทย)
 5. **ตั้งตารางเวลา จันทร์–ศุกร์** (ดูด้านล่าง)
 6. ปิด Search Partners (ทดสอบทีหลัง)
-7. เปิดแคมเปญ → ตรวจสถานะ 24 ชม.
+7. ตั้ง **Final URL suffix** ของแคมเปญ: `keyword={keyword}&searchterm={searchterm}` — **อย่า** เปลี่ยน Final URL (`landing-bigcleaning.html`)
+8. เปิดแคมเปญ → ตรวจสถานะ 24 ชม.
 
 ---
 

@@ -41,8 +41,18 @@ test("attribution.js reads Google _gcl_aw cookie when URL has no gclid", () => {
   assert.equal(snap.channel, "google_ads");
 });
 
-test("attribution.js empty landing is direct", () => {
-  const snap = runAttribution("");
-  assert.equal(snap.channel, "direct");
-  assert.equal(snap.gclid, "");
+test("attribution.js captures searchterm from the landing URL", () => {
+  const snap = runAttribution(
+    "?gclid=TESTGCLID123&keyword=%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99&searchterm=%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%89%E0%B8%B1%E0%B8%99"
+  );
+  assert.equal(snap.channel, "google_ads");
+  assert.equal(snap.keyword, "รับทำความสะอาดบ้าน");
+  assert.equal(snap.searchterm, "รับทำความสะอาดบ้านใกล้ฉัน");
+});
+
+test("attribution.js drops unreplaced ValueTrack tokens", () => {
+  const snap = runAttribution("?gclid=TESTGCLID123&keyword={keyword}&searchterm={searchterm}");
+  assert.equal(snap.gclid, "TESTGCLID123");
+  assert.equal(snap.keyword, "");
+  assert.equal(snap.searchterm, "");
 });

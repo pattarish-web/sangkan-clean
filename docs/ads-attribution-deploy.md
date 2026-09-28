@@ -33,7 +33,11 @@ python google_ads/setup_offline_conversions.py --apply  # เขียนบั�
 3. ตั้ง **เป้าหมายโฆษณาหลัก** เป็น `phone_click` + `line_click` + ฟอร์ม `generate_lead`
 4. ตั้ง `qualified_lead` / `won_deal` เป็น observe-only (`primary_for_goal=false`)
 5. ตั้ง conversion เว็บไซต์โทร/LINE เดิม และ GA4-imported `click_phone` / `click_line` ให้ไม่เป็นเป้าหมายโฆษณา
-6. **ไม่** เปลี่ยน Final URL ของแคมเปญ — ValueTrack เป็นทางเลือก: `{lpurl}?campaignid={campaignid}&adgroupid={adgroupid}&creative={creative}&keyword={keyword}` (`gclid` มาจาก auto-tagging)
+6. **ไม่** เปลี่ยน Final URL ของแคมเปญ — ใส่ **Final URL suffix** ใน Ads UI ของ `SK-BigClean-Search` (ไม่ใช่ Tracking template และไม่แก้ landing):
+
+   `keyword={keyword}&searchterm={searchterm}`
+
+   Auto-tagging ใส่ `gclid` เอง `{searchterm}` ใช้ได้เฉพาะ Search — Display/PMax ไม่แทนค่า ห้ามส่ง `searchterm` เข้า Ads API
 
 ยืนยันลีดแล้วระบบยิง Google Ads API (`uploadClickConversions`) ทันที — CSV เป็นไฟล์สำรองของแถวที่ยังไม่ส่งสำเร็จเท่านั้น
 
@@ -106,5 +110,7 @@ python google_ads/setup_offline_conversions.py --apply  # เขียนบั�
 - [ ] กดโทร/LINE แล้วยังโทรออก/เปิด LINE ได้ และยังบันทึกลงรายงาน
 - [ ] ไฟล์ CSV ไม่มีชื่อหรือเบอร์โทร และมีเฉพาะแถวที่ยังไม่ส่งสำเร็จ
 - [ ] `https://www.sangkanclean.com/attribution.js` และ `tracking.js` ต้องได้ HTTP 200
+- [ ] แคมเปญ Search มี Final URL suffix `keyword={keyword}&searchterm={searchterm}` (ไม่เปลี่ยน Final URL)
+- [ ] `/ops/leads` แสดงคอลัมน์ **คำค้น** และกล่องคำค้นวันนี้
 - [ ] `/ops/leads` เข้าไม่ได้ถ้าไม่มีโทเคน
 - [ ] Render ใช้ Sheets (ไม่ตั้ง `LEAD_STORE_FILE`, `LEAD_SEED_DEMO` ไม่เป็น `1`)

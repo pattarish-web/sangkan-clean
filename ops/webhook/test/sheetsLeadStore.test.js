@@ -11,8 +11,20 @@ import {
 import { normalizeSpreadsheetId, SHEET_VALUES_RANGE } from "../src/lib/sheets.js";
 
 test("Sheets value range covers all lead columns", () => {
-  assert.equal(LEAD_HEADERS.length, 29);
+  assert.equal(LEAD_HEADERS.length, 30);
+  assert.equal(LEAD_HEADERS[LEAD_HEADERS.length - 1], "searchterm");
   assert.equal(SHEET_VALUES_RANGE, "A:AZ");
+});
+
+test("sheetRowToLead keeps searchterm without sending it to Ads", () => {
+  const lead = sheetRowToLead({
+    id: "LD-ST",
+    gclid: "GCLID-ST",
+    keyword: "รับทำความสะอาดบ้าน",
+    searchterm: "รับทำความสะอาดบ้านใกล้ฉัน",
+  });
+  assert.equal(lead.attribution.searchterm, "รับทำความสะอาดบ้านใกล้ฉัน");
+  assert.equal(lead.attribution.keyword, "รับทำความสะอาดบ้าน");
 });
 
 test("planLeadTabSetup renames Sheet1 and adds the other lead tabs", () => {

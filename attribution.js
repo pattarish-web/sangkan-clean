@@ -20,6 +20,7 @@
         "adgroupid",
         "creative",
         "keyword",
+        "searchterm",
         "gad_source",
         "gad_campaignid",
     ];
@@ -60,6 +61,12 @@
         } catch (e) {
             return "";
         }
+    }
+
+    function cleanTrack(v) {
+        if (!v) return "";
+        if (v.charAt(0) === "{" && v.charAt(v.length - 1) === "}") return "";
+        return v;
     }
 
     function cookieValue(name) {
@@ -114,7 +121,7 @@
         var hasClick = false;
         for (var i = 0; i < CLICK_KEYS.length; i++) {
             var k = CLICK_KEYS[i];
-            var v = param(search, k);
+            var v = cleanTrack(param(search, k));
             if (v) {
                 out[k] = v;
                 hasClick = true;
@@ -218,7 +225,8 @@
         merged.campaignid = (last && last.campaignid) || "";
         merged.adgroupid = (last && last.adgroupid) || "";
         merged.creative = (last && last.creative) || "";
-        merged.keyword = (last && last.keyword) || "";
+        merged.keyword = (last && last.keyword) || (first && first.keyword) || "";
+        merged.searchterm = (last && last.searchterm) || (first && first.searchterm) || current.searchterm || "";
         merged.landing_page = current.landing_page;
         merged.referrer = current.referrer;
         return merged;

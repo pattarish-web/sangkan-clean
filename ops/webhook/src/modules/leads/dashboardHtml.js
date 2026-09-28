@@ -38,7 +38,8 @@ export function dashboardHtml() {
     }
     header h1 { font-size: 1.15rem; margin: 0; }
     header p { margin: .15rem 0 0; color: var(--muted); font-size: .9rem; }
-    main { max-width: 1180px; margin: 0 auto; padding: 1.25rem; }
+    main { max-width: 1280px; margin: 0 auto; padding: 1.25rem; }
+    .term { font-weight: 600; }
     .row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: end; }
     label { font-size: .8rem; color: var(--muted); display: block; margin-bottom: .25rem; }
     input, select, button, textarea {
@@ -144,6 +145,11 @@ export function dashboardHtml() {
           <div id="pipeline" class="kpis" style="margin:0"></div>
         </section>
       </div>
+      <section class="card" style="margin-top:1rem;">
+        <h2 style="margin:0 0 .35rem;font-size:1rem;">คำค้นวันนี้</h2>
+        <p class="tiny" style="margin:0 0 .75rem;">ข้อความที่ลูกค้าพิมพ์ใน Google — ไม่ใช่คีย์เวิร์ดที่เราตั้งใน Ads</p>
+        <div id="searchTerms" class="bars"></div>
+      </section>
       <section style="margin-top:1rem;">
         <h2 style="font-size:1rem;">ลีดของวัน</h2>
         <div id="emptyBox" class="banner empty hidden">ยังไม่มีลีดในวันนี้ ลองเปลี่ยนวันที่ หรือส่งแบบฟอร์มขอใบเสนอราคาจากหน้าแรก</div>
@@ -224,6 +230,7 @@ async function load() {
     ]);
     renderSummary(sumRes.summary);
     renderTable(listRes.leads || []);
+    renderSearchTerms(listRes.leads || []);
   } catch (err) {
     if (String(err.message) === "unauthorized") {
       sessionStorage.removeItem(TOKEN_KEY);
@@ -269,11 +276,36 @@ function renderSummary(s) {
 function escapeHtml(s) {
   return String(s || "").replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+function searchTermOf(attr) {
+  return String((attr && (attr.searchterm || attr.utm_term)) || "").trim();
+}
+function keywordOf(attr) {
+  return String((attr && attr.keyword) || "").trim();
+}
+function renderSearchTerms(leads) {
+  const counts = {};
+  for (const lead of leads) {
+    const q = searchTermOf(lead.attribution || {});
+    if (!q) continue;
+    counts[q] = (counts[q] || 0) + 1;
+  }
+  const entries = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "th"));
+  const el = document.getElementById("searchTerms");
+  if (!entries.length) {
+    el.innerHTML = '<p class="muted">ยังไม่มีคำค้นจาก Ads ในวันนี้ — ตั้ง Final URL suffix เป็น keyword={keyword}&amp;searchterm={searchterm}</p>';
+    return;
+  }
+  const max = Math.max(1, ...entries.map(([, n]) => n));
+  el.innerHTML = entries.map(([q, n]) => {
+    const w = Math.round((n / max) * 100);
+    return '<div class="bar"><span>'+escapeHtml(q)+'</span><i style="width:'+w+'%"></i><span>'+n+'</span></div>';
+  }).join("");
+}
 function renderTable(leads) {
   emptyBox.classList.toggle("hidden", leads.length > 0);
   const wrap = document.getElementById("tableWrap");
   if (!leads.length) { wrap.innerHTML = ""; return; }
-  wrap.innerHTML = '<table><thead><tr><th>ลูกค้า</th><th>บริการ</th><th>ต้นทาง</th><th>สถานะ</th><th>มูลค่า / Ads</th></tr></thead><tbody>' +
+  wrap.innerHTML = '<table><thead><tr><th>ลูกค้า</th><th>บริการ</th><th>ต้นทาง</th><th>คำค้น</th><th>สถานะ</th><th>มูลค่า / Ads</th></tr></thead><tbody>' +
     leads.map((lead) => {
       const attr = lead.attribution || {};
       const channelKey = attr.gclid || attr.gbraid || attr.wbraid || attr.gad_source || lead.gclid
@@ -316,7 +348,13 @@ function renderTable(leads) {
         '<td><input class="lead-service-input" value="'+escapeHtml(lead.service||"")+'"><div class="tiny">'+escapeHtml((lead.message||"").slice(0,80))+'</div></td>'+
         '<td><span class="status">'+escapeHtml(CHANNEL_LABEL[channelKey]||channelKey||"direct")+'</span>'+
           '<div class="tiny">'+(attr.gclid ? "GCLID "+escapeHtml(attr.gclid.slice(0,16))+"…" : "ไม่มี GCLID")+'</div>'+
-          '<div class="tiny">'+escapeHtml(attr.utm_campaign||attr.keyword||attr.landing_page||"")+'</div></td>'+
+          '<div class="tiny">'+escapeHtml(attr.utm_campaign||attr.landing_page||"")+'</div></td>'+
+        '<td>'+(searchTermOf(attr)
+          ? '<div class="term">'+escapeHtml(searchTermOf(attr))+'</div>'
+          : '<div class="muted">—</div>')+
+          (keywordOf(attr) && keywordOf(attr) !== searchTermOf(attr)
+            ? '<div class="tiny">คีย์เวิร์ด: '+escapeHtml(keywordOf(attr))+'</div>'
+            : "")+'</td>'+
         '<td><select class="st">'+opts+'</select><div class="tiny" style="margin-top:.35rem;"><input class="lost" placeholder="เหตุผลที่ไม่ปิด" value="'+escapeHtml(lead.lost_reason||"")+'"></div></td>'+
         '<td><input class="val" type="number" min="0" step="100" value="'+(lead.value_thb||"")+'" placeholder="บาท">'+
           '<div class="tiny" style="margin-top:.35rem;">'+escapeHtml(adsNote)+'</div>'+

@@ -66,6 +66,7 @@
             "adgroupid",
             "creative",
             "keyword",
+            "searchterm",
             "channel",
             "first_channel",
             "landing_page",
