@@ -4,11 +4,7 @@
 
 บัญชี `AW-18299765093` / customer `615-120-8199` (MCC `791-572-9299`)
 
-อย่าสลับ Final URL ข้ามออฟเฟอร์:
-
-- `SK-BigClean-Search` → `landing-bigcleaning.html`
-- `SK-Maid-Search` (แม่บ้านประจำ) → `landing-maid.html`
-- Sangkan Office (`landing-sangkan-office.html`) คนละสินค้า ห้ามใช้แทนแคมเปญแม่บ้านประจำ
+อย่าแก้โครงแคมเปญ `SK-BigClean-Search` — Final URL ต้องเป็น `landing-bigcleaning.html`
 
 สร้าง **Google Ads API ใหม่ใน Google Cloud** ของโปรเจ็กต์เดียวกับ OAuth ที่ใส่ Render แล้ว — อย่าสมัครโทเค็นนักพัฒนาจากศูนย์ API ของ MCC (เลิกใช้ 9 ก.ย. 2026)
 
@@ -109,5 +105,6 @@ python google_ads/setup_offline_conversions.py --apply  # เขียนบั�
 - [ ] ปิด API ชั่วคราว แล้วยังได้เมล FormSubmit
 - [ ] กดโทร/LINE แล้วยังโทรออก/เปิด LINE ได้ และยังบันทึกลงรายงาน
 - [ ] ไฟล์ CSV ไม่มีชื่อหรือเบอร์โทร และมีเฉพาะแถวที่ยังไม่ส่งสำเร็จ
+- [ ] `https://www.sangkanclean.com/attribution.js` และ `tracking.js` ต้องได้ HTTP 200
 - [ ] `/ops/leads` เข้าไม่ได้ถ้าไม่มีโทเคน
 - [ ] Render ใช้ Sheets (ไม่ตั้ง `LEAD_STORE_FILE`, `LEAD_SEED_DEMO` ไม่เป็น `1`)

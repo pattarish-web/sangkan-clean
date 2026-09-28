@@ -28,7 +28,6 @@ export function contactMethodOf(lead) {
 
 export const SERVICES = [
   "Big Cleaning",
-  "Sangkan Office",
   "แม่บ้านประจำ",
   "ทำความสะอาดทั่วไป",
   "หลังก่อสร้าง",
@@ -90,6 +89,26 @@ function clip(value, max) {
   return String(value || "").trim().slice(0, max);
 }
 
+export function resolveLeadChannel(attr = {}, gclid = "") {
+  const a = attr && typeof attr === "object" ? attr : {};
+  const clickId =
+    a.gclid ||
+    gclid ||
+    a.gbraid ||
+    a.wbraid ||
+    a.gad_source ||
+    a.first_gclid ||
+    a.last_gclid;
+  if (clickId) return "google_ads";
+  const src = String(a.utm_source || a.last_utm_source || "").toLowerCase();
+  const med = String(a.utm_medium || "").toLowerCase();
+  if (src === "google" && /(cpc|ppc|paid|sem|paidsearch)/.test(med)) return "google_ads";
+  if (a.channel) return String(a.channel);
+  if (a.fbclid) return "facebook";
+  if (a.referrer) return "referral";
+  return "direct";
+}
+
 export function sanitizeAttribution(input) {
   const src = input && typeof input === "object" ? input : {};
   const out = {};
@@ -97,6 +116,8 @@ export function sanitizeAttribution(input) {
     if (src[key] == null || src[key] === "") continue;
     out[key] = String(src[key]).trim().slice(0, 180);
   }
+  out.channel = resolveLeadChannel(out, out.gclid || "");
+  if (!out.first_channel) out.first_channel = out.channel;
   return out;
 }
 

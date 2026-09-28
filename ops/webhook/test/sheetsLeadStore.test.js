@@ -6,6 +6,7 @@ import {
   memoryLeadIo,
   pickSharedLeadSpreadsheet,
   planLeadTabSetup,
+  sheetRowToLead,
 } from "../src/lib/leadSheetMap.js";
 import { normalizeSpreadsheetId, SHEET_VALUES_RANGE } from "../src/lib/sheets.js";
 
@@ -48,6 +49,16 @@ test("pickSharedLeadSpreadsheet prefers the google ads file", () => {
   assert.equal(picked.id, "leads-file");
   assert.equal(pickSharedLeadSpreadsheet([{ id: "only", name: "My Sheet" }]).id, "only");
   assert.equal(pickSharedLeadSpreadsheet([]), null);
+});
+
+test("sheetRowToLead treats a stored gclid as Google Ads even without channel", () => {
+  const lead = sheetRowToLead({
+    id: "LD-1",
+    gclid: "GCLID-ONLY",
+    channel: "",
+  });
+  assert.equal(lead.attribution.channel, "google_ads");
+  assert.equal(lead.gclid, "GCLID-ONLY");
 });
 
 test("Sheets lead store is idempotent and queues Ads conversions without PII", async () => {

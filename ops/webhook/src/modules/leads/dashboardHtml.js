@@ -276,6 +276,9 @@ function renderTable(leads) {
   wrap.innerHTML = '<table><thead><tr><th>ลูกค้า</th><th>บริการ</th><th>ต้นทาง</th><th>สถานะ</th><th>มูลค่า / Ads</th></tr></thead><tbody>' +
     leads.map((lead) => {
       const attr = lead.attribution || {};
+      const channelKey = attr.gclid || attr.gbraid || attr.wbraid || attr.gad_source || lead.gclid
+        ? "google_ads"
+        : (attr.channel || "direct");
       const methodLabel = lead.contact_method === "phone"
         ? "คลิกโทร"
         : lead.contact_method === "line"
@@ -311,7 +314,7 @@ function renderTable(leads) {
           '<label class="tiny" for="area-'+escapeHtml(lead.id)+'">พื้นที่</label>'+
           '<input id="area-'+escapeHtml(lead.id)+'" class="lead-area-input" name="lead_area" placeholder="เช่น บางนา" value="'+escapeHtml(lead.area||"")+'" style="margin-top:.15rem">'+hint+'</td>'+
         '<td><input class="lead-service-input" value="'+escapeHtml(lead.service||"")+'"><div class="tiny">'+escapeHtml((lead.message||"").slice(0,80))+'</div></td>'+
-        '<td><span class="status">'+escapeHtml(CHANNEL_LABEL[attr.channel]||attr.channel||"direct")+'</span>'+
+        '<td><span class="status">'+escapeHtml(CHANNEL_LABEL[channelKey]||channelKey||"direct")+'</span>'+
           '<div class="tiny">'+(attr.gclid ? "GCLID "+escapeHtml(attr.gclid.slice(0,16))+"…" : "ไม่มี GCLID")+'</div>'+
           '<div class="tiny">'+escapeHtml(attr.utm_campaign||attr.keyword||attr.landing_page||"")+'</div></td>'+
         '<td><select class="st">'+opts+'</select><div class="tiny" style="margin-top:.35rem;"><input class="lost" placeholder="เหตุผลที่ไม่ปิด" value="'+escapeHtml(lead.lost_reason||"")+'"></div></td>'+

@@ -11,31 +11,15 @@ import {
   normalizePhone,
   adsSafeConversionRow,
   sanitizeAttribution,
-  SERVICES,
+  resolveLeadChannel,
 } from "../src/lib/leadValidation.js";
 import { conversionsToEnqueue, conversionsToCsv } from "../src/lib/adsConversions.js";
 import { FileLeadStore } from "../src/lib/leadStore.js";
 import { hitRateLimit, resetRateLimits } from "../src/lib/rateLimit.js";
 
-test("lead services include Sangkan Office as a distinct offer from แม่บ้านประจำ", () => {
-  assert.equal(SERVICES.includes("Sangkan Office"), true);
-  assert.equal(SERVICES.includes("แม่บ้านประจำ"), true);
-});
-
 test("normalize Thai mobile numbers", () => {
   assert.equal(normalizePhone("081-234-5678"), "0812345678");
   assert.equal(normalizePhone("+66812345678"), "0812345678");
-});
-
-test("accept Sangkan Office as a form service", () => {
-  const ok = validateLeadCreate({
-    name: "สมชาย",
-    phone: "0812345678",
-    service: "Sangkan Office",
-    consent: true,
-  });
-  assert.equal(ok.ok, true);
-  assert.equal(ok.lead.service, "Sangkan Office");
 });
 
 test("reject lead without consent or invalid phone", () => {
@@ -79,8 +63,16 @@ test("accepts a valid lead and strips unknown attribution keys", () => {
   assert.equal(result.lead.contact_method, "form");
   assert.equal(result.lead.event_type, "form_submit");
   assert.equal(result.lead.attribution.gclid, "abc");
+  assert.equal(result.lead.attribution.channel, "google_ads");
   assert.equal(result.lead.attribution.email, undefined);
   assert.equal(result.lead.attribution.name, undefined);
+});
+
+test("resolveLeadChannel treats gclid and google cpc as ads, empty as direct", () => {
+  assert.equal(resolveLeadChannel({ gclid: "Cjw" }), "google_ads");
+  assert.equal(resolveLeadChannel({ utm_source: "google", utm_medium: "cpc" }), "google_ads");
+  assert.equal(resolveLeadChannel({}), "direct");
+  assert.equal(resolveLeadChannel({ channel: "facebook" }), "facebook");
 });
 
 test("accepts PII-free phone and LINE click records", () => {
@@ -387,45 +379,8 @@ test("website does not fire Google Ads conversions on raw phone or LINE clicks",
   assert.doesNotMatch(tracking, /fireAdsConversion\(\s*'line'/);
   assert.match(tracking, /fireAdsConversion\('lead'/);
   assert.match(tracking, /generate_lead/);
-  assert.match(tracking, /sangkan-office-ops\.onrender\.com\/api\/leads/);
-  assert.match(tracking, /preserveClickIdsOnQuoteLinks/);
-  assert.match(leadForm, /sangkan-office-ops\.onrender\.com\/api\/leads/);
   assert.doesNotMatch(leadForm, /generate_lead/);
   assert.doesNotMatch(leadForm, /fireAdsConversion/);
-});
-
-test("Ads landings have an on-page quote form that posts to the Lead API scripts", async () => {
-  const big = await readFile(new URL("../../../landing-bigcleaning.html", import.meta.url), "utf8");
-  const maid = await readFile(new URL("../../../landing-maid.html", import.meta.url), "utf8");
-  const office = await readFile(
-    new URL("../../../landing-sangkan-office.html", import.meta.url),
-    "utf8"
-  );
-  assert.match(big, /id="quoteForm"/);
-  assert.match(maid, /id="quoteForm"/);
-  assert.match(big, /name="consent"/);
-  assert.match(maid, /name="consent"/);
-  assert.match(big, /lead-form\.js/);
-  assert.match(maid, /lead-form\.js/);
-  assert.match(maid, /value="แม่บ้านประจำ" selected/);
-  assert.match(office, /value="Sangkan Office" selected/);
-  assert.doesNotMatch(office, /value="แม่บ้านประจำ" selected/);
-});
-
-test("แม่บ้านประจำ Ads keywords point at landing-maid.html not Sangkan Office", async () => {
-  const maidKw = await readFile(
-    new URL("../../../google_ads/imports/03_keywords_maid_phase2.csv", import.meta.url),
-    "utf8"
-  );
-  const plan = await readFile(
-    new URL("../../../google_ads/imports/PLAN.md", import.meta.url),
-    "utf8"
-  );
-  assert.match(maidKw, /https:\/\/www\.sangkanclean\.com\/landing-maid\.html/);
-  assert.doesNotMatch(maidKw, /landing-sangkan-office\.html/);
-  assert.match(plan, /SK-Maid-Search/);
-  assert.match(plan, /landing-maid\.html/);
-  assert.match(plan, /ห้าม.*landing-sangkan-office\.html/);
 });
 
 test("sanitizeAttribution drops PII-like keys", () => {

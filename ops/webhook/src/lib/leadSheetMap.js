@@ -1,5 +1,7 @@
 /** Flatten / restore marketing leads for Google Sheets. Never put Ads PII extras here. */
 
+import { resolveLeadChannel } from "./leadValidation.js";
+
 export const LEAD_TABS = [
   "leads",
   "lead_pipeline",
@@ -224,6 +226,8 @@ export function sheetRowToLead(row) {
   ]) {
     if (row[key]) attribution[key] = row[key];
   }
+  attribution.channel = resolveLeadChannel(attribution, row.gclid || "");
+  if (!attribution.first_channel) attribution.first_channel = attribution.channel;
   const consent = String(row.consent || "") === "true";
   const valueRaw = row.value_thb;
   const value_thb =
@@ -318,7 +322,7 @@ export function summarizeLeads(leads, conversions, date) {
   let revenue = 0;
   for (const lead of leads) {
     byStatus[lead.status] = (byStatus[lead.status] || 0) + 1;
-    const ch = lead.attribution?.channel || "direct";
+    const ch = resolveLeadChannel(lead.attribution, lead.gclid);
     byChannel[ch] = (byChannel[ch] || 0) + 1;
     const method = lead.contact_method || "form";
     byContactMethod[method] = (byContactMethod[method] || 0) + 1;
