@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_germ_lifespan",
+  "last_topic": "office_ondemand",
   "posts": [
-    {
-      "ts": "2026-09-08T16:44:13.253336+07:00",
-      "topic_id": "office_ondemand",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260908/feed.png",
-        "stories_png": "out/20260908/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260908/bg.jpg",
-        "voiceover_mp3": "out/20260908/voiceover.mp3",
-        "stories_srt": "out/20260908/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีมงานรุ่นใหม่ไฟแรงอย่างเรา เข้าใจเลยว่าออฟฟิศต้องคลีนพร้อมลุยงาน แต่จะจ้างแม่บ้านประจำก็ไม่ใช่คำตอบเสมอไปใช่ไหมครับ? 😅 Sangkan Clean มีบริการแม่บ้านออฟฟิศ On-Demand ให้คุณเรียกใช้ได้ตามต้องการ ไม่ต้อ",
-        "tiktok": "ออฟฟิศรก ปัญหาโลกแตก! 😱 ไม่ต้องจ้างแม่บ้านประจำ Sangkan Clean มีแม่บ้านออฟฟิศ On-Demand ให้เรียกใช้เฉพาะโซนอุดมสุข-บางนา",
-        "line": "เฮ้! ทีมงานสุดคูลทุกคน 👋 ออฟฟิศคุณรกจนหงุดหงิดอยู่รึเปล่า? Sangkan Clean มีบริการแม่บ้านออฟฟิศ On-Demand พร้อมดูแลความสะ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122117877921401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-08T22:12:36.200789+07:00",
       "topic_id": "edu_productivity",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122124372411401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-09-28T18:43:44.395302+07:00",
+      "topic_id": "office_ondemand",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20260928/feed.png",
+        "stories_png": "out/20260928/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20260928/bg.jpg",
+        "voiceover_mp3": "out/20260928/voiceover.mp3",
+        "stories_srt": "out/20260928/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานรุ่นใหม่ไฟแรงอย่างคุณ กำลังมองหาโซลูชั่นเรื่องความสะอาดออฟฟิศ แบบยืดหยุ่นอยู่รึเปล่า? Sangkan Clean เข้าใจดีว่า การจ้างแม่บ้านประจำ อาจไม่ใช่ทางออกที่ดีที่สุดเสมอไป โดยเฉพาะช่วงที่ต้องการความสะอ",
+        "tiktok": "ออฟฟิศคุณ ต้องการความสะอาด แบบ On-Demand ไม่ต้องจ้างประจำ ใช่ไหม? Sangkan Clean มีแม่บ้านมืออาชีพ พร้อมให้บริการ โดยเฉพา",
+        "line": "เบื่อไหม กับภาระการจ้างแม่บ้านประจำ ที่ออฟฟิศคุณอาจใช้ไม่คุ้ม? Sangkan Clean เข้าใจดีเลยครับ! เรามีบริการแม่บ้านออฟฟิศ O"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122124401229401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
