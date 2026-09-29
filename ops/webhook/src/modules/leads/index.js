@@ -8,6 +8,7 @@ import {
 import { conversionsToCsv } from "../../lib/adsConversions.js";
 import {
   adsConfigured,
+  fetchSearchTerms,
   recordUploadResults,
   uploadClickConversions,
 } from "../../lib/adsUpload.js";
@@ -194,6 +195,21 @@ export async function handleLeadRequest(req, res, url) {
     const date = url.searchParams.get("date") || undefined;
     const summary = await store.summary(date);
     sendLeadJson(req, res, 200, { ok: true, summary });
+    return true;
+  }
+
+  if (req.method === "GET" && url.pathname === "/api/leads/search-terms") {
+    if (!staffAuthorized(req)) {
+      sendLeadJson(req, res, 401, { ok: false, error: "unauthorized" });
+      return true;
+    }
+    const report = await fetchSearchTerms(url.searchParams.get("date") || "");
+    sendLeadJson(req, res, 200, {
+      ok: Boolean(report.ok),
+      skipped: Boolean(report.skipped),
+      reason: report.reason || "",
+      terms: report.terms || [],
+    });
     return true;
   }
 

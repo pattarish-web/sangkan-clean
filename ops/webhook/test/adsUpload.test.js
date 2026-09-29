@@ -8,6 +8,9 @@ import {
   adsConfigured,
   adsDateTime,
   clickConversionBody,
+  fetchSearchTerms,
+  isBigCleanCampaignName,
+  parseSearchTermRows,
   payloadHasPii,
   setAdsConfigOverride,
   setAdsFetch,
@@ -378,5 +381,97 @@ test("CSV export is pending-only, staff-authorized, and PII-free", async () => {
   assert.doesNotMatch(allowed.body, /ลูกค้าฟอร์ม|0812345678/);
   setLeadStore(null);
   await rm(dir, { recursive: true, force: true });
+});
+
+test("parseSearchTermRows keeps BigClean typed queries and skips Maid", () => {
+  const terms = parseSearchTermRows({
+    results: [
+      {
+        campaign: { name: "SK-BigClean-Search" },
+        searchTermView: { searchTerm: "รับทำความสะอาดบ้านใกล้ฉัน" },
+        metrics: { clicks: 4, impressions: 20, conversions: 0 },
+      },
+      {
+        campaign: { name: "SK-Maid-Search" },
+        searchTermView: { searchTerm: "หาแม่บ้าน" },
+        metrics: { clicks: 9, impressions: 30, conversions: 0 },
+      },
+    ],
+  });
+  assert.deepEqual(terms, [
+    {
+      term: "รับทำความสะอาดบ้านใกล้ฉัน",
+      campaign: "SK-BigClean-Search",
+      clicks: 4,
+      impressions: 20,
+      conversions: 0,
+    },
+  ]);
+  assert.equal(isBigCleanCampaignName("SK-Maid-Search"), false);
+});
+
+test("fetchSearchTerms skips when Ads is not configured", async () => {
+  setAdsConfigOverride({
+    developerToken: "",
+    clientId: "",
+    clientSecret: "",
+    refreshToken: "",
+    customerId: "6151208199",
+    loginCustomerId: "7915729299",
+    apiVersion: "v19",
+  });
+  const result = await fetchSearchTerms("2026-09-29");
+  assert.equal(result.skipped, true);
+  assert.equal(result.reason, "not_configured");
+  assert.deepEqual(result.terms, []);
+});
+
+test("staff search-terms endpoint is authorized and returns Ads rows", async () => {
+  process.env.LEAD_STAFF_TOKEN = "test-staff";
+  setAdsConfigOverride({
+    developerToken: "dev",
+    clientId: "id",
+    clientSecret: "secret",
+    refreshToken: "refresh",
+    customerId: "6151208199",
+    loginCustomerId: "7915729299",
+    apiVersion: "v19",
+  });
+  setAdsFetch(async (url) => {
+    if (String(url).includes("oauth2")) {
+      return jsonRes({ access_token: "tok", expires_in: 3600 });
+    }
+    return jsonRes({
+      results: [
+        {
+          campaign: { name: "SK-BigClean-Search" },
+          searchTermView: { searchTerm: "big cleaning คอนโด" },
+          metrics: { clicks: 2, impressions: 11, conversions: 0 },
+        },
+      ],
+    });
+  });
+  const denied = makeRes();
+  await handleLeadRequest(
+    makeReq({ method: "GET", url: "/api/leads/search-terms?date=2026-09-29" }),
+    denied,
+    new URL("/api/leads/search-terms?date=2026-09-29", "http://local")
+  );
+  assert.equal(denied.statusCode, 401);
+  const allowed = makeRes();
+  await handleLeadRequest(
+    makeReq({
+      method: "GET",
+      url: "/api/leads/search-terms?date=2026-09-29",
+      token: "test-staff",
+    }),
+    allowed,
+    new URL("/api/leads/search-terms?date=2026-09-29", "http://local")
+  );
+  assert.equal(allowed.statusCode, 200);
+  const payload = JSON.parse(allowed.body);
+  assert.equal(payload.ok, true);
+  assert.equal(payload.terms[0].term, "big cleaning คอนโด");
+  assert.doesNotMatch(allowed.body, /refresh|secret|tok/);
 });
 });

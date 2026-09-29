@@ -239,3 +239,78 @@ export async function recordUploadResults(store, upload) {
   await store.markConversionUploads(upload.results);
   return upload;
 }
+
+const BKK_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+export function isBigCleanCampaignName(name) {
+  const text = String(name || "");
+  if (/maid|แม่บ้าน/i.test(text)) return false;
+  return /BigClean|Big Clean/i.test(text) || text.trim() === "SK-BigClean-Search";
+}
+
+/** Parse Ads search_term_view rows. Typed queries are campaign-level, never per GCLID. */
+export function parseSearchTermRows(json) {
+  const terms = [];
+  for (const row of json?.results || []) {
+    const campaign = String(row.campaign?.name || "");
+    if (!isBigCleanCampaignName(campaign)) continue;
+    const view = row.searchTermView || row.search_term_view || {};
+    const term = String(view.searchTerm || view.search_term || "").trim().slice(0, 180);
+    if (!term) continue;
+    const metrics = row.metrics || {};
+    terms.push({
+      term,
+      campaign,
+      clicks: Number(metrics.clicks || 0),
+      impressions: Number(metrics.impressions || 0),
+      conversions: Number(metrics.conversions || 0),
+    });
+  }
+  return terms;
+}
+
+export function searchTermsQuery(date) {
+  if (!BKK_DATE_RE.test(String(date || ""))) {
+    throw new Error("date_invalid");
+  }
+  return (
+    "SELECT campaign.name, search_term_view.search_term, " +
+    "metrics.clicks, metrics.impressions, metrics.conversions " +
+    "FROM search_term_view " +
+    `WHERE segments.date = '${date}' AND metrics.clicks > 0 ` +
+    "ORDER BY metrics.clicks DESC LIMIT 40"
+  );
+}
+
+/**
+ * Actual typed Google queries for the day from Ads Search terms report.
+ * Not joinable to a single lead / GCLID.
+ */
+export async function fetchSearchTerms(date) {
+  const day = String(date || "").trim();
+  if (!BKK_DATE_RE.test(day)) {
+    return { ok: false, skipped: false, reason: "date_invalid", terms: [] };
+  }
+  const cfg = readAdsConfig();
+  if (!adsConfigured(cfg)) {
+    return { ok: true, skipped: true, reason: "not_configured", terms: [] };
+  }
+  try {
+    const token = await accessToken(cfg);
+    const res = await _fetchImpl(
+      `https://googleads.googleapis.com/${cfg.apiVersion}/customers/${cfg.customerId}/googleAds:search`,
+      {
+        method: "POST",
+        headers: adsHeaders(cfg, token),
+        body: JSON.stringify({ query: searchTermsQuery(day) }),
+      }
+    );
+    const json = await readJsonResponse(res);
+    if (!res.ok) {
+      return { ok: false, skipped: false, reason: "ads_search_failed", terms: [] };
+    }
+    return { ok: true, skipped: false, reason: "", terms: parseSearchTermRows(json) };
+  } catch {
+    return { ok: false, skipped: false, reason: "ads_unavailable", terms: [] };
+  }
+}

@@ -14,7 +14,7 @@ id, created_at, created_date_bkk, event_type, contact_method, clicked_target, na
 - หลังยืนยันแล้วระบบยิง Google Ads API ทันที และคิว `phone_click` / `line_click` เข้า `ads_conversions` (เฉพาะเมื่อมี GCLID) — คลิกดิบไม่ถูกส่งไป Google Ads
 - มาร์ก `lost` จากสถานะรอตรวจสอบ = ไม่ใช่ลูกค้าจริง และไม่ส่ง Ads
 - ฟอร์มเป็น `contact_method=form` / `event_type=form_submit` สถานะเริ่มที่ `new` — Ads เว็บไซต์ยิง `generate_lead` ครั้งเดียว ไม่คิว `phone_click`/`line_click`
-- `searchterm` คือข้อความที่ลูกค้าพิมพ์ใน Google (`{searchterm}`) — อยู่ท้ายแถวเพื่อไม่เลื่อนคอลัมน์เดิม ห้ามส่งค่านี้เข้า Google Ads API
+- `searchterm` คือคีย์เวิร์ดที่โฆษณาแมตช์ (`{keyword}`) เมื่อ Google ไม่ส่งคำที่พิมพ์จริง — อยู่ท้ายแถวเพื่อไม่เลื่อนคอลัมน์เดิม ห้ามส่งค่านี้เข้า Google Ads API คำค้นจริงดูจากรายงานข้อความค้นหาของ Ads (`/api/leads/search-terms`)
 
 ## lead_pipeline
 

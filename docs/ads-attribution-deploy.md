@@ -24,6 +24,8 @@
 pip install -r requirements.txt
 python google_ads/setup_offline_conversions.py          # dry-run (ค่าเริ่มต้น)
 python google_ads/setup_offline_conversions.py --apply  # เขียนบัญชีจริง
+python google_ads/set_final_url_suffix.py               # dry-run suffix ของ SK-BigClean-Search
+python google_ads/set_final_url_suffix.py --apply       # เขียน suffix จริง — ไม่แตะ Final URL
 ```
 
 สคริปต์จะ:
@@ -35,9 +37,9 @@ python google_ads/setup_offline_conversions.py --apply  # เขียนบั�
 5. ตั้ง conversion เว็บไซต์โทร/LINE เดิม และ GA4-imported `click_phone` / `click_line` ให้ไม่เป็นเป้าหมายโฆษณา
 6. **ไม่** เปลี่ยน Final URL ของแคมเปญ — ใส่ **Final URL suffix** ใน Ads UI ของ `SK-BigClean-Search` (ไม่ใช่ Tracking template และไม่แก้ landing):
 
-   `keyword={keyword}&searchterm={searchterm}`
+   `keyword={keyword}&utm_term={keyword}&campaignid={campaignid}&adgroupid={adgroupid}&creative={creative}`
 
-   Auto-tagging ใส่ `gclid` เอง `{searchterm}` ใช้ได้เฉพาะ Search — Display/PMax ไม่แทนค่า ห้ามส่ง `searchterm` เข้า Ads API
+   Auto-tagging ใส่ `gclid` เอง `{keyword}` คือคีย์เวิร์ดในบัญชีที่แมตช์ ไม่ใช่ข้อความที่ลูกค้าพิมพ์ `{searchterm}` ไม่ใช่ ValueTrack ของ Google — ถ้าใส่ มักว่าง ห้ามส่งค่านี้เข้า Ads API คำค้นจริงดึงจาก `search_term_view` มาโชว์รวมใน `/ops/leads` (ไม่ผูกทีละลีด)
 
 ยืนยันลีดแล้วระบบยิง Google Ads API (`uploadClickConversions`) ทันที — CSV เป็นไฟล์สำรองของแถวที่ยังไม่ส่งสำเร็จเท่านั้น
 
@@ -110,7 +112,7 @@ python google_ads/setup_offline_conversions.py --apply  # เขียนบั�
 - [ ] กดโทร/LINE แล้วยังโทรออก/เปิด LINE ได้ และยังบันทึกลงรายงาน
 - [ ] ไฟล์ CSV ไม่มีชื่อหรือเบอร์โทร และมีเฉพาะแถวที่ยังไม่ส่งสำเร็จ
 - [ ] `https://www.sangkanclean.com/attribution.js` และ `tracking.js` ต้องได้ HTTP 200
-- [ ] แคมเปญ Search มี Final URL suffix `keyword={keyword}&searchterm={searchterm}` (ไม่เปลี่ยน Final URL)
-- [ ] `/ops/leads` แสดงคอลัมน์ **คำค้น** และกล่องคำค้นวันนี้
+- [ ] แคมเปญ Search มี Final URL suffix `keyword={keyword}&utm_term={keyword}` (ไม่เปลี่ยน Final URL, อย่าใส่ `{searchterm}`)
+- [ ] `/ops/leads` แสดงคอลัมน์ **คำค้น** (คีย์เวิร์ดจากลีด) และกล่อง **คำค้นจริงจาก Ads** (รายงานข้อความค้นหา)
 - [ ] `/ops/leads` เข้าไม่ได้ถ้าไม่มีโทเคน
 - [ ] Render ใช้ Sheets (ไม่ตั้ง `LEAD_STORE_FILE`, `LEAD_SEED_DEMO` ไม่เป็น `1`)

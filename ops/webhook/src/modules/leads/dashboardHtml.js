@@ -146,9 +146,14 @@ export function dashboardHtml() {
         </section>
       </div>
       <section class="card" style="margin-top:1rem;">
-        <h2 style="margin:0 0 .35rem;font-size:1rem;">คำค้นวันนี้</h2>
-        <p class="tiny" style="margin:0 0 .75rem;">ข้อความที่ลูกค้าพิมพ์ใน Google — ไม่ใช่คีย์เวิร์ดที่เราตั้งใน Ads</p>
+        <h2 style="margin:0 0 .35rem;font-size:1rem;">คีย์เวิร์ดจากลีดวันนี้</h2>
+        <p class="tiny" style="margin:0 0 .75rem;">คีย์เวิร์ดที่โฆษณาแมตช์ — Google ไม่ส่งคำที่พิมพ์จริงมาใน URL ของลีด</p>
         <div id="searchTerms" class="bars"></div>
+      </section>
+      <section class="card" style="margin-top:1rem;">
+        <h2 style="margin:0 0 .35rem;font-size:1rem;">คำค้นจริงจาก Ads วันนี้</h2>
+        <p class="tiny" style="margin:0 0 .75rem;">ข้อความที่ลูกค้าพิมพ์ใน Google จากรายงานข้อความค้นหา — รวมทั้งแคมเปญ ไม่ผูกทีละลีด</p>
+        <div id="adsSearchTerms" class="bars"></div>
       </section>
       <section style="margin-top:1rem;">
         <h2 style="font-size:1rem;">ลีดของวัน</h2>
@@ -224,13 +229,15 @@ async function load() {
   showError("");
   try {
     const date = dateEl.value;
-    const [sumRes, listRes] = await Promise.all([
+    const [sumRes, listRes, adsTermsRes] = await Promise.all([
       api("/api/leads/summary?date=" + encodeURIComponent(date)),
       api("/api/leads?date=" + encodeURIComponent(date)),
+      api("/api/leads/search-terms?date=" + encodeURIComponent(date)).catch(() => null),
     ]);
     renderSummary(sumRes.summary);
     renderTable(listRes.leads || []);
     renderSearchTerms(listRes.leads || []);
+    renderAdsSearchTerms(adsTermsRes);
   } catch (err) {
     if (String(err.message) === "unauthorized") {
       sessionStorage.removeItem(TOKEN_KEY);
@@ -292,13 +299,36 @@ function renderSearchTerms(leads) {
   const entries = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "th"));
   const el = document.getElementById("searchTerms");
   if (!entries.length) {
-    el.innerHTML = '<p class="muted">ยังไม่มีคำค้นจาก Ads ในวันนี้ — Final URL suffix ต้องเป็น keyword={keyword}&amp;utm_term={keyword} (Google ไม่แทน {searchterm})</p>';
+    el.innerHTML = '<p class="muted">ยังไม่มีคีย์เวิร์ดจากคลิกลีดวันนี้ — Final URL suffix ต้องเป็น keyword={keyword}&amp;utm_term={keyword}</p>';
     return;
   }
   const max = Math.max(1, ...entries.map(([, n]) => n));
   el.innerHTML = entries.map(([q, n]) => {
     const w = Math.round((n / max) * 100);
     return '<div class="bar"><span>'+escapeHtml(q)+'</span><i style="width:'+w+'%"></i><span>'+n+'</span></div>';
+  }).join("");
+}
+function renderAdsSearchTerms(res) {
+  const el = document.getElementById("adsSearchTerms");
+  if (!el) return;
+  if (!res) {
+    el.innerHTML = '<p class="muted">โหลดรายงานข้อความค้นหาจาก Ads ไม่สำเร็จ</p>';
+    return;
+  }
+  if (res.skipped || res.reason === "not_configured" || res.reason === "ads_unavailable" || res.reason === "ads_search_failed") {
+    el.innerHTML = '<p class="muted">ยังดึงคำค้นจริงจาก Ads ไม่ได้ — ต้องต่อ OAuth ใหม่ แล้วดูที่รายงานข้อความค้นหาใน Google Ads ไปพลางก่อน</p>';
+    return;
+  }
+  const terms = res.terms || [];
+  if (!terms.length) {
+    el.innerHTML = '<p class="muted">วันนี้ยังไม่มีคลิกที่มีคำค้นในรายงาน Ads</p>';
+    return;
+  }
+  const max = Math.max(1, ...terms.map((t) => Number(t.clicks) || 0));
+  el.innerHTML = terms.map((t) => {
+    const n = Number(t.clicks) || 0;
+    const w = Math.round((n / max) * 100);
+    return '<div class="bar"><span>'+escapeHtml(t.term)+'</span><i style="width:'+w+'%"></i><span>'+n+'</span></div>';
   }).join("");
 }
 function renderTable(leads) {
