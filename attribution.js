@@ -69,6 +69,14 @@
         return v;
     }
 
+    /* Google does not replace {searchterm}. Show matched {keyword} / utm_term instead. */
+    function fillSearchterm(record) {
+        if (!record || record.searchterm) return record;
+        var fallback = record.utm_term || record.keyword || "";
+        if (fallback) record.searchterm = fallback;
+        return record;
+    }
+
     function cookieValue(name) {
         try {
             var parts = String(document.cookie || "").split(";");
@@ -141,6 +149,7 @@
                 hasClick = true;
             }
         }
+        fillSearchterm(out);
         out.landing_page = landingPath();
         out.referrer = referrerHost();
         out.captured_at = now();
@@ -227,6 +236,7 @@
         merged.creative = (last && last.creative) || "";
         merged.keyword = (last && last.keyword) || (first && first.keyword) || "";
         merged.searchterm = (last && last.searchterm) || (first && first.searchterm) || current.searchterm || "";
+        fillSearchterm(merged);
         merged.landing_page = current.landing_page;
         merged.referrer = current.referrer;
         return merged;

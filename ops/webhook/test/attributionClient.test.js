@@ -56,3 +56,11 @@ test("attribution.js drops unreplaced ValueTrack tokens", () => {
   assert.equal(snap.keyword, "");
   assert.equal(snap.searchterm, "");
 });
+
+test("attribution.js copies keyword into searchterm when searchterm is missing", () => {
+  const snap = runAttribution(
+    "?gclid=TESTGCLID123&keyword=%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99"
+  );
+  assert.equal(snap.keyword, "รับทำความสะอาดบ้าน");
+  assert.equal(snap.searchterm, "รับทำความสะอาดบ้าน");
+});

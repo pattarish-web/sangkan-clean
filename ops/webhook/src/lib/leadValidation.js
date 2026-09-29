@@ -118,6 +118,10 @@ export function sanitizeAttribution(input) {
     out[key] = String(src[key]).trim().slice(0, 180);
     if (out[key].startsWith("{") && out[key].endsWith("}")) delete out[key];
   }
+  if (!out.searchterm) {
+    const fallback = out.utm_term || out.keyword;
+    if (fallback) out.searchterm = fallback;
+  }
   out.channel = resolveLeadChannel(out, out.gclid || "");
   if (!out.first_channel) out.first_channel = out.channel;
   return out;

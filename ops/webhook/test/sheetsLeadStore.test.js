@@ -27,6 +27,17 @@ test("sheetRowToLead keeps searchterm without sending it to Ads", () => {
   assert.equal(lead.attribution.keyword, "รับทำความสะอาดบ้าน");
 });
 
+test("sheetRowToLead fills searchterm from keyword when searchterm is blank", () => {
+  const lead = sheetRowToLead({
+    id: "LD-ST2",
+    gclid: "GCLID-ST2",
+    keyword: "รับทำความสะอาดบ้าน",
+    searchterm: "",
+  });
+  assert.equal(lead.attribution.searchterm, "รับทำความสะอาดบ้าน");
+  assert.equal(lead.attribution.keyword, "รับทำความสะอาดบ้าน");
+});
+
 test("planLeadTabSetup renames Sheet1 and adds the other lead tabs", () => {
   const plan = planLeadTabSetup(["Sheet1"]);
   assert.deepEqual(plan.rename, [{ from: "Sheet1", to: "leads" }]);

@@ -7,5 +7,6 @@ test("daily report shows a search-term column and today's query list", () => {
   assert.match(html, /<th>คำค้น<\/th>/);
   assert.match(html, /คำค้นวันนี้/);
   assert.match(html, /function searchTermOf/);
+  assert.match(html, /attr\.searchterm \|\| attr\.utm_term \|\| attr\.keyword/);
   assert.doesNotMatch(html, /attr\.utm_campaign\|\|attr\.keyword/);
 });

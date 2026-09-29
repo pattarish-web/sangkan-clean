@@ -198,7 +198,7 @@ export function leadToSheetRow(lead) {
   row.utm_source = attr.utm_source || "";
   row.utm_campaign = attr.utm_campaign || "";
   row.keyword = attr.keyword || "";
-  row.searchterm = attr.searchterm || attr.utm_term || "";
+  row.searchterm = attr.searchterm || attr.utm_term || attr.keyword || "";
   row.landing_page = attr.landing_page || "";
   row.ads_contact_sent_at = lead.ads_contact_sent_at || "";
   row.ads_qualified_sent_at = lead.ads_qualified_sent_at || "";
@@ -229,6 +229,10 @@ export function sheetRowToLead(row) {
     "referrer",
   ]) {
     if (row[key]) attribution[key] = row[key];
+  }
+  if (!attribution.searchterm) {
+    const fallback = attribution.utm_term || attribution.keyword;
+    if (fallback) attribution.searchterm = fallback;
   }
   attribution.channel = resolveLeadChannel(attribution, row.gclid || "");
   if (!attribution.first_channel) attribution.first_channel = attribution.channel;

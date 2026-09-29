@@ -85,6 +85,15 @@ test("keeps searchterm and drops unreplaced ValueTrack tokens", () => {
   assert.equal(dropped.keyword, undefined);
 });
 
+test("fills searchterm from keyword when Ads omitted searchterm", () => {
+  const filled = sanitizeAttribution({
+    gclid: "abc",
+    keyword: "รับทำความสะอาดบ้าน",
+  });
+  assert.equal(filled.keyword, "รับทำความสะอาดบ้าน");
+  assert.equal(filled.searchterm, "รับทำความสะอาดบ้าน");
+});
+
 test("resolveLeadChannel treats gclid and google cpc as ads, empty as direct", () => {
   assert.equal(resolveLeadChannel({ gclid: "Cjw" }), "google_ads");
   assert.equal(resolveLeadChannel({ utm_source: "google", utm_medium: "cpc" }), "google_ads");

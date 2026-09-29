@@ -277,7 +277,7 @@ function escapeHtml(s) {
   return String(s || "").replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 function searchTermOf(attr) {
-  return String((attr && (attr.searchterm || attr.utm_term)) || "").trim();
+  return String((attr && (attr.searchterm || attr.utm_term || attr.keyword)) || "").trim();
 }
 function keywordOf(attr) {
   return String((attr && attr.keyword) || "").trim();
@@ -292,7 +292,7 @@ function renderSearchTerms(leads) {
   const entries = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "th"));
   const el = document.getElementById("searchTerms");
   if (!entries.length) {
-    el.innerHTML = '<p class="muted">ยังไม่มีคำค้นจาก Ads ในวันนี้ — ตั้ง Final URL suffix เป็น keyword={keyword}&amp;searchterm={searchterm}</p>';
+    el.innerHTML = '<p class="muted">ยังไม่มีคำค้นจาก Ads ในวันนี้ — Final URL suffix ต้องเป็น keyword={keyword}&amp;utm_term={keyword} (Google ไม่แทน {searchterm})</p>';
     return;
   }
   const max = Math.max(1, ...entries.map(([, n]) => n));
