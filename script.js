@@ -21,64 +21,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Interactive Pricing Calculator with Real Cost Structure
-    // ต้นทุน: ค่ารถ ฿1,500 + ค่าแรง ฿500/คน + ค่าอุปกรณ์-น้ำยา ฿4/ตร.ม.
-    // ราคาขาย = Base Fee (รถ+แรงงาน) + ราคา/ตร.ม. (รวม margin ~40%)
-    const serviceType = document.getElementById('serviceType');
+    // 2. Big Cleaning pricing calculator
+    const propertyType = document.getElementById('propertyType');
     const areaSize = document.getElementById('areaSize');
     const areaVal = document.getElementById('areaVal');
     const totalPrice = document.getElementById('totalPrice');
     const breakdownEl = document.getElementById('priceBreakdown');
-    const extras = ['optCarpet', 'optAC', 'optOzone', 'optWindow'];
-
-    // Pricing config per service type
-    const pricingConfig = {
-        standard: { baseFee: 2500, ratePerSqm: 18, minPrice: 3500, crew: 2, label: 'ทำความสะอาดทั่วไป' },
-        deep:     { baseFee: 4000, ratePerSqm: 35, minPrice: 5500, crew: 3, label: 'Big Cleaning' },
-        post:     { baseFee: 5500, ratePerSqm: 50, minPrice: 8000, crew: 4, label: 'หลังก่อสร้าง' }
+    const carpetArea = document.getElementById('carpetArea');
+    const sofaSeats = document.getElementById('sofaSeats');
+    const ozoneOption = document.getElementById('optOzone');
+    const propertyLabels = {
+        house: 'บ้าน',
+        condo: 'คอนโด',
+        office: 'สำนักงาน/ร้านค้า',
+        factory: 'โรงงาน/โกดัง'
     };
+    const priceTiers = {
+        house: [35, 30, 28, 26, 24, 22],
+        condo: [40, 35, 32, 30, 28, 25],
+        office: [35, 32, 28, 26, 24, 22],
+        factory: [30, 28, 26, 24, 22, 20]
+    };
+    const tierUpperBounds = [50, 100, 200, 300, 500, 1000];
 
     function calculateCost() {
-        if (!serviceType || !areaSize || !totalPrice) return;
+        if (!propertyType || !areaSize || !areaVal || !totalPrice) return;
 
-        let size = parseInt(areaSize.value, 10);
-        if (isNaN(size) || size < 20) {
-            size = 20;
-            if (areaSize.type === 'number') areaSize.value = 20;
-        }
+        const size = parseInt(areaSize.value, 10);
         areaVal.textContent = `${size} ตร.ม.`;
 
-        const selectedOption = serviceType.options[serviceType.selectedIndex];
-        const config = pricingConfig[selectedOption.value];
+        if (size > 1000) {
+            totalPrice.textContent = 'สอบถามราคา';
+            if (breakdownEl) {
+                breakdownEl.innerHTML = '<span>พื้นที่เกิน 1,000 ตร.ม. ต้องประเมินหน้างาน กรุณาติดต่อเพื่อขอใบเสนอราคา</span>';
+            }
+            clearTimeout(calculatorTrackTimer);
+            return;
+        }
 
-        // Calculate: Base Fee + (sqm × rate)
-        let calculatedPrice = config.baseFee + (size * config.ratePerSqm);
+        const property = propertyType.value;
+        const tierIndex = tierUpperBounds.findIndex(bound => size <= bound);
+        const rate = priceTiers[property][tierIndex];
+        const areaPrice = size * rate;
+        const basePrice = Math.max(6000, areaPrice);
+        const addOns = [];
+        const carpetSqm = Math.max(0, Number(carpetArea && carpetArea.value) || 0);
+        const sofaCount = Math.max(0, Number(sofaSeats && sofaSeats.value) || 0);
 
-        // Apply minimum price
-        if (calculatedPrice < config.minPrice) calculatedPrice = config.minPrice;
+        if (carpetSqm > 0) addOns.push({ label: `ซักพรม ${carpetSqm} ตร.ม.`, price: carpetSqm * 30 });
+        if (sofaCount > 0) addOns.push({ label: `ซักโซฟา ${sofaCount} ที่นั่ง`, price: sofaCount * 500 });
+        if (ozoneOption && ozoneOption.checked) addOns.push({ label: 'อบโอโซนพร้อม Big Cleaning (ราคาเริ่มต้น)', price: 1290 });
 
-        // Add extras
-        let extraCost = 0;
-        extras.forEach(id => {
-            const el = document.getElementById(id);
-            if (el && el.checked) extraCost += parseFloat(el.value);
-        });
-
-        const finalTotal = calculatedPrice + extraCost;
-
-        // Update breakdown text
+        const addOnTotal = addOns.reduce((total, addOn) => total + addOn.price, 0);
+        const finalTotal = basePrice + addOnTotal;
         if (breakdownEl) {
             breakdownEl.innerHTML = `
-                <span>ค่าเดินทาง+ทีมงาน ${config.crew} คน: ฿${config.baseFee.toLocaleString()}</span>
-                <span>ค่าบริการ ${size} ตร.ม. × ฿${config.ratePerSqm}: ฿${(size * config.ratePerSqm).toLocaleString()}</span>
-                ${extraCost > 0 ? `<span>บริการเสริม: +฿${extraCost.toLocaleString()}</span>` : ''}
+                <span>Big Cleaning (${propertyLabels[property]}): ${size} ตร.ม. × ฿${rate}/ตร.ม. = ฿${areaPrice.toLocaleString()}${areaPrice < 6000 ? ' (คิดขั้นต่ำ ฿6,000)' : ''}</span>
+                ${addOns.map(addOn => `<span>${addOn.label}: +฿${addOn.price.toLocaleString()}</span>`).join('')}
             `;
         }
 
         // Animate price (calculator_result tracked on debounce, not every keystroke)
         totalPrice.style.transform = 'scale(1.05)';
         totalPrice.textContent = `฿${finalTotal.toLocaleString()}`;
-        scheduleCalculatorTrack(finalTotal, config.label);
+        scheduleCalculatorTrack(finalTotal, `Big Cleaning - ${propertyLabels[property]}`);
         setTimeout(() => { totalPrice.style.transform = 'scale(1)'; }, 200);
     }
 
@@ -92,13 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600);
     }
 
-    if (serviceType && areaSize) {
-        serviceType.addEventListener('change', calculateCost);
+    if (propertyType && areaSize) {
+        propertyType.addEventListener('change', calculateCost);
         areaSize.addEventListener('input', calculateCost);
-        extras.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.addEventListener('change', calculateCost);
-        });
+        if (carpetArea) carpetArea.addEventListener('input', calculateCost);
+        if (sofaSeats) sofaSeats.addEventListener('input', calculateCost);
+        if (ozoneOption) ozoneOption.addEventListener('change', calculateCost);
         calculateCost();
     }
 

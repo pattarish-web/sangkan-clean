@@ -427,7 +427,7 @@
                     <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
                     <h3>Big Cleaning</h3>
                     <p>ทำความสะอาดครั้งใหญ่ ขจัดคราบฝังลึก เหมาะสำหรับโรงงาน อาคาร สำนักงาน</p>
-                    <span class="price-start">เริ่มต้น ฿5,500</span>
+                    <span class="price-start">เริ่มต้น ฿6,000</span>
                 </a>
                 <a href="landing-maid.html" class="service-card-mini" style="text-decoration: none; display: block;">
                     <div class="service-icon"><i class="fa-solid fa-user-nurse"></i></div>
@@ -572,49 +572,40 @@
                     <h3><i class="fa-solid fa-calculator"></i> โปรแกรมคำนวณราคา</h3>
                     <form id="calcForm">
                         <div class="form-group">
-                            <label for="serviceType">ประเภทบริการ</label>
-                            <select id="serviceType" class="form-control">
-                                <option value="standard">ทำความสะอาดทั่วไป (2 คน | Base ฿2,500 + ฿18/ตร.ม.)</option>
-                                <option value="deep">Big Cleaning (3 คน | Base ฿4,000 + ฿35/ตร.ม.)</option>
-                                <option value="post">หลังก่อสร้าง (4 คน | Base ฿5,500 + ฿50/ตร.ม.)</option>
+                            <label for="propertyType">ประเภทสถานที่</label>
+                            <select id="propertyType" class="form-control">
+                                <option value="house">บ้าน</option>
+                                <option value="condo">คอนโด</option>
+                                <option value="office">สำนักงาน/ร้านค้า</option>
+                                <option value="factory">โรงงาน/โกดัง</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="areaSize">ขนาดพื้นที่ (ตารางเมตร)</label>
                             <div class="range-wrapper">
-                                <input type="range" id="areaSize" min="20" max="500" value="80" class="range-slider">
+                                <input type="range" id="areaSize" min="20" max="1200" value="80" step="1" class="range-slider">
                                 <span class="range-val" id="areaVal">80 ตร.ม.</span>
                             </div>
+                            <small>พื้นที่เกิน 1,000 ตร.ม. ต้องประเมินหน้างาน กรุณาติดต่อเพื่อขอราคา</small>
                         </div>
                         <div class="form-group">
-                            <label>บริการเสริมพิเศษ</label>
-                            <div class="checkbox-group">
+                            <label>บริการเสริม (คิดเพิ่มจากค่าบริการหลัก)</label>
+                            <div class="addon-fields">
+                                <label for="carpetArea">ซักพรม (ตร.ม. × ฿30)</label>
+                                <input type="number" id="carpetArea" class="form-control" min="0" step="1" value="0">
+                                <label for="sofaSeats">ซักโซฟา (ที่นั่ง × ฿500)</label>
+                                <input type="number" id="sofaSeats" class="form-control" min="0" step="1" value="0">
                                 <label class="checkbox-container">
-                                    <input type="checkbox" id="optCarpet" value="800">
+                                    <input type="checkbox" id="optOzone">
                                     <span class="checkmark"></span>
-                                    ซักพรม/โซฟา (+฿800)
-                                </label>
-                                <label class="checkbox-container">
-                                    <input type="checkbox" id="optAC" value="450">
-                                    <span class="checkmark"></span>
-                                    ล้างแอร์ (+฿450/เครื่อง)
-                                </label>
-                                <label class="checkbox-container">
-                                    <input type="checkbox" id="optOzone" value="1200">
-                                    <span class="checkmark"></span>
-                                    อบโอโซนฆ่าเชื้อ (+฿1,200)
-                                </label>
-                                <label class="checkbox-container">
-                                    <input type="checkbox" id="optWindow" value="300">
-                                    <span class="checkmark"></span>
-                                    เช็ดกระจกด้านนอก (+฿300)
+                                    อบโอโซนพร้อม Big Cleaning (เริ่มต้น ฿1,290)
                                 </label>
                             </div>
                         </div>
                         <div class="price-breakdown" id="priceBreakdown"></div>
                         <div class="price-result">
                             <span class="price-label">ราคาประเมินทั้งสิ้น</span>
-                            <span class="price-amount" id="totalPrice">฿3,940</span>
+                            <span class="price-amount" id="totalPrice">฿6,000</span>
                         </div>
                         <a href="https://line.me/ti/p/@sangkanclean" target="_blank" class="btn btn-primary btn-block text-center"><i class="fa-brands fa-line"></i> จองคิวผ่าน Line @sangkanclean</a>
                     </form>

@@ -445,6 +445,10 @@
             align-items: start;
         }
 
+        .rates-card {
+            grid-column: 1 / -1;
+        }
+
         .pricing-card {
             padding: 40px;
             position: relative;
@@ -498,6 +502,85 @@
             background: rgba(245, 158, 11, 0.08);
             border-radius: var(--radius-sm);
             border: 1px solid rgba(245, 158, 11, 0.15);
+        }
+
+        .pricing-intro {
+            color: var(--text-dim);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pricing-table-wrap {
+            overflow-x: auto;
+            margin-top: 16px;
+        }
+
+        .pricing-table {
+            width: 100%;
+            min-width: 760px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .pricing-table caption {
+            color: var(--text-dim);
+            margin-bottom: 10px;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(13, 148, 136, 0.16);
+            white-space: nowrap;
+        }
+
+        .pricing-table thead th,
+        .pricing-table tbody th {
+            color: var(--primary-light);
+            font-weight: 700;
+        }
+
+        .pricing-table tbody th {
+            text-align: left;
+        }
+
+        .ozone-table {
+            min-width: 300px;
+        }
+
+        .addon-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .addon-price-card {
+            padding: 28px;
+        }
+
+        .addon-price-card h3 {
+            margin-bottom: 16px;
+        }
+
+        .addon-price-card li {
+            margin: 8px 0;
+            color: var(--text-dim);
+        }
+
+        .calc-property-group {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .calc-property-select {
+            padding: 12px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            background: var(--bg-dark-2);
+            color: var(--text-light);
+            font: inherit;
         }
 
         /* Calculator */
