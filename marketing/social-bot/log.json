@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_hidden_dirt",
+  "last_topic": "big_cleaning",
   "posts": [
-    {
-      "ts": "2026-09-11T16:44:28.644595+07:00",
-      "topic_id": "big_cleaning",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260911/feed.png",
-        "stories_png": "out/20260911/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260911/bg.jpg",
-        "voiceover_mp3": "out/20260911/voiceover.mp3",
-        "stories_srt": "out/20260911/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "Big Cleaning ที่ Sangkan Clean ไม่ใช่แค่เรื่องความสะอาดทั่วไป แต่เป็นการคลีนลึกถึงคราบฝังแน่นที่ทีมงานมืออาชีพกว่า 30 ปีของเราเชี่ยวชาญ ไม่ว่าจะเป็นพื้นที่ไหน เราจัดการได้จบจริงตั้งแต่ทำความสะอาดหลังก",
-        "tiktok": "คราบฝังแน่นจาก Big Cleaning ปล่อยให้ Sangkan Clean จัดการได้เลย! ทีมมืออาชีพกว่า 30 ปีของเราคลีนลึกจบจริง ไม่ว่าจะทำความ",
-        "line": "กำลังมองหาทีมทำ Big Cleaning อยู่ใช่ไหม? Sangkan Clean มีทีมงานมืออาชีพประสบการณ์กว่า 30 ปี ที่พร้อมคลีนลึกทุกคราบฝังแน่"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122118720219401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-11T22:09:21.953952+07:00",
       "topic_id": "edu_checklist",
@@ -2800,6 +2753,53 @@
           "ok": true,
           "mode": "photo",
           "id": "122125459809401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-01T18:39:35.644524+07:00",
+      "topic_id": "big_cleaning",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261001/feed.png",
+        "stories_png": "out/20261001/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261001/bg.jpg",
+        "voiceover_mp3": "out/20261001/voiceover.mp3",
+        "stories_srt": "out/20261001/stories.srt"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานคนรุ่นใหม่ หรือเพื่อน ๆ ที่กำลังหาผู้เชี่ยวชาญด้าน Big Cleaning อยู่ใช่ไหมครับ? Sangkan Clean มีประสบการณ์ดูแลเรื่องความสะอาดมามากกว่า 30 ปี คราบฝังแน่นแค่ไหน เราก็จัดการได้หมดจดทุกซอกมุม ไม่ว่า",
+        "tiktok": "คราบหนักแค่ไหนก็ไม่หวั่น! Sangkan Clean มีทีม Big Cleaning มืออาชีพ ประสบการณ์ 30+ ปี ไม่ว่าจะเป็น แม่บ้านโรงงาน หรือ ทำ",
+        "line": "ไม่ต้องปวดหัวเรื่องคราบหนักอีกต่อไป! Sangkan Clean พร้อมช่วยเรื่อง Big Cleaning ที่คุณมองหา เรามีทีมงานมืออาชีพ ประสบการ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122125489137401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
