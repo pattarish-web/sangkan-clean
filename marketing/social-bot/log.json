@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_maid_absent",
+  "last_topic": "maid_backup",
   "posts": [
-    {
-      "ts": "2026-09-12T16:23:54.208264+07:00",
-      "topic_id": "maid_backup",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260912/feed.png",
-        "stories_png": "out/20260912/stories.png",
-        "venue_need": "home",
-        "venue_got": "home",
-        "bg_source": "bg-home-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260912/bg.jpg",
-        "voiceover_mp3": "out/20260912/voiceover.mp3",
-        "stories_srt": "out/20260912/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทำงานกับ Sangkan Clean หมดห่วงเรื่องแม่บ้านประจำลาหยุดกะทันหันครับ/ค่ะ! เราเข้าใจว่างานโครงการของคุณเดินหน้าตลอด เลยจัดทีมแม่บ้านอาคารพานิชย์มืออาชีพที่ผ่านการอบรมมาอย่างดี แถมยังมีพนักงานสำรองพร้อมสแ",
-        "tiktok": "เบื่อไหมที่แม่บ้านประจำลาบ่อย? Sangkan Clean ช่วยได้! เรามีทีมแม่บ้านอาคารพานิชย์ที่มีคนสำรองพร้อม! งานไม่มีสะดุดแน่นอน ",
-        "line": "Sangkan Clean เข้าใจดีว่าเวลาแม่บ้านประจำลาหยุดกะทันหัน งานจะสะดุดได้ เราจึงเตรียมทีมแม่บ้านอาคารพานิชย์พร้อมพนักงานสำรอ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122118899295401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-12T21:14:28.476132+07:00",
       "topic_id": "edu_zone_problems",
@@ -2798,6 +2751,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122125828407401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-02T18:08:07.882409+07:00",
+      "topic_id": "maid_backup",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261002/feed.png",
+        "stories_png": "out/20261002/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261002/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "โปรเจกต์งาน ทำความสะอาดบ้าน ใหญ่แค่ไหน ก็ไม่ต้องกังวลเรื่องคน! Sangkan Clean เข้าใจเลยว่างานมันรันตลอด เลยจัดทีมแม่บ้านประจำมืออาชีพให้คุณ. พิเศษกว่าที่อื่นคือ เรามีแม่บ้านสำรองเตรียมพร้อมไว้เสมอ ถ้าค",
+        "tiktok": "งาน ทำความสะอาดบ้าน จะไม่สะดุดอีกต่อไป! Sangkan Clean มี แม่บ้านประจำ คุณภาพพร้อมคนสำรอง 👩‍🔬 ไม่ต้องห่วงเรื่องคนลาป่วย. ",
+        "line": "บอกลาปัญหา งาน ทำความสะอาดบ้าน สะดุด! Sangkan Clean จัดการให้ได้ด้วยทีม แม่บ้านประจำ มืออาชีพของเรา. ที่สำคัญคือเรามีคนส"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122125849773401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
