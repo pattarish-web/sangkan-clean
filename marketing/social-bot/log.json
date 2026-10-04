@@ -1,53 +1,6 @@
 {
-  "last_topic": "price_pack",
+  "last_topic": "edu_building_hygiene",
   "posts": [
-    {
-      "ts": "2026-09-15T00:02:30.615787+07:00",
-      "topic_id": "edu_building_hygiene",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260914/feed.png",
-        "stories_png": "out/20260914/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260914/bg.jpg",
-        "voiceover_mp3": "out/20260914/voiceover.mp3",
-        "stories_srt": "out/20260914/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เคยสังเกตไหมครับว่า / ความสะอาดในออฟฟิศเรา / มันไม่ได้จบแค่ในห้องทำงานนะ! 💡 / โดยเฉพาะถ้าออฟฟิศเราอยู่ตึกเดียวกับที่อื่น / การที่ทั้งชั้นช่วยกันดูแลความสะอาด / ไม่ว่าจะพื้นที่ส่วนกลาง / ห้องน้ำ / หรือ",
-        "tiktok": "รู้ป่ะ? ออฟฟิศในตึกเดียวกัน / ถ้าช่วยกันดูแลความสะอาดนะ / โอกาสที่เชื้อโรคจะแชร์กันข้ามห้อง / ก็น้อยลงไปเยอะเลย / คิดง่า",
-        "line": "มาคุยกันเรื่อง / ความสะอาดในออฟฟิศที่อยู่ตึกเดียวกัน! 🏢 / การที่ทั้งชั้นช่วยกันดูแลพื้นที่ส่วนกลาง / ห้องน้ำ หรือทางเดิน"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122119340781401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-15T14:51:46.071419+07:00",
       "topic_id": "edu_zone_clean",
@@ -2784,6 +2737,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122126261439401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-04T22:52:11.486529+07:00",
+      "topic_id": "edu_building_hygiene",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261004/feed.png",
+        "stories_png": "out/20261004/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-05.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261004/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "อยู่ตึกเดียวกัน ใช้พื้นที่ส่วนกลางร่วมกัน การดูแลความสะอาดก็ต้องไปด้วยกัน จริงไหมครับ 😉 ลองคิดดูสิว่า ถ้าทุกออฟฟิศช่วยกันรักษาความสะอาด โอกาสที่เชื้อโรคหรือสิ่งปนเปื้อนต่างๆ จะแพร่จากห้องหนึ่งไปอีกห้อ",
+        "tiktok": "ตึกสะอาด เริ่มจากทุกออฟฟิศ! ถ้าทั้งชั้นร่วมกันดูแล โอกาสเชื้อโรคปนเปื้อนข้ามห้อง ก็ลดลงเพียบ ไม่ว่าจะเป็น แม่บ้านโชว์รูม",
+        "line": "ตึกสะอาด เริ่มจากทุกออฟฟิศครับ! ลองจินตนาการดูว่า ถ้าทุกห้องช่วยกันดูแลความสะอาด โดยเฉพาะพื้นที่ส่วนกลาง โอกาสที่เชื้อโร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122126311773401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
