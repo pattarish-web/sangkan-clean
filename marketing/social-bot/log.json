@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_building_hygiene",
+  "last_topic": "edu_zone_clean",
   "posts": [
-    {
-      "ts": "2026-09-15T14:51:46.071419+07:00",
-      "topic_id": "edu_zone_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260915/feed.png",
-        "stories_png": "out/20260915/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260915/bg.jpg",
-        "voiceover_mp3": "out/20260915/voiceover.mp3",
-        "stories_srt": "out/20260915/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เพื่อนๆ ที่ทำงานในอาคาร หรือดูแลพื้นที่ต่างๆ เคยตั้งคำถามไหมครับว่า ทำไมการทำความสะอาดทั้งชั้น ถึงสำคัญกว่าแค่ห้องเดียว? Sangkan Clean มีคำตอบมาฝากครับ\n\nจริงๆ แล้วปัญหาอย่างฝุ่น แมลง และกลิ่น ไม่ได้มี",
-        "tiktok": "เคยสงสัยไหมว่าทำไมต้องสะอาดทั้งชั้น ไม่ใช่แค่ห้องเดียว? Sangkan Clean บอกเลยว่าเรื่องเล็กๆ อย่างฝุ่น แมลง หรือกลิ่น มันเ",
-        "line": "สวัสดีครับ Sangkan Clean มาพร้อมเกร็ดความรู้ 😊\n\nหลายคนอาจคิดว่า ทำความสะอาดแค่ห้องใครห้องมันก็พอแล้ว แต่รู้ไหมว่า ฝุ่น แ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122119452933401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-15T17:07:25.543744+07:00",
       "topic_id": "affiliate",
@@ -2782,6 +2735,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122126311773401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-05T16:12:49.870269+07:00",
+      "topic_id": "edu_zone_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261005/feed.png",
+        "stories_png": "out/20261005/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-06.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261005/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมว่า ทำไมการทำความสะอาดสำนักงาน ทั้งชั้นถึงสำคัญกว่าแค่ห้องเดียว? 🧐\n\nหลายครั้ง เราอาจจะคิดว่าดูแลแค่พื้นที่ของเราก็พอแล้ว แต่จริงๆ แล้วไม่ใช่เลย! ทั้งฝุ่นละออง แมลงตัวเล็กๆ หรือแม้แต่กลิ่นไม่พึงป",
+        "tiktok": "ทำไมตึกสะอาดทั้งชั้นถึงดีกว่าแค่ห้องเดียว? ฝุ่น แมลง กลิ่น ไม่เคยเลือกห้อง! พวกมันเดินทางข้ามกันได้สบายๆ เลยนะ การทำความ",
+        "line": "เคยสงสัยไหมว่า ทำไม Sangkan Clean ถึงย้ำเรื่องความสะอาดทั้งชั้น? 🏢\n\nเพราะฝุ่น แมลง และกลิ่นไม่พึงประสงค์ มันไม่เคยอยู่แค"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122126466117401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
