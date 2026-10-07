@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_routine_clean",
+  "last_topic": "edu_harsh_chemical",
   "posts": [
-    {
-      "ts": "2026-09-17T14:47:18.993227+07:00",
-      "topic_id": "edu_harsh_chemical",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260917/feed.png",
-        "stories_png": "out/20260917/stories.png",
-        "venue_need": "mall",
-        "venue_got": "mall",
-        "bg_source": "bg-mall-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260917/bg.jpg",
-        "voiceover_mp3": "out/20260917/voiceover.mp3",
-        "stories_srt": "out/20260917/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "รู้ไหมว่า การเลือกใช้น้ำยาทำความสะอาดสำนักงานที่ไม่เหมาะเนี่ย ส่งผลเสียต่อเฟอร์นิเจอร์เรามากกว่าที่คิดนะ! บางทีอาจจะดูสะอาดแว๊บแรก แต่สารเคมีแรงๆ นี่แหละตัวการทำลายของเลย. พวกโต๊ะไม้ที่ใช้ในออฟฟิศ หรื",
-        "tiktok": "รู้ป่าว? น้ำยาทำความสะอาดสำนักงานที่แรงเกินไป อาจทำเฟอร์นิเจอร์พังได้! หนังโซฟาในโชว์รูมก็ลอกง่าย ไม้ก็ด่าง สีก็เพี้ยน. ",
-        "line": "หลายคนอาจมองข้ามเรื่องน้ำยาทำความสะอาดสำนักงาน แต่รู้ไหมว่า น้ำยาผิด ชีวิตเปลี่ยน (เฟอร์นิเจอร์พังนะ!) 😱 พวกสารเคมีแรงๆ "
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122120038233401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-17T17:01:44.933882+07:00",
       "topic_id": "soft_cleaning",
@@ -2770,6 +2723,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122127102567401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-07T18:51:53.099216+07:00",
+      "topic_id": "edu_harsh_chemical",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261007/feed.png",
+        "stories_png": "out/20261007/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261007/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมงาน Sangkan Clean เคยเจอเคสที่น้ำยาทำความสะอาดออฟฟิศ ทำลายเฟอร์นิเจอร์มาเยอะมาก! 😲 บางทีที่เราเลือกใช้น้ำยาแรงๆ เพราะคิดว่าจะสะอาดกว่า แต่สุดท้ายกลับได้ผลตรงข้ามเลยนะ สารเคมีที่เข้มข้นเกินไป จะกัดก",
+        "tiktok": "น้ำยาทำความสะอาดออฟฟิศ ที่เราใช้อยู่ อาจทำร้ายเฟอร์นิเจอร์ได้นะ! สารเคมีแรงๆ ทำให้หนังโซฟาเราลอก ไม้ด่าง สีซีด เหมือนที่",
+        "line": "รู้ไหมว่า น้ำยาทำความสะอาดที่ใช้อยู่ในออฟฟิศ อาจทำลายเฟอร์นิเจอร์ได้! สารเคมีแรงๆ ทำให้หนังลอก ไม้ด่าง หรือสีเฟอร์นิเจอร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122127134553401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
