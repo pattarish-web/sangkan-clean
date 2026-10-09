@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_productivity",
+  "last_topic": "edu_creative_block",
   "posts": [
-    {
-      "ts": "2026-09-19T14:25:50.309061+07:00",
-      "topic_id": "edu_creative_block",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260919/feed.png",
-        "stories_png": "out/20260919/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260919/bg.jpg",
-        "voiceover_mp3": "out/20260919/voiceover.mp3",
-        "stories_srt": "out/20260919/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "บางทีที่ไอเดียไม่ออก ไม่ใช่เพราะเราหมดไฟนะทุกคน! 💡 แต่มันอาจจะมาจากสภาพแวดล้อมรอบตัวเรานี่แหละครับ โดยเฉพาะในออฟฟิศ พื้นที่ทำงานที่รก ไม่สะอาด หรือมีฝุ่นเยอะๆ อาจจะกำลังขโมยความคิดสร้างสรรค์ของคุณไปอย",
-        "tiktok": "ไอเดียไม่ปัง Creative Block มาเยือน? 😩 ลองมองที่โต๊ะทำงานสิครับ! ออฟฟิศรกๆ หรือฝุ่นเยอะๆ อาจกำลังขโมยสมองคุณอยู่ก็ได้นะ ",
-        "line": "เคยเป็นไหมครับ? ไอเดียตัน คิดงานไม่ออก 🤷‍♀️ บางทีต้นเหตุไม่ได้อยู่ที่ตัวเรา แต่อยู่ที่สภาพแวดล้อมนี่แหละครับ ออฟฟิศที่รก"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122120819613401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-19T16:33:38.232780+07:00",
       "topic_id": "agency_focus",
@@ -2760,6 +2713,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122128226757401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-09T18:58:31.732085+07:00",
+      "topic_id": "edu_creative_block",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261009/feed.png",
+        "stories_png": "out/20261009/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261009/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เคยไหมครับที่นั่งทำงานแล้วสมองไม่แล่น ไอเดียไม่ออก ไม่ใช่เพราะคุณไม่เก่งนะ แต่อาจเป็นเพราะสภาพแวดล้อมรอบตัวมันไม่เอื้อ! 😵‍💫\nจริงๆ แล้ว สมองเราต้องการพื้นที่ที่ปลอดโปร่ง สะอาด เป็นระเบียบ เพื่อกระตุ้นค",
+        "tiktok": "Creative Block ที่แท้ไม่ใช่เราตันนะ แต่เป็นที่ออฟฟิศ! 🤯 เชื่อไหมว่าพื้นที่ทำงานที่สะอาด เป็นระเบียบ ช่วยให้สมองโปร่ง ไอเ",
+        "line": "รู้ไหมว่า Creative Block อาจไม่ได้เกิดจากคุณคนเดียว แต่มาจากสภาพแวดล้อมรอบตัว! 💡 สมองเราต้องการพื้นที่ปลอดโปร่ง สะอาด เพ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122128253925401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
