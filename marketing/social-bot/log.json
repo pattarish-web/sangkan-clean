@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_hidden_dirt",
+  "last_topic": "big_cleaning",
   "posts": [
-    {
-      "ts": "2026-09-21T17:46:54.591508+07:00",
-      "topic_id": "big_cleaning",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260921/feed.png",
-        "stories_png": "out/20260921/stories.png",
-        "venue_need": "mall",
-        "venue_got": "mall",
-        "bg_source": "bg-mall-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260921/bg.jpg",
-        "voiceover_mp3": "out/20260921/voiceover.mp3",
-        "stories_srt": "out/20260921/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "เคยเจอไหม งาน Big Cleaning ที่คิดว่าจบแล้วแต่ยังเจอคราบฝังลึกที่ทีมไหนก็แก้ไม่หาย? Sangkan Clean เข้าใจดี! เรามีประสบการณ์มากกว่า 30 ปี พร้อมทีมงานมืออาชีพที่เชี่ยวชาญเรื่องการคลีนลึก คลีนจริง ทุกซอกท",
-        "tiktok": "งาน Big Cleaning ที่ว่ายาก Sangkan Clean เอาอยู่! ทีมมืออาชีพกว่า 30 ปี คลีนลึกถึงคราบฝังแน่น ให้พื้นที่คุณเหมือนใหม่ ไม",
-        "line": "เหนื่อยใจกับ Big Cleaning ที่ไม่เคยจบจริงไหม? Sangkan Clean พร้อมช่วย! ด้วยประสบการณ์กว่า 30 ปี เราเชี่ยวชาญการคลีนลึกทุ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122121629937401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-22T00:08:27.929689+07:00",
       "topic_id": "edu_checklist",
@@ -2746,6 +2699,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122129185503401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-11T23:40:32.845570+07:00",
+      "topic_id": "big_cleaning",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261011/feed.png",
+        "stories_png": "out/20261011/stories.png",
+        "venue_need": "mall",
+        "venue_got": "mall",
+        "bg_source": "bg-mall-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261011/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมเราเข้าใจดีว่าคราบฝังแน่นในศูนย์การค้าหรืออาคารพานิชย์ไม่ใช่เรื่องง่ายที่จะจัดการ บางทีอาจจะลองมาหลายวิธีแล้วก็ยังไม่จบใช่ไหม? 🤷‍♀️ Sangkan Clean มีประสบการณ์ทำความสะอาดมามากกว่า 30 ปี เราเชี่ยวชาญ",
+        "tiktok": "คราบฝังแน่นในศูนย์การค้า หรืออาคารพานิชย์ เป็นปัญหาใหญ่ใช่ไหม? Sangkan Clean จัดการให้! ด้วยทีมแม่บ้านศูนย์การค้ามืออาชี",
+        "line": "ปัญหาสนิม คราบฝังลึกที่ทำความสะอาดยากในศูนย์การค้าหรืออาคารพานิชย์ ให้ Sangkan Clean ช่วยดูแลสิครับ! เรามีทีมแม่บ้านศูนย"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122129227275401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
