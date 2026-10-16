@@ -1,53 +1,6 @@
 {
-  "last_topic": "affiliate",
+  "last_topic": "edu_construction_dust",
   "posts": [
-    {
-      "ts": "2026-09-25T22:54:21.526121+07:00",
-      "topic_id": "edu_construction_dust",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260925/feed.png",
-        "stories_png": "out/20260925/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260925/bg.jpg",
-        "voiceover_mp3": "out/20260925/voiceover.mp3",
-        "stories_srt": "out/20260925/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "หลังรีโนเวทอาคาร หรือปรับปรุงพื้นที่ใหม่ ๆ | รู้ไหมว่าฝุ่นปูนที่หลงเหลืออยู่เนี่ย อันตรายกว่าที่คิดเยอะเลยนะ ⚠️ มันไม่ใช่แค่ฝุ่นธรรมดา แต่เป็นฝุ่นซิลิกาขนาดเล็กมาก ๆ ที่มองไม่เห็นด้วยตาเปล่าเลยนะ\nฝุ่น",
-        "tiktok": "ฝุ่นปูนหลังรีโนเวท อันตรายกว่าที่คิด! ⚠️ รู้ไหมว่าฝุ่นซิลิกาเล็ก ๆ เนี่ย เข้าไปในปอดเราได้นะ อาจส่งผลเสียต่อสุขภาพระยะยา",
-        "line": "เพื่อน ๆ ที่มีแพลนรีโนเวท หรือเพิ่งสร้างเสร็จ | อย่ามองข้ามเรื่องฝุ่นปูนหลังก่อสร้างนะครับ!\nฝุ่นซิลิกาขนาดเล็กจากงานก่อส"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122123705859401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-26T14:49:48.597234+07:00",
       "topic_id": "edu_move_in_clean",
@@ -2720,6 +2673,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122130532725401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-16T14:17:30.765431+07:00",
+      "topic_id": "edu_construction_dust",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261016/feed.png",
+        "stories_png": "out/20261016/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261016/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เห็นฝุ่นปูนหลังรีโนเวท หรือหลังงานก่อสร้างกันบ่อยๆ ใช่ไหมครับ? หลายคนอาจคิดว่า แค่เก็บกวาดให้เรียบร้อยก็พอ แต่จริงๆ แล้ว มันมีอันตรายมากกว่าที่คิดนะ! โดยเฉพาะ 'ฝุ่นซิลิกา' ที่อยู่ในฝุ่นปูน มันเล็กมากๆ",
+        "tiktok": "รู้ไหม? ฝุ่นปูนหลังรีโนเวท มี 'ฝุ่นซิลิกา' ที่เล็กมองไม่เห็น แต่อันตรายมาก เพราะมันเข้าสู่ปอดได้ ทำลายระบบทางเดินหายใจ ไ",
+        "line": "ทุกคนรู้ไหมว่า ฝุ่นปูนหลังรีโนเวท หรือหลังงานก่อสร้างใหญ่ๆ ไม่ใช่แค่สกปรกธรรมดานะ ในนั้นมี 'ฝุ่นซิลิกา' ขนาดเล็กจิ๋ว ที่"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122130629817401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
