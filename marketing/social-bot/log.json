@@ -1,53 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-09-29T23:58:13.051915+07:00",
-      "topic_id": "edu_dust_it",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20260929/feed.png",
-        "stories_png": "out/20260929/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20260929/bg.jpg",
-        "voiceover_mp3": "out/20260929/voiceover.mp3",
-        "stories_srt": "out/20260929/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทุกคนเคยสังเกตไหมว่า คอมพิวเตอร์หรืออุปกรณ์ IT ของเราทำไมเครื่องร้อนง่าย พัดลมทำงานเสียงดังผิดปกติ? สาเหตุสำคัญที่หลายคนมองข้ามคือ \"ฝุ่น\" นั่นเองครับ\n\nไม่ว่าจะเป็นออฟฟิศขนาดเล็ก, ห้องเซิร์ฟเวอร์, ไปจน",
-        "tiktok": "คอมพิวเตอร์ของคุณร้อนง่าย พัดลมเสียงดังไหม? ระวัง! ฝุ่นตัวร้ายกำลังทำให้อุปกรณ์ IT ทำงานหนักขึ้น ระบายความร้อนไม่ดี เครื",
-        "line": "เช็กด่วน! ทำไมอุปกรณ์ IT ของคุณถึงร้อนง่าย?\nสาเหตุหลักคือ \"ฝุ่น\" ครับ! เจ้าฝุ่นจิ๋วๆ ที่เรามองข้ามเนี่ยแหละ ไปเกาะตามชิ้"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122124829737401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-09-30T15:41:30.871359+07:00",
       "topic_id": "edu_server_room",
@@ -2696,6 +2649,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122131708293401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-20T14:42:14.514284+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261020/feed.png",
+        "stories_png": "out/20261020/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261020/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เฮ้ย! เคยสังเกตไหมว่า คอมพิวเตอร์หรือโน้ตบุ๊กของเรา ทำไมช่วงหลังๆ มันร้อนง่าย หรือพัดลมเสียงดังจัง? 😱 หนึ่งในตัวการสำคัญที่คุณอาจมองข้ามไป คือ 'ฝุ่น' นี่แหละครับ!\n\nฝุ่นจิ๋วๆ ที่ลอยอยู่ในอากาศ พอสะสมเย",
+        "tiktok": "อุปกรณ์ IT ร้อนผิดปกติไหม? 🥵 ระวัง! ฝุ่นนี่แหละตัวการสำคัญเลยนะ พอฝุ่นสะสมเยอะๆ จะไปอุดตันระบบระบายความร้อน ทำให้คอมพิวเ",
+        "line": "หลายคนอาจมองข้าม ฝุ่นตัวร้ายที่ทำลายอุปกรณ์ IT ของคุณอยู่ทุกวัน! รู้ไหมว่าฝุ่นเล็กๆ นี่แหละตัวการสำคัญที่ทำให้คอมพิวเตอร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122131886925401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
