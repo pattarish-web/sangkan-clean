@@ -1,53 +1,6 @@
 {
-  "last_topic": "edu_hidden_dirt",
+  "last_topic": "big_cleaning",
   "posts": [
-    {
-      "ts": "2026-10-01T18:39:35.644524+07:00",
-      "topic_id": "big_cleaning",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261001/feed.png",
-        "stories_png": "out/20261001/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261001/bg.jpg",
-        "voiceover_mp3": "out/20261001/voiceover.mp3",
-        "stories_srt": "out/20261001/stories.srt"
-      },
-      "captions": {
-        "fb_ig": "ทีมงานคนรุ่นใหม่ หรือเพื่อน ๆ ที่กำลังหาผู้เชี่ยวชาญด้าน Big Cleaning อยู่ใช่ไหมครับ? Sangkan Clean มีประสบการณ์ดูแลเรื่องความสะอาดมามากกว่า 30 ปี คราบฝังแน่นแค่ไหน เราก็จัดการได้หมดจดทุกซอกมุม ไม่ว่า",
-        "tiktok": "คราบหนักแค่ไหนก็ไม่หวั่น! Sangkan Clean มีทีม Big Cleaning มืออาชีพ ประสบการณ์ 30+ ปี ไม่ว่าจะเป็น แม่บ้านโรงงาน หรือ ทำ",
-        "line": "ไม่ต้องปวดหัวเรื่องคราบหนักอีกต่อไป! Sangkan Clean พร้อมช่วยเรื่อง Big Cleaning ที่คุณมองหา เรามีทีมงานมืออาชีพ ประสบการ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122125489137401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-02T00:27:28.615335+07:00",
       "topic_id": "edu_checklist",
@@ -2686,6 +2639,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122132139393401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-21T22:59:19.337056+07:00",
+      "topic_id": "big_cleaning",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261021/feed.png",
+        "stories_png": "out/20261021/stories.png",
+        "venue_need": "office",
+        "venue_got": "office",
+        "bg_source": "bg-office-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261021/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เบื่อไหมกับคราบฝังแน่น หลังงานก่อสร้างออฟฟิศ? หรือออฟฟิศเก่าที่ไม่ได้ทำความสะอาดลึกมานานจนเหมือนมีอะไรซ่อนอยู่? ให้ Sangkan Clean เข้ามาดูแล Big Cleaning ที่จบงานจริง ด้วยทีมงานมืออาชีพประสบการณ์ 30+ ",
+        "tiktok": "ออฟฟิศคุณ หลังก่อสร้าง มีคราบหนัก คราบฝัง รึเปล่า? Sangkan Clean ช่วยได้! เราเชี่ยวชาญ ทำความสะอาดออฟฟิศ และ ทำความสะอาด",
+        "line": "ทีมงาน Sangkan Clean เข้าใจเลยว่า หลังก่อสร้างออฟฟิศ หรืออาคารพานิชย์ คราบสกปรกหนักๆ มันเยอะแค่ไหน! เรามีประสบการณ์กว่า "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122132268597401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
