@@ -1,51 +1,6 @@
 {
-  "last_topic": "maid_backup",
+  "last_topic": "edu_zone_problems",
   "posts": [
-    {
-      "ts": "2026-10-02T23:43:30.608024+07:00",
-      "topic_id": "edu_zone_problems",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261002/feed.png",
-        "stories_png": "out/20261002/stories.png",
-        "venue_need": "showroom",
-        "venue_got": "showroom",
-        "bg_source": "bg-showroom-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261002/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "รู้ไหมครับว่า ความสะอาดของออฟฟิศ แต่ละย่าน ก็มีโจทย์ที่ต่างกันนะ 🤔 อย่างออฟฟิศริมถนนใหญ่ ฝุ่น PM มาเต็ม แม่บ้านโชว์รูม หรือ แม่บ้านอาคารพานิชย์ ที่ต้องดูแลพื้นที่ ก็เหนื่อยหน่อย เพราะต้องเช็ดถูบ่อยกว่",
-        "tiktok": "ออฟฟิศแต่ละย่าน ปัญหาคลีนไม่เหมือนกันนะ ริมถนนใหญ่เจอฝุ่น แม่บ้านโชว์รูม ต้องลุยหนัก ใกล้แหล่งน้ำชื้นๆ เชื้อรามาง่าย ตึก",
-        "line": "เคยสงสัยไหมครับว่า ทำไมออฟฟิศเรา มีปัญหาความสะอาด ไม่เหมือนที่อื่น? ก็เพราะแต่ละย่าน มีปัจจัยต่างกันไง ออฟฟิศริมถนนใหญ่ "
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122125901583401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-03T15:14:48.495108+07:00",
       "topic_id": "edu_pm25",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122132457897401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-23T14:39:09.300471+07:00",
+      "topic_id": "edu_zone_problems",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261023/feed.png",
+        "stories_png": "out/20261023/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261023/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ออฟฟิศคุณอยู่ย่านไหน? รู้ไหมว่าโลเคชันก็มีผลกับปัญหาความสะอาดนะ Sangkan Clean มีข้อมูลมาแชร์!\n\nถ้าออฟฟิศอยู่ริมถนนใหญ่ อย่างตึกสูงแถว CBD หรือพื้นที่รอบ **แม่บ้านศูนย์การค้า** มักเจอฝุ่น PM 2.5 และครา",
+        "tiktok": "ออฟฟิศแต่ละย่าน ปัญหาความสะอาดต่างกันจริงเหรอ? Sangkan Clean บอกเลยว่าจริง! 🧐\n\nริมถนนใหญ่ เจอฝุ่น PM 2.5 จัดเต็ม\nใกล้น้ำ",
+        "line": "เคยสงสัยไหมว่าทำไมออฟฟิศแต่ละที่ ปัญหาความสะอาดถึงไม่เหมือนกัน? Sangkan Clean มีคำตอบครับ/ค่ะ\n\nออฟฟิศริมถนนใหญ่: ฝุ่น คว"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122132623125401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
