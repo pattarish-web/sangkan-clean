@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_routine_clean",
+  "last_topic": "edu_harsh_chemical",
   "posts": [
-    {
-      "ts": "2026-10-07T18:51:53.099216+07:00",
-      "topic_id": "edu_harsh_chemical",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261007/feed.png",
-        "stories_png": "out/20261007/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-07.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261007/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ทีมงาน Sangkan Clean เคยเจอเคสที่น้ำยาทำความสะอาดออฟฟิศ ทำลายเฟอร์นิเจอร์มาเยอะมาก! 😲 บางทีที่เราเลือกใช้น้ำยาแรงๆ เพราะคิดว่าจะสะอาดกว่า แต่สุดท้ายกลับได้ผลตรงข้ามเลยนะ สารเคมีที่เข้มข้นเกินไป จะกัดก",
-        "tiktok": "น้ำยาทำความสะอาดออฟฟิศ ที่เราใช้อยู่ อาจทำร้ายเฟอร์นิเจอร์ได้นะ! สารเคมีแรงๆ ทำให้หนังโซฟาเราลอก ไม้ด่าง สีซีด เหมือนที่",
-        "line": "รู้ไหมว่า น้ำยาทำความสะอาดที่ใช้อยู่ในออฟฟิศ อาจทำลายเฟอร์นิเจอร์ได้! สารเคมีแรงๆ ทำให้หนังลอก ไม้ด่าง หรือสีเฟอร์นิเจอร"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122127134553401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-08T00:53:18.635949+07:00",
       "topic_id": "soft_cleaning",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122133893085401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-27T17:40:34.628583+07:00",
+      "topic_id": "edu_harsh_chemical",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261027/feed.png",
+        "stories_png": "out/20261027/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261027/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เคยสังเกตไหมว่าทำไมเฟอร์นิเจอร์ออฟฟิศบางชิ้นถึงดูเก่าเร็วจัง? 🧐 หลายครั้งสาเหตุมาจากน้ำยาทำความสะอาดที่เราใช้กันนี่แหละครับ\n\nสารเคมีแรงๆ ที่ไม่เหมาะกับพื้นผิวต่างๆ เช่น โต๊ะทำงานไม้ เก้าอี้หนัง หรือแม",
+        "tiktok": "เฟอร์นิเจอร์ออฟฟิศพังเร็ว? สาเหตุหนึ่งคือน้ำยาทำความสะอาดนี่แหละ! สารเคมีแรงๆ อาจทำให้เก้าอี้หนังลอก โต๊ะไม้เป็นรอยด่าง ",
+        "line": "รู้ไหมว่าน้ำยาทำความสะอาดบางตัว ทำให้เฟอร์นิเจอร์ออฟฟิศเราพังได้ง่ายๆ เลยนะ!\n\nสารเคมีแรงๆ อาจทำลายพื้นผิวอย่างหนังจนลอก "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122133911493401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
