@@ -1,51 +1,6 @@
 {
-  "last_topic": "soft_cleaning",
+  "last_topic": "edu_desk_germ",
   "posts": [
-    {
-      "ts": "2026-10-08T16:06:22.517163+07:00",
-      "topic_id": "edu_desk_germ",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261008/feed.png",
-        "stories_png": "out/20261008/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-05.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261008/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "คิดว่าจุดไหนในออฟฟิศที่สะอาดที่สุด? อาจจะไม่ใช่ที่คิดนะ!\nรู้ไหมว่ามี 5 จุดที่เราสัมผัสทุกวัน ที่สกปรกกว่าฝารองนั่งชักโครกซะอีก 😱\nใช่ครับ! ทั้งคีย์บอร์ดที่เราพิมพ์งาน โทรศัพท์ที่คุยกับลูกค้า หรือแม้แต่",
-        "tiktok": "เคยคิดไหมว่า คีย์บอร์ด โทรศัพท์ ลูกบิดประตู ที่เราใช้ทุกวันเนี่ย สกปรกกว่าฝารองนั่งชักโครกอีกนะ!\nนี่คือ 5 จุดสกปรกในออฟฟ",
-        "line": "รู้ไหมครับ? ว่าในออฟฟิศเรามีจุดที่สกปรกกว่าฝารองนั่งชักโครกซะอีกนะ!\nอย่างคีย์บอร์ด โทรศัพท์ หรือลูกบิดประตู ที่เราจับบ่อ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122127816621401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-08T19:06:59.477206+07:00",
       "topic_id": "edu_germ_lifespan",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122134486821401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-28T18:26:03.733271+07:00",
+      "topic_id": "edu_desk_germ",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261028/feed.png",
+        "stories_png": "out/20261028/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261028/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหม? ออฟฟิศคุณอาจมีจุดที่สกปรกกว่าห้องน้ำหลายเท่า! 😱 เราไม่ได้พูดเล่นนะ จากงานวิจัยหลายชิ้นพบว่า คีย์บอร์ด โทรศัพท์ และลูกบิดประตูในสำนักงานนี่แหละ คือแหล่งรวมเชื้อโรคชั้นดีเลยทีเดียว แบคทีเรียอาจเ",
+        "tiktok": "ใครว่าห้องน้ำสกปรกสุด? 😲 ความจริงคือ คีย์บอร์ด โทรศัพท์ ลูกบิดประตูในออฟฟิศนี่แหละ แบคทีเรียเยอะกว่าฝารองนั่งซะอีก! Sang",
+        "line": "รู้ยัง? ออฟฟิศเรามีจุดที่สกปรกกว่าห้องน้ำอีกนะ! 🤫 งานวิจัยบอกว่าคีย์บอร์ด โทรศัพท์ และลูกบิดประตูในสำนักงานนี่แหละ คือแห"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122134509471401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
