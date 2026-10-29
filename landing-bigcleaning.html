@@ -274,10 +274,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><th scope="row">บ้าน</th><td>฿35</td><td>฿30</td><td>฿28</td><td>฿26</td><td>฿24</td><td>฿22</td><td>ประเมินหน้างาน</td></tr>
-                                <tr><th scope="row">คอนโด</th><td>฿40</td><td>฿35</td><td>฿32</td><td>฿30</td><td>฿28</td><td>฿25</td><td>ประเมินหน้างาน</td></tr>
-                                <tr><th scope="row">สำนักงาน/ร้านค้า</th><td>฿35</td><td>฿32</td><td>฿28</td><td>฿26</td><td>฿24</td><td>฿22</td><td>ประเมินหน้างาน</td></tr>
-                                <tr><th scope="row">โรงงาน/โกดัง</th><td>฿30</td><td>฿28</td><td>฿26</td><td>฿24</td><td>฿22</td><td>฿20</td><td>ประเมินหน้างาน</td></tr>
+                                <tr><th scope="row">บ้าน</th><td>฿87.50</td><td>฿75</td><td>฿70</td><td>฿65</td><td>฿60</td><td>฿55</td><td>ประเมินหน้างาน</td></tr>
+                                <tr><th scope="row">คอนโด</th><td>฿100</td><td>฿87.50</td><td>฿80</td><td>฿75</td><td>฿70</td><td>฿62.50</td><td>ประเมินหน้างาน</td></tr>
+                                <tr><th scope="row">สำนักงาน/ร้านค้า</th><td>฿87.50</td><td>฿80</td><td>฿70</td><td>฿65</td><td>฿60</td><td>฿55</td><td>ประเมินหน้างาน</td></tr>
+                                <tr><th scope="row">โรงงาน/โกดัง</th><td>฿75</td><td>฿70</td><td>฿65</td><td>฿60</td><td>฿55</td><td>฿50</td><td>ประเมินหน้างาน</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -317,7 +317,7 @@
                     <p id="areaHelp" class="calc-result-unit">ขั้นต่ำ ฿6,000 • พื้นที่เกิน 1,000 ตร.ม. ต้องประเมินหน้างานและติดต่อขอราคา</p>
                     <div class="calc-result">
                         <div class="calc-result-label">ราคาประมาณ</div>
-                        <div class="calc-result-price" id="priceDisplay">฿6,000</div>
+                        <div class="calc-result-price" id="priceDisplay">฿7,500</div>
                         <div class="calc-result-unit" id="priceBreakdown" aria-live="polite">คำนวณตามอัตราต่อพื้นที่และค่าบริการขั้นต่ำ</div>
                     </div>
                     <div style="text-align: center; margin-top: 20px;">
@@ -771,10 +771,10 @@
             var priceBreakdown = document.getElementById('priceBreakdown');
             var propertyType = document.getElementById('propertyType');
             var properties = {
-                house: { label: 'บ้าน', rates: [35, 30, 28, 26, 24, 22] },
-                condo: { label: 'คอนโด', rates: [40, 35, 32, 30, 28, 25] },
-                office: { label: 'สำนักงาน/ร้านค้า', rates: [35, 32, 28, 26, 24, 22] },
-                factory: { label: 'โรงงาน/โกดัง', rates: [30, 28, 26, 24, 22, 20] }
+                house: { label: 'บ้าน', rates: [87.5, 75, 70, 65, 60, 55] },
+                condo: { label: 'คอนโด', rates: [100, 87.5, 80, 75, 70, 62.5] },
+                office: { label: 'สำนักงาน/ร้านค้า', rates: [87.5, 80, 70, 65, 60, 55] },
+                factory: { label: 'โรงงาน/โกดัง', rates: [75, 70, 65, 60, 55, 50] }
             };
             var tierUpperBounds = [50, 100, 200, 300, 500, 1000];
 
