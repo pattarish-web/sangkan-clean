@@ -104,15 +104,15 @@
               "areaServed": "กรุงเทพฯ และปริมณฑล"
             },
             "priceCurrency": "THB",
-            "price": 5500,
+            "price": 6000,
             "url": "https://www.sangkanclean.com/agent/catalog#big-cleaning",
             "priceSpecification": {
               "@type": "PriceSpecification",
-              "price": 5500,
+              "price": 6000,
               "priceCurrency": "THB",
               "valueAddedTaxIncluded": true,
               "unitText": "job",
-              "description": "max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน"
+              "description": "ขั้นต่ำ 6,000 บาท ตามประเภทสถานที่และช่วงพื้นที่ ดู bigcleaning-pricing.json"
             }
           },
           {
@@ -291,15 +291,15 @@
             "areaServed": "กรุงเทพฯ และปริมณฑล"
           },
           "priceCurrency": "THB",
-          "price": 5500,
+          "price": 6000,
           "url": "https://www.sangkanclean.com/agent/catalog#big-cleaning",
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "price": 5500,
+            "price": 6000,
             "priceCurrency": "THB",
             "valueAddedTaxIncluded": true,
             "unitText": "job",
-            "description": "max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน"
+            "description": "ขั้นต่ำ 6,000 บาท ตามประเภทสถานที่และช่วงพื้นที่ ดู bigcleaning-pricing.json"
           }
         },
         {
@@ -491,16 +491,16 @@
       "offers": {
         "@type": "Offer",
         "priceCurrency": "THB",
-        "price": 5500,
+        "price": 6000,
         "url": "https://www.sangkanclean.com/agent/catalog#big-cleaning",
         "availability": "https://schema.org/InStock",
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "price": 5500,
+          "price": 6000,
           "priceCurrency": "THB",
           "valueAddedTaxIncluded": true,
           "unitText": "job",
-          "description": "max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน"
+          "description": "ขั้นต่ำ 6,000 บาท ตามประเภทสถานที่และช่วงพื้นที่ ดู bigcleaning-pricing.json"
         }
       }
     },
@@ -607,7 +607,7 @@
           "name": "Big Cleaning ต่างจากทำความสะอาดทั่วไปอย่างไร?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Big Cleaning คือทำความสะอาดเชิงลึกด้วยทีม 3 คน สูตร max(฿5,500, ฿4,000 + ฿35/ตร.ม.) ทั่วไปคือทีม 2 คน สูตร max(฿3,500, ฿2,500 + ฿18/ตร.ม.)"
+            "text": "Big Cleaning คือทำความสะอาดเชิงลึกด้วยทีม 3 คน สูตร ขั้นต่ำ 6,000 บาท ตามประเภทสถานที่และช่วงพื้นที่ ดู bigcleaning-pricing.json ทั่วไปคือทีม 2 คน สูตร max(฿3,500, ฿2,500 + ฿18/ตร.ม.)"
           }
         },
         {

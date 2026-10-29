@@ -1,0 +1,16 @@
+{
+  "currency": "THB",
+  "minimum": 6000,
+  "tierUpperBounds": [50, 100, 200, 300, 500, 1000],
+  "rates": {
+    "house": [87.5, 75, 70, 65, 60, 55],
+    "condo": [100, 87.5, 80, 75, 70, 62.5],
+    "office": [87.5, 80, 70, 65, 60, 55],
+    "factory": [75, 70, 65, 60, 55, 50]
+  },
+  "requiresPropertyType": true,
+  "siteSurveyAboveSqm": 1000,
+  "calculatorUrl": "https://www.sangkanclean.com/#calculator",
+  "addons": {"carpetPerSqm": 30, "sofaPerSeat": 500, "ozoneStartingPrice": 1290},
+  "priceStatus": "estimate_subject_to_site_conditions"
+}

@@ -126,15 +126,15 @@ e:["$","$1","c",{"children":[null,["$","$L1d",null,{"parallelRouterKey":"childre
           "areaServed": "กรุงเทพฯ และปริมณฑล"
         },
         "priceCurrency": "THB",
-        "price": 5500,
+        "price": 6000,
         "url": "https://www.sangkanclean.com/agent/catalog#big-cleaning",
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "price": 5500,
+          "price": 6000,
           "priceCurrency": "THB",
           "valueAddedTaxIncluded": true,
           "unitText": "job",
-          "description": "max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน"
+          "description": "ขั้นต่ำ 6,000 บาท ตามประเภทสถานที่และช่วงพื้นที่ ดู bigcleaning-pricing.json"
         }
       },
       {
@@ -313,15 +313,15 @@ e:["$","$1","c",{"children":[null,["$","$L1d",null,{"parallelRouterKey":"childre
         "areaServed": "กรุงเทพฯ และปริมณฑล"
       },
       "priceCurrency": "THB",
-      "price": 5500,
+      "price": 6000,
       "url": "https://www.sangkanclean.com/agent/catalog#big-cleaning",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "price": 5500,
+        "price": 6000,
         "priceCurrency": "THB",
         "valueAddedTaxIncluded": true,
         "unitText": "job",
-        "description": "max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน"
+        "description": "ขั้นต่ำ 6,000 บาท ตามประเภทสถานที่และช่วงพื้นที่ ดู bigcleaning-pricing.json"
       }
     },
     {

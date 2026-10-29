@@ -6,8 +6,8 @@ Marketing site: https://www.sangkanclean.com
 Agent layer: https://www.sangkanclean.com/agent
 Preferred contact: LINE @sangkanclean | Phone 092-914-9978 | Email info@sangkanclean.com
 
-สูตรราคาตรงเว็บจริง (script.js):
-- Big Cleaning = max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) ทีม 3 คน
+ข้อมูลบริการอื่น (ตรวจสอบกับหน้าบริการก่อนยืนยันราคา):
+
 - ทำความสะอาดทั่วไป / Soft Cleaning = max(฿3,500, ฿2,500 + ฿18 × ตร.ม.) ทีม 2 คน
 - หลังก่อสร้าง = max(฿8,000, ฿5,500 + ฿50 × ตร.ม.) ทีม 4 คน
 - แม่บ้านประจำ = ฿12,000 / 1 คน/เดือน, ฿22,000 / 2 คน, +฿10,000 ต่อคนถัดไป
@@ -56,7 +56,7 @@ GET สูตรราคา: https://www.sangkanclean.com/agent/api/v1/quotes.j
 - ต้องส่ง pdpaConsent=true (ลูกค้าติ๊กเอง) ชื่อ และโทรหรืออีเมล
 - เอเจนต์ต้องส่ง agent.name และ agent.principal
 - สถานะเริ่มต้น pending_review หรือ needs_site_survey
-- Big Cleaning ≥ 400 ตร.ม. ต้องสำรวจหน้างาน
+
 - Sangkan Office รับเฉพาะโซนอุดมสุข–บางนา (ต้องส่ง inOfficeZone=true)
 
 ## FAQ
@@ -70,7 +70,7 @@ GET สูตรราคา: https://www.sangkanclean.com/agent/api/v1/quotes.j
 ## Quote formulas
 
 - general-cleaning: max(฿3,500, ฿2,500 + ฿18 × ตร.ม.) (ทีม 2 คน)
-- big-cleaning: max(฿5,500, ฿4,000 + ฿35 × ตร.ม.) (ทีม 3 คน)
+
 - post-construction: max(฿8,000, ฿5,500 + ฿50 × ตร.ม.) (ทีม 4 คน)
 - maid-monthly: ฿12,000 / 1 คน, ฿22,000 / 2 คน, แล้ว +฿10,000 ต่อคน
 - maid-daily: ฿1,200 / ครั้ง
@@ -80,8 +80,20 @@ GET สูตรราคา: https://www.sangkanclean.com/agent/api/v1/quotes.j
 
 ## Example agent flow
 
-1. GET https://www.sangkanclean.com/agent/llms.txt
-2. GET https://www.sangkanclean.com/agent/api/v1/services?category=big_clean
-3. POST https://www.sangkanclean.com/agent/api/v1/quotes  {"serviceId":"big-cleaning","areaSqm":180,"province":"bangkok"}
-4. POST https://www.sangkanclean.com/agent/api/v1/bookings  with quoteId, address, customer, pdpaConsent, agent
-5. GET https://www.sangkanclean.com/agent/api/v1/bookings/{id}
+Big Cleaning: เปิดเครื่องคำนวณหน้าแรก เลือกประเภทสถานที่และพื้นที่ แล้วติดต่อ LINE เพื่อยืนยันราคา
+
+
+## Big Cleaning pricing — current
+
+Big Cleaning: ค่าบริการ = max(6,000 บาท, พื้นที่ × อัตราตามประเภทสถานที่และช่วงพื้นที่)
+ช่วงพื้นที่: ไม่เกิน 50, 51–100, 101–200, 201–300, 301–500, 501–1,000 ตร.ม.
+- house: 87.5, 75, 70, 65, 60, 55 บาท/ตร.ม.
+- condo: 100, 87.5, 80, 75, 70, 62.5 บาท/ตร.ม.
+- office: 87.5, 80, 70, 65, 60, 55 บาท/ตร.ม.
+- factory: 75, 70, 65, 60, 55, 50 บาท/ตร.ม.
+เกิน 1,000 ตร.ม. ประเมินหน้างาน ไม่เสนอราคาตายตัว
+ซักพรมเพิ่ม 30 บาท/ตร.ม.; ซักโซฟาเพิ่ม 500 บาท/ที่นั่ง; โอโซนพร้อม Big Cleaning เริ่ม 1,290 บาท
+ข้อมูลราคา: https://www.sangkanclean.com/bigcleaning-pricing.json
+เครื่องคำนวณ: https://www.sangkanclean.com/#calculator
+
+แบบฟอร์มเอเจนต์เดิมยังไม่รองรับประเภทสถานที่ จึงไม่ออกใบประเมิน Big Cleaning; ใช้เครื่องคำนวณข้างต้นหรือให้เจ้าหน้าที่ประเมิน

@@ -38,6 +38,10 @@ def rebuild_blog_surface() -> None:
 
 
 def build_all():
+    from scripts.sync_bigcleaning_pricing import sync as sync_pricing
+    from scripts.sync_agent_pricing import sync as sync_agent_pricing
+    sync_pricing()
+    sync_agent_pricing()
     write_analytics_js()
     patch_root_html_files()
     build_blogs.build_blogs()

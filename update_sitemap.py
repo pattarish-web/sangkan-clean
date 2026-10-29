@@ -1,5 +1,6 @@
 import json
-from datetime import datetime
+from pathlib import Path
+import re
 from urllib.parse import quote
 
 from site_config import LOCAL_AREAS, SERVICE_LANDINGS, SITE_URL
@@ -13,13 +14,18 @@ def encode_url_path(path):
     return f"{SITE_URL}/{encoded}"
 
 
+def content_lastmod(path, registry, published=None):
+    dates = [date for date in (registry.get(path or 'index.html'), published)
+             if isinstance(date, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}', date)]
+    return max(dates) if dates else None
+
+
 def url_entry(path, priority, changefreq, lastmod=None):
-    lastmod = lastmod or datetime.today().strftime("%Y-%m-%d")
+    lastmod_xml = f"\n    <lastmod>{lastmod}</lastmod>" if lastmod else ""
     loc = encode_url_path(path)
     return f"""
   <url>
-    <loc>{loc}</loc>
-    <lastmod>{lastmod}</lastmod>
+    <loc>{loc}</loc>{lastmod_xml}
     <changefreq>{changefreq}</changefreq>
     <priority>{priority}</priority>
   </url>"""
@@ -37,17 +43,18 @@ def write_urlset(filename, entries):
 
 
 def write_sitemap_index(filename, child_sitemaps, lastmod=None):
-    lastmod = lastmod or datetime.today().strftime("%Y-%m-%d")
     parts = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for child in child_sitemaps:
+        dates = re.findall(r'<lastmod>([^<]+)</lastmod>', Path(child).read_text(encoding='utf-8'))
+        child_date = max(dates) if dates else lastmod
+        date_xml = f"\n    <lastmod>{child_date}</lastmod>" if child_date else ""
         parts.append(
             f"""
   <sitemap>
-    <loc>{SITE_URL}/{child}</loc>
-    <lastmod>{lastmod}</lastmod>
+    <loc>{SITE_URL}/{child}</loc>{date_xml}
   </sitemap>"""
         )
     parts.append("\n</sitemapindex>\n")
@@ -56,7 +63,8 @@ def write_sitemap_index(filename, child_sitemaps, lastmod=None):
 
 
 def update_sitemap():
-    today = datetime.today().strftime("%Y-%m-%d")
+    registry_path = Path('seo/content_lastmod.json')
+    registry = json.loads(registry_path.read_text(encoding='utf-8')) if registry_path.exists() else {}
 
     static_pages = [
         ("", "1.0", "weekly"),
@@ -70,10 +78,11 @@ def update_sitemap():
     for svc in SERVICE_LANDINGS:
         static_pages.append((f"{svc['file']}.html", "0.75", "monthly"))
 
-    page_urls = [url_entry(path, prio, freq, today) for path, prio, freq in static_pages]
+    page_urls = [url_entry(path, prio, freq, content_lastmod(path, registry)) for path, prio, freq in static_pages]
 
     for area in LOCAL_AREAS:
-        page_urls.append(url_entry(f"areas/{area['file']}.html", "0.75", "monthly", today))
+        path = f"areas/{area['file']}.html"
+        page_urls.append(url_entry(path, "0.75", "monthly", content_lastmod(path, registry)))
 
     with open("posts.json", "r", encoding="utf-8") as f:
         posts = json.load(f)
@@ -95,13 +104,12 @@ def update_sitemap():
             continue
         if 'http-equiv="refresh"' in head or "location.replace" in head:
             continue
-        # Prefer today's lastmod when the HTML file exists (reflects recent SEO/GEO edits)
-        date = today
+        date = content_lastmod(blog_path, registry, post.get('dateModified') or post.get('date'))
         blog_urls.append(url_entry(blog_path, "0.7", "monthly", date))
 
     write_urlset("sitemap-pages.xml", page_urls)
     write_urlset("sitemap-blog.xml", blog_urls)
-    write_sitemap_index("sitemap.xml", ["sitemap-pages.xml", "sitemap-blog.xml"], today)
+    write_sitemap_index("sitemap.xml", ["sitemap-pages.xml", "sitemap-blog.xml"])
 
     total = len(page_urls) + len(blog_urls)
     print(

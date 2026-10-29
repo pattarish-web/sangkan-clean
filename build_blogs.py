@@ -1,4 +1,5 @@
 import hashlib
+import html as html_module
 import json
 import os
 import re
@@ -66,20 +67,37 @@ def build_related_posts_html(posts, current_idx, count=3):
 def _strip_tags(text):
     text = re.sub(r"<br\s*/?>", " ", text, flags=re.IGNORECASE)
     text = re.sub(r"<[^>]+>", "", text)
-    return re.sub(r"\s+", " ", text).strip()
+    return html_module.unescape(re.sub(r"\s+", " ", text).strip())
+
+
+def article_body_content(content):
+    """The article template owns H1; preserve body headings as H2."""
+    return re.sub(r"<(\/?)(h1)(?=[\s>])", r"<\1h2", content, flags=re.I)
 
 
 def extract_faq_schema(content):
     """Build FAQPage schema from common GEO/Gemini/offline FAQ HTML shapes."""
-    if "คำถามที่พบบ่อย" not in content and "FAQ" not in content:
-        return ""
-
     pairs = []
+    sections = []
+    headings = list(re.finditer(r"<h([2-6])\b[^>]*>(.*?)</h\1>", content, re.I | re.S))
+    for idx, heading in enumerate(headings):
+        if not re.search(r"คำถามที่พบบ่อย|\bFAQ\b", _strip_tags(heading.group(2)), re.I):
+            continue
+        end = len(content)
+        for following in headings[idx + 1:]:
+            if int(following.group(1)) <= int(heading.group(1)):
+                end = following.start()
+                break
+        section = content[heading.end():end]
+        # Appended calls to action are outside the FAQ even without a new H2.
+        section = re.split(r'<section\b[^>]*class=["\'][^"\']*inline-cta', section, flags=re.I)[0]
+        sections.append(section)
+    faq_content = "\n".join(sections)
 
     # Offline / some Gemini: <h3>Q</h3><p>A</p>
     for q, a in re.findall(
         r"<h3[^>]*>(.*?)</h3>\s*<p[^>]*>(.*?)</p>",
-        content,
+        faq_content,
         flags=re.IGNORECASE | re.DOTALL,
     ):
         pairs.append((_strip_tags(q), _strip_tags(a)))
@@ -87,7 +105,7 @@ def extract_faq_schema(content):
     # Gemini: <dl><dt>Q: ...</dt><dd>A: ...</dd></dl> or plain dt/dd
     for q, a in re.findall(
         r"<dt[^>]*>(.*?)</dt>\s*<dd[^>]*>(.*?)</dd>",
-        content,
+        faq_content,
         flags=re.IGNORECASE | re.DOTALL,
     ):
         q_clean = _strip_tags(q)
@@ -140,7 +158,7 @@ def extract_faq_schema(content):
     seen = set()
     entities = []
     for q, a in pairs:
-        if not q or not a or len(q) < 4 or len(a) < 4:
+        if not q or not a or len(q) < 4 or len(a) < 4 or len(q) > 200:
             continue
         key = (q.lower(), a.lower())
         if key in seen:
@@ -149,8 +167,8 @@ def extract_faq_schema(content):
         entities.append(
             {
                 "@type": "Question",
-                "name": q[:200],
-                "acceptedAnswer": {"@type": "Answer", "text": a[:1000]},
+                "name": q,
+                "acceptedAnswer": {"@type": "Answer", "text": a},
             }
         )
         if len(entities) >= 6:
@@ -159,7 +177,8 @@ def extract_faq_schema(content):
     if not entities:
         return ""
     schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": entities}
-    return f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>'
+    encoded = json.dumps(schema, ensure_ascii=False).replace('</', '<\\/')
+    return f'<script type="application/ld+json">{encoded}</script>'
 
 
 def redirect_slugs():
@@ -190,7 +209,7 @@ def render_blog_html(posts, idx, template):
     slug = post.get("slug") or slugify(post["title"]) or f"post-{idx}"
     post["slug"] = slug
 
-    content = scrub_retired_phones(post.get("content", ""))
+    content = article_body_content(scrub_retired_phones(post.get("content", "")))
     if not content:
         content = f"""<p>{post['description']}</p>
                    <p>บทความนี้กำลังอยู่ในระหว่างการจัดทำเนื้อหาเพิ่มเติม โปรดติดตามอัปเดตจากเราได้เร็วๆ นี้ครับ</p>
@@ -218,6 +237,11 @@ def render_blog_html(posts, idx, template):
     related = build_related_posts_html(posts, idx)
     canonical = f"{SITE_URL}/blog/{slug}.html"
     date_modified = post.get("dateModified", post.get("date", ""))
+    lastmod_path = os.path.join('seo', 'content_lastmod.json')
+    if os.path.exists(lastmod_path):
+        with open(lastmod_path, encoding='utf-8') as dates_file:
+            registry_date = json.load(dates_file).get(f'blog/{slug}.html', '')
+            date_modified = max(date_modified, registry_date)
     word_count = len(re.sub(r"<[^>]+>", " ", content).split())
     faq_schema = extract_faq_schema(content)
 

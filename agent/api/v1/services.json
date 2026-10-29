@@ -10,12 +10,14 @@
       "summary": "ทำความสะอาดครั้งใหญ่เชิงลึกด้วยทีม 3 คน อุปกรณ์อุตสาหกรรม เหมาะกับโรงงาน อาคาร สำนักงาน",
       "liveUrl": "https://www.sangkanclean.com/landing-bigcleaning.html",
       "currency": "THB",
-      "bookableByAgent": true,
-      "requiresSiteSurveyAboveSqm": 400,
+      "bookableByAgent": false,
+      "requiresSiteSurveyAboveSqm": 1000,
       "minLeadDays": 2,
       "rushHours": 24,
       "unit": "job",
-      "startingPrice": 5500
+      "startingPrice": 6000,
+      "requiresPropertyType": true,
+      "calculatorUrl": "https://www.sangkanclean.com/#calculator"
     },
     {
       "id": "maid-monthly",
