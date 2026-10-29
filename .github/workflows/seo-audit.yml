@@ -18,6 +18,7 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Measure production Core Web Vitals
         uses: treosh/lighthouse-ci-action@v12
         with:
