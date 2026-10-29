@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_productivity",
+  "last_topic": "edu_creative_block",
   "posts": [
-    {
-      "ts": "2026-10-09T18:58:31.732085+07:00",
-      "topic_id": "edu_creative_block",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261009/feed.png",
-        "stories_png": "out/20261009/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261009/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "เคยไหมครับที่นั่งทำงานแล้วสมองไม่แล่น ไอเดียไม่ออก ไม่ใช่เพราะคุณไม่เก่งนะ แต่อาจเป็นเพราะสภาพแวดล้อมรอบตัวมันไม่เอื้อ! 😵‍💫\nจริงๆ แล้ว สมองเราต้องการพื้นที่ที่ปลอดโปร่ง สะอาด เป็นระเบียบ เพื่อกระตุ้นค",
-        "tiktok": "Creative Block ที่แท้ไม่ใช่เราตันนะ แต่เป็นที่ออฟฟิศ! 🤯 เชื่อไหมว่าพื้นที่ทำงานที่สะอาด เป็นระเบียบ ช่วยให้สมองโปร่ง ไอเ",
-        "line": "รู้ไหมว่า Creative Block อาจไม่ได้เกิดจากคุณคนเดียว แต่มาจากสภาพแวดล้อมรอบตัว! 💡 สมองเราต้องการพื้นที่ปลอดโปร่ง สะอาด เพ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122128253925401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-10T00:28:10.802040+07:00",
       "topic_id": "agency_focus",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122134942185401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-30T00:30:30.052038+07:00",
+      "topic_id": "edu_creative_block",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261030/feed.png",
+        "stories_png": "out/20261030/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261030/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เคยไหม? คิดงานไม่ออก ทั้งที่พยายามแค่ไหนก็ตันไปหมด… บางที Creative Block ที่แท้จริงอาจไม่ใช่แค่เรื่องไอเดีย แต่เป็นเรื่อง 'สภาพแวดล้อม' รอบตัวเราก็ได้นะ! สมองของเราต้องการพื้นที่ที่โปร่ง โล่ง สะอาด เพ",
+        "tiktok": "Creative Block ไม่ได้มาจากไหนไกล อาจเพราะ 'ออฟฟิศ' ไม่เอื้อ! 💡 สมองเราต้องการพื้นที่โปร่ง โล่ง สะอาด เพื่อคิดสร้างสรรค์น",
+        "line": "รู้ไหมว่า Creative Block ที่เจออยู่ อาจเกิดจากสภาพแวดล้อมที่ไม่เอื้อก็ได้นะ! สมองเราต้องการพื้นที่ที่โปร่ง โล่ง และสะอาด"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122135032659401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
