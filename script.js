@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         factory: 'โรงงาน/โกดัง'
     };
     const priceTiers = {
-        house: [35, 30, 28, 26, 24, 22],
-        condo: [40, 35, 32, 30, 28, 25],
-        office: [35, 32, 28, 26, 24, 22],
-        factory: [30, 28, 26, 24, 22, 20]
+        house: [87.5, 75, 70, 65, 60, 55],
+        condo: [100, 87.5, 80, 75, 70, 62.5],
+        office: [87.5, 80, 70, 65, 60, 55],
+        factory: [75, 70, 65, 60, 55, 50]
     };
     const tierUpperBounds = [50, 100, 200, 300, 500, 1000];
 
