@@ -7,13 +7,13 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 
-function runAttribution(search, cookies = "") {
+function runAttribution(search, cookies = "", referrer = "") {
   const code = readFileSync(path.join(root, "attribution.js"), "utf8");
   const store = {};
   const sandbox = {
     window: {},
     location: { search, pathname: "/landing-bigcleaning.html", hash: "" },
-    document: { cookie: cookies, referrer: "" },
+    document: { cookie: cookies, referrer },
     Date,
     URL,
     URLSearchParams,
@@ -33,6 +33,18 @@ test("attribution.js marks gclid landing as google_ads", () => {
   const snap = runAttribution("?gclid=TESTGCLID123&utm_source=google&utm_medium=cpc");
   assert.equal(snap.channel, "google_ads");
   assert.equal(snap.gclid, "TESTGCLID123");
+});
+
+for (const [host, channel] of [['chatgpt.com', 'chatgpt'], ['chat.openai.com', 'chatgpt'], ['claude.ai', 'claude'], ['claude.com', 'claude'], ['www.perplexity.ai', 'perplexity'], ['gemini.google.com', 'gemini'], ['copilot.microsoft.com', 'copilot']]) {
+  test('AI referrer ' + host + ' is classified without UTM', () => {
+    assert.equal(runAttribution('', '', 'https://' + host + '/').channel, channel);
+  });
+}
+test('AI classification keeps Ads priority and rejects lookalike hosts', () => {
+  assert.equal(runAttribution('?gclid=TEST', '', 'https://claude.ai/').channel, 'google_ads');
+  assert.equal(runAttribution('', '', 'https://claude.ai.evil.example/').channel, 'referral');
+  assert.equal(runAttribution('', '', 'https://www.google.com/').channel, 'referral');
+  assert.equal(runAttribution('?utm_source=gpt').channel, 'chatgpt');
 });
 
 test("attribution.js reads Google _gcl_aw cookie when URL has no gclid", () => {

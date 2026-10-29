@@ -1,4 +1,4 @@
-import { newLeadId } from "./leadValidation.js";
+import { newLeadId, resolveLeadChannel } from "./leadValidation.js";
 import { conversionsToEnqueue } from "./adsConversions.js";
 import {
   ATTR_HEADERS,
@@ -35,8 +35,17 @@ export class SheetsLeadStore {
   }
 
   async _leads() {
-    const rows = await this.io.readTable("leads");
-    return rows.map(sheetRowToLead);
+    const [rows, attributionRows] = await Promise.all([
+      this.io.readTable("leads"), this.io.readTable("lead_attribution")
+    ]);
+    const saved = new Map(attributionRows.map(row => [row.lead_id, row]));
+    return rows.map(row => {
+      const combined = { ...(saved.get(row.id) || {}) };
+      for (const [key, value] of Object.entries(row)) {
+        if (value !== '' && value != null) combined[key] = value;
+      }
+      return sheetRowToLead(combined);
+    });
   }
 
   async create(payload, meta = {}) {
@@ -81,7 +90,7 @@ export class SheetsLeadStore {
     return leads.filter((lead) => {
       if (date && lead.created_date_bkk !== date) return false;
       if (status && lead.status !== status) return false;
-      if (channel && (lead.attribution?.channel || "direct") !== channel) return false;
+      if (channel && resolveLeadChannel(lead.attribution, lead.gclid) !== channel) return false;
       return true;
     });
   }

@@ -1,3 +1,5 @@
+import { aiChannelOf } from './aiChannels.js';
+
 export const PIPELINE_STATUSES = [
   "unverified",
   "new",
@@ -104,8 +106,13 @@ export function resolveLeadChannel(attr = {}, gclid = "") {
   const src = String(a.utm_source || a.last_utm_source || "").toLowerCase();
   const med = String(a.utm_medium || "").toLowerCase();
   if (src === "google" && /(cpc|ppc|paid|sem|paidsearch)/.test(med)) return "google_ads";
-  if (a.channel) return String(a.channel);
+  const existing = String(a.channel || '').toLowerCase();
+  if (existing && !['direct', 'referral', 'organic'].includes(existing)) return aiChannelOf(existing) || String(a.channel);
   if (a.fbclid) return "facebook";
+  if (src) return aiChannelOf(src) || src;
+  const ai = aiChannelOf(a.referrer);
+  if (ai) return ai;
+  if (existing) return existing;
   if (a.referrer) return "referral";
   return "direct";
 }

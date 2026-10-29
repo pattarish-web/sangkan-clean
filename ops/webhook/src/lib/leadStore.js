@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { newLeadId } from "./leadValidation.js";
+import { newLeadId, resolveLeadChannel } from "./leadValidation.js";
 import { conversionsToEnqueue } from "./adsConversions.js";
 import { bangkokDate, summarizeLeads } from "./leadSheetMap.js";
 import { SheetsLeadStore } from "./sheetsLeadStore.js";
@@ -91,7 +91,7 @@ export class FileLeadStore {
     return state.leads.filter((lead) => {
       if (date && lead.created_date_bkk !== date) return false;
       if (status && lead.status !== status) return false;
-      if (channel && (lead.attribution?.channel || "direct") !== channel) return false;
+      if (channel && resolveLeadChannel(lead.attribution, lead.gclid) !== channel) return false;
       return true;
     });
   }

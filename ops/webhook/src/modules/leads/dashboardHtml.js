@@ -1,3 +1,6 @@
+import { aiChannelOf } from '../../lib/aiChannels.js';
+import { resolveLeadChannel } from '../../lib/leadValidation.js';
+
 export function dashboardHtml() {
   return `<!DOCTYPE html>
 <html lang="th">
@@ -138,6 +141,7 @@ export function dashboardHtml() {
       <div style="display:grid;grid-template-columns:minmax(240px,1fr) 2fr;gap:1rem;" class="layout">
         <section class="card">
           <h2 style="margin:0 0 .75rem;font-size:1rem;">แยกตามช่องทาง</h2>
+          <p class="muted">ต้นทางของผู้ติดต่อที่ระบุได้ ไม่ใช่จำนวนบอต AI ที่เข้ามาอ่านเว็บ</p>
           <div id="channels" class="bars"></div>
         </section>
         <section class="card">
@@ -173,6 +177,11 @@ const STATUS_LABEL = {
   lost: "ไม่ปิด",
 };
 const CHANNEL_LABEL = {
+  chatgpt: "ChatGPT",
+  claude: "Claude",
+  perplexity: "Perplexity",
+  gemini: "Gemini",
+  copilot: "Copilot",
   google_ads: "Google Ads",
   facebook: "Facebook",
   line: "LINE",
@@ -182,6 +191,8 @@ const CHANNEL_LABEL = {
   tiktok: "TikTok",
 };
 const TOKEN_KEY = "sc_lead_staff_token";
+${aiChannelOf.toString()}
+${resolveLeadChannel.toString()}
 const ERROR_LABEL = {
   confirm_name_required: "กรอกชื่อลูกค้าจากสายโทรหรือแชต LINE ก่อนยืนยัน",
   confirm_phone_required: "กรอกเบอร์ลูกค้าก่อนยืนยัน จึงจะส่ง Google Ads",
@@ -338,9 +349,7 @@ function renderTable(leads) {
   wrap.innerHTML = '<table><thead><tr><th>ลูกค้า</th><th>บริการ</th><th>ต้นทาง</th><th>คำค้น</th><th>สถานะ</th><th>มูลค่า / Ads</th></tr></thead><tbody>' +
     leads.map((lead) => {
       const attr = lead.attribution || {};
-      const channelKey = attr.gclid || attr.gbraid || attr.wbraid || attr.gad_source || lead.gclid
-        ? "google_ads"
-        : (attr.channel || "direct");
+      const channelKey = resolveLeadChannel(attr, lead.gclid);
       const methodLabel = lead.contact_method === "phone"
         ? "คลิกโทร"
         : lead.contact_method === "line"

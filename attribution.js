@@ -152,6 +152,7 @@
         fillSearchterm(out);
         out.landing_page = landingPath();
         out.referrer = referrerHost();
+        if (aiChannelOf(out.referrer)) hasClick = true;
         out.captured_at = now();
         out.has_click = hasClick;
         return out;
@@ -196,6 +197,31 @@
         return out;
     }
 
+/** Identify explicit AI sources; ordinary Google/Bing search stays unclassified. */
+function aiChannelOf(value) {
+  var source = String(value || '').trim().toLowerCase();
+  var aliases = {
+    gpt: 'chatgpt', chatgpt: 'chatgpt', openai: 'chatgpt',
+    claude: 'claude', anthropic: 'claude',
+    perplexity: 'perplexity', gemini: 'gemini', copilot: 'copilot'
+  };
+  if (Object.prototype.hasOwnProperty.call(aliases, source)) return aliases[source];
+  var host;
+  try {
+    host = new URL(source.indexOf('://') >= 0 ? source : 'https://' + source).hostname.replace(/\.$/, '');
+  } catch (_) { return ''; }
+  var domains = {
+    'chatgpt.com': 'chatgpt', 'chat.openai.com': 'chatgpt',
+    'claude.ai': 'claude', 'claude.com': 'claude',
+    'perplexity.ai': 'perplexity', 'gemini.google.com': 'gemini',
+    'copilot.microsoft.com': 'copilot', 'copilot.com': 'copilot'
+  };
+  for (var domain in domains) {
+    if (host === domain || host.endsWith('.' + domain)) return domains[domain];
+  }
+  return '';
+}
+
     function channelOf(record) {
         if (!record) return "direct";
         if (record.gclid || record.gbraid || record.wbraid || record.gad_source) return "google_ads";
@@ -206,7 +232,9 @@
         if (record.li_fat_id) return "line";
         if (record.ttclid) return "tiktok";
         if (record.msclkid) return "microsoft_ads";
-        if (record.utm_source) return src;
+        if (record.utm_source) return aiChannelOf(src) || src;
+        var ai = aiChannelOf(record.referrer);
+        if (ai) return ai;
         if (record.referrer) return "referral";
         return "direct";
     }
