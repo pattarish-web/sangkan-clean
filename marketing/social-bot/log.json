@@ -1,51 +1,6 @@
 {
-  "last_topic": "agency_focus",
+  "last_topic": "edu_dust_it",
   "posts": [
-    {
-      "ts": "2026-10-10T15:36:30.497533+07:00",
-      "topic_id": "edu_dust_it",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261010/feed.png",
-        "stories_png": "out/20261010/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261010/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ใครจะคิดว่าฝุ่นจิ๋วๆ ที่เรามองข้ามไปนี่แหละ คือตัวการสำคัญที่ทำให้อุปกรณ์ไอทีสุดรักของเราทำงานได้ไม่เต็มประสิทธิภาพ แถมยังอายุสั้นลงอีก! 😲 ลองสังเกตคอมพิวเตอร์หรือเซิร์ฟเวอร์ที่ออฟฟิศดูสิ ถ้ามันร้อนผิ",
-        "tiktok": "คอมพิวเตอร์ร้อนผิดปกติใช่ไหม? 🥵 นั่นอาจเป็นฝีมือของฝุ่นจิ๋วๆ ที่สะสมอยู่ข้างใน! ฝุ่นพวกนี้ทำให้พัดลมทำงานหนัก ระบายความร",
-        "line": "รู้หรือไม่ว่า ฝุ่นคือตัวร้ายของอุปกรณ์ IT? 💻 หลายคนมองข้าม แต่ฝุ่นที่สะสมในคอมพิวเตอร์ ทำให้เครื่องร้อนจัด พัดลมทำงานหนั"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122128949301401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-10T18:15:27.130651+07:00",
       "topic_id": "edu_server_room",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122135125737401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-30T18:28:43.492592+07:00",
+      "topic_id": "edu_dust_it",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261030/feed.png",
+        "stories_png": "out/20261030/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261030/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานสตาร์ทอัพหรือน้องๆ เอเจนซี่ที่ใช้คอมทำงานหนักๆ ต้องอ่านเลยนะ! 💻 รู้ไหมว่าฝุ่นที่เรามองข้ามเนี่ย คือตัวการสำคัญที่ทำลายอุปกรณ์ไอทีของเราได้ทุกวันเลย พัดลมระบายความร้อนต้องทำงานหนักขึ้นมาก เพราะฝุ",
+        "tiktok": "ใครใช้คอมทำงานบ่อยๆ มาฟังทางนี้! 😮 ฝุ่นเล็กๆ เนี่ย ทำคอมคุณพังได้นะ พัดลมทำงานหนักจนร้อนจัด คอมก็อืด อายุสั้นลงอีก ถ้าปล",
+        "line": "เพื่อนๆ ที่ทำงานกับคอมทุกวัน รู้ไหมว่าฝุ่นที่เรามองข้ามเนี่ย อันตรายกว่าที่คิดนะ 😱 มันทำให้พัดลมระบายความร้อนทำงานหนัก ค"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122135151189401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
