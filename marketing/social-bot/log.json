@@ -1,51 +1,6 @@
 {
-  "last_topic": "tech_team",
+  "last_topic": "edu_big_clean_why",
   "posts": [
-    {
-      "ts": "2026-10-11T16:00:59.440790+07:00",
-      "topic_id": "edu_big_clean_why",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261011/feed.png",
-        "stories_png": "out/20261011/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261011/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "รู้ไหมว่า ทำไม Sangkan Clean ถึงแนะนำ Big Cleaning อย่างน้อยปีละ 2 ครั้ง? 🤔\n\nเพราะการทำความสะอาดปกติ อาจไม่พอจัดการคราบฝังลึก เชื้อรา หรือแบคทีเรียที่สะสมในจุดที่มองไม่เห็นได้หมดจด\n\nเช่น ซอกมุมหลัง ทำ",
-        "tiktok": "เพื่อนๆ รู้ไหม ทำไมต้อง Big Cleaning อย่างน้อยปีละ 2 ครั้ง? เพราะการทำความสะอาดทั่วไป อาจทิ้งคราบฝังลึก เชื้อรา แบคทีเรี",
-        "line": "รู้ไหมครับ ทำไม Sangkan Clean ถึงแนะนำ Big Cleaning ปีละ 2 ครั้ง? เพราะการทำความสะอาดปกติ อาจมองข้ามคราบฝังลึก เชื้อรา แ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122129164149401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-11T18:29:02.942854+07:00",
       "topic_id": "edu_hidden_dirt",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122135432139401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-10-31T17:59:48.570976+07:00",
+      "topic_id": "edu_big_clean_why",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261031/feed.png",
+        "stories_png": "out/20261031/stories.png",
+        "venue_need": "restaurant",
+        "venue_got": "restaurant",
+        "bg_source": "bg-restaurant-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261031/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "รู้กันไหมว่า ทำไมเราถึงต้องมี Big Cleaning อย่างน้อยปีละ 2 ครั้ง? หลายคนอาจคิดว่าทำความสะอาดปกติก็พอแล้ว แต่ความจริงคือคราบฝังลึก เชื้อรา แบคทีเรีย หรือแม้แต่สารก่อภูมิแพ้ มักจะสะสมอยู่ในจุดที่ตาเรามอ",
+        "tiktok": "Big Cleaning ปีละ 2 ครั้ง จำเป็นแค่ไหน? จำเป็นมาก! เพราะคราบฝังลึก เชื้อโรคในจุดที่มองไม่เห็น มันสะสมเยอะกว่าที่คิดนะ โด",
+        "line": "มาอัปเดตเรื่อง Big Cleaning กันหน่อย! หลายคนอาจสงสัยว่าทำไมต้องทำอย่างน้อยปีละ 2 ครั้ง? คำตอบคือ สิ่งสกปรก คราบฝังลึก เช"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122135449017401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
