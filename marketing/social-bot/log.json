@@ -1,51 +1,6 @@
 {
-  "last_topic": "maid_backup",
+  "last_topic": "edu_zone_problems",
   "posts": [
-    {
-      "ts": "2026-10-13T16:31:57.418381+07:00",
-      "topic_id": "edu_zone_problems",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261013/feed.png",
-        "stories_png": "out/20261013/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-07.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261013/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "บางทีปัญหาความสะอาดในออฟฟิศ ก็ไม่ได้มาจากแค่การใช้งานอย่างเดียวนะ แต่สภาพแวดล้อมรอบๆ ก็ส่งผลด้วย! 🌪️\nออฟฟิศริมถนนใหญ่ มักจะเจอศึกหนักกับฝุ่นละออง PM2.5 ที่ปลิวมาเกาะทุกซอกทุกมุม ทำให้ต้องทำความสะอาดกั",
-        "tiktok": "เคยสงสัยไหม ทำไมออฟฟิศเราถึงมีปัญหาคราบฝังแน่นกว่าที่อื่น? จริงๆ แล้วแต่ละย่านก็มีปัญหาความสะอาดต่างกันนะ! ออฟฟิศริมถนนใ",
-        "line": "ออฟฟิศแต่ละที่ | ปัญหาความสะอาดก็ต่างกันนะ! 🏢✨\n\nออฟฟิศริมถนนใหญ่: ระวังฝุ่น PM2.5 และควันรถ ที่มาพร้อมกับการจราจรหนาแน่น"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122129733969401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-13T19:47:31.666530+07:00",
       "topic_id": "edu_pm25",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122135779413401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-02T20:35:21.917538+07:00",
+      "topic_id": "edu_zone_problems",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261102/feed.png",
+        "stories_png": "out/20261102/stories.png",
+        "venue_need": "warehouse",
+        "venue_got": "warehouse",
+        "bg_source": "bg-warehouse-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261102/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหม? ปัญหาความสะอาดแต่ละออฟฟิศน่ะ ไม่เหมือนกันเป๊ะนะ! ถ้าออฟฟิศอยู่ติดถนนใหญ่เนี่ย เตรียมรับมือกับฝุ่น PM2.5 ที่มาเยี่ยมเยือนทุกวันได้เลย ทีมงานต้องทำงานหนักหน่อย ไหนจะดูแลความสะอาดทั่วไปแล้ว ยังต้",
+        "tiktok": "รู้ยัง? ออฟฟิศแต่ละย่าน ปัญหาคลีนก็ต่างกันนะ! 🏙️ ติดถนน ฝุ่นเยอะ! 💦 ใกล้น้ำ ชื้น ราขึ้น! 🏛️ ตึกเก่า คราบฝังลึก! ไม่ว่าจะ",
+        "line": "ออฟฟิศคุณอยู่ย่านไหน? ปัญหาความสะอาดก็ต่างกันนะ!\n\n- ติดถนนใหญ่: ฝุ่นมาเต็ม ต้องจัดการบ่อยๆ เลย\n- ใกล้แหล่งน้ำ: ระวังความ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122135810061401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
