@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_maid_absent",
+  "last_topic": "maid_backup",
   "posts": [
-    {
-      "ts": "2026-10-13T03:19:34.027730+07:00",
-      "topic_id": "maid_backup",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261013/feed.png",
-        "stories_png": "out/20261013/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261013/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "หลายคนคงเคยเจอปัญหาเรื่อง แม่บ้านโรงแรม แม่บ้านรีสอร์ท ลาบ่อย หรือทำงานไม่เรียบร้อยใช่ไหมครับ? หรือแม้แต่โปรเจกต์ บิ๊กคลีนนิ่งคอนโด ที่ต้องการความเป๊ะทุกตารางนิ้ว. ที่ Sangkan Clean เราเข้าใจ Pain Poi",
-        "tiktok": "หา แม่บ้านโรงแรม แม่บ้านรีสอร์ท หรือทำ บิ๊กคลีนนิ่งคอนโด ต้องเจอ Sangkan Clean! เรามีแม่บ้านประจำ มืออาชีพ มีทีมสำรอง ไม",
-        "line": "ทีมงาน Sangkan Clean เข้าใจดีว่าการหา แม่บ้านโรงแรม หรือ แม่บ้านรีสอร์ท ที่ไว้ใจได้นั้นสำคัญแค่ไหน. หรือแม้แต่โปรเจกต์ บ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122129627043401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-13T16:31:57.418381+07:00",
       "topic_id": "edu_zone_problems",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122135667963401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-02T16:34:49.461469+07:00",
+      "topic_id": "maid_backup",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261102/feed.png",
+        "stories_png": "out/20261102/stories.png",
+        "venue_need": "mall",
+        "venue_got": "mall",
+        "bg_source": "bg-mall-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261102/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ปัญหาโลกแตกที่คนทำธุรกิจต้องเจอคือ 'แม่บ้านประจำลาออกบ่อย' หรือ 'คนไม่พอ' ใช่ไหมครับ? เข้าใจเลย! ที่ Sangkan Clean เรามีทีมแม่บ้านมืออาชีพ ที่ผ่านการคัดเลือกและอบรมมาอย่างดี พร้อมปฏิบัติหน้าที่อย่างต่",
+        "tiktok": "เจอ แม่บ้านศูนย์การค้า หรือ แม่บ้านประจำ แล้วชอบทิ้งงาน? Sangkan Clean แก้ให้! เรามีทีมมืออาชีพ ทำความสะอาดบ้าน, ออฟฟิศ,",
+        "line": "ไม่ต้องปวดหัวกับปัญหาแม่บ้านประจำลาบ่อยอีกต่อไปครับ! Sangkan Clean มีแม่บ้านมืออาชีพ ที่พร้อมดูแลพื้นที่ของคุณ ไม่ว่าจะเ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122135779413401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
