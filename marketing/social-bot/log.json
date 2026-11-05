@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_construction_dust",
+  "last_topic": "edu_move_in_clean",
   "posts": [
-    {
-      "ts": "2026-10-16T16:55:51.281089+07:00",
-      "topic_id": "edu_move_in_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261016/feed.png",
-        "stories_png": "out/20261016/stories.png",
-        "venue_need": "home",
-        "venue_got": "home",
-        "bg_source": "bg-home-10.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261016/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจดีว่าการย้ายเข้าออฟฟิศใหม่เป็นเรื่องที่น่าตื่นเต้น แต่ก่อนจะจัดโต๊ะทำงานและเริ่มลุยงานกันจริงจัง มีสิ่งสำคัญที่เรามองข้ามไม่ได้เลยครับ นั่นคือเรื่องความสะอาด!\n\nหลายคนอาจคิดว",
-        "tiktok": "ย้ายออฟฟิศใหม่? อย่าเพิ่งลุยงาน! 🏢 รู้ไหมว่าฝุ่นก่อสร้าง คราบเคมี อาจซ่อนอยู่เพียบ! การ `ทำความสะอาดหลังก่อสร้างสำนักงาน",
-        "line": "ก่อนย้ายเข้าออฟฟิศใหม่ สำคัญมากที่ต้อง Deep Clean! เพราะหลังก่อสร้างจะมีฝุ่นละเอียด คราบกาว และสารเคมี ที่มองไม่เห็นแต่ส"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122130652239401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-16T22:24:11.518387+07:00",
       "topic_id": "after_construction",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122136669861401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-06T01:50:15.130357+07:00",
+      "topic_id": "edu_move_in_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261106/feed.png",
+        "stories_png": "out/20261106/stories.png",
+        "venue_need": "hotel",
+        "venue_got": "hotel",
+        "bg_source": "bg-hotel-07.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261106/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "เตรียมย้ายเข้าออฟฟิศใหม่กันอยู่รึเปล่า? 🏢 อย่าเพิ่งรีบขนของเข้าไปนะ! รู้ไหมว่าสารเคมีจากสีทาผนังใหม่ ฝุ่นผงจากการก่อสร้าง หรือแม้แต่คราบสีที่หลงเหลืออยู่จากงานตกแต่ง อาจจะยังซ่อนตัวอยู่ในทุกซอกมุม แม้",
+        "tiktok": "ย้ายออฟฟิศใหม่ อย่าลืม Deep Clean ก่อนนะ! 🌬️ สารเคมี ฝุ่น คราบสีที่มองไม่เห็น อาจลอยอยู่ในอากาศ ส่งผลเสียต่อสุขภาพได้ Sa",
+        "line": "ทีมงาน Sangkan Clean มีเรื่องสำคัญมาบอกครับ! 📣 สำหรับใครที่กำลังจะย้ายเข้าออฟฟิศใหม่ อย่าลืม Deep Clean ก่อนนะครับ เพราะ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122136709047401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
