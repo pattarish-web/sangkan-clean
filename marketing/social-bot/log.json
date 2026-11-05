@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_zone_clean",
+  "last_topic": "affiliate",
   "posts": [
-    {
-      "ts": "2026-10-15T22:38:06.533074+07:00",
-      "topic_id": "affiliate",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261015/feed.png",
-        "stories_png": "out/20261015/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-03.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261015/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "เพื่อน ๆ Sangkan Clean เตรียมเฮ! 🥳 มีข่าวดีมาบอกสำหรับคนที่อยากได้เครดิตคืนง่าย ๆ Sangkan Clean จัดโปรฯ ชวนเพื่อนในโซน รับเครดิตคืน 10% ไปเลย!\nไม่ว่าเพื่อนคุณจะกำลังมองหา แม่บ้านศูนย์การค้า มืออาชีพ ท",
-        "tiktok": "Sangkan Clean ชวนเพื่อนรับเครดิตคืน 10%! ✨ แค่ชวนเพื่อนในโซน ที่ต้องการ แม่บ้านศูนย์การค้า, ทำความสะอาดหลังก่อสร้างโกดัง",
-        "line": "ชวนเพื่อนในโซน รับเครดิตคืน 10% กับ Sangkan Clean!\nโอกาสดีๆ มาแล้ว แค่ชวนเพื่อนที่กำลังมองหา แม่บ้านศูนย์การค้า, ทีม ทำค"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122130532725401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-16T14:17:30.765431+07:00",
       "topic_id": "edu_construction_dust",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122136432783401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-05T16:33:56.741099+07:00",
+      "topic_id": "affiliate",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261105/feed.png",
+        "stories_png": "out/20261105/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261105/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานคนไหนกำลังหาผู้ช่วยดูแลความสะอาดให้ที่ทำงาน หรือโปรเจกต์ใหม่ๆ อยู่บ้าง? Sangkan Clean มีข่าวดีมาบอก! 🤩 ตอนนี้เรามีแคมเปญชวนเพื่อนในโซนมาใช้บริการ รับเครดิตคืนไปเลย 10% ง่ายๆ แค่แนะนำเพื่อนที่กำล",
+        "tiktok": "เฮ้ย! Sangkan Clean มีโปรชวนเพื่อนในโซน รับเครดิตคืน 10% ไปเลยนะ! ไม่ว่าเพื่อนจะหา แม่บ้านศูนย์การค้า, แม่บ้านโรงงาน หรื",
+        "line": "ข่าวดีจาก Sangkan Clean! ชวนเพื่อนในโซนมาใช้บริการ รับเครดิตคืน 10% เลยนะ! 🥳 ไม่ว่าเพื่อนจะมองหาบริการ แม่บ้านศูนย์การค้"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122136634179401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
