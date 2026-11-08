@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_germ_lifespan",
+  "last_topic": "office_ondemand",
   "posts": [
-    {
-      "ts": "2026-10-18T21:38:32.943354+07:00",
-      "topic_id": "office_ondemand",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261018/feed.png",
-        "stories_png": "out/20261018/stories.png",
-        "venue_need": "home",
-        "venue_got": "home",
-        "bg_source": "bg-home-08.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261018/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ทีมงานรุ่นใหม่ไฟแรงอย่างพวกเรา เข้าใจดีว่าการจัดการออฟฟิศไม่ใช่เรื่องง่าย โดยเฉพาะเรื่อง ทำความสะอาดสำนักงาน Sangkan Clean มีบริการ ทำความสะอาดออฟฟิศ แบบ On-Demand ที่ตอบโจทย์คนยุคใหม่ ไม่ต้องปวดหัวเร",
-        "tiktok": "ออฟฟิศคุณอยู่โซนอุดมสุข-บางนา แล้วอยากได้บริการ ทำความสะอาดสำนักงาน แบบ On-Demand ไหมครับ? Sangkan Clean จัดให้! ไม่ต้อง",
-        "line": "เบื่อไหมกับการหาแม่บ้านประจำ? Sangkan Clean เข้าใจ! เรามีบริการ ทำความสะอาดสำนักงาน แบบ On-Demand ตอบโจทย์ทีมรุ่นใหม่โซน"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122131457007401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-19T14:54:54.399543+07:00",
       "topic_id": "edu_productivity",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122137390017401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-08T16:03:58.541025+07:00",
+      "topic_id": "office_ondemand",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261108/feed.png",
+        "stories_png": "out/20261108/stories.png",
+        "venue_need": "hospital",
+        "venue_got": "hospital",
+        "bg_source": "bg-hospital-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261108/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานรุ่นใหม่/สตาร์ทอัพที่กำลังมองหาทางออกเรื่องความสะอาดออฟฟิศในโซนอุดมสุข–บางนา มาทางนี้เลยครับ! ✨ Sangkan Clean เข้าใจดีว่าการจ้างแม่บ้านประจำอาจไม่ใช่คำตอบสำหรับทุกคน ตอนนี้เรามีบริการทำความสะอาด",
+        "tiktok": "ออฟฟิศแถวอุดมสุข–บางนา อยากคลีนแบบไม่ต้องจ้างประจำใช่ป่ะ? Sangkan Clean จัดให้! บริการทำความสะอาดสำนักงานแบบ On-Demand ท",
+        "line": "Sangkan Clean เข้าใจว่าทีมงานรุ่นใหม่แบบคุณต้องการความยืดหยุ่น! สำหรับออฟฟิศโซนอุดมสุข–บางนา ที่ไม่อยากจ้างแม่บ้านประจำ "
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122137537737401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
