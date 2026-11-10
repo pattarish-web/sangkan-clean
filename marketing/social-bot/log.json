@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_big_clean_why",
+  "last_topic": "edu_hidden_dirt",
   "posts": [
-    {
-      "ts": "2026-10-21T17:15:07.309469+07:00",
-      "topic_id": "edu_hidden_dirt",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261021/feed.png",
-        "stories_png": "out/20261021/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-06.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261021/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "เพื่อนๆ เคยสงสัยไหมว่า จุดไหนในพื้นที่ของเราที่มองข้ามการทำความสะอาดไปบ่อยที่สุด? นอกจากคราบที่เห็นชัดๆ แล้ว ยังมีอีกหลายมุมที่การทำความสะอาดปกติเข้าไม่ถึงง่ายๆ เลยนะ เช่น ใต้เฟอร์นิเจอร์ หรือตามรางแอ",
-        "tiktok": "เบื่อไหมกับคราบฝังลึกที่มองไม่เห็น? ใต้โซฟา รางแอร์ ร่องกระเบื้อง หรือแม้แต่ซอกมุมในโรงงาน ก็เป็นจุดที่ทำความสะอาดปกติเข",
-        "line": "รู้ไหม? จุดที่มักถูกลืมเรื่องความสะอาด คือใต้เฟอร์นิเจอร์ รางแอร์ หรือร่องกระเบื้องนี่แหละ คราบฝังลึกมักจะไปกองอยู่ตามซอ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122132139393401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-21T22:59:19.337056+07:00",
       "topic_id": "big_cleaning",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122138226285401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-11T01:44:48.930754+07:00",
+      "topic_id": "edu_hidden_dirt",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261111/feed.png",
+        "stories_png": "out/20261111/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-02.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261111/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทุกคนน่าจะคุ้นเคยกับการทำความสะอาดทั่วไปดีอยู่แล้ว แต่เคยสังเกตไหมว่ามีบางจุดที่เรามักจะมองข้ามไปเสมอ? จุดเล็กๆ น้อยๆ อย่างใต้เฟอร์นิเจอร์หนักๆ รางแอร์ที่ซ่อนอยู่ หรือแม้แต่ร่องกระเบื้องที่ดูเหมือนจะส",
+        "tiktok": "เคยสงสัยไหมว่า คราบซ่อนอยู่ไหน? ไม่ใช่แค่ที่มองเห็นนะ! ใต้เฟอร์นิเจอร์ รางแอร์ ร่องกระเบื้อง พวกนี้แหละตัวดี แหล่งสะสมคร",
+        "line": "เคยสงสัยไหมว่า คราบฝังลึก ซ่อนอยู่ตรงไหนบ้าง? นอกจากที่เห็นชัดๆ แล้ว ใต้เฟอร์นิเจอร์ รางแอร์ หรือร่องกระเบื้อง นี่แหละ ต"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122138339445401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
