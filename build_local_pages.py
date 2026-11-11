@@ -1,5 +1,6 @@
 import json
 import os
+from html import escape
 
 from site_config import LOCAL_AREAS, SITE_URL, analytics_script_tag
 
@@ -50,6 +51,14 @@ def _related_posts_html(posts, area_slug, count=3):
     return "\n".join(links) if links else '<a href="../blog.html">ดูบทความทั้งหมด</a>'
 
 
+def _service_links_html(services):
+    items = [
+        f'            <li><a href="../{escape(path, quote=True)}">{escape(label)}</a> — {escape(detail)}</li>'
+        for path, label, detail in services
+    ]
+    return "\n".join(items)
+
+
 def build_local_pages():
     os.makedirs("areas", exist_ok=True)
 
@@ -67,7 +76,7 @@ def build_local_pages():
 
         html = template
         for key, value in area.items():
-            if key == "faq":
+            if key in ("faq", "service_links"):
                 continue
             html = html.replace("{{" + key + "}}", value)
         html = html.replace("{{site_url}}", SITE_URL)
@@ -75,6 +84,21 @@ def build_local_pages():
         html = html.replace("{{faq_html}}", faq_html)
         html = html.replace("{{faq_schema}}", faq_schema)
         html = html.replace("{{related_posts}}", related)
+        service_links = area.get("service_links", [])
+        html = html.replace(
+            "{{service_links}}",
+            _service_links_html(service_links) + "\n" if service_links else "",
+        )
+        html = html.replace(
+            "{{area_phone}}",
+            '<p><a href="tel:+66929149978" class="btn btn-primary" id="local-cta-phone">โทรประเมินราคา 092-914-9978</a></p>\n        ' if service_links else "",
+        )
+        if service_links:
+            html = html.replace(
+                '            <a href="tel:0929149978" class="btn btn-secondary btn-lg"><i class="fa-solid fa-phone"></i> โทรเลย</a>\n',
+                "",
+            )
+            html = html.replace('href="../index.html', 'href="/')
         html = html.replace("{{analytics_script}}", analytics_script_tag("../"))
 
         path = os.path.join("areas", f"{area['file']}.html")
