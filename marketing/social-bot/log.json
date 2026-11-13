@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_pm25",
+  "last_topic": "service_area",
   "posts": [
-    {
-      "ts": "2026-10-23T22:46:47.838024+07:00",
-      "topic_id": "service_area",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261023/feed.png",
-        "stories_png": "out/20261023/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-04.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261023/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "กำลังมองหาพาร์ทเนอร์ด้านความสะอาด ที่เข้าใจงานใหญ่ๆ อยู่ใช่ไหม? Sangkan Clean พร้อมซัพพอร์ตคุณเต็มที่! เราเชี่ยวชาญทั้งงานทำความสะอาดหลังก่อสร้างโกดัง ให้พื้นที่ใหม่พร้อมใช้งานได้ทันที หรือดูแล แม่บ้า",
-        "tiktok": "โปรเจกต์คุณไปถึงไหน Sangkan Clean ก็ไปถึงที่! เราดูแลทำความสะอาดหลังก่อสร้างโกดัง หรือจัดหาแม่บ้านโรงงาน และแม่บ้านศูนย์",
-        "line": "อยากรู้ว่า Sangkan Clean ไปดูแลคุณได้ถึงไหน? บอกเลยว่าครอบคลุมทั่ว กทม. นนทบุรี สมุทรปราการ ปทุมธานี รวมถึงชลบุรีและระยอ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122132705439401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-10-24T14:24:35.198806+07:00",
       "topic_id": "edu_outsource_vs_hire",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122139040293401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-13T16:37:36.448826+07:00",
+      "topic_id": "service_area",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261113/feed.png",
+        "stories_png": "out/20261113/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261113/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมงานคนไหนกำลังมองหาผู้ช่วยดูแลความสะอาดแบบมือโปรอยู่บ้าง? Sangkan Clean พร้อมไปดูแลพื้นที่ของคุณให้เป๊ะ ปัง และเป็นระเบียบสุดๆ เลยนะ ไม่ว่าจะอยู่โซนไหนในกรุงเทพฯ นนทบุรี สมุทรปราการ ปทุมธานี ชลบุรี ",
+        "tiktok": "ทีมคุณต้องการความคลีนแบบมืออาชีพใช่ไหม? Sangkan Clean บริการดูแลพื้นที่ทั่วกรุงเทพฯ ปริมณฑล ชลบุรี ระยอง ไม่ว่าจะเป็น แม",
+        "line": "กำลังมองหาทีมทำความสะอาดคู่ใจอยู่รึเปล่า? Sangkan Clean พร้อมเป็นพาร์ทเนอร์ดูแลพื้นที่ของคุณให้สะอาดเอี่ยมอ่อง! เราให้บร"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122139254271401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
