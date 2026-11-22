@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_zone_problems",
+  "last_topic": "edu_pm25",
   "posts": [
-    {
-      "ts": "2026-11-03T03:51:32.926932+07:00",
-      "topic_id": "edu_pm25",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261103/feed.png",
-        "stories_png": "out/20261103/stories.png",
-        "venue_need": "hospital",
-        "venue_got": "hospital",
-        "bg_source": "bg-hospital-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261103/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ออฟฟิศริมถนนใหญ่ เจอปัญหาฝุ่น PM2.5 บุกไหมครับ? แม้จะคิดว่าปิดประตูดีแล้ว แต่ทุกครั้งที่เราเปิด-ปิดเข้าออกเนี่ย ฝุ่นจิ๋วพวกนี้มันก็แอบเล็ดลอดเข้ามาได้ง่ายๆ เลยนะ พอฝุ่น PM2.5 สะสมเยอะเข้า ไม่ใช่แค่เฟอ",
-        "tiktok": "ออฟฟิศติดถนนใหญ่ ระวัง PM2.5! เปิด-ปิดประตูแต่ละที ฝุ่นจิ๋วก็เข้ามาสะสมในออฟฟิศเราได้ง่ายๆ เลยนะ นี่ไม่ใช่แค่เรื่องสกปรก",
-        "line": "รู้ยัง? ออฟฟิศริมถนนใหญ่ เสี่ยง PM2.5 สูงกว่าที่คิดนะ! ทุกครั้งที่เปิด-ปิดประตู ฝุ่นจิ๋วพวกนี้ก็แอบเข้ามาสะสมในห้องทำงาน"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122135864409401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-11-03T16:37:49.807463+07:00",
       "topic_id": "service_area",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122140941201401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-23T01:35:46.525831+07:00",
+      "topic_id": "edu_pm25",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261123/feed.png",
+        "stories_png": "out/20261123/stories.png",
+        "venue_need": "home",
+        "venue_got": "home",
+        "bg_source": "bg-home-04.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261123/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ชาวออฟฟิศริมถนนใหญ่รู้ยัง? 🛣️ ปัญหา PM2.5 ไม่ได้อยู่แค่ข้างนอกนะ แต่เข้าออฟฟิศเราได้ง่ายๆ เลย แค่ตอนเปิด-ปิดประตูแต่ละวันนี่แหละ! ฝุ่นจิ๋วพวกนี้ส่งผลต่อสุขภาพระยะยาวได้ ทั้งภูมิแพ้ ไอ ระคายเคืองตา ต้อ",
+        "tiktok": "PM2.5 ไม่ได้อยู่แค่ข้างนอกนะ! ฝุ่นจิ๋วพวกนี้เข้ามาในออฟฟิศคุณได้ง่ายๆ ทุกครั้งที่เปิด-ปิดประตู ยิ่งออฟฟิศติดถนนใหญ่ยิ่งเ",
+        "line": "ออฟฟิศติดถนนใหญ่ ระวัง PM2.5 นะครับ!\nรู้ไหมว่าฝุ่น PM2.5 เข้ามาในออฟฟิศคุณได้ง่ายๆ ทุกครั้งที่ประตูเปิด-ปิด? ฝุ่นจิ๋วเหล"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122140979205401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
