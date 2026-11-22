@@ -1415,3 +1415,5 @@
                 transition: none;
             }
         }
+/* Keep decorative effects inside the viewport; tables retain their own scroll area. */
+html { overflow-x: clip; }
