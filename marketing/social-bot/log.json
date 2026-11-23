@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_pm25",
+  "last_topic": "service_area",
   "posts": [
-    {
-      "ts": "2026-11-03T16:37:49.807463+07:00",
-      "topic_id": "service_area",
-      "type": "promo",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261103/feed.png",
-        "stories_png": "out/20261103/stories.png",
-        "venue_need": "factory",
-        "venue_got": "factory",
-        "bg_source": "bg-factory-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261103/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "ทีม Sangkan Clean พร้อมลุยทุกงานทำความสะอาด! 💪\nหลายคนอาจจะสงสัยว่า Sangkan Clean รับทำความสะอาดที่ไหนบ้าง? วันนี้มาบอกให้ชัดๆ เลยว่าทีมเราพร้อมให้บริการทั่วพื้นที่กรุงเทพฯ นนทบุรี ปทุมธานี และสมุทรปรา",
-        "tiktok": "Sangkan Clean เราไม่ได้มีดีแค่ใน กทม. นะ! 😊\nรู้ไหมว่าเราขยายพื้นที่บริการไปถึง นนทบุรี ปทุมธานี สมุทรปราการ ชลบุรี และระ",
-        "line": "เช็กเลย! Sangkan Clean อยู่ใกล้คุณแค่ไหน?\nเราครอบคลุมบริการทำความสะอาดทั่ว กทม. นนทบุรี ปทุมธานี สมุทรปราการ และขยายพื้น"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122135939109401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-11-03T19:53:49.298698+07:00",
       "topic_id": "edu_outsource_vs_hire",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122140979205401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-23T17:51:29.356665+07:00",
+      "topic_id": "service_area",
+      "type": "promo",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261123/feed.png",
+        "stories_png": "out/20261123/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261123/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทีมงาน Sangkan Clean เข้าใจดีว่าการหาบริการทำความสะอาดที่ครอบคลุมพื้นที่ธุรกิจของคุณไม่ใช่เรื่องง่าย วันนี้เราพร้อมดูแลคุณในวงกว้างขึ้นแล้ว! ไม่ว่าธุรกิจคุณจะอยู่ใน กทม. นนทบุรี สมุทรปราการ ปทุมธานี ช",
+        "tiktok": "Sangkan Clean ขยายโซนบริการแล้วนะ! 🚀 ไม่ว่าธุรกิจคุณจะอยู่ กทม. นนทบุรี สมุทรปราการ ปทุมธานี ชลบุรี หรือระยอง เราส่งทีมแ",
+        "line": "อัปเดตจาก Sangkan Clean ครับ! ตอนนี้เราขยายพื้นที่บริการแล้วนะ ครอบคลุม กทม. นนทบุรี สมุทรปราการ ปทุมธานี ชลบุรี และระยอ"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122141062635401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
