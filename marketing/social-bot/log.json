@@ -1,51 +1,6 @@
 {
-  "last_topic": "edu_building_hygiene",
+  "last_topic": "edu_zone_clean",
   "posts": [
-    {
-      "ts": "2026-11-05T01:44:21.908112+07:00",
-      "topic_id": "edu_zone_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261105/feed.png",
-        "stories_png": "out/20261105/stories.png",
-        "venue_need": "warehouse",
-        "venue_got": "warehouse",
-        "bg_source": "bg-warehouse-01.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261105/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "หลายคนอาจคิดว่า แค่ดูแลความสะอาดห้องตัวเองก็พอ แต่รู้ไหมว่าทำไมการที่ตึกสะอาดทั้งชั้นถึงดีกว่าสะอาดแค่ห้องเดียว? 🧐\n\nง่ายๆ เลยคือ ฝุ่นผง แมลง และกลิ่นไม่พึงประสงค์เดินทางข้ามห้องได้สบายๆ ไม่ว่าจะทางช่อ",
-        "tiktok": "ทำไมทำความสะอาดห้องเดียวไม่พอ? 🤔 เพราะฝุ่น แมลง และกลิ่นไม่ได้อยู่ในพื้นที่ใครคนเดียวไงครับ! มันเดินทางข้ามห้องได้สบายๆ ",
-        "line": "เคยสงสัยไหมครับว่า ทำไมการทำความสะอาดทั้งชั้น ถึงดีกว่าแค่ห้องเดียว? เพราะฝุ่น แมลง และกลิ่นพวกนี้ ไม่เคยอยู่แค่ในห้องเด"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122136432783401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-11-05T16:33:56.741099+07:00",
       "topic_id": "affiliate",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122141258031401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-25T04:20:33.994060+07:00",
+      "topic_id": "edu_zone_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261125/feed.png",
+        "stories_png": "out/20261125/stories.png",
+        "venue_need": "factory",
+        "venue_got": "factory",
+        "bg_source": "bg-factory-01.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261125/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "ทำไมทำความสะอาดทั้งชั้น ถึงดีกว่าแค่ห้องเดียว? 🧐\n\nบางทีเราอาจมองข้ามว่า ฝุ่นละออง กลิ่นไม่พึงประสงค์ หรือแม้แต่แมลงเนี่ย ไม่ได้อยู่แค่ในห้องเดียวที่เราทำความสะอาดนะ! ลองนึกภาพการ ทำความสะอาดโรงงาน หรื",
+        "tiktok": "เคยสงสัยไหมว่าทำไมต้องทำความสะอาดทั้งชั้น? 🤓\n\nเพราะฝุ่น กลิ่น แมลง ไม่ได้อยู่แค่ในห้องเดียว! เวลาเรา ทำความสะอาดโรงเรียน",
+        "line": "ทำความสะอาดแค่ห้องเดียวอาจไม่พอ! 🤫\n\nรู้ไหมว่าฝุ่น กลิ่น และแมลงเนี่ย ไม่ได้อยู่แค่ในห้องที่เราดูแลนะ มันแพร่กระจายไปทั่ว"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122141289645401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
