@@ -1,51 +1,6 @@
 {
-  "last_topic": "after_construction",
+  "last_topic": "edu_routine_clean",
   "posts": [
-    {
-      "ts": "2026-11-06T20:01:39.295983+07:00",
-      "topic_id": "edu_routine_clean",
-      "type": "edu",
-      "caption_source": "gemini",
-      "format": "image",
-      "dry_run": false,
-      "assets": {
-        "feed_png": "out/20261106/feed.png",
-        "stories_png": "out/20261106/stories.png",
-        "venue_need": "hotel",
-        "venue_got": "hotel",
-        "bg_source": "bg-hotel-02.jpg",
-        "relevance_ok": "1",
-        "bg": "out/20261106/bg.jpg"
-      },
-      "captions": {
-        "fb_ig": "หลายคนอาจคิดว่า การทำความสะอาดเนี่ย ไว้รอให้เห็นคราบชัดๆ ก่อนก็ได้มั้ง? 😅 แต่เดี๋ยวก่อน! จริงๆ แล้วเชื้อโรคและฝุ่นผงต่างๆ มันสะสมอยู่กับเราทุกวันเลยนะ มองไม่เห็นก็ใช่ว่าจะไม่มี ยิ่งในพื้นที่ที่มีคนพลุ",
-        "tiktok": "ใครว่ารอให้เห็นคราบค่อยคลีน? ไม่จริงเลยนะ! เชื้อโรคและฝุ่นผงสะสมทุกวัน แม้ตาเปล่าจะมองไม่เห็น ยิ่งพื้นที่อย่างโรงพยาบาล ",
-        "line": "รู้ไหมว่า เราไม่ควรรอให้เห็นคราบสกปรกชัดๆ ค่อยทำความสะอาด? เพราะเชื้อโรคต่างๆ มันสะสมอยู่ทุกวัน แม้เราจะมองไม่เห็น ยิ่งใ"
-      },
-      "results": {
-        "facebook": {
-          "ok": true,
-          "mode": "photo",
-          "id": "122137013085401302",
-          "page_id": "1158266640711425"
-        },
-        "instagram": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
-        },
-        "tiktok": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing TIKTOK_ACCESS_TOKEN"
-        },
-        "line": {
-          "ok": false,
-          "skipped": true,
-          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
-        }
-      }
-    },
     {
       "ts": "2026-11-07T01:06:06.507470+07:00",
       "topic_id": "edu_harsh_chemical",
@@ -2682,6 +2637,51 @@
           "ok": true,
           "mode": "photo",
           "id": "122141567085401302",
+          "page_id": "1158266640711425"
+        },
+        "instagram": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing INSTAGRAM_BUSINESS_ACCOUNT_ID or token"
+        },
+        "tiktok": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing TIKTOK_ACCESS_TOKEN"
+        },
+        "line": {
+          "ok": false,
+          "skipped": true,
+          "reason": "missing LINE_CHANNEL_ACCESS_TOKEN"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-26T22:23:10.908009+07:00",
+      "topic_id": "edu_routine_clean",
+      "type": "edu",
+      "caption_source": "gemini",
+      "format": "image",
+      "dry_run": false,
+      "assets": {
+        "feed_png": "out/20261126/feed.png",
+        "stories_png": "out/20261126/stories.png",
+        "venue_need": "school",
+        "venue_got": "school",
+        "bg_source": "bg-school-03.jpg",
+        "relevance_ok": "1",
+        "bg": "out/20261126/bg.jpg"
+      },
+      "captions": {
+        "fb_ig": "รู้ไหมครับว่าเชื้อโรคและฝุ่นละอองมันสะสมทุกวันนะ! ไม่ต้องรอเห็นคราบสกปรกชัดๆ แล้วค่อยเริ่มทำความสะอาดหรอกครับ เพราะกว่าจะเห็นด้วยตาเปล่าเนี่ย เชื้อโรคอาจจะแฮปปี้ในพื้นที่เราไปนานแล้วนะ 🦠 การคลีนแบบประ",
+        "tiktok": "อย่ารอให้เห็นคราบแล้วค่อยทำความสะอาดนะ! เชื้อโรคและฝุ่นมันสะสมทุกวัน 🦠 การคลีนประจำสำคัญกว่าเยอะ ไม่ว่าจะพื้นที่สาธารณะแ",
+        "line": "รู้ไหมว่าเชื้อโรคไม่เคยรอให้เราเห็นคราบสกปรกนะ! 🦠 พวกมันสะสมทุกวันเลย การดูแลพื้นที่ให้สะอาดเป็นประจำจึงสำคัญมากครับ ไม่"
+      },
+      "results": {
+        "facebook": {
+          "ok": true,
+          "mode": "photo",
+          "id": "122141604747401302",
           "page_id": "1158266640711425"
         },
         "instagram": {
